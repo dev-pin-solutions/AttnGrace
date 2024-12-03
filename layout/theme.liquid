@@ -295,7 +295,7 @@ Creation date: 08/14/2024
   </div>
 
   {% section 'top-banner' %}
-  {% section 'header' %}
+  {% comment %}{% section 'header' %}{% endcomment %}
 
   <div class="content-wrapper">
     <div class="main-content">
@@ -359,7 +359,7 @@ Creation date: 08/14/2024
       {{ content_for_layout }}
 	<noscript class="endOfLayoutContentX" type="text/mark"></noscript>{% render 'treedify_script' %}
 
-      {% section 'footer' %}
+      {% comment %}{% section 'footer' %}{% endcomment %}
     </div>
 
     <div class="content-overlay"></div>
