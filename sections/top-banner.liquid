@@ -1,0 +1,64 @@
+{% if section.settings.show_banner == true %}
+  <link
+    rel="stylesheet"
+    href="{{ 'top-banner.css' | asset_url }}"
+    media="print"
+    onload="this.media='all'">
+
+  <div class="top-banner-section" style="background-color: {{ section.settings.background_color }};">
+    {% if section.settings.banner_text != blank %}
+      {% if section.settings.banner_link != blank %}
+        <div class="top-banner-wrapper" style="color:{{ section.settings.text_color }};">
+          <a href="{{ section.settings.banner_link }}">{{ section.settings.banner_text }}</a>
+        </div>
+      {% else %}
+        <div class="top-banner-wrapper" style="color:{{ section.settings.text_color }};">{{ section.settings.banner_text }}</div>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endif %}
+<script>
+  var topBanner = document.querySelector('.top-banner-section');
+
+  if (topBanner) {
+    document.body.classList.add('has-top-banner');
+  } else {
+    document.body.classList.remove('has-top-banner');
+  }
+</script>
+{% schema %}
+  {
+    "name": "Top Banner",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_banner",
+        "label": "Show Banner",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "banner_text",
+        "label": "Banner text",
+        "default": "August is now available at 400+ Targets nationwide! Click here for our store location!"
+      },
+      {
+        "type": "url",
+        "id": "banner_link",
+        "label": "Banner Link",
+        "default": "/"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#fb9650"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#ffffff"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,13 @@
+{% if section.blocks.size != 0 %}
+<div class="moving-text-section product-moving-text" style="background-color: {{ section.settings.background }}; color:{{ section.settings.text_color }};">
+     <marquee direction = "left">
+        {% for block in section.blocks %}
+            <span>{{ block.settings.text }}</span>
+        {% endfor %}
+
+        {% for block in section.blocks %}
+            <span>{{ block.settings.text }}</span>
+        {% endfor %}
+    </marquee> 
+</div>
+{% endif %}

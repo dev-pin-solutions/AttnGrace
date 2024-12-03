@@ -1,0 +1,140 @@
+.attn-grace-difference-section {
+	background-color: #fff;
+  padding: 100px 0;
+}
+.attn-grace-difference-section .attn-grace-difference-inner {
+	width: 77%;
+	max-width: 1024px;
+	min-width: 320px;
+	margin: auto;
+}
+.attn-grace-difference-section .title {
+	font-size: 60px;
+	line-height: 70px;
+	font-family: 'BentonMod';
+	text-align: center;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #000;
+	width: 77%;
+	margin: auto;
+	min-width: 320px;
+}
+.attn-grace-difference-section .subtext {
+	margin-top: 35px;
+	font-size: 24px;
+	line-height: 34px;
+	font-family: 'Acre';
+	color: #000;
+	text-align: center;
+}
+.attn-grace-difference-section .attn-grace-difference-wrapper {
+	position: relative;
+}
+.attn-grace-difference-section .chart-grid-second-column {
+  position: absolute;
+	width: 28%;
+	height: 100%;
+	margin-left: 44%;
+	margin-right: 28%;
+	background-image: linear-gradient(#f49958, #f6eee8);
+	border-radius: 50px;
+	z-index: 0;
+}
+.attn-grace-difference-section .chart-grid-wrapper {
+	position: relative;
+	z-index: 1;
+}
+.attn-grace-difference-section .chart-row-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-bottom: 1px solid #000;
+	padding: 30px 0;
+}
+.attn-grace-difference-section .chart-row-wrapper:last-child {
+	border: none;
+}
+.attn-grace-difference-section .chart-row-wrapper svg {
+	width: 64px;
+	height: 64px;
+}
+.attn-grace-difference-section .first-column {
+	width: 44%;
+	font-size: 28px;
+	line-height: 39px;
+	font-family: 'Acre';
+	color: #000;
+	text-transform: uppercase;
+	text-align: left;
+}
+.attn-grace-difference-section .first-column img {
+	height: 70px;
+	width: auto;
+}
+.attn-grace-difference-section .first-column-title {
+	width: 84%;
+}
+.attn-grace-difference-section .second-column {
+	width: 28%;
+	text-align: center;
+	height: 100%;
+}
+.attn-grace-difference-section .third-column {
+	width: 28%;
+	text-align: center;
+}
+.attn-grace-difference-section .chart-row-wrapper.header {
+	padding: 0;
+	padding: 60px 0;
+	font-size: 37px;
+	line-height: 40px;
+	font-family: 'BentonMod';
+}
+.attn-grace-difference-section .header .second-column {
+	display: flex;
+	align-items: center;
+	padding: 0 30px;
+}
+.attn-grace-difference-section .header .second-column img {
+	width: 70px;
+	margin-right: 20px;
+}
+.attn-grace-difference-section .grace-title {
+	border-bottom: 1px solid #000;
+}
+@media screen and (max-width: 768px) {
+	.attn-grace-difference-section .attn-grace-difference-inner {
+		width: 100%;
+		padding: 0 30px;
+	}
+	.attn-grace-difference-section .title {
+		font-size: 30px;
+		line-height: 35px;
+	}
+	.attn-grace-difference-section .subtext {
+		font-size: 16px;
+		line-height: 24px;
+	}
+	.attn-grace-difference-section .first-column {
+		font-size: 16px;
+		line-height: 24px;
+	}
+	.attn-grace-difference-section .first-column img {
+		height: auto;
+		width: 100%;
+	}
+	.attn-grace-difference-section .chart-row-wrapper svg {
+		width: 45px;
+		height: 45px;
+	}
+	.attn-grace-difference-section .chart-row-wrapper.header {
+		font-size: 28px;
+		line-height: 35px;
+	}
+	.attn-grace-difference-section .header .second-column img {
+		margin-right: 0;
+	}
+	.attn-grace-difference-section .grace-title {
+		display: none;
+	}
+}

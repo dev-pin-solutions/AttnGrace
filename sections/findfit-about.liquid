@@ -1,0 +1,180 @@
+<section class="about">
+  <div class='center-wrapper'>
+      <h2 class="about__title">{{section.settings.heading}}</h2> 
+        <div class="about__video">
+            <div class="video">
+                <div class="video__poster">{{section.settings.image | img_url : 'master' | img_tag }}</div>
+                <button class="video__play lvideo" data-url="{{ section.settings.videourl }}">
+                  <svg width="83" height="94" viewBox="0 0 83 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M80 41.8038C84 44.1132 84 49.8868 80 52.1962L9.5 92.8993C5.5 95.2087 0.499995 92.322 0.499996 87.7032L0.499999 6.29681C0.499999 1.67801 5.5 -1.20875 9.5 1.10065L80 41.8038Z" fill="#F5F5F5"/>
+                  </svg>
+                </button>
+            </div>
+        </div>
+      <h2 class="about__title text_green">{{section.settings.subheading}}</h2>
+      <div class="about__text">                
+          {{section.settings.text}}
+      </div>
+      <div class="about-features">
+        {% for block in section.blocks %}
+          <div class="about-features__item">
+              <div class="about-features__image">{{block.settings.image | img_url : 'master' | img_tag }}</div>
+              <div class="about-features__text">{{block.settings.text}}</div>
+          </div>
+          {% endfor %}
+         
+      </div>
+      <div class="about__btn">
+          <a href="{{section.settings.btn-link}}" class="btn">{{section.settings.btn-label}} {% render 'icon-arrow-3l' %}</a>
+      </div>
+  </div>
+</section>
+<script>
+  // Video
+document.querySelectorAll(".lvideo").forEach((d) => d.addEventListener("click", playVideos));
+const body = document.body;
+
+function playVideos(e) {
+  lvideo(e.currentTarget.dataset.url);
+
+  body.classList.add("lvideo-active");
+
+  var lvideoWrap = document.createElement("DIV");
+  lvideoWrap.setAttribute("id", "lvideo-wrap");
+  document.body.appendChild(lvideoWrap);
+
+  // console.log(this.dataset.url)
+  // console.log(this.dataset.video)
+
+  const wrapper = document.getElementById("lvideo-wrap");
+  wrapper.classList.add("active");
+
+  const url = this.dataset.url;
+
+  const startModal = `<span onclick="lvideoClose();" class="lvideo-overlay"></span> <div class="lvideo-container">`;
+  const finishModal = `</div><button onclick="lvideoClose();" class="lvideo-close">x</button>`;
+
+  // if (url.indexOf("youtube") !== -1) {
+  if (url.indexOf("youtube") !== -1 || url.indexOf("youtu") !== -1) {
+    //console.log("is youtube")
+
+    const ytUrl = [this.dataset.url];
+
+    var i,
+      r,
+      regExp = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+
+    for (i = 0; i < ytUrl.length; ++i) {
+      r = ytUrl[i].match(regExp);
+      //console.log(r[1])
+
+      document.getElementById(
+        "lvideo-wrap"
+      ).innerHTML = `${startModal}<iframe width="560" height="315" title="YouTube Video" src='https://www.youtube.com/embed/${r[1]}?rel=0&autoplay=1&mute=1&loop=1&playlist=${r[1]}' frameborder="0" allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>${finishModal}`;
+    }
+  } else if (url.indexOf("vimeo") !== -1) {
+    // console.log("is Vimeo")
+
+    const vimeoURL = this.dataset.url;
+    const regExp = /https:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/;
+
+    const match = vimeoURL.match(regExp);
+
+    if (match) {
+      document.getElementById(
+        "lvideo-wrap"
+      ).innerHTML = `${startModal}<iframe title="Vimeo" src="https://player.vimeo.com/video/${match[2]}?autoplay=1&loop=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>${finishModal}`;
+    } else {
+      alert("Not a Vimeo!  URL example:\n https://vimeo.com/120206922");
+    }
+  
+  } else if (url.indexOf("mp4") !== -1 || url.indexOf("m4v") !== -1) {
+    
+    document.getElementById(
+      "lvideo-wrap"
+    ).innerHTML = `${startModal}<video controls loop playsinline autoplay><source src='${this.dataset.url}' type="video/mp4"></video>${finishModal}`;
+  } else {
+    alert("No video link found.");
+  }
+}
+
+// CLOSE MODAL LVIDEO
+const lvideoClose = () => {
+  body.classList.remove("lvideo-active");
+
+  const wrapper = document.getElementById("lvideo-wrap");
+  wrapper.parentNode.removeChild(wrapper);
+};
+
+// LAUNCH
+function lvideo(){}
+</script>
+{% schema %}
+  {
+    "name": "Findfit About",
+    "settings" : [
+      {
+        "type" : "image_picker",
+        "id" : "image",
+        "label" : "Image"
+      },
+      {
+        "type" : "text",
+        "id" : "videourl",
+        "label" : "VideoUrl",
+        "default" : "https://samplelib.com/lib/preview/mp4/sample-5s.mp4"
+      },
+      {
+        "type" : "text",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "We outperform other brands in all<br> the ways that matter most."
+      },
+
+
+      {
+        "type" : "text",
+        "id" : "subheading",
+        "label" : "SubHeading",
+        "default" : "Made with your wellness and<br> the health of our planet in mind."
+      },
+      {
+        "type" : "richtext",
+        "id" : "text",
+        "label" : "Text",
+        "default" : "<p><strong>Attn: Grace is a female-founded, Certified B Corporation™, meeting the highest verified standards of social and environmental performance, transparency and accountability.</strong></p> <p>Our products incorporate the cleanest, most sustainable materials<br> possible without ever compromising on performance.</p>"
+      },
+       {
+            "type" : "text",
+            "id" : "btn-label",
+            "label" : "Button Label",
+            "default"   : "FIND YOUR FIT"
+        },
+        {
+            "type" : "url",
+            "id" : "btn-link",
+            "label" : "Button Link"
+        }
+    ],
+    "blocks" : [
+      {
+        "type" : "text",
+        "name" : "Feature",
+        "settings" : [
+          {
+            "type" : "image_picker",
+            "id" : "image",
+            "label" : "Image"
+          },
+        
+            {
+              "type" : "text",
+              "id" : "text",
+              "label" : "Text",
+              "default" : "We’ll never expose your skin to toxic chemicals."
+            }   
+        ]
+      }
+    ]
+  }
+{% endschema %}

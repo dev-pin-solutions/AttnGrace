@@ -1,0 +1,731 @@
+{% comment %}
+Custom Testimonials section created for UVT Landing Page and other site-wide page use.
+{% endcomment %}
+{% if product.metafields.custom.slider_products != blank %}
+    <div class="testimonials-section product_testimonials_slider">
+      <div class="page-width">
+        {% if section.settings.heading != blank %}
+            <h1 class="testimonials-heading heading">{{ section.settings.heading }}</h1>
+        {% endif %}
+        <div class="meta-testimonials-container">
+        {% for value in product.metafields.custom.slider_products.value %}
+            <div class="testimonial-block">
+                <div class="testimonial-content">
+                    <div class="meta_products_slider meta_products_slider_{{ forloop.index }}">
+                        <div class="product-details">
+                            <div class="product-features">
+                                <div><span class="icon-check">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                                            <mask id="mask0_86_1293" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
+                                            <path d="M44 0H0V44H44V0Z" fill="white"/>
+                                            </mask>
+                                            <g mask="url(#mask0_86_1293)">
+                                            <path d="M22 44C34.1528 44 44 34.1528 44 22C44 9.8472 34.1528 0 22 0C9.8472 0 0 9.8472 0 22C0 34.1528 9.8472 44 22 44Z" fill="#F58C35"/>
+                                            </g>
+                                            <mask id="mask1_86_1293" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
+                                            <path d="M44 0H0V44H44V0Z" fill="white"/>
+                                            </mask>
+                                            <g mask="url(#mask1_86_1293)">
+                                            <path d="M34.4343 10.7184C33.1847 10.8064 32.1639 10.9648 31.3455 11.2112C30.5359 11.4576 29.8671 11.7832 29.3479 12.2056C28.7583 12.6896 28.0983 13.4024 27.3679 14.3352C26.6375 15.268 25.5639 16.7904 24.1647 18.8848C23.1615 20.3808 21.9647 22.2376 20.5743 24.4376C19.1135 26.7432 18.2863 27.9048 18.0751 27.9048C17.8287 27.9048 17.5295 27.3944 17.1687 26.3824C17.0103 25.9248 16.8783 25.5728 16.7727 25.3C16.5967 24.8688 16.4383 24.5872 16.2975 24.4552C16.1567 24.3232 15.9807 24.2616 15.7607 24.2616C15.0743 24.2616 14.3791 24.5168 13.6751 25.0096C12.9711 25.5112 12.6191 26.0656 12.6191 26.664C12.6191 26.9632 12.7863 27.6936 13.1119 28.864C13.1295 28.9608 13.1559 29.04 13.1735 29.1016C13.4551 30.1576 13.7015 30.9584 13.9127 31.4952C14.1239 32.0408 14.3527 32.4808 14.5903 32.8152C14.8895 33.2024 15.2063 33.484 15.5583 33.6336C15.9103 33.792 16.3503 33.8712 16.8871 33.8712C18.1543 33.8712 19.1311 33.1848 19.8175 31.812C20.0375 31.3632 20.2223 31.0024 20.3719 30.756C22.3783 27.324 24.5783 23.98 26.9631 20.724C29.3567 17.468 31.9175 14.3088 34.6455 11.2552L34.4343 10.7184Z" fill="black"/>
+                                            </g>
+                                        </svg>
+                                    </span>{{ value.top_description }}</div>
+                                <div><span class="icon-check">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                                            <mask id="mask0_86_1293" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
+                                            <path d="M44 0H0V44H44V0Z" fill="white"/>
+                                            </mask>
+                                            <g mask="url(#mask0_86_1293)">
+                                            <path d="M22 44C34.1528 44 44 34.1528 44 22C44 9.8472 34.1528 0 22 0C9.8472 0 0 9.8472 0 22C0 34.1528 9.8472 44 22 44Z" fill="#F58C35"/>
+                                            </g>
+                                            <mask id="mask1_86_1293" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
+                                            <path d="M44 0H0V44H44V0Z" fill="white"/>
+                                            </mask>
+                                            <g mask="url(#mask1_86_1293)">
+                                            <path d="M34.4343 10.7184C33.1847 10.8064 32.1639 10.9648 31.3455 11.2112C30.5359 11.4576 29.8671 11.7832 29.3479 12.2056C28.7583 12.6896 28.0983 13.4024 27.3679 14.3352C26.6375 15.268 25.5639 16.7904 24.1647 18.8848C23.1615 20.3808 21.9647 22.2376 20.5743 24.4376C19.1135 26.7432 18.2863 27.9048 18.0751 27.9048C17.8287 27.9048 17.5295 27.3944 17.1687 26.3824C17.0103 25.9248 16.8783 25.5728 16.7727 25.3C16.5967 24.8688 16.4383 24.5872 16.2975 24.4552C16.1567 24.3232 15.9807 24.2616 15.7607 24.2616C15.0743 24.2616 14.3791 24.5168 13.6751 25.0096C12.9711 25.5112 12.6191 26.0656 12.6191 26.664C12.6191 26.9632 12.7863 27.6936 13.1119 28.864C13.1295 28.9608 13.1559 29.04 13.1735 29.1016C13.4551 30.1576 13.7015 30.9584 13.9127 31.4952C14.1239 32.0408 14.3527 32.4808 14.5903 32.8152C14.8895 33.2024 15.2063 33.484 15.5583 33.6336C15.9103 33.792 16.3503 33.8712 16.8871 33.8712C18.1543 33.8712 19.1311 33.1848 19.8175 31.812C20.0375 31.3632 20.2223 31.0024 20.3719 30.756C22.3783 27.324 24.5783 23.98 26.9631 20.724C29.3567 17.468 31.9175 14.3088 34.6455 11.2552L34.4343 10.7184Z" fill="black"/>
+                                            </g>
+                                        </svg>
+                                    </span> {{ value.center_description }}</div>
+                                <div><span class="icon-check">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                                            <mask id="mask0_86_1293" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
+                                            <path d="M44 0H0V44H44V0Z" fill="white"/>
+                                            </mask>
+                                            <g mask="url(#mask0_86_1293)">
+                                            <path d="M22 44C34.1528 44 44 34.1528 44 22C44 9.8472 34.1528 0 22 0C9.8472 0 0 9.8472 0 22C0 34.1528 9.8472 44 22 44Z" fill="#F58C35"/>
+                                            </g>
+                                            <mask id="mask1_86_1293" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
+                                            <path d="M44 0H0V44H44V0Z" fill="white"/>
+                                            </mask>
+                                            <g mask="url(#mask1_86_1293)">
+                                            <path d="M34.4343 10.7184C33.1847 10.8064 32.1639 10.9648 31.3455 11.2112C30.5359 11.4576 29.8671 11.7832 29.3479 12.2056C28.7583 12.6896 28.0983 13.4024 27.3679 14.3352C26.6375 15.268 25.5639 16.7904 24.1647 18.8848C23.1615 20.3808 21.9647 22.2376 20.5743 24.4376C19.1135 26.7432 18.2863 27.9048 18.0751 27.9048C17.8287 27.9048 17.5295 27.3944 17.1687 26.3824C17.0103 25.9248 16.8783 25.5728 16.7727 25.3C16.5967 24.8688 16.4383 24.5872 16.2975 24.4552C16.1567 24.3232 15.9807 24.2616 15.7607 24.2616C15.0743 24.2616 14.3791 24.5168 13.6751 25.0096C12.9711 25.5112 12.6191 26.0656 12.6191 26.664C12.6191 26.9632 12.7863 27.6936 13.1119 28.864C13.1295 28.9608 13.1559 29.04 13.1735 29.1016C13.4551 30.1576 13.7015 30.9584 13.9127 31.4952C14.1239 32.0408 14.3527 32.4808 14.5903 32.8152C14.8895 33.2024 15.2063 33.484 15.5583 33.6336C15.9103 33.792 16.3503 33.8712 16.8871 33.8712C18.1543 33.8712 19.1311 33.1848 19.8175 31.812C20.0375 31.3632 20.2223 31.0024 20.3719 30.756C22.3783 27.324 24.5783 23.98 26.9631 20.724C29.3567 17.468 31.9175 14.3088 34.6455 11.2552L34.4343 10.7184Z" fill="black"/>
+                                            </g>
+                                        </svg>
+                                    </span> {{ value.bottom_decription }}</div>
+                            </div>
+                        </div>
+
+                        <a href="{{ value.product_for_slide.value.url }}" class="product-image" target="_blank">
+                            {% if value.image_for_product != blank %}
+                                <img src="{{ value.image_for_product | img_url: 'master' }}" alt="Daily Renew Body Oil">
+                            {% else %}
+                                <img src="{{ value.product_for_slide.value.featured_image | img_url: 'master' }}" alt="Daily Renew Body Oil">
+                            {% endif %}
+                        </a>
+
+                        <div class="product-info">
+                            <h2>{{ value.product_for_slide.value.title }}</h2>
+                            <p class="price">{{ value.product_for_slide.value.price | money }}</p>
+                            <div class="quantity-cart">
+                                <div class="meta_slider custom-dropdown">
+                                    <input type="hidden" name="quantity" id="hiddenqty" value="1">
+                                    <button class="meta_slider dropdown-btn">
+                                        QTY <span class="meta_slider selected-value">1</span>
+                                        <span class="meta_slider arrow">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" version="1.1"
+                                                 viewBox="0 0 129 129" enable-background="new 0 0 129 129">
+                                              <g>
+                                                <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
+                                              </g>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    <ul class="meta_slider dropdown-list">
+                                        <li class="meta_slider" data-value="1">1</li>
+                                        <li class="meta_slider" data-value="2">2</li>
+                                        <li class="meta_slider" data-value="3">3</li>
+                                        <li class="meta_slider" data-value="4">4</li>
+                                        <li class="meta_slider" data-value="5">5</li>
+                                        <li class="meta_slider" data-value="6">6</li>
+                                        <li class="meta_slider" data-value="7">7</li>
+                                        <li class="meta_slider" data-value="8">8</li>
+                                        <li class="meta_slider" data-value="9">9</li>
+                                        <li class="meta_slider" data-value="10">10</li>
+                                    </ul>
+                                </div>
+
+                                <button data-product-id="{{ value.product_for_slide.value.first_available_variant.id }}" class="add-to-cart">ADD TO CART</button>
+                            </div>
+                            <div class="slider_review">
+                                    <div class="slider_review_author_buyer">
+                                        <p>{{ value.review_autor }}</p>
+                                        <span class="verified-buyer">
+                                            Verified Buyer
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M8 16C6.89583 16 5.85938 15.7917 4.89062 15.375C3.91146 14.9583 3.0599 14.388 2.33594 13.6641C1.61198 12.9401 1.04167 12.0885 0.625 11.1094C0.208333 10.1406 0 9.10417 0 8C0 6.89583 0.208333 5.85938 0.625 4.89062C1.04167 3.91146 1.61198 3.0599 2.33594 2.33594C3.0599 1.61198 3.91146 1.04167 4.89062 0.625C5.85938 0.208333 6.89583 0 8 0C9.10417 0 10.1406 0.208333 11.1094 0.625C12.0885 1.04167 12.9401 1.61198 13.6641 2.33594C14.388 3.0599 14.9583 3.91146 15.375 4.89062C15.7917 5.85938 16 6.89583 16 8C16 9.10417 15.7917 10.1406 15.375 11.1094C14.9583 12.0885 14.388 12.9401 13.6641 13.6641C12.9401 14.388 12.0885 14.9583 11.1094 15.375C10.1406 15.7917 9.10417 16 8 16ZM11.4531 4.42188L6.71875 9.14062L4.46875 6.90625L3 8.375L6.71875 12.0781L12.9219 5.89062L11.4531 4.42188Z" fill="#0075FF"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                   <div class="slider_review_stars">
+                                       {% if value.review_rating == 1 %}
+                                           ★
+                                       {% endif %}
+                                       {% if value.review_rating == 2 %}
+                                           ★★
+                                       {% endif %}
+                                       {% if value.review_rating == 3 %}
+                                           ★★★
+                                       {% endif %}
+                                       {% if value.review_rating == 4 %}
+                                           ★★★★
+                                       {% endif %}
+                                       {% if value.review_rating == 5 %}
+                                           ★★★★★
+                                       {% endif %}
+                                   </div>
+                            </div>
+                            <div class="slider_review-text">
+                                <p class="title">{{ value.review_title }}</p>
+                                <p class="text">{{ value.review_text }}</p>
+                                <a class="reed_more" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+      </div>
+        </div>
+    </div>
+
+
+        <style>
+            .product_testimonials_slider .slick-arrow.slick-next {
+                background-image: url("https://cdn.shopify.com/s/files/1/0350/7706/2795/files/right-arrow_1_1.png?v=1729524986") !important;
+                max-height: 35px;
+                max-width: 35px;
+                background-size: 100%;
+
+            }
+            .product_testimonials_slider {
+                transition: max-height 0.5s ease-in-out;
+            }
+            .product_testimonials_slider .slick-arrow.slick-prev {
+                background-image: url("https://cdn.shopify.com/s/files/1/0350/7706/2795/files/right-arrow_1_2.png?v=1729525286") !important;
+                max-height: 35px;
+                max-width: 35px;
+                background-size: 100%;
+            }
+            .product_testimonials_slider .testimonials-heading {
+                font-size: 64px;
+                margin-bottom: 40px;
+            }
+            .meta_slider.custom-dropdown {
+                position: relative;
+                display: inline-block;
+                font-family: Arial, sans-serif;
+            }
+
+            .meta_slider.dropdown-btn {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                height: 52px;
+                border: 1px solid #000;
+                color: black;
+                background-color: #fff;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 19px;
+            }
+
+            .meta_slider.dropdown-btn .meta_slider.arrow {
+                margin-left: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-left: 1px solid black;
+                height: 52px;
+                padding-left: 20px;
+            }
+            .meta_slider .selected-value {
+                margin-right: 30px;
+            }
+
+            .meta_slider.dropdown-list {
+                position: absolute;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+               border-left: 1px solid black;
+                border-right: 1px solid black;
+
+                border-top: none;
+                transition: max-height 0.3s ease;
+                background-color: #fff;
+                z-index: 100;
+            }
+
+            .meta_slider.dropdown-list.open {
+                max-height: 420px;
+            }
+
+            .meta_slider.dropdown-list li {
+                padding: 0 10px;
+                font-size: 19px;
+                cursor: pointer;
+                font-weight: 600;
+                height: 35px;
+            }
+
+            .meta_slider.dropdown-list li:hover {
+                background-color: #f0f0f0;
+            }
+
+            .meta_slider.dropdown-list li:last-child {
+                border-bottom: none;
+            }
+
+            .meta_slider .meta_slider.selected-value {
+                margin-left: 5px;
+            }
+
+            .product_testimonials_slider .meta-testimonials-container {
+                margin: 0 auto;
+            }
+            .product_testimonials_slider .testimonial-block .testimonial-content {
+                max-width: unset;
+            }
+            .product_testimonials_slider .page-width {
+                max-width: unset;
+            }
+            .product_testimonials_slider .testimonial-block {
+                /*width: 100% !important;*/
+            }
+            .product_testimonials_slider {
+                background: #F2EBE7;
+                padding: 40px 0;
+            }
+            .meta_products_slider {
+                display: grid;
+                grid-template-columns: 1.4fr 1fr 2fr;
+                gap:60px;
+                padding: 20px 200px;
+                border-radius: 10px;
+                font-family: Arial, sans-serif;
+                color: #333;
+            }
+
+            .product-details {
+                font-size: 14px;
+            }
+
+            .product-features {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 20px;
+                padding: 0;
+            }
+
+            .product-features div {
+                text-align: left;
+                line-height: 1.2;
+                color: black;
+                font-size: 24px;
+                display: flex;
+                align-items: flex-start;
+            }
+
+            .icon-check {
+               margin-right: 15px;
+            }
+            .product_testimonials_slider .product-image {
+                position: relative;
+                display: inline-block;
+                width: 300px;
+                height: 300px;
+                cursor: pointer;
+            }
+
+            .product_testimonials_slider .product-image img {
+                display: block;
+                max-width: 100%;
+                height: 100%;
+            }
+
+            .product_testimonials_slider .product-image::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: -5px;
+                width: 280px;
+                height: 120px;
+                border-left: 5px solid #c4cc00;
+                border-bottom: 5px solid #c4cc00;
+                z-index: 1;
+            }
+            .product_testimonials_slider .product-info {
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .product_testimonials_slider .product-info h2 {
+                margin-top: unset;
+                font-size: 48px;
+                font-weight: 400;
+                margin-bottom: 10px;
+            }
+
+            .product_testimonials_slider .product-info .price {
+                font-size: 36px;
+                color: black;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .product_testimonials_slider .quantity-cart {
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .product_testimonials_slider .quantity {
+                margin-right: 10px;
+            }
+
+            .product_testimonials_slider .quantity input {
+                width: 50px;
+                padding: 5px;
+                text-align: center;
+            }
+
+            .product_testimonials_slider .add-to-cart {
+                background-color: #000;
+                color: white;
+                padding: 10px 40px;
+                border: none;
+                border-radius: 25px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                font-size: 24px;
+                cursor: pointer;
+                height: 52px;
+                transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход для фона и цвета */
+
+            }
+            .product_testimonials_slider .add-to-cart:hover {
+                background: #fb9650;
+                color: black;
+            }
+
+            .product_testimonials_slider .slider_review {
+                margin-top: 20px;
+                margin-bottom: 10px;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .product_testimonials_slider .slider_review .slider_review_author_buyer {
+                display: flex;
+                font-size: 24px;
+                flex-direction: row;
+                gap: 20px;
+                align-items: center;
+                justify-content: center;
+            }
+            .product_testimonials_slider .slider_review .slider_review_author_buyer p {
+                margin: 0;
+            }
+            .product_testimonials_slider .slider_review .verified-buyer {
+                align-self: center;
+                display: flex;
+                justify-content: flex-end;
+                color: #0075FF;
+            }
+            .product_testimonials_slider .slider_review .verified-buyer svg {
+                margin-left: 10px;
+                margin-top: 5px;
+                align-self: center;
+            }
+            .product_testimonials_slider .slider_review .slider_review_stars {
+                display: flex;
+                flex-direction: row;
+                font-size: 20px;
+                color: black;
+                align-items: flex-end;
+            }
+
+            .slider_review-text .text {
+                font-size: 22px;
+                margin-bottom: 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                max-height: 180px;
+                transition: max-height 0.5s ease-in-out;
+            }
+
+            .slider_review-text .text.expanded {
+                -webkit-line-clamp: unset;
+                max-height: none;
+            }
+
+
+
+
+            .product_testimonials_slider .slider_review-text .title {
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 15px;
+
+            }
+
+            .product_testimonials_slider .slider_review-text .reed_more {
+                color: black;
+                cursor: pointer;
+                font-size: 22px;
+                text-decoration: underline;
+            }
+            .product_testimonials_slider .slider_review-text .reed_more.hidden {
+                display: none;
+            }
+
+
+
+
+            @media(max-width: 1600px) {
+                .meta_products_slider .quantity-cart {
+                    flex-direction: column;
+                    gap: 30px;
+                    align-items: flex-start;
+                }
+                .meta_products_slider .quantity-cart button {
+                    width: 100%;
+                }
+                .product_testimonials_slider .slider_review .slider_review_author_buyer  {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 0;
+                }
+                .product_testimonials_slider .slider_review .slider_review_stars {
+                    align-items: flex-start;
+                }
+                .meta_products_slider {
+                    gap: 20px;
+                }
+                .meta_products_slider .product-features div {
+                    font-size: 18px;
+                }
+                .meta_products_slider .product-info h2  {
+                    font-size: 32px;
+                }
+                .meta_products_slider .product-info .text  {
+                    font-size: 18px;
+                }
+                .meta_products_slider .product-info .title  {
+                    font-size: 20px;
+                }
+
+            }
+            @media(max-width: 1280px) {
+                .product_testimonials_slider .testimonial-block  {
+                    background: #F2EBE7 !important;
+                }
+                .meta_products_slider {
+                    background: #F2EBE7 !important;
+                   display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+            }
+            }
+            @media(max-width: 1024px) {
+                .product_testimonials_slider .testimonial-block {
+                    padding-top: 0;
+                }
+                .product_testimonials_slider .testimonials-heading {
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    padding-top: 20px;
+                }
+                .meta_products_slider {
+                    padding: 0;
+                }
+                .product_testimonials_slider {
+                    padding: 0;
+                }
+                .product_testimonials_slider .meta-testimonials-container {
+                    max-width: unset;
+                }
+                .product_testimonials_slider .testimonial-content {
+                    padding: 20px 100px;
+                }
+
+            }
+            @media (max-width: 768px) {
+                .meta_products_slider {
+                    grid-template-columns: 1fr;
+                }
+
+                .product-info {
+                    margin-top: 20px;
+                }
+                .product_testimonials_slider .slick-arrow.slick-next {
+                    background-image: url("https://cdn.shopify.com/s/files/1/0350/7706/2795/files/right-arrow_1_1.png?v=1729524986") !important;
+                    max-height: 35px;
+                    max-width: 35px;
+                    background-size: 100%;
+                    display: block !important;
+                    right: 0;
+                }
+                .product_testimonials_slider .slick-arrow.slick-prev {
+                    background-image: url("https://cdn.shopify.com/s/files/1/0350/7706/2795/files/right-arrow_1_2.png?v=1729525286") !important;
+                    max-height: 35px;
+                    max-width: 35px;
+                    background-size: 100%;
+                    display: block !important;
+                    left: 0;
+                }
+                .product_testimonials_slider .meta-testimonials-container .slick_dots {
+                    display: none !important;
+                    visibility: hidden;
+                }
+            }
+            @media (max-width: 550px) {
+                .product_testimonials_slider .slick-arrow.slick-next {
+                    max-height: 20px;
+                    max-width: 20px;
+                    right: -2%;
+                }
+                .product_testimonials_slider .slick-arrow.slick-prev {
+                    max-height: 20px;
+                    max-width: 20px;
+                    left: -2%;
+                }
+                .product_testimonials_slider .testimonials-heading {
+                    font-size: 30px;
+                }
+                .meta_products_slider .quantity-cart button {
+                    font-size: 22px;
+                    height: 46px;
+                }
+                .product_testimonials_slider .testimonial-content {
+                    padding: 20px;
+                }
+
+                .product_testimonials_slider .testimonial-block {
+                    padding-top: 0;
+                }
+                .product_testimonials_slider .icon-check svg {
+                   width: 25px;
+                    height: 25px;
+                }
+            }
+            @media (max-width: 400px) {
+                .product_testimonials_slider .slick-arrow.slick-next {
+                    max-height: 20px;
+                    max-width: 20px;
+                    right: -4%;
+                }
+                .product_testimonials_slider .slick-arrow.slick-prev {
+                    max-height: 20px;
+                    max-width: 20px;
+                    left: -4%;
+                }
+                .product_testimonials_slider .testimonials-heading {
+                    margin-bottom: 20px;
+                }
+                .product_testimonials_slider .testimonial-content {
+                    padding: 0;
+                }
+            }
+
+        </style>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const dropdownBtn = document.querySelector('.meta_slider.dropdown-btn');
+                const dropdownList = document.querySelector('.meta_slider.dropdown-list');
+                const selectedValue = document.querySelector('.meta_slider.selected-value');
+
+                dropdownBtn.addEventListener('click', function () {
+                    dropdownList.classList.toggle('open');
+
+                    if (dropdownList.classList.contains('open')) {
+                        dropdownList.style.borderBottom = '1px solid black';
+                        dropdownList.style.borderTop = '1px solid black';
+                    } else {
+                        dropdownList.style.borderBottom = 'none';
+                        dropdownList.style.borderTop = 'none';
+                    }
+                });
+
+                dropdownList.addEventListener('click', function (e) {
+                    console.log(e.target.tagName);
+                    if (e.target.tagName === 'LI') {
+                        selectedValue.textContent = e.target.getAttribute('data-value');
+                        dropdownList.classList.remove('open');
+                        dropdownList.style.borderBottom = 'none';
+                        dropdownList.style.borderTop = 'none';
+                    }
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!dropdownBtn.contains(e.target)) {
+                        dropdownList.classList.remove('open');
+                        dropdownList.style.borderBottom = 'none';
+                        dropdownList.style.borderTop = 'none';
+                    }
+                });
+            });
+            document.querySelectorAll('.meta_products_slider').forEach(function(slider) {
+                const reviewText = slider.querySelector('.text');
+                const readMoreLink = slider.querySelector('.reed_more');
+                const addToCartButton = slider.querySelector('.add-to-cart');
+
+                const maxLines = 5;
+
+                const lineHeight = parseFloat(window.getComputedStyle(reviewText).lineHeight);
+                const maxHeight = lineHeight * maxLines;
+
+                if (reviewText.scrollHeight <= maxHeight) {
+                    readMoreLink.style.display = 'none';
+                }
+
+                reviewText.style.maxHeight = maxHeight + "px"; // Устанавливаем начальную высоту
+
+                readMoreLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    if (!reviewText.classList.contains('expanded')) {
+                        reviewText.classList.add('expanded');
+                        reviewText.style.maxHeight = maxHeight + "px";
+                        reviewText.offsetHeight;
+                        reviewText.style.maxHeight = reviewText.scrollHeight + "px";
+                        readMoreLink.textContent = "Read Less";
+                    } else {
+                        reviewText.style.maxHeight = maxHeight + "px";
+                        readMoreLink.textContent = "Read More";
+                        reviewText.addEventListener('transitionend', function removeExpanded() {
+                            reviewText.classList.remove('expanded');
+                            reviewText.removeEventListener('transitionend', removeExpanded);
+                        });
+                    }
+                });
+
+                addToCartButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productId = this.getAttribute('data-product-id');
+                    let productQuantity = slider.querySelector('.meta_slider.selected-value').innerHTML;
+
+                    fetch('/cart/add.js', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            id: productId,
+                            quantity: productQuantity
+                        })
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                return response.json();
+                            }
+                            throw new Error('Error adding product to cart');
+                        })
+                        .then(data => {
+                            console.log('Product added to cart:', data);
+                            let mainAddButton = document.getElementById('AddtoCartBtn');
+                            mainAddButton.click();
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
+                });
+            });
+        </script>
+{% endif %}
+{% schema %}
+  {
+    "name": "Product Slider",
+    "class": "index-section",
+    "settings": [
+	  {
+        "type": "text",
+		"id": "heading",
+        "label": "Product Slider Heading",
+        "default": "Pair It With"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Promotional",
+        "name": "Product Slider"
+      }
+    ]
+  }
+{% endschema %} 

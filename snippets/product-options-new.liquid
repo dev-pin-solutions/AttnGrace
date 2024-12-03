@@ -1,0 +1,228 @@
+{% assign has_variants = false %}
+{% assign num_variant = product.variants.size | plus: 0 %}
+{% if product.available and num_variant > 1 %}
+    {% assign has_variants = true %}
+{% endif %}
+
+{% assign selected_variant_outofstock = false %}
+{% if product.selected_or_first_available_variant.available == false %}
+    {% assign selected_variant_outofstock = true %}
+{% endif %}
+<div
+        class="
+    product-form
+    {% if has_variants %} product-form-has-variants{% endif %}{% if selected_variant_outofstock %} product-form-selected-variant-outofstock{% endif %}{% if product.handle contains "drawcord-bags" %} normal-product-layout{% else %} new-product-layout{% endif %}{% if product.title contains "Briefs" %} briefs-product-layout{% endif %}"
+>
+    <form method="post" action="/cart/add" id="product_form_{{ product.id }}" accept-charset="UTF-8" class="111 shopify-product-form" enctype="multipart/form-data">
+
+        <div class="product-options">
+            <select id="product-select-{{ product.id }}"
+                    name="id"
+                    class="product-variants product-variants-main-select"
+                    data-product-variants
+                    data-product="{{ product | json | escape }}">
+
+                {% for variant in product.variants %}
+                    <option
+                            {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
+                            value="{{ variant.id }}">
+                        {{ variant.title }} - {{ variant.price | money }}
+                    </option>
+                {% endfor %}
+            </select>
+
+                {% include 'product-option', current_option: option, selected_variant: variant %}
+			
+        </div>
+
+        <a
+                href="#"
+                data-product-extended-open
+                class="button product-add product-add-select">
+            {{ 'products.product.select_options' | t }}
+        </a>
+
+        {% if product.available %}
+            {% unless product.handle contains 'drawcord-bags' %}
+                {% if product.handle == "wipes" %}
+                    {% include 'subscription-product-common' , minm_quantity: 4 %}
+                {% else %}
+                    {% include 'subscription-product-common' , minm_quantity: 1 %}
+                {% endif %}
+            {% endunless %}
+        {% endif %}
+        <style>
+
+
+        .page-product__subs {
+        margin-bottom: 25px;
+        padding: 24px;
+        background: rgba(242, 234, 230, 0.5);
+        border-radius: 16px;
+        }
+        .page-product__subs .product-subscription-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: #828282;
+        }
+        .page-product__subs .subscribe-price-discount {
+        font-size: 25px;
+        font-weight: normal;
+        }
+        .page-product__subs .price-per-pack {
+        color: #828282;
+        }
+        .page-product__subs .label-title {
+        font-weight: 500;
+        }
+        .page-product__subs .label-main-section::before {
+        border-color: 2px solid #BDBDBD;
+        }
+
+
+
+
+  
+
+        .new-product-layout .product-add>div{
+        width:auto!important;
+        height:auto!important;
+        }
+  
+  
+        .page-product__subs {
+        margin-bottom: 25px;
+        padding: 24px;
+        background: rgba(242, 234, 230, 0.5);
+        border-radius: 16px;
+        }
+
+        .page-product__subs .label{
+        background:none;
+        }
+  
+        .page-product__actions {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-bottom: 20px;
+        }
+        .page-product__actions .btn {
+        font-size: 22px;
+        height: 56px;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+        min-width: auto;
+        }
+          .quantity {
+        margin-right: 25px;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 180px;
+                flex: 0 0 180px;
+        width: 180px;
+        height: 56px;
+        border-radius: 30px;
+        border: 1px solid #E0E0E0;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        }
+        .quantity__btn {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 60px;
+                flex: 0 0 60px;
+        width: 60px;
+        height: 56px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        cursor: pointer;
+        }
+        .quantity__value {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 60px;
+                flex: 0 0 60px;
+        width: 60px;
+        font-weight: 500;
+        font-size: 20px;
+        color: #000;
+        height: 56px;
+        padding: 0;
+        text-align: center;
+        }
+        
+          </style>
+        <div class="page-product__actions product-add">
+          
+          	<!-- ADD TO CART -->
+              {% comment %} <div class="page-product__quantity">
+                <div class="quantity">
+                    <button class="quantity__btn btn_minus" tabindex="-1">
+                      <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 13.2583H5V11.7583H11.25H12.75H19V13.2583H12.75H11.25Z" fill="black"/>
+                      </svg>  
+                    </button>
+                    <input name="quantity" id="hiddenqty" class="quantity__value" value="1" tabindex="-1" type="text">
+                    <button class="quantity__btn btn_plus" tabindex="-1">
+                      <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.25 13.2583H5V11.7583H11.25V5.5083H12.75V11.7583H19V13.2583H12.75V19.5083H11.25V13.2583Z" fill="black"/>
+                      </svg>  
+                    </button>
+                </div>
+              </div> {% endcomment %}
+            <input id="AddtoCartBtn"
+                    type="submit"
+                    class=" page-product__btn btn"
+                    value="{% if product.variants.first.inventory_quantity <= 0 %}Pre-Order{% elsif product.tags contains "preorder" %}Pre-Order{% elsif product.tags contains "backorder" %}Backorder{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}"/>
+
+            <input
+                    type="submit"
+                    class="button product-add-soldout"
+                    disabled
+                    value="{{ 'products.product.out_of_stock' | t }}"/>
+
+            <input
+                    type="button"
+                    class="button product-add-unavailable"
+                    disabled
+                    value="{{ 'products.product.unavailable' | t }}"/>
+
+            {% if section.settings.show_spb %}
+                {{ form | payment_button }}
+            {% endif %}
+        </div>
+        {% if product.selected_or_first_available_variant.inventory_quantity <= 0  %}
+        <a href="#" id="BIS_trigger" type="button" data-variant-id="{{ product.selected_or_first_available_variant.id }}">Notify Me When Available</a>
+        {% endif %}
+        <div class="product-bottom-info">
+        {% unless product.handle contains 'drawcord-bags' %}
+			<div class="product-add-price"></div>
+        {% endunless %}
+        </div>
+        {% for tag in product.tags %}
+            {% if tag contains "preorder" %}
+                {% assign preordermsg = tag | remove: "preorder" %}
+                <input id="preorder" type="hidden" name="properties[Pre-Order]" value="{{ product.metafields.global.preorder }}">
+                <div class="preordermsg">{{ product.metafields.global.preorder }}</div>
+            {% endif %}
+      		{% if tag contains "backorder" %}
+                <input id="preorder" type="hidden" name="properties[Pre-Order]" value="{{ product.metafields.global.Backorder }}">
+                <div class="preordermsg">{{ product.metafields.global.Backorder }}</div>
+            {% endif %}
+        {% endfor %}
+    </form>
+    <div class="outofstock">
+      {% if product.metafields.global.outofstock %}
+      <p>{{ product.metafields.global.outofstock }}</p>
+      {% endif %}
+    </div>
+  
+</div>
+<style>
+    .preordermsg {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+</style>

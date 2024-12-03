@@ -1,0 +1,212 @@
+{% unless template == 'password' %}
+  {% if section.settings.enable_footer %}
+    <footer class="site-footer" role="contentinfo" style="background-color: {{ section.settings.section_bg_color }};">
+      {% if section.settings.show_newsletter_form == true %}
+        <div class="footer-top">
+
+          <div class="newsletter">
+            {% form 'customer' %}
+              {{ form.errors | default_errors }}
+
+              {% if form.posted_successfully? %}
+              {% if section.settings.signup-submit-message != blank %}
+              <p class="form-success">{{ section.settings.signup-submit-message }}</p>
+              {% else %}
+              <p class="form-success">{{ 'signup_form_success' | t }}</p>
+              {% endif %}                         
+              {% else %}
+                <input
+                  type="hidden"
+                  name="contact[tags]"
+                  value="newsletter">
+                <label for="homepage-email" class="input-label input-label-hidden">
+                  {{ 'signup_form_email_label' | t }}
+                </label>
+                <div class="input-wrapper inline-input-button-wrapper">
+                  <div class="inline-input-wrapper">
+                    <input
+                      id="homepage-email"
+                      class="input-field homepage-email-input"
+                      type="text"
+                      name="contact[email]"
+                      placeholder="{{ 'email_placeholder' | t }}">
+                    {% if section.settings.input-overlay-text != blank %}
+                      <label class="overlay-label" for="homepage-email">{{ section.settings.input-overlay-text }}</label>
+                    {% endif %}
+                    <button aria-label="Submit" type="submit"><img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/right-arrow.png?v=1679469921" alt="button-image" loading="lazy" /></button>
+                  </div>
+                </div>
+              {% endif %}
+            {% endform %}
+			<div class="newslatter-content-wrapper">
+				<p>{{ section.settings.newsletter-heading }} <a href="{{ settings.social_instagram_url }}">@ATTNGRACE</a></p></p>
+			</div>
+
+          </div>
+        </div>
+      {% endif %}
+      {% if section.settings.footer_menu.size > 0 %}
+        <div class="footer-bottom-wrap">
+          <div class="footer-bottom">
+            {% if section.settings.footer_menu.size > 0 %}
+              <div class="col col-keep-touch">
+                <strong>{{ linklists[section.settings.footer_menu].title }}</strong>
+                <ul class="footer-menu">
+                  {% for link in linklists[section.settings.footer_menu].links %}
+                    <li>
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if section.settings.footer_menu_2.size > 0 %}
+              <div class="col col-company">
+                <strong>{{ linklists[section.settings.footer_menu_2].title }}</strong>
+                <ul class="footer-menu">
+                  {% for link in linklists[section.settings.footer_menu_2].links %}
+                    <li>
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if section.settings.footer_menu_3.size > 0 %}
+              <div class="col col-footer-menu">
+                <strong>{{ linklists[section.settings.footer_menu_3].title }}</strong>
+                <ul class="footer-menu">
+                  {% for link in linklists[section.settings.footer_menu_3].links %}
+                    <li>
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if section.settings.footer_menu_4.size > 0 %}
+              <div class="col col-footer-menu">
+                <strong>{{ linklists[section.settings.footer_menu_4].title }}</strong>
+                <ul class="footer-menu">
+                  {% for link in linklists[section.settings.footer_menu_4].links %}
+                    <li>
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if section.settings.footer_menu_5.size > 0 %}
+              <div class="col col-about right">
+                <strong class="no-caps">{{ linklists[section.settings.footer_menu_5].title }}</strong>
+                <ul class="footer-menu">
+                  {% for link in linklists[section.settings.footer_menu_5].links %}
+                    <li>
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+			{% include 'main-navigation-footer' %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if section.settings.show_copyright_text or section.settings.show_payment_icons %}
+        <div class="footer-bottom">
+          {% if section.settings.show_copyright_text %}
+            {% include 'footer-copyright' %}
+          {% endif %}
+          {% if section.settings.show_payment_icons %}
+            {% include 'payment-icons' %}
+          {% endif %}
+        </div>
+      {% endif %}
+    </footer>
+  {% endif %}
+{% endunless %}
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "color",
+        "id": "section_bg_color",
+        "label": "Section Background Color",
+        "default": "#fb9650"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_footer",
+        "label": "Enable Footer"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_newsletter_form",
+        "label": "Show sign-up form"
+      },
+	    {
+        "type": "text",
+        "id": "newsletter-heading",
+        "label": "Heading",
+        "default": "Feel like-minded? Check us out on Instagram."
+      },
+      {
+        "type": "text",
+        "id": "input-overlay-text",
+        "label": "Sign-up Input Overlay Text",
+        "default": "Join Our Mailing List"
+      },
+      {
+        "type": "text",
+        "id": "signup-submit-message",
+        "label": "Sign-up Success Message",
+        "default": "Thank You For Submitting"
+      }, 
+      {
+        "type": "link_list",
+        "id": "footer_menu",
+        "label": "Links 1",
+        "default": "footer"
+      }, 
+      {
+        "type": "link_list",
+        "id": "footer_menu_2",
+        "label": "Links 2",
+        "default": "footer"
+      }, 
+      {
+        "type": "link_list",
+        "id": "footer_menu_3",
+        "label": "Links 3",
+        "default": "footer"
+      }, 
+      {
+        "type": "link_list",
+        "id": "footer_menu_4",
+        "label": "Links 4",
+        "default": "footer"
+      }, 
+      {
+        "type": "link_list",
+        "id": "footer_menu_5",
+        "label": "Links 5",
+        "default": "footer"
+      }
+    ],
+    "locales": {
+      "en": {
+        "signup_form_email_label": "Enter your email",
+        "email_placeholder": "ENTER EMAIL HERE",
+        "subscribe": "Subscribe",
+        "signup_form_success": "Thanks for signing up!"
+      }
+    }
+  }
+{% endschema %}

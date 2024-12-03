@@ -1,0 +1,51 @@
+<div class="ingredients-features">
+    <div class="left" style="background-color:{{ section.settings.inside_bg_color }}">
+        {% include 'icon-check' %}
+        <h2>What’s Inside:</h2>
+        {{ section.settings.add_features_3 }}
+    </div>
+    <div class="right" style="background-color:{{ section.settings.not_bg_color }}">
+        {% include 'icon-close' %}
+        <h2>What’s Not:</h2>
+        {{ section.settings.add_features_4 }}
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Ingredients Features",
+  "settings": [
+    {
+      "type": "header",
+      "content": "What's Inside"
+    },
+    {
+      "type": "color",
+      "id": "inside_bg_color",
+      "default": "#a0e5d6",
+      "label": "Background Color"
+    },
+    {
+      "type": "richtext",
+      "id": "add_features_3",
+      "label": "Add Features"
+    },
+    {
+      "type": "header",
+      "content": "What's Not"
+    },
+    {
+      "type": "color",
+      "id": "not_bg_color",
+      "default": "#e7e6e6",
+      "label": "Background Color"
+    },
+    {
+      "type": "richtext",
+      "id": "add_features_4",
+      "label": "Add Features"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,92 @@
+<section class="mainreview" >
+  <div class='center-wrapper'>
+      <h2 class="mainreview__title">{{section.settings.heading}}</h2>
+      <div class="mainreview__list">
+        <div class="mainreview__col">
+          <div class="mainreview-item">
+              <div class="mainreview-item__text">Finally the perfect find! So much better than Poise.</div>
+              <div class="mainreview-item__author">— Kari T.</div>
+          </div>
+      </div>
+      <div class="mainreview__col">
+          <div class="mainreview-item">
+              <div class="mainreview-item__text">I really like this product and turns out my mom does too! We both came from the Always pads, and these are so much better!</div>
+              <div class="mainreview-item__author">— Barbara D.</div>
+          </div>
+      </div>
+      <div class="mainreview__col">
+          <div class="mainreview-item">
+              <div class="mainreview-item__text">This product is amazing! It feels like silk and is more comfortable, thinner, and more effective than any other brand.</div>
+              <div class="mainreview-item__author">— Tara S.</div>
+          </div>
+      </div>
+      <div class="mainreview__col">
+          <div class="mainreview-item">
+              <div class="mainreview-item__text">No more scratchy plastic—thank god!</div>
+              <div class="mainreview-item__author">— Susan F.</div>
+          </div>
+      </div>
+      <div class="mainreview__col">
+          <div class="mainreview-item">
+              <div class="mainreview-item__text">They don’t fall apart, leak, make crinkly noises when you walk, or bunch up like a lot of other brands. And no rash!</div>
+              <div class="mainreview-item__author">— Carmen R.</div>
+          </div>
+      </div>
+      <div class="mainreview__col">
+          <div class="mainreview-item">
+              <div class="mainreview-item__text">MUCH more comfortable than major brands.</div>
+              <div class="mainreview-item__author">— Deanne B.</div>
+          </div>
+      </div>
+      <div class="mainreview__col">
+          <div class="mainreview-item">
+              <div class="mainreview-item__text">I've tried them all, and Attn: Grace is the absolute best.</div>
+              <div class="mainreview-item__author">— Trish M.</div>
+          </div>
+      </div>
+      <div class="mainreview__col">
+          <div class="mainreview-item">
+              <div class="mainreview-item__text">This is the first pad that did not create any irritation! And I’ve tried them all.</div>
+              <div class="mainreview-item__author">— Melinda B.</div>
+          </div>
+      </div>
+      </div>
+      <div class="get-discount">
+          <a href="{{section.settings.btn-link}}" class="get-discount__btn btn">{{section.settings.btn-label}}</a>
+          <div class="get-discount__note">{{section.settings.subtext}}</div>
+      </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Final3 Revs",
+    "settings" : [
+      {
+        "type" : "html",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "Thousand of women are <span>switching to Attn: Grace</span>"
+      },
+       {
+            "type" : "text",
+            "id" : "btn-label",
+            "label" : "Button Label",
+            "default"   : "GET 30% OFF YOUR FIRST ORDER*"
+        },
+        {
+            "type" : "url",
+            "id" : "btn-link",
+            "label" : "Button Link"
+        },
+        {
+          "type" : "text",
+          "id" : "subtext",
+          "label" : "SubText",
+          "default" : "*Discount automatically applied at checkout"
+        }
+       
+    ]
+    
+  }
+{% endschema %}

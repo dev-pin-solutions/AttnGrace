@@ -1,0 +1,58 @@
+<section class="message">
+  <div class="message__bg">{{section.settings.bg |img_url : 'master' | img_tag }}</div>
+  <div class='center-wrapper'>
+      <div class="message__block">
+          <div class="message__photo">{{section.settings.image | img_url: 'master' | img_tag }}</div>
+          <div class="message__text">
+              {{section.settings.text}}
+          </div>
+          <div class="message-author">
+              <div class="message-author__quote">
+                        <svg width="77" height="58" viewBox="0 0 77 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.6667 57.1885C29.3141 57.1885 37.0001 48.3983 36.9998 35.383C36.9316 16.4726 22.7157 3.10235 2.20711 0.534721C0.304408 0.296505 -0.42925 2.93227 1.3229 3.71137C9.19219 7.2105 13.1666 11.6507 13.68 16.0457C14.0635 19.3292 12.2785 22.2056 10.0372 22.7441C4.22655 24.1404 0.333396 31.3765 0.333396 38.8551C0.333396 48.9804 8.54151 57.1885 18.6667 57.1885Z" fill="#F2EAE6"/>
+                            <path d="M58.6667 57.1885C69.3141 57.1885 77.0001 48.3983 76.9998 35.383C76.9316 16.4726 62.7157 3.10235 42.2071 0.534721C40.3044 0.296505 39.5708 2.93227 41.3229 3.71137C49.1922 7.2105 53.1666 11.6507 53.68 16.0457C54.0635 19.3292 52.2785 22.2056 50.0372 22.7441C44.2266 24.1404 40.3334 31.3765 40.3334 38.8551C40.3334 48.9804 48.5415 57.1885 58.6667 57.1885Z" fill="#F2EAE6"/>
+                        </svg>
+              </div>
+              <div class="message-author__name">{{section.settings.name}}</div>
+              <div class="message-author__post">{{section.settings.desc}}</div>
+          </div>
+      </div>
+  </div><!-- end center-wrapper -->
+</section><!-- end message -->
+
+
+{% schema %}
+  {
+    "name": "New Product Message",
+    "settings": [
+        {
+        "type" : "image_picker",
+        "id" : "bg",
+        "label" : "Background"
+      },
+      {
+        "type" : "image_picker",
+        "id" : "image",
+        "label" : "Image"
+      },
+      {
+        "type" : "richtext",
+        "id" : "text",
+        "label" : "Text",
+        "default" : "<p>There are so many women who suffer from itchy or painful skin irritation because of the bleach, dyes, and fragrances found in their ncontinence pads.</p>        <p>Are there colorful designs on your pads? Avoid them!</p>        <p>Instead, look for skin-safe incontinence pads with no harsh chemicals against your skin. You want breathable, natural materials that won’t irritate you down there.</p>"
+      },
+       {
+        "type" : "text",
+        "id" : "name",
+        "label" : "Name",
+        "default" : "Dr. Barbara Frank"
+      },
+      {
+        "type" : "html",
+        "id" : "desc",
+        "label" : "Desc",
+        "default" : "Harvrd-affiliated OBGYN,<br> Attn: Grace Medical Advisor"
+      }
+    ]
+  }
+{% endschema %}

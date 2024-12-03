@@ -1,0 +1,74 @@
+
+{{ 'featured-product.css' | asset_url | stylesheet_tag: preload: true }}
+
+<div class="featured-product-wrap">
+  <div class="featured-product-container">
+    {% for block in section.blocks %}
+      {% assign block-image = block.settings.product-image %}
+      <div class="featured-product-block">
+        <a href="{{ block.settings.product-link }}" class="featured-product-link">
+          <div class="content-wrap">
+            {% if block.settings['product-image'] != blank %}
+              <div class="image image-{{ forloop.index }}">
+                <img alt="featured-product-image" width="{{ block-image.width }}" height="{{ block-image.height }}" src="{{ block.settings['product-image'] | img_url: 'original' }}" loading="eager">
+              </div>
+            {% endif %}
+            <div class="text">
+              {% if block.settings['product-name'] != blank %}
+                <p class="title">{{ block.settings['product-name'] }}</p>
+              {% endif %}
+              {% if block.settings['overlay-text'] != blank %}
+                <p class="subtext">{{ block.settings['overlay-text'] }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Product",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "name": "Product",
+      "type": "product",
+      "settings": [
+        {
+          "type": "text",
+          "id": "product-name",
+          "label": "Product Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "product-image",
+          "label": "Product Image"
+        },
+        {
+          "type": "url",
+          "id": "product-link",
+          "label": "Product Link"
+        },
+        {
+          "type": "text",
+          "id": "overlay-text",
+          "label": "Overlay Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Featured Product",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}

@@ -1,0 +1,67 @@
+{% comment %}
+  @param product {Product}
+    The product object in question
+{% endcomment %}
+
+{% assign models = product.media | where: 'media_type', 'model' %}
+{% assign first_model = models | first %}
+{% assign media_without_first = product.media | slice: 1, product.media.size %}
+{% assign product-id = product.id %}
+
+<div class="page-product__gallery">
+  <div class="product-gallery-slider">
+    {% if product-id == 6787711434906 %}
+      {% for media in media_without_first %}
+        <div class="product-gallery-slider__slide">
+          <div class="product-gallery-slider__item">
+            {{ media | img_url : 'master' | img_tag }}
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      {% for media in product.media %}
+        <div class="product-gallery-slider__slide">
+          <div class="product-gallery-slider__item">
+            {{ media | img_url : 'master' | img_tag }}
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="product-gallery-thumbs">
+    {% if product-id == 6787711434906 %}
+      {% for media in media_without_first %}
+        <div class="product-gallery-thumbs__slide">
+          <div class="product-gallery-thumbs__item">
+            {% if product.title contains "Pads" %}
+            <img class="thumb-img" src="{{ media | img_url : 'master' }}" alt="{{ media.alt }}">
+            {% else %}
+            <img class="img" src="{{ media | img_url : 'master' }}" alt="{{ media.alt }}">
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      {% for media in product.media %}
+        <div class="product-gallery-thumbs__slide">
+          <div class="product-gallery-thumbs__item">
+            {% if product.title contains "Pads" %}
+            <img class="thumb-img" src="{{ media | img_url : 'master' }}" alt="{{ media.alt }}">
+            {% else %}
+            <img class="img" src="{{ media | img_url : 'master' }}" alt="{{ media.alt }}">
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  mediumZoom('.thumb-img');
+});
+</script>
+
+

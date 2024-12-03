@@ -1,0 +1,16 @@
+.top-banner-section {
+    padding: 17px 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.top-banner-section .top-banner-wrapper {
+    font-family: 'Acre';
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.top-banner-section .top-banner-wrapper a {
+    text-decoration: none;
+}

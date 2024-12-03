@@ -1,0 +1,306 @@
+.productrecharge-bundle .content-wrapper {
+  overflow: initial;
+}
+
+.productrecharge-bundle #recharge-bundles .rb-sticky-form {
+  position: sticky;
+  top: 0;
+  z-index: 10001;
+  background: #fff;
+}
+
+.productrecharge-bundle #recharge-bundles .rb-container.tmb3 {
+  position: sticky;
+  top: 130px;
+  z-index: 10001;
+  background: #fff;
+  /* display: none; */
+  color: transparent;
+}
+
+.productrecharge-bundle #recharge-bundles .rb-container.tmb3::before {
+  content: "Add 4,";
+  display: block;
+  position: absolute;
+  top: 0px; /* Adjust top position as needed */
+  right: 5px; /* Adjust right position to place it on the right side */
+  font-size: 20px; /* Adjust font size as needed */
+  color: #283965; /* Adjust color as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+}
+
+
+.productrecharge-bundle #recharge-bundles .rb-container.tmb3::after {
+  content: "Save 15%";
+  display: block;
+  position: absolute;
+  top: 20px; /* Adjust top position to place it below 'Add 4' */
+  right: 5px; /* Adjust right position to align it with 'Add 4' */
+  font-size: 20px; /* Adjust font size as needed */
+  color: #283965; /* Adjust color as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+}
+
+@media only screen and (min-width: 756px) {
+    .dynamic_buttons_center {
+        position: relative;
+        right: calc(50% - 230px);
+        margin-top: 15px;
+    }
+}
+
+.productrecharge-bundle #recharge-bundles {
+  padding: 30px 0;
+}
+
+.productrecharge-bundle #recharge-bundles .rb-bundle-title {
+  font-family: BentonMod, sans-serif;
+  font-size: 40px;
+  color: #000;
+  font-weight: 300;
+}
+
+.productrecharge-bundle #recharge-bundles .rb-form {
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.productrecharge-bundle #recharge-bundles .rb-label[for="selling-plan-list"] {
+  font-size: 0;
+}
+
+.productrecharge-bundle
+  #recharge-bundles
+  .rb-label[for="selling-plan-list"]:before {
+  content: "Choose your delivery schedule";
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.productrecharge-bundle #selling-plan-list {
+  font-size: 18px;
+  padding: 15px;
+}
+
+.productrecharge-bundle #recharge-bundles .rb-bundle-title {
+  font-size: 0;
+}
+
+.productrecharge-bundle .rb-btn {
+  font-size: 20px;
+}
+
+.productrecharge-bundle .rb-container.tmb3 {
+  font-size: 20px;
+}
+
+.productrecharge-bundle #recharge-bundles .rb-bundle-title:before {
+  content: "Select Your Products";
+  font-size: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .productrecharge-bundle #recharge-bundles .rb-container.tmb3 {
+    position: relative; /* Change position to relative */
+    top: initial; /* Reset top position */
+    right: initial; /* Reset right position */
+    padding-bottom: 1px;
+  }
+
+  .productrecharge-bundle #recharge-bundles .rb-container.tmb3::before {
+    content: "Add 4,";
+    display: block;
+    position: absolute;
+    right: 40px; /* Reset right position */
+    top: 10px; /* Adjust top position as needed */
+
+    font-size: 20px; /* Adjust font size as needed */
+    color: #283965; /* Adjust color as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+  }
+
+  .productrecharge-bundle #recharge-bundles .rb-container.tmb3::after {
+    content: "Save 15%";
+    display: block;
+    position: absolute;
+    top: 40px; /* Adjust top position to place it below 'Add 4' */
+    right: 25px; /* Adjust right position to align it with 'Add 4' */
+    font-size: 20px; /* Adjust font size as needed */
+    color: #283965; /* Adjust color as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+  }
+
+  .productrecharge-bundle #recharge-bundles .rb-bundle-title:before {
+    font-size: 30px;
+  }
+
+  .productrecharge-bundle
+    #recharge-bundles
+    .rb-label[for="selling-plan-list"]:before {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .productrecharge-bundle .main-title {
+    margin-top: 0;
+  }
+  
+  .status-bar-sign-up {
+    margin-bottom: 12%;
+  }
+}
+
+.producteric-bundletest .content-wrapper {
+  overflow: initial;
+}
+
+.producteric-bundletest #recharge-bundles .rb-sticky-form {
+  position: sticky;
+  top: 0;
+  z-index: 10001;
+  background: #fff;
+}
+
+.producteric-bundletest #recharge-bundles .rb-container.tmb3 {
+  position: sticky;
+  top: 90px;
+  z-index: 10001;
+  background: #fff;
+  /* display: none; */
+  color: transparent;
+}
+
+/* .producteric-bundletest #recharge-bundles .rb-sticky-form {
+  display: none;
+} */
+
+
+.producteric-bundletest #recharge-bundles .rb-container.tmb3::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px; /* Adjust top position as needed */
+  right: 5px; /* Adjust right position to place it on the right side */
+  font-size: 20px; /* Adjust font size as needed */
+  color: #283965; /* Adjust color as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+}
+
+
+.producteric-bundletest #recharge-bundles .rb-container.tmb3::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px; /* Adjust top position to place it below 'Add 4' */
+  right: 5px; /* Adjust right position to align it with 'Add 4' */
+  font-size: 20px; /* Adjust font size as needed */
+  color: #283965; /* Adjust color as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+}
+
+.producteric-bundletest #recharge-bundles {
+  padding: 30px 0;
+}
+
+.producteric-bundletest #recharge-bundles .rb-bundle-title {
+  font-family: BentonMod, sans-serif;
+  font-size: 40px;
+  color: #000;
+  font-weight: 300;
+}
+
+.producteric-bundletest #recharge-bundles .rb-form {
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.producteric-bundletest #recharge-bundles .rb-label[for="selling-plan-list"] {
+  font-size: 0;
+}
+
+.producteric-bundletest
+  #recharge-bundles
+  .rb-label[for="selling-plan-list"]:before {
+  content: "Choose your delivery schedule";
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.producteric-bundletest #selling-plan-list {
+  font-size: 18px;
+  padding: 15px;
+}
+
+.producteric-bundletest #recharge-bundles .rb-bundle-title {
+  font-size: 0;
+}
+
+.producteric-bundletest .rb-btn {
+  font-size: 20px;
+}
+
+.producteric-bundletest .rb-container.tmb3 {
+  font-size: 20px;
+}
+
+
+.producteric-bundletest #recharge-bundles .rb-bundle-title:before {
+  content: "Select Your Products";
+  font-size: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .producteric-bundletest #recharge-bundles .rb-container.tmb3 {
+    position: relative; /* Change position to relative */
+    top: initial; /* Reset top position */
+    right: initial; /* Reset right position */
+    padding-bottom: 1px;
+  }
+
+  .producteric-bundletest #recharge-bundles .rb-container.tmb3::before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 40px; /* Reset right position */
+    top: 10px; /* Adjust top position as needed */
+
+    font-size: 20px; /* Adjust font size as needed */
+    color: #283965; /* Adjust color as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+  }
+
+  .producteric-bundletest #recharge-bundles .rb-container.tmb3::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 40px; /* Adjust top position to place it below 'Add 4' */
+    right: 25px; /* Adjust right position to align it with 'Add 4' */
+    font-size: 20px; /* Adjust font size as needed */
+    color: #283965; /* Adjust color as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+  }
+
+  .producteric-bundletest #recharge-bundles .rb-bundle-title:before {
+    font-size: 30px;
+  }
+
+  .producteric-bundletest
+    #recharge-bundles
+    .rb-label[for="selling-plan-list"]:before {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .producteric-bundletest .main-title {
+    margin-top: 0;
+  }
+  
+  .status-bar-sign-up {
+    margin-bottom: 12%;
+  }
+}
+

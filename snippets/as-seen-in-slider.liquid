@@ -1,0 +1,22 @@
+<div class="as-seen-nav-slider">
+  {% for block in section.blocks %}
+    {% assign image = block.settings.seen_item_image %}
+    <div class="as-seen-image">
+      {%
+         include 'rimg-home'
+         img: image,
+         size: '2048x2048',
+         lazy: true, %}
+    </div>
+  {% endfor %}
+</div>
+
+<div class="as-seen-text-slider">
+  {% for block in section.blocks %}
+    {% if block.settings.seen_item_title != blank %}
+      <div class="as-seen-text">
+        <div class="as-seen-content">{{ block.settings.seen_item_title }}</div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

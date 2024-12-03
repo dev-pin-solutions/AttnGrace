@@ -1,0 +1,125 @@
+
+
+<style>
+  .skinsafe{
+      background-image: url({{section.settings.bg | img_url : 'master' }})!important;
+      background-position: 50% 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+</style>
+<section class="skinsafe">
+    <div class='center-wrapper'>
+        <h2 class="skinsafe__title title_2">{{section.settings.heading}}</h2>
+        <div class="skinsafe__desc">{{section.settings.description}}</div>
+        <div class="skinsafe__row">
+            <div class="skinsafe__leftside">
+                <div class="skinsafe-other">
+                    <div class="skinsafe-other__image">{{section.settings.image_left | img_url : 'master' | img_tag }}</div>
+                    <div class="skinsafe-other__content">
+                        <div class="skinsafe-other__title">{{ section.settings.heading_left }}</div>
+                        <div class="skinsafe-other__desc">{{ section.settings.imagei_left  | img_url : 'master' | img_tag }}{{ section.settings.desc_left }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="skinsafe__rightside">
+                <div class="skinsafe-info">
+                    <div class="skinsafe-info__title">{{ section.settings.heading_right}}</div>
+                    <div class="skinsafe-info__item">
+                        <div class="skinsafe-info__icon">{{section.settings.image_right | img_url: 'master' | img_tag }}</div>
+                        <div class="skinsafe-info__content">
+                            <div class="skinsafe-info__caption">{{section.settings.caption_right}}</div>
+                            <div class="skinsafe-info__desc">{{section.settings.text_right}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "New Product Scinsafe",
+    "settings" : [
+       {
+            "type" : "image_picker",
+            "id" : "bg",
+            "label" : "Background"
+          }  ,
+        {
+            "type" : "html",
+            "id" : "heading",
+            "label" : "Text",
+            "default" : "The only incontinence pad backed by a <span>Skin-Safe Promise™</span>"
+          }       ,
+          {
+            "type" : "text",
+            "id" : "description",
+            "label" : "Text",
+            "default" :   "With Attn: Grace you never have to choose between skin-safety and high-performance. Our pads are designed so that only soft, gentle, plant-based fibers touch your skin. Our sophisticated top sheet proudly boasts moisture-wicking capabilities that outperform premium, big-box brands, as well as brands using cotton top sheets. Tough on leaks, and safe on skin — no trade-offs."
+        },
+
+
+
+
+
+        {
+          "type" : "image_picker",
+          "id" : "image_left",
+          "label" : "Image Left"
+        }  ,
+      {
+          "type" : "text",
+          "id" : "heading_left",
+          "label" : "Heading Left",
+          "default" : "."
+        } ,
+       {
+          "type" : "image_picker",
+          "id" : "imagei_left",
+          "label" : "Image Left"
+        }  ,
+{
+          "type" : "html",
+          "id" : "desc_left",
+          "label" : "DEscription Leftt",
+          "default" : "<strong>Petroleum-based <span>top sheets</span></strong>"
+        } ,
+
+        {
+          "type" : "image_picker",
+          "id" : "image_right",
+          "label" : "Image Right"
+        }  ,
+        {
+          "type" : "text",
+          "id" : "heading_right",
+          "label" : "Heading Right",
+          "default" : "."
+        } ,
+        {
+          "type" : "text",
+          "id" : "caption_right",
+          "label" : "Caption Right",
+          "default" : "."
+        } 
+        ,
+        {
+          "type" : "text",
+          "id" : "text_right",
+          "label" : "Text Right",
+          "default" : "."
+        } 
+        ]
+  }
+{% endschema %}
+
+
+
+
+
+
+
+

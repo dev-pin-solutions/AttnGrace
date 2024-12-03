@@ -1,0 +1,43 @@
+{% section 'page-cart' %}
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=DC-14554057"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'DC-14554057');
+</script>
+
+<script>
+  gtag('event', 'conversion', {
+    'allow_custom_scripts': true,
+    'send_to': 'DC-14554057/attng000/landi0+standard'
+  });
+  
+<noscript>
+<img src="https://ad.doubleclick.net/ddm/activity/src=14554057;type=attng000;cat=landi0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=1?" width="1" height="1" alt=""/>
+</noscript>
+
+
+  <img src="https://mpp.mxptint.net/2/37154/?rnd=%n" width="0" height="0" style="display:none" />
+
+    
+
+
+  function reChargeProcessCart() {
+	function get_cookie(name){ return( document.cookie.match('(^|; )'+name+'=([^;]*)')||0 )[2] }
+	do {
+      		token=get_cookie('cart');
+	}
+	while(token == undefined);
+
+	var myshopify_domain='{{ shop.permanent_domain }}'
+	try { var ga_linker = ga.getAll()[0].get('linkerParam') } catch(err) { var ga_linker ='' }
+	var customer_param = '{% if customer %}customer_id={{customer.id}}&customer_email={{customer.email}}{% endif %}'
+	window.location.href = "https://checkout.rechargeapps.com/r/checkout?myshopify_domain="+myshopify_domain+"&cart_token="+token+"&"+ga_linker+"&"+customer_param;
+}
+  
+</script>
+

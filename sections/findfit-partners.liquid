@@ -1,0 +1,32 @@
+<section class="brands">
+  <marquee class="brands__carousel" direction="left">
+    {% for block in section.blocks %}
+      {{ block.settings.image | img_url : 'master' | img_tag }}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {{ block.settings.image | img_url : 'master' | img_tag }}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {{ block.settings.image | img_url : 'master' | img_tag }}
+    {% endfor %}
+  </marquee>
+</section>
+
+{% schema %}
+  {
+    "name": "Findfit Partners",
+    "blocks" : [
+      {
+        "type" : "image",
+        "name" : "Partner",
+        "settings": [
+          {
+            "type" : "image_picker",
+            "id" : "image",
+            "label" : "Image"
+          }          
+        ]
+      }
+    ]
+  }
+{% endschema %}

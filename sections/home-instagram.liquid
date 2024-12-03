@@ -1,0 +1,21 @@
+{% assign heading = section.settings.heading %}
+{% include 'instagram-feed' %}
+
+{%schema%}
+{
+	"name":"Instafeed Attngrace",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+	"presets": [
+	{
+      "category": "Promotional",
+      "name": "Instafeed Attngrace"
+    }
+  ]
+}
+{%endschema%}

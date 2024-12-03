@@ -1,0 +1,76 @@
+<style>
+  .pads-reviews__row::before {
+    top: -60px;
+    left: 15px;
+    background-image: url({{'review-quote1.svg'  |asset_url }});
+    z-index: -1;
+  }
+  .pads-reviews__row::after {
+    bottom: 40px;
+    right: 90px;
+    background-image: url({{'review-quote2.svg'  |asset_url }});
+  }
+</style>
+<section class="pads-reviews">
+    <div class='center-wrapper'>
+        <h2 class="pads-reviews__title title_2">{{ section.settings.heading }}</h2>
+        <div class="pads-reviews__subtitle">{{ section.settings.subheading }}</div>
+        <div class="pads-reviews__row">
+            {% for block in section.blocks %}
+            <div class="pads-reviews__col">
+                <div class="pads-reviews-item">
+                    <div class="pads-reviews-item__desc">{{ block.settings.text }}</div>
+                    <div class="pads-reviews-item__author">{{ block.settings.autor }}</div>
+                </div>
+            </div>
+            {% endfor %}
+          
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "New Product Reviews",
+    "settings": [
+      {
+        "type" : "image_picker",
+        "id" : "image",
+        "label" : "Image"
+      },
+      {
+        "type" : "html",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "9-out-of-10 customers noticed a<br> difference almost immediately after<br> switching to <span>Attn: Grace.</span>"
+      },
+       {
+        "type" : "text",
+        "id" : "subheading",
+        "label" : "SubHeading",
+        "default" : "A better way is waiting for you. Don’t miss out."
+      }],
+      "blocks" : [
+        {
+          "type" : "text",
+          "name"  : "QA",
+          "settings" : [
+            
+            {
+              "type" : "text",
+              "id" : "text",
+              "label" : "Text",
+              "default" : "Finally the perfect find! So much better than Poise."
+            },
+            {
+              "type" : "text",
+              "id" : "autor",
+              "label" : "Autor",
+              "default" : "Kari T."
+            }
+          ]
+        }
+      ] 
+  }
+{% endschema %}

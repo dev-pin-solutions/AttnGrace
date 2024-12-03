@@ -1,0 +1,135 @@
+<link rel="stylesheet" href="{{ 'skin-safe-promise.css' | asset_url }}" media="print" onload="this.media='all'">
+<section class="skin-safe-promise-section" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    {% if section.settings.title != blank or section.settings.text != blank %}
+      <div class="sfp-header-wrapper">
+        {% if section.settings.title != blank %}
+          <h2>{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <div class="text-wrapper">{{ section.settings.text }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="image-text-block-wrapper">
+      <div class="itb-wrapper">
+        {% if section.settings.itc-title != blank %}
+          <div class="title">
+            <h3>{{ section.settings.itc-title }}</h3>
+          </div>
+        {% endif %}
+        <div class="grid-wrapper">
+          {% for block in section.blocks %}
+            {% if block.type == 'image-text-column' %}
+              <div class="image-text-column-wrapper">
+                {% if block.settings.image != blank %}
+                  <div class="image image-{{ forloop.index }}">
+                    <img src="{{ block.settings.image | img_url: 'original' }}" loading="lazy" />
+                  </div>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                  <div class="text">
+                    <p>{{ block.settings.text }}</p>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% for block in section.blocks %}
+      {% if block.type == 'image-with-text' %}
+        <div class="image-with-text-block-wrapper">
+          {% if block.settings.title != blank %}
+            <div class="title">
+              <h3>{{ block.settings.title }}</h3>
+            </div>
+          {% endif %}
+          <div class="image-text-wrapper">
+            <div class="image-text-grid">
+              {% if block.settings.image != blank %}
+                <div class="image">
+                  <img
+                    class="desktop-image"
+                    src="{{ block.settings.image | img_url: 'original' }}"
+                    loading="lazy" />
+                  <img
+                    class="mobile-image"
+                    src="{{ block.settings.mobile_image | img_url: 'original' }}"
+                    loading="lazy" />
+                </div>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <div class="text">{{ block.settings.text }}</div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Skin Safe Promise",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Heading",
+        "default": "The only incontinence brand backed by a <strong>Skin-Safe Promise™</strong>"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Our products incorporate the cleanest, most sustainable materials possible without <u>ever</u> compromising on performance</p>"
+      }, {
+        "type": "text",
+        "id": "itc-title",
+        "label": "Image Text Column Heading",
+        "default": "WHAT THAT MEANS FOR YOU"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image-text-column",
+        "name": "Image Text Column",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }, {
+        "type": "image-with-text",
+        "name": "Image With Text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "CROSS SECTION OF OUR SIGNATURE TOP SHEET FIBER"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Desktop Image"
+          }, {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image"
+          }, {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

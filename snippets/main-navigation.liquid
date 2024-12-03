@@ -1,0 +1,19 @@
+{% comment %}
+  @param primary_menu LinkedList
+  @param secondary_menu LinkedList
+{% endcomment %}
+<meta name="google-site-verification" content="s_hRk_bW30j1sxNvxe0xfdR4PmTGpUznwoyBOS2Rl5o" />
+<div class="main-navigation" role="banner">
+  <nav class="main-navigation-menu">
+    {% include 'main-navigation-submenu', menu: primary_menu, depth: 3 %}
+	<ul class="navigation-menu navigation-other-menu">
+		<li class="user-account icon">
+          <a aria-label="Customer Account" href="{{ shop.url }}/account"><span>{% if customer %}MY ACCOUNT {% else %}SIGN IN {% endif %}</span>{% include 'icon-user' %}</a>
+      </li>
+		<li class="fontsize icon">
+			<span class="iconsize size-decrease" style="cursor: pointer; font-size: 1px;"> {% include 'icon-fontdecrease' %}</span>
+			<span class="iconsize size-increase jfontsize-disabled" style="cursor: pointer; font-size: 1px;">{% include 'icon-fontincrese' %}</span>
+		</li>
+	</ul>
+  </nav>
+</div>

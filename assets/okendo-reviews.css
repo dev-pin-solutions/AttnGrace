@@ -1,0 +1,75 @@
+
+/* Reviews Widget > Star Rating Color */
+.okeReviews.okeReviews--theme .okeReviews-starRating-indicator .okeReviews-starRating-indicator-layer--foreground {
+  background-image: url('data:image/svg+xml;charset=UTF-8, <svg%20width%3D"80"%20height%3D"14"%20viewBox%3D"0%200%2080%2014"%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"><g%20fill%3D"%23000"%20fill-rule%3D"evenodd"><path%20d%3D"M71.996%2011.368l-3.94%202.42c-.474.292-.756.096-.628-.443l1.074-4.53-3.507-3.022c-.422-.363-.324-.693.24-.74l4.602-.37%201.778-4.3c.21-.51.55-.512.762%200l1.78%204.3%204.602.37c.552.046.666.37.237.74l-3.507%203.02%201.075%204.532c.127.536-.147.74-.628.444l-3.94-2.422zM55.996%2011.368l-3.94%202.42c-.474.292-.756.096-.628-.443l1.074-4.53-3.507-3.022c-.422-.363-.324-.693.24-.74l4.602-.37%201.778-4.3c.21-.51.55-.512.762%200l1.78%204.3%204.602.37c.552.046.666.37.237.74l-3.507%203.02%201.075%204.532c.127.536-.147.74-.628.444l-3.94-2.422zM40.123%2011.368l-3.94%202.42c-.475.292-.756.096-.63-.443l1.076-4.53-3.508-3.022c-.422-.363-.324-.693.24-.74l4.602-.37%201.778-4.3c.21-.51.55-.512.762%200l1.778%204.3%204.603.37c.554.046.667.37.24.74l-3.508%203.02%201.075%204.532c.127.536-.147.74-.628.444l-3.94-2.422zM24.076%2011.368l-3.94%202.42c-.475.292-.757.096-.63-.443l1.076-4.53-3.507-3.022c-.422-.363-.324-.693.238-.74l4.603-.37%201.78-4.3c.21-.51.55-.512.76%200l1.78%204.3%204.602.37c.554.046.667.37.24.74l-3.508%203.02%201.074%204.532c.127.536-.146.74-.628.444l-3.94-2.422zM8.123%2011.368l-3.94%202.42c-.475.292-.756.096-.63-.443l1.076-4.53L1.12%205.792c-.422-.363-.324-.693.24-.74l4.602-.37%201.778-4.3c.21-.51.55-.512.762%200l1.778%204.3%204.603.37c.554.046.667.37.24.74l-3.508%203.02%201.075%204.532c.127.536-.147.74-.628.444l-3.94-2.422z"%2F><%2Fg><%2Fsvg>');
+}
+
+.product-details-header-content .okeReviews-reviewsSummary-ratingCount > span,
+.product-details-header-mobile-content .okeReviews-reviewsSummary-ratingCount > span {
+  border-bottom: 1px solid;
+  cursor: pointer;
+}
+
+.product-details-header-content .okeReviews-reviewsSummary-ratingCount:hover > span,
+.product-details-header-mobile-content .okeReviews-reviewsSummary-ratingCount:hover > span {
+  border-bottom: 2px solid;
+  color: #000;
+}
+
+/* Reviews Widget > Select */
+.okeReviews.okeReviews--theme .okeReviews-reviews-controls-select {
+  left: unset;
+}
+.okeReviews.okeReviews--theme .okeReviews-starRating.okeReviews-starRating--small {
+    height: 15px !important;
+    width: 85px !important;
+}
+.okeReviews.okeReviews--theme .okeReviews-starRating--small .okeReviews-starRating-indicator-layer {
+    background-size: 85px 15px !important;
+}
+
+.okeReviews .okeReviews-reviewsWidget.is-okeReviews-reviewsWidget-large .okeReviews-review {
+  width: 100%;
+}
+
+.okeReviews .okeReviews-question {
+  padding: 1.5em;
+}
+
+.okeReviews .okeReviews-questions {
+  background-color: #f2ebe7;
+}
+
+.okeReviews.okeReviews--theme .okeReviews-questions .okeReviews-question {
+  border-color: #f2ebe7;
+}
+
+.okeReviews-widget-holder .okeReviews .okeReviews-select {
+  margin: 0 21px;
+}
+
+.okeReviews .okeReviews-qandaWidget.is-okeReviews-qandaWidget-large .okeReviews-qandaWidget-header-controls-askQuestion {
+  margin-bottom: 25px;
+}
+
+.okeReviews .okeReviews-qandaWidget-footer {
+  background-color: #f2ebe7;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  .okeReviews .okeReviews-question {
+    padding: 0 1.5rem;
+  }
+
+  .okeReviews .okeReviews-qandaWidget .okeReviews-qandaWidget-header-controls .okeReviews-select {
+    margin: 0 auto;
+    width: 92%;
+  }
+
+  .okeReviews-widget-holder .okeReviews.okeReviews--theme .okeReviews-button {
+    width: 92%;
+    margin: 0 auto 20px;
+  }
+}
+

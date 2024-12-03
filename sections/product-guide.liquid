@@ -1,0 +1,65 @@
+{% comment %}
+Custom product guide section
+Naming convention used throughout - "pg" is shorthand for product-guide.
+{% endcomment %}
+
+<div class="pg-section">
+  <div class="pg-images-container">
+    {% for block in section.blocks %}
+      <img loading="lazy" class="pg-image" src="{{ block.settings.pg_product_image | img_url: '400x400' }}"/>
+    {% endfor %}  
+  </div>
+  <h1 class="pg-heading">{{ section.settings.heading }}</h1>
+  {% if section.settings.button_link != blank and section.settings.button_label != blank %}
+    <a
+       class="image-bg-with-text-button button"
+       href="{{ section.settings.button_link }}"
+       >
+      {{ section.settings.button_label | escape }}
+    </a>
+  {% endif %}
+</div>
+{% schema %}
+  {
+    "name": "Product Guide Section",
+    "class": "index-section",
+    "settings": [
+	  {
+		"type": "text",
+		"id": "heading",
+        "label": "Section Main Text",
+		"default": "Find which products are right for you."
+      },
+	  {
+      	"type": "url",
+      	"id": "button_link",
+      	"label": "Button Link"
+      },
+      {
+      	"type": "text",
+      	"id": "button_label",
+      	"label": "Button Text"
+      }
+    ],
+	"blocks" : [
+		{
+		  "type": "image",
+		  "name": "product guide image",
+		  "limit": 3,
+		  "settings" : [
+			{
+			  "type": "image_picker",
+			  "id": "pg_product_image",
+			  "label": "Product Image"
+			}
+		  ]
+		}
+	],
+    "presets": [
+      {
+        "category": "Product",
+        "name": "Product Guide Section"
+      }
+    ]
+  }
+{% endschema %} 

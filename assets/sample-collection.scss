@@ -1,0 +1,322 @@
+// Breakpoints
+$breakpoint-xs: 320px;
+$breakpoint-s: 500px;
+$breakpoint-ms: 770px;
+$breakpoint-m: 960px;
+$breakpoint-l: 1060px;
+$breakpoint-xl: 1280px;
+
+#shopify-section-page-sample-collection {
+    .collection-item {
+        background-color: #b2a088;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+
+        h1 {
+            font-family: 'BentonMod';
+            font-weight: 300;
+            font-size: 4rem;
+            margin: 0;
+            padding-top: 20px;
+
+            @media screen and (min-width: 1800px) {
+                font-size: 5rem;
+                padding-top: 40px;
+            }
+
+            @media screen and (max-width: $breakpoint-m) {
+                font-size: 3rem;
+                padding-top: 0;
+            }
+        }
+
+        .short-heading {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 20px 0;
+
+            @media screen and (max-width: $breakpoint-m) {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+        }
+
+        p {
+            font-size: 1.4rem;
+            max-width: 72%;
+            margin: 0 auto;
+
+            @media screen and (max-width: $breakpoint-m) {
+                font-size: 18px;
+                max-width: 100%;
+            }
+        }
+
+        @media screen and (min-width: $breakpoint-m) {
+            .collection-item-details {
+                max-width: 50%;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-s) {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .collection-item-content {
+            @media screen and (min-width: $breakpoint-l) {
+                padding: 5rem 0;
+            }
+
+            @media screen and (max-width: $breakpoint-l) {
+                background-color: rgba(255, 255, 255, 0.24);
+            }
+        }
+    }
+
+    + .shopify-section {
+        padding-top: 0;
+    }
+}
+
+#shopify-section-page-sample-collection {
+    .section-tags {
+        display: none;
+    }
+
+    .collection-listing {
+        padding: 0;
+        max-width: 100%;
+        margin: 10px;
+    }
+
+    .product-list {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .product-list-item {
+        width: 100%;
+        background: #ccc;
+        display: flex;
+        flex-direction: row-reverse;
+        overflow: hidden;
+
+        @media screen and (max-width: $breakpoint-s) {
+            flex-direction: column;
+        }
+
+        &.sample-purple {
+            background: #b08fbc;
+        }
+
+        &.sample-pink {
+            background: #ea998d;
+        }
+
+        &.sample-orange {
+            background: #ed7720;
+        }
+    }
+
+    .product-list-item-thumbnail {
+        max-width: 50%;
+        margin-left: auto;
+        background-color: #e3e3e3;
+
+        @media screen and (max-width: $breakpoint-s) {
+            max-width: 100%;
+        }
+    }
+
+    .product-list-item-details {
+        background-color: transparent;
+        bottom: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 50%;
+        padding: 30px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        form {
+            margin-top: auto;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: $breakpoint-s) {
+            max-width: 100%;
+        }
+    }
+
+    .drop {
+        background-image: url(drop-black.svg?v=2);
+        background-repeat: repeat;
+        display: block;
+        height: 40px;
+        width: 122px;
+        margin-bottom: 10px;
+        position: relative;
+
+        &.drop-1:after,
+        &.drop-2:after,
+        &.drop-3:after,
+        &.drop-4:after,
+        &.drop-5:after {
+            background-image: url(drop-fill-black.svg?v=2);
+            content: "";
+            position: absolute;
+            width: 20%;
+            height: 100%;
+        }
+
+        &.drop-2:after {
+            width: 40%;
+        }
+
+        &.drop-3:after {
+            width: 60%;
+        }
+
+        &.drop-4:after {
+            width: 80%;
+        }
+
+        &.drop-5:after {
+            width: 100%;
+        }
+
+    }
+
+    .product-list-item-price {
+        display: none;
+    }
+
+    .product-list-item-title {
+        font-family: 'BentonMod';
+        font-weight: 300;
+        font-size: 3.2rem;
+        margin: 0 0 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid;
+        line-height: normal;
+        width: 100%;
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 1800px) {
+            font-size: 4rem;
+        }
+
+        @media screen and (max-width: $breakpoint-l) {
+            font-size: 2.4rem;
+        }
+    }
+
+    .product-limit {
+        font-size: 18px;
+        opacity: 0.5;
+        margin-top: -10px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .free-shipping {
+        font-size: 20px;
+        font-weight: 500;
+
+        @media screen and (min-width: $breakpoint-l) {
+            font-size: 18px;
+        }
+    }
+
+    .product-desc {
+        font-size: 20px;
+        max-width: 80%;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: 1800px) {
+            font-size: 22px;
+            margin-bottom: 40px;
+            max-width: 60%;
+        }
+
+        @media screen and (max-width: $breakpoint-l) {
+            font-size: 18px;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.collection-info {
+    margin: 20px 10px;
+    display: flex;
+    justify-content: space-around;
+    background: #a2e7d8;
+    font-size: 20px;
+    line-height: normal;
+    font-weight: 500;
+    flex-direction: column;
+
+    @media screen and (min-width: $breakpoint-m) {
+        flex-direction: row;
+        font-size: 22px;
+    }
+
+    @media screen and (min-width: $breakpoint-ms - 2) and (max-width: 1280px) {
+        flex-direction: row;
+        font-size: 18px;
+    }
+
+    .item {
+        text-align: center;
+        padding: 0 30px;
+        border-right: 1px solid #000;
+        margin: 50px 0;
+
+        @media screen and (min-width: 1800px) {
+            padding: 0 110px;
+        }
+
+        &:last-child {
+            border: 0;
+        }
+
+        @media screen and (min-width: $breakpoint-ms - 2) and (max-width: $breakpoint-l) {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+
+        @media screen and (max-width: $breakpoint-ms - 3) {
+            padding: 30px 0;
+            border-bottom: 1px solid #000;
+            margin: 0 15px;
+            border-right: 0;
+        }
+    }
+
+    .icon {
+        margin-bottom: 10px;
+
+        @media screen and (min-width: $breakpoint-xl) {
+            margin-bottom: 10px;
+        }
+
+        @media screen and (min-width: $breakpoint-ms - 2) and (max-width: $breakpoint-l) {
+            transform: scale(0.8);
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+}

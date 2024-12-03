@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "hero": {
+      "type": "final3-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/promo-image3.png",
+        "image_mob": "shopify:\/\/shop_images\/promo-image3-mobile.png",
+        "heading": "The <span>BEST<\/span> way to stay dry.",
+        "text": "<p>Our bladder leak pads are changing the game, beating the competition when it comes to keeping you dry, protecting your skin and caring for our planet. Keep scrolling to see how!<\/p>",
+        "btn-label": "GET 30% OFF YOUR FIRST ORDER*",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+        "subtext": "Use code: 30OFFFIRSTORDER"
+      }
+    },
+    "secret": {
+      "type": "final3-secret",
+      "settings": {
+        "image1": "shopify:\/\/shop_images\/secret-image1.png",
+        "image11": "shopify:\/\/shop_images\/secret-image1-add.png",
+        "image2": "shopify:\/\/shop_images\/secret-image2.png",
+        "image22": "shopify:\/\/shop_images\/secret-image2-add.png",
+        "heading": "Our <span>SECRET<\/span> to keeping you <span>DRY<\/span>",
+        "subheading": "Pads don’t just have to ABSORB leaks, they have to RETAIN the leaks once they’re absorbed. Attn: Grace pads and briefs absorb leaks quickly AND keep them locked away, even when soaked to capacity, so that you stay dry.",
+        "text": "<p>Our bladder leak pads are changing the game, beating the competition when it comes to keeping you dry, protecting your skin and caring for our planet. Keep scrolling to see how!<\/p>",
+        "btn-label": "GET 30% OFF YOUR FIRST ORDER*",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+        "subtext": "Use code: 30OFFFIRSTORDER"
+      }
+    },
+    "safe": {
+      "type": "final3-safe",
+      "settings": {
+        "heading": "<span>SAFE<\/span> and <span>GENTLE<\/span> against your skin",
+        "image1": "shopify:\/\/shop_images\/safe-image1.png",
+        "text1": "<p>Our products are dermatologist tested and approved, free of the bleaches, dyes, fragrances and latex found in other brands, and designed so that only gentle, plant-based fibers touch your skin. Ready to ditch the itch? Look no further.<\/p>",
+        "image2": "shopify:\/\/shop_images\/safe-image2.png",
+        "text2": "<p>Other incontinence brands treat their pads with synthetic dyes, fragrance and chlorine bleach. This combination of ingredients often causes itchy, uncomfortable and sometimes painful skin irritation.<\/p>",
+        "btn-label": "GET 30% OFF YOUR FIRST ORDER*",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+        "subtext": "Use code: 30OFFFIRSTORDER"
+      }
+    },
+    "text": {
+      "type": "final3-text",
+      "settings": {
+        "text": "9-out-of-10 of our customers say they <span>FELT A DIFFERENCE ALMOST IMMEDIATELY<\/span> after switching to Attn: Grace.",
+        "btn-label": "SHOP NOW",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all"
+      }
+    },
+    "reviews": {
+      "type": "final3-revs",
+      "settings": {
+        "heading": "Thousand of women are <span>switching to Attn: Grace<\/span>",
+        "btn-label": "GET 30% OFF YOUR FIRST ORDER*",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+        "subtext": "Use code: 30OFFFIRSTORDER"
+      }
+    },
+    "vs": {
+      "type": "final3-vs",
+      "settings": {
+        "image1": "shopify:\/\/shop_images\/comparsion-image1.jpg",
+        "heading1": "Petroleum",
+        "text1": "<p>Not so fun fact: It takes roughly <strong>1 cup of crude oil<\/strong> to make a single conventional disposable adult incontinence pad or brief.<\/p>",
+        "image2": "shopify:\/\/shop_images\/comparsion-image2.jpg",
+        "heading2": "Plant",
+        "text2": "<p>We replace petroleum-based plastics with skin-safe, plant-based materials to bring you game-changing comfort and confidence.<\/p>",
+        "btn-label": "GET 30% OFF YOUR FIRST ORDER*",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+        "subtext": "Use code: 30OFFFIRSTORDER"
+      }
+    },
+    "team": {
+      "type": "final3-team",
+      "settings": {
+        "heading": "<span>DESIGNED BY WOMEN<\/span>  who get it",
+        "image1": "shopify:\/\/shop_images\/team-image1.jpg",
+        "heading1": "MIA + ALEX FOUNDERS",
+        "text1": "<p>We knew there had to be a better way to manage bladder leaks, <strong>so we built it.<\/strong><\/p>",
+        "image2": "shopify:\/\/shop_images\/team-image2.png",
+        "heading2": "..........?",
+        "text2": "<p>Most of the incontinence category is dominated by massive international conglomerates.<\/p>",
+        "btn-label": "GET 30% OFF YOUR FIRST ORDER*",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+        "subtext": "Use code: 30OFFFIRSTORDER"
+      }
+    },
+    "risk": {
+      "type": "final3-try-risk",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/reasons-review-photo_6c6ced68-4d7e-43a9-af64-e3b4c7389d14.jpg",
+        "heading": "Try us, RISK FREE.",
+        "text": "<p>If you're not satisfied with your first order, we’ll help you find the right product for your needs, or issue you a complete refund. Whichever you prefer.<\/p>",
+        "btn-label": "SHOP NOW",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+        "subtext": "Use code: 30OFFFIRSTORDER"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "secret",
+    "safe",
+    "text",
+    "reviews",
+    "vs",
+    "team",
+    "risk"
+  ]
+}

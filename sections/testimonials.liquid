@@ -1,0 +1,117 @@
+{% comment %}
+Custom Testimonials section created for UVT Landing Page and other site-wide page use.
+{% endcomment %}
+
+<div class="testimonials-section" {% if section.settings.sbg-color != blank %}style="background-color:{{ section.settings.sbg-color }};"{% endif %}}>
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <h1 class="testimonials-heading heading">{{ section.settings.heading }}</h1>
+    {% endif %}
+    <div class="testimonials-container">
+      {% for block in section.blocks %}
+        <div class="testimonial-block">
+          <div class="testimonial-ratings">
+            {% if block.settings.rating_star == '1' %}
+              {% include 'icon-star' %}
+            {% endif %}
+            {% if block.settings.rating_star == '2' %}
+              {% include 'icon-star' %}
+              {% include 'icon-star' %}
+            {% endif %}
+            {% if block.settings.rating_star == '3' %}
+              {% include 'icon-star' %}
+              {% include 'icon-star' %}
+              {% include 'icon-star' %}
+            {% endif %}
+            {% if block.settings.rating_star == '4' %}
+              {% include 'icon-star' %}
+              {% include 'icon-star' %}
+              {% include 'icon-star' %}
+              {% include 'icon-star' %}
+            {% endif %}
+            {% if block.settings.rating_star == '5' %}
+              {% include 'icon-star' %}
+              {% include 'icon-star' %}
+              {% include 'icon-star' %}
+              {% include 'icon-star' %}
+              {% include 'icon-star' %}
+            {% endif %}
+          </div>
+          <div class="testimonial-content">
+            <span>“</span>
+            {{ block.settings.testimonial }}<span>”</span>
+          </div>
+          <p class="author-name">{{ block.settings.author-name }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Testimonials",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Testimonials Section Heading"
+      }, {
+        "type": "color",
+        "id": "sbg-color",
+        "label": "Section Background Color",
+        "default": "#f2ebe7"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "testimonials block",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "testimonial",
+            "label": "Testimonial Text"
+          }, {
+            "type": "text",
+            "id": "author-name",
+            "label": "Author Name"
+          }, {
+            "type": "select",
+            "id": "rating_star",
+            "label": "Select Ratings",
+            "options": [
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              }, {
+                "label": "5",
+                "value": "5"
+              }
+            ],
+            "default": "5",
+            "info": "Select Number of Ratings"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Promotional",
+        "name": "Custom Testimonals"
+      }
+    ]
+  }
+{% endschema %}

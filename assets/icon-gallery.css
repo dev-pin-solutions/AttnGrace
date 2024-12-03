@@ -1,0 +1,155 @@
+.icon-gallery-section {
+  padding: 100px 0;
+  background-color: #f2ebe7;
+}
+.icon-gallery-section .icon-gallery-header {
+  text-align: center;
+}
+.icon-gallery-section .title {
+  font-size: 60px;
+  line-height: 70px;
+  font-weight: 300;
+  font-family: 'BentonMod';
+  width: 77%;
+  margin: auto;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #000;
+}
+.icon-gallery-section .subtext {
+  margin: 0;
+  font-size: 40px;
+  line-height: 34px;
+  font-family: 'Acre';
+  font-weight: 600;
+  margin-top: 30px;
+}
+.icon-gallery-section .icon-grid {
+  margin: 70px auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.icon-gallery-section .icon-wrapper {
+  width: 16.66%;
+}
+.icon-gallery-section .percentage-chart-grid {
+  position: relative;
+}
+.icon-gallery-section .percentage-grid-chart {
+  width: 100%;
+}
+.icon-gallery-section .pc-chart-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.icon-gallery-section .percentage-chart {
+  background-color: #e5d9d1;
+  height: 100px;
+  margin: 15px 30px 15px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.icon-gallery-section .percentage-chart span {
+  margin-left: 70px;
+  font-size: 24px;
+  line-height: 33px;
+  font-family: 'Acre';
+  text-align: left;
+  color: #000;
+  font-weight: 600;
+}
+.icon-gallery-section .percentage-text {
+  font-family: 'BentonMod';
+  font-size: 60px;
+  color: #000;
+}
+.icon-gallery-section .percentage-grid-title {
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  background-color: #dedc00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 100px;
+  right: 14%;
+}
+.icon-gallery-section .per-title {
+  font-size: 42px;
+  line-height: 58px;
+  color: #000;
+  font-family: 'Acre';
+  font-weight: 600;
+  width: 150px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .icon-gallery-section .title {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .icon-gallery-section .subtext {
+    font-size: 24px;
+    line-height: 32px;
+    padding: 0 30px;
+  }
+  .icon-gallery-section .icon-grid {
+    margin-bottom: 20px;
+  }
+  .icon-gallery-section .icon-wrapper {
+    width: 33.33%;
+    display: inherit;
+  }
+  .icon-gallery-section .percentage-chart-grid {
+    padding: 0 30px;
+  }
+  .icon-gallery-section .percentage-grid-chart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .icon-gallery-section .pc-chart-wrap {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .icon-gallery-section .pc-wrapper {
+    width: 30%;
+    background-color: #e5d9d1;
+    margin-bottom: 20px;
+    padding: 20px 5px;
+  }
+  .icon-gallery-section .pc-wrapper:nth-child(5),
+  .icon-gallery-section .pc-wrapper:nth-child(7) {
+    width: 65%;
+  }
+  .icon-gallery-section .percentage-chart {
+    width: auto !important;
+    text-align: center;
+    order: 2;
+    display: block;
+    margin: 0;
+    height: auto;
+  }
+  .icon-gallery-section .percentage-chart span {
+    margin-left: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .icon-gallery-section .percentage-text {
+    font-size: 30px;
+  }
+  .icon-gallery-section .percentage-grid-title {
+    position: static;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+  }
+  .icon-gallery-section .per-title {
+    font-size: 36px;
+    line-height: 50px;
+  }
+}

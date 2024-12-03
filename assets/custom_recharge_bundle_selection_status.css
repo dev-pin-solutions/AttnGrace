@@ -1,0 +1,30 @@
+.customBundle-section {
+  text-align: center;
+}
+
+.customBundle-title, .customBundle-sub-title {
+  margin-bottom: 20px;
+}
+
+.customBundle-container-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.customBundle-container-item {
+  width: 45%;
+  height: 100px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+}
+
+.customBundle-delivery-schedule {
+  margin-top: 20px;
+}

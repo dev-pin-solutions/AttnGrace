@@ -1,0 +1,57 @@
+{% unless template == 'index' or template == 'list-collections' or template == 'password' %}
+<div class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+  <div class="breadcrumb-item">
+    <a href="/" title="Home">Home</a>
+    {% if template contains 'page' %}
+        <span class="icon" aria-hidden="true">></span>
+        <span>{{ page.title }}</span>
+    {% elsif template contains 'product' %}
+        {% if collection.url %}
+        <span class="icon" aria-hidden="true">></span>
+        {{ collection.title | link_to: collection.url }}
+        {% endif %}
+        <span class="icon" aria-hidden="true">></span>
+        <span>{{ product.title }}</span>
+    {% elsif template contains 'collection' and collection.handle %}
+        <span class="icon" aria-hidden="true">></span>
+        {% if current_tags %}
+        {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+        {{ collection.title | link_to: url }}
+        <span class="icon" aria-hidden="true">></span>
+        <span>{{ current_tags | join: " + " }}</span>
+        {% else %}
+        <span>{{ collection.title }}</span>
+        {% endif %}
+    {% elsif template == 'blog' %}
+        <span class="icon" aria-hidden="true">></span>
+        {% if current_tags %}
+        {{ blog.title | link_to: blog.url }}
+        <span class="icon" aria-hidden="true">></span>
+        <span>{{ current_tags | join: " + " }}</span>
+        {% else %}
+        <span>{{ blog.title }}</span>
+        {% endif %}
+    {% elsif template == 'article' %}
+        <span class="icon" aria-hidden="true">></span>
+        {{ blog.title | link_to: blog.url }}
+        <span class="icon" aria-hidden="true">></span>
+        <span>{{ article.title }}</span>
+    {% elsif template.name == 'order' or template.name == 'addresses' %}
+        <span class="icon" aria-hidden="true">></span>
+        <a href="/account" title="Account">Account</a>
+        <span class="icon" aria-hidden="true">></span>
+        <span>{{ page_title }}</span>
+    {% elsif template.name == blank %}
+        {% if customer %}
+            <span class="icon" aria-hidden="true">></span>
+            <a href="/account" title="Account">Account</a>
+            <span class="icon" aria-hidden="true">></span>
+            <span>Subscriptions</span>
+        {% endif %}
+    {% else %}
+    <span class="icon" aria-hidden="true">></span>
+    <span>{{ page_title }}</span>
+    {% endif %}
+  </div>
+</div>
+{% endunless %}

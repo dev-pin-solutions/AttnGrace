@@ -1,0 +1,133 @@
+<style>
+.structure__block{
+    background-image: url({{section.settings.bg | img_url: 'master'}});
+    background-repeat: no-repeat;
+    background-position: right 15px top 145px;
+}
+</style>
+
+<section class="structure">
+    <div class='center-wrapper'>
+        <h2 class="structure__title title_2">{{section.settings.heading}}</h2>
+        <div class="structure__mobiletitle">A better way is waiting for you. Don’t miss out.</div>
+        <div class="structure__mobileimage">{{ section.settings.bg-mobile | img_url : 'master' | img_tag }}</div>
+        <div class="structure__block">
+            <div class="structure__list">
+                {% for block in section.blocks %}
+                <div class="structure-item">
+                    <div class="structure-item__icon">{{ block.settings.image | img_url : 'master' | img_tag }}</div>
+                    <div class="structure-item__desc">{{ block.settings.text }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="structure-cert">
+            <div class="structure-cert__body">
+                <div class="structure-cert__logo">{{ section.settings.cert_image | img_url : 'master' | img_tag }}</div>
+                <div class="structure-cert__desc">{{ section.settings.cert_text }}</div>
+            </div>
+        </div>
+        <div class="structure-info">
+            <div class="structure-info__image">{{ section.settings.structure-info_image | img_url : 'master' | img_tag }}</div>
+            <div class="structure-info__content">
+                <div class="structure-info__title">{{ section.settings.structure-info_heading}}</div>
+                <div class="structure-info__desc">{{ section.settings.structure-info_text }}</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "New Product Structure",
+    "settings" : [
+       {
+            "type" : "image_picker",
+            "id" : "bg",
+            "label" : "Background"
+          }  ,
+       {
+            "type" : "image_picker",
+            "id" : "bg-mobile",
+            "label" : "Background Mobile"
+          }  ,
+        {
+            "type" : "html",
+            "id" : "heading",
+            "label" : "Text",
+            "default" : "<span>Attn: Grace pads</span> are better for your<br> body and better for our planet."
+          }       ,
+          
+
+
+
+
+
+        {
+            "type" : "image_picker",
+            "id" : "cert_image",
+            "label" : "Image"
+          }  ,
+          {
+            "type" : "text",
+            "id" : "cert_text",
+            "label" : "Text",
+            "default" : "Attn: Grace is proudly a Certified B Corporation™, meeting the highest verified standards of social and environmental performance, transparency and accountability."
+          } ,
+          
+
+          
+
+
+          {
+            "type" : "image_picker",
+            "id" : "structure-info_image",
+            "label" : "Image"
+          }  ,
+          {
+            "type" : "text",
+            "id" : "structure-info_heading",
+            "label" : "Text",
+            "default" : "Plants > Petroleum"
+          }  ,
+          {
+            "type" : "text",
+            "id" : "structure-info_text",
+            "label" : "Text",
+            "default" : "Not so fun fact: It takes roughly 1 cup of crude oil to make a single conventional disposable adult incontinence pad or brief. That’s why we replace petroleum-based plastics with skin-safe, high-performing, plant-based materials to bring you game-changing comfort and confidence."
+          }  
+
+
+
+
+        ],
+    "blocks" : [
+      {
+        "type" : "image",
+        "name" : "Feature",
+        "settings": [
+          {
+            "type" : "image_picker",
+            "id" : "image",
+            "label" : "Image"
+          }  ,
+          {
+            "type" : "html",
+            "id" : "text",
+            "label" : "Text",
+            "default" : "Super absorbent core"
+          }          
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+
+
+
+
+
+
+
+

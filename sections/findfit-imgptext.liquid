@@ -1,0 +1,63 @@
+<section class="difference">
+  <div class='center-wrapper'>
+      <div class="difference__body">
+          <div class="difference__image">{{ section.settings.image | img_url : 'master' | img_tag }}</div>
+          <div class="difference__content">
+              <h2 class="difference__title">{{ section.settings.heading }}</h2>
+              <blockquote class="difference__quote">
+                  {{section.settings.text}}
+                  <cite>{{section.settings.autor}}</cite>
+              </blockquote>
+              <a href="{{ section.settings.btn-link }}" class="upgrade__btn btn">{{ section.settings.btn-label }} {% render 'icon-arrow-3l' %}</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Findfit Img+Text",
+    "settings": [
+      {
+        "type" : "image_picker",
+        "id" : "image",
+        "label" : "Image"
+      },
+      {
+        "type" : "text",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "“I cannot believe<br> the difference.”"
+      },
+       {
+        "type" : "text",
+        "id" : "subheading",
+        "label" : "SubHeading",
+        "default" : "Attn: Grace makes living with incontinence easier."
+      },
+      {
+        "type" : "richtext",
+        "id" : "text",
+        "label" : "Text",
+        "default" : "<p>I really didn't know what was happening... The itch and irritation was maddening. For over a year I tried cream after cream, every product imaginable thinking it was hormones, menopause, skin changes. I would wake up in the middle of the night because the itch was so unbearable. WHO KNEW IT WAS THE PADS?? I cannot believe the difference. With Attn: Grace, it's just gone. And the fit and absorbency are so excellent. I just signed up for a subscription, and hope to not be without these pads, EVER.</p>"
+      },   
+      {
+        "type" : "text",
+        "id" : "autor",
+        "label" : "Autor",
+        "default" : "— LORI A."
+      },     
+       {
+            "type" : "text",
+            "id" : "btn-label",
+            "label" : "Button Label",
+            "default"   : "FIND YOUR FIT"
+        },
+        {
+            "type" : "url",
+            "id" : "btn-link",
+            "label" : "Button Link"
+        }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,31 @@
+{% comment %} {% stylesheet %}
+.custom-right-section {
+  background-color: {{ section.settings.background_color | default: '#ffffff' }};
+}
+{% endstylesheet %}
+
+<div class="custom-right-section">
+  <!-- Content of your Custom Right section goes here -->
+</div>
+
+{% schema %}
+{
+  "name": "Custom Right",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Custom Right",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+ {% endcomment %}

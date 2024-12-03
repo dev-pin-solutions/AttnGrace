@@ -1,0 +1,104 @@
+{
+  "sections": {
+    "custom_hero_MwprDj": {
+      "type": "custom-hero",
+      "settings": {
+        "background_image_desktop": "shopify:\/\/shop_images\/hero_background_bundle.png",
+        "background_image_mobile": "shopify:\/\/shop_images\/hero_background_mobile.png",
+        "main_title": "Build Your Own Custom Bundle & Save Big.",
+        "subtitle": "Get 15% off when you add any combination of four products (repeats welcome) to your custom subscription bundles. Orders $50+ ship free!",
+        "column_1_image": "shopify:\/\/shop_images\/dollar_icon_fe27be58-32bc-4913-ae1c-2f51f117bbe8.png",
+        "column_1_text": "15% Off Per Shipment",
+        "column_2_image": "shopify:\/\/shop_images\/truck_icon_3584f3f3-67a1-4def-a769-02fb18ecb5e5.png",
+        "column_2_text": "Orders $50+ Ship Free",
+        "column_3_image": "shopify:\/\/shop_images\/box_icon_b34f7e03-5da9-4ea8-9c2a-140d335251fb.png",
+        "column_3_text": "Early Access to New Product Launches"
+      }
+    },
+    "custom_four_jypckM": {
+      "type": "custom-four",
+      "blocks": {
+        "text_AJwa8z": {
+          "type": "text",
+          "settings": {
+            "column_title": "1",
+            "column_text": "Add at least 4 products to create your bundle"
+          }
+        },
+        "text_4J3P3x": {
+          "type": "text",
+          "settings": {
+            "column_title": "2",
+            "column_text": "Choose your subscription frequency"
+          }
+        },
+        "text_pCNV4r": {
+          "type": "text",
+          "settings": {
+            "column_title": "3",
+            "column_text": "Add your bundle\nto your cart"
+          }
+        },
+        "text_Q8qFVm": {
+          "type": "text",
+          "settings": {
+            "column_title": "4",
+            "column_text": "Checkout"
+          }
+        }
+      },
+      "block_order": [
+        "text_AJwa8z",
+        "text_4J3P3x",
+        "text_pCNV4r",
+        "text_Q8qFVm"
+      ],
+      "settings": {
+        "main_title": "How It Works"
+      }
+    },
+    "recharge-bundles-widget": {
+      "type": "apps",
+      "blocks": {
+        "recharge-bundles-widget-block": {
+          "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/bundles-widget\/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {
+            "product": "{{ product }}",
+            "rb_theme_color": "#000000",
+            "rb_theme_text": "#ffffff",
+            "rb_theme_other_text": "#283965",
+            "rb_theme_bg": "#ffffff",
+            "rb_text_size": "16px",
+            "rb_spacing_width": 960,
+            "rb_spacing_margins": "15px",
+            "rb_buttons_size": "15px",
+            "rb_buttons_corners": "4",
+            "rb_builder_items_per_row_ns": 3,
+            "rb_builder_items_per_row": "2",
+            "rb_builder_aspect_ratio": "100%",
+            "rb_builder_radius": "4"
+          }
+        }
+      },
+      "block_order": [
+        "recharge-bundles-widget-block"
+      ],
+      "settings": {}
+    },
+    "custom_three_qfayhR": {
+      "type": "custom-three",
+      "settings": {
+        "main_title": "Have questions? Want to make changes?",
+        "sub_text": "Email us at hello@attngrace.com or call\/text us at 833.713.9212. ",
+        "bold_line_text": "Happiness Guaranteed",
+        "detailed_text": "We promise you’ll be happy with our products, or you’ll get your money back. If you order an Attn: Grace product bundle and don’t love it, send us an email and we will make it right."
+      }
+    }
+  },
+  "order": [
+    "custom_hero_MwprDj",
+    "custom_four_jypckM",
+    "recharge-bundles-widget",
+    "custom_three_qfayhR"
+  ]
+}

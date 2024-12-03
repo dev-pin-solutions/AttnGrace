@@ -1,0 +1,26 @@
+{% if product.metafields.global.ingre-sust-left-content != blank or product.metafields.global.ingre-sust-center-image != blank or product.metafields.global.ingre-sust-right-content != blank %}
+<div class="product-ingredients-sustainability">
+    <div class="ingredients-sustainability-wrap  {{ product.handle }}">
+        <div class="section-heading">
+            <h2 class="title"> {{ product.metafields.global.ingre-sust-title }} </h2>
+        </div>
+        <div class="content-wrap">
+            <div class="ingre-sust-col content-col">
+                <div class="content">
+                    {{ product.metafields.global.ingre-sust-left-content }}
+                </div>
+            </div>
+            <div class="ingre-sust-col image-col">
+                <div class="image">
+                    {{ product.metafields.global.ingre-sust-center-image }}
+                </div>
+            </div>
+            <div class="ingre-sust-col content-col">
+                <div class="content">
+                    {{ product.metafields.global.ingre-sust-right-content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

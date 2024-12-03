@@ -1,0 +1,50 @@
+<section class="try">
+  <div class='center-wrapper'>
+      <div class="try__body">
+          <div class="try__image">{{section.settings.image | img_url: 'master' | img_tag }}</div>
+          <div class="try__content">
+              <h2 class="try__title title_2">{{section.settings.heading}}</h2>
+              <div class="try__desc">{{section.settings.subheading}}</div>
+              <a href="{{section.settings.btn-link}}" class="try__btn btn">{{section.settings.btn-label}}</a>
+          </div>
+      </div>
+  </div><!-- end center-wrapper -->
+</section><!-- end try -->
+
+{% schema %}
+  {
+    "name": "New Product Why",
+    "settings": [
+      {
+        "type" : "image_picker",
+        "id" : "image",
+        "label" : "Image"
+      },
+      {
+        "type" : "text",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "Try us, risk free."
+      },
+       {
+        "type" : "text",
+        "id" : "subheading",
+        "label" : "SubHeading",
+        "default" : "If you're not satisfied with your first order, we’ll help you find the right product for your needs, or issue you a complete refund. Whichever you prefer."
+      },
+    
+       {
+            "type" : "text",
+            "id" : "btn-label",
+            "label" : "Button Label",
+            "default"   : "Shop now"
+        },
+        {
+            "type" : "url",
+            "id" : "btn-link",
+            "label" : "Button Link"
+        }
+     
+    ]
+  }
+{% endschema %}

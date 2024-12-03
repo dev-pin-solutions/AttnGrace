@@ -1,0 +1,176 @@
+<div class="page-content form-page login-form">
+  <h1 class="page-title">{{ 'customers.login.header' | t }}</h1>
+
+  <article class="account-login-form" data-login-form>
+    {% form 'recover_customer_password' %}
+      {% if form.posted_successfully? %}
+        <p class="successful-reset">{{ 'customers.login.message' | t }}</p>
+      {% endif %}
+
+      <div class="recover-password">
+        <p>{{ 'customers.login.recover_password_message' | t }}</p>
+
+        <div class="input-wrapper">
+          <label class="input-label" for="login-reset">
+            {{ 'general.general.email' | t }}
+          </label>
+          <input
+            id="login-reset"
+            class="input-field {% if form.errors %}error{% endif %}"
+            type="text"
+            value="{{ form.email }}"
+            name="email"
+            required
+          >
+
+          {% if form.errors %}
+            <p class="error-message">{{ form.errors.messages.form }}</p>
+          {% endif %}
+        </div>
+
+        <div class="input-wrapper">
+          <input
+            class="button"
+            type="submit"
+            value="{{ 'customers.reset_password.submit' | t }}"
+          >
+        </div>
+
+        <p>
+          <a
+            class="toggle-forgetfulness"
+            href="#"
+            data-toggle-passwordform
+          >
+            {{ 'general.general.cancel' | t }}
+          </a>
+        </p>
+      </div>
+    {% endform %}
+
+    <div class="customer-login">
+      {% form 'customer_login', id: 'customer-login-form' %}
+        <input type="hidden" name="checkout_url" value="/account">
+        {% if form.errors %}
+          <p class="error-message banner">{{ 'customers.login.error' | t }}</p>
+        {% endif %}
+
+        <div class="input-wrapper">
+          <label class="input-label" for="login-email">
+            {{ 'general.general.email' | t }}
+          </label>
+          <input
+            id="login-email"
+            class="input-field"
+            type="text"
+            value="{{ form.email }}"
+            name="customer[email]"
+          >
+        </div>
+
+        <div class="input-wrapper">
+          <label class="input-label" for="login-password">{{ 'general.general.password' | t }}</label>
+          <input
+            id="login-password"
+            class="input-field"
+            type="password"
+            name="customer[password]"
+          >
+        </div>
+
+        <div class="input-wrapper">
+          <input
+            class="button"
+            type="submit"
+            value="{{ 'customers.login.submit' | t }}"
+          >
+        </div>
+
+        <p>
+          <a
+            class="toggle-forgetfulness"
+            href="#"
+            data-toggle-passwordform
+          >
+            {{ 'customers.login.forgot_your_password' | t }}
+          </a>
+        </p>
+      {% endform %}
+
+      {% render 'rc-subs-account-link',
+        style: 'padding-bottom: 5px;',
+        linkstyle: 'font-size: 14px;
+              padding: 6px 12px;
+              margin-bottom: 0;
+              display: inline-block;
+              text-decoration: none;
+              text-align: center;
+              white-space: nowrap;
+              vertical-align: middle;
+              -ms-touch-action: manipulation;
+              touch-action: manipulation;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              background-image: none;
+              border: 1px solid transparent;
+              background-color:#dedc00;
+              border-radius: 35px;
+              color:black;
+              font-size: 1.06667rem;
+      			padding: 13px 44px;'
+      %}
+    </div>
+  </article>
+
+  {% if shop.checkout.guest_login %}
+    <div class="guest-checkout">
+      <h2 class="account-subtitle">{{ 'customers.guest_checkout.header' | t }}</h2>
+      {% form 'guest_login' %}
+        <p>{{ 'customers.guest_checkout.header' | t }}</p>
+        <input class="input-field" type="submit" value="{{ 'customers.guest_checkout.submit' | t }}">
+      {% endform %}
+    </div>
+  {% else %}
+    <div class="new-customer">
+      <h2 class="account-subtitle">{{ 'customers.new_customer.header' | t }}</h2>
+      <p>{{ 'customers.new_customer.message' | t }}</p>
+      <a class="button" href="/account/register">{{ 'customers.register.submit' | t }}</a>
+    </div>
+  {% endif %}
+</div>
+
+<script src="{{ 'jquery.min.js' | asset_url }}" defer></script>
+<script src="{{ 'jquery.validate.min.js' | asset_url }}" defer></script>
+<script src="{{ 'additional-methods.js' | asset_url }}" defer></script>
+<script>
+  $("#customer_login").validate({
+    rules: {
+      'customer[email]': {
+          required: true,
+          email: true
+      },
+      'customer[password]': {
+        required: true
+      }
+    }
+  });
+
+  $('form[action="/account/recover"]').validate({
+    rules: {
+      'email': {
+          required: true,
+          email: true
+      }
+    }
+  });
+</script>
+<script>
+  // Select the form using its ID
+    var form = document.getElementById('customer-login-form');
+    form.addEventListener('submit', (e)=> {
+      history.replaceState(null, "", "/")
+    })
+</script>

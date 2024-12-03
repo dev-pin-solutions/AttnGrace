@@ -1,0 +1,83 @@
+{% render 'shogun-products', content: product %}
+{% if product.tags contains "starter kit" or product.tags contains "sample-pack" %}
+<script>
+window.location.href = "/collections/starter-kits";
+</script>
+{% endif %} 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{{product.metafields.shogun.above}}
+
+{% section 'page-product-new' %}
+
+{% comment %}{% section 'new-poduct' %}{% endcomment %}
+{% section 'n-product-features' %}
+{% section 'new-product-videos' %}
+{% section 'new-product-scinsafe' %}
+{% section 'n-product-reviews' %}
+{% section 'n-product-why' %}
+{% section 'new-product-structure' %}
+{% section 'n-product-message' %}
+{% section 'n-product-try' %}
+
+<div id="okendo-reviews-widget-wrapper">
+  <div class="center-wrapper">
+  <h2 class="rev__title  title_2">More reviews from women like you.</h2>
+  {% render 'okendo-reviews-widget', product: product %}
+  </div>
+</div>
+{% section 'n-product-faq' %}
+{% section 'product-recommendations' %}
+<div class="recommended-products-single-container" data-product-recommendations-container></div>
+
+
+
+{{product.metafields.shogun.below}}
+
+{% render 'product_infox' %}
+
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+  </script>
+  <script> 
+    window.liQ = window.liQ || []; 
+    window.liQ.push 
+        ({ 
+          event: "viewContent", 
+          email: "{{ customer.email }}", 
+          contentType: "Product", 
+          name: "{{ product.title | strip_html | strip_newlines | strip | escape }}", 
+          contentId: "{{ product.selected_or_first_available_variant.sku }}" 
+        }); 
+  </script>
+{{product.metafields.shogun.below}}
+<script type="text/javascript">
+	var _learnq = _learnq || [];
+	document.getElementById("AddtoCartBtn").addEventListener('click',function (){
+ 		_learnq.push(['track', 'Added to Cart', item]);
+	});
+</script>
+  

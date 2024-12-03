@@ -1,0 +1,68 @@
+
+<div class="cart-footer" {{ subscription }} - {{ starterkit }}>
+  <div class="cart-totals">
+    <div class="sipping-text">
+      <span>{{ 'cart.general.tax_and_shipping' | t }}</span>
+    </div>
+
+    <div class="cart-action">
+      <a class="button continue" href="{{ shop.url }}/collections">{{ 'cart.general.continue_link' | t }}</a>
+        {% if subscription == 'yes' or starterkit == 'yes' %}
+            <button
+                    type="submit"
+                    name="checkout"
+                    value="{{ 'cart.general.submit' | t }}"
+                    class="button" onclick="reChargeProcessCart();"><span>{{ 'cart.general.submit' | t }}</span>
+            </button>
+
+        {% else %}
+            <button
+                    type="submit"
+                    name="checkout"
+                    value="{{ 'cart.general.submit' | t }}"
+                    class="button" onclick="window.location='/checkout'"
+            ><span>{{ 'cart.general.submit' | t }}</span>
+            </button>
+
+        {% endif %}
+      {% if section.settings.enable_checkout_lock_icon %}
+        {% include 'icon-checkout-lock' %}
+      {% endif %}
+
+
+    </div>
+
+  </div>
+    {% if additional_checkout_buttons %}
+        <div class="dynamic_buttons_center">
+            {{ content_for_additional_checkout_buttons }}
+        </div>
+    {% endif %}
+
+  {% if section.settings.show_shipping_calculator and cart.requires_shipping %}
+    {% assign show_shipping = true %}
+  {% endif %}
+
+  {% if section.settings.enable_cart_notes or show_shipping %}
+    <div class="cart-footer-extras">
+      {% if section.settings.enable_cart_notes %}
+        <div class="cart-notes">
+          <label class="input-label input-label-hidden" for="cart-note-input">{{ 'cart.general.note' | t }}</label>
+          <textarea
+                  class="cart-note input-field"
+                  name="note"
+                  id="cart-note-input"
+                  rows="1"
+                  placeholder="{{ 'cart.general.note' | t }}"
+                  data-cart-notes
+                  aria-label="{{ 'cart.general.note' | t }}">{{ cart.note }}</textarea>
+        </div>
+      {% endif %}
+
+      {% if show_shipping %}
+        {% include 'cart-shipping' %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+</div>

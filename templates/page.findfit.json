@@ -1,0 +1,208 @@
+{
+  "sections": {
+    "hero": {
+      "type": "findfit-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/promo-image_996049f0-f019-44ce-95f1-f690cb6e2624.png",
+        "image_mob": "shopify:\/\/shop_images\/promo-image-mobile.png",
+        "heading": "The BEST pads <br> I’ve ever used — and <br>I’ve tried them all.”",
+        "subheading": "— ANITA V.",
+        "text": "Incontinence care that’s tough on leaks, safe on skin, and gentler on the planet.",
+        "btn-label": "FIND YOUR FIT",
+        "btn-link": "shopify:\/\/pages\/find-your-fit-quiz"
+      }
+    },
+    "product": {
+      "type": "findfit-product",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/upgrade-image.jpg",
+        "heading": "Upgrade your incontinence care.",
+        "subheading": "Attn: Grace outperforms other brands in all the ways that matter most:",
+        "text": "<li>Powerfully absorbent<\/li>\n<li>Keeps you drier, longer<\/li>\n<li>Safe and gentle on your skin<\/li>\n<li>Sustainably sourced, designed and packaged<\/li><li>Contains less conventional plastic<\/li>",
+        "btn-label": "FIND YOUR FIT",
+        "btn-link": "shopify:\/\/pages\/find-your-fit-quiz"
+      }
+    },
+    "partners": {
+      "type": "findfit-partners",
+      "blocks": {
+        "2fc919ec-efe3-4bf8-9aed-e7af53b0e361": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brands-logo1.png"
+          }
+        },
+        "4172671f-3d0f-4414-aa36-9eaf5b6597fa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brands-logo2.png"
+          }
+        },
+        "c7da5343-d4d5-4ef0-bb73-d88441ceb807": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brands-logo3.png"
+          }
+        },
+        "8d7ef4e4-72fa-405f-b377-9aed98c1506d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brands-logo4.png"
+          }
+        }
+      },
+      "block_order": [
+        "2fc919ec-efe3-4bf8-9aed-e7af53b0e361",
+        "4172671f-3d0f-4414-aa36-9eaf5b6597fa",
+        "c7da5343-d4d5-4ef0-bb73-d88441ceb807",
+        "8d7ef4e4-72fa-405f-b377-9aed98c1506d"
+      ],
+      "settings": {}
+    },
+    "imgtext": {
+      "type": "findfit-imgptext",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/difference-image.jpg",
+        "heading": "I cannot believe the difference.”",
+        "subheading": "Attn: Grace makes living with incontinence easier.",
+        "text": "<p>I really didn't know what was happening... The itch and irritation was maddening. For over a year I tried cream after cream, every product imaginable thinking it was hormones, menopause, skin changes. I would wake up in the middle of the night because the itch was so unbearable. WHO KNEW IT WAS THE PADS?? I cannot believe the difference. With Attn: Grace, it's just gone. And the fit and absorbency are so excellent. I just signed up for a subscription, and hope to not be without these pads, EVER.<\/p>",
+        "autor": "— LORI A.",
+        "btn-label": "FIND YOUR FIT",
+        "btn-link": "shopify:\/\/pages\/find-your-fit-quiz"
+      }
+    },
+    "steps": {
+      "type": "findfit-steps",
+      "blocks": {
+        "28805ab6-c440-4ca9-9b59-64dde7852d36": {
+          "type": "text",
+          "settings": {
+            "title": "One-Time Purchase",
+            "text": "Pick the products that suit your needs and check out. No subscription required."
+          }
+        },
+        "a29bd431-add5-45c5-ae12-7fe808076042": {
+          "type": "text",
+          "settings": {
+            "title": "Subscribe & Save",
+            "text": "Get the products you need, as often as you need them, at 10% OFF."
+          }
+        },
+        "5de23aa6-4ee0-4771-945e-4a4a6684d285": {
+          "type": "text",
+          "settings": {
+            "title": "Adjust or Cancel Anytime",
+            "text": "Need to adjust your subscription? No problem. You can pause, modify or cancel your subscription anytime."
+          }
+        }
+      },
+      "block_order": [
+        "28805ab6-c440-4ca9-9b59-64dde7852d36",
+        "a29bd431-add5-45c5-ae12-7fe808076042",
+        "5de23aa6-4ee0-4771-945e-4a4a6684d285"
+      ],
+      "settings": {
+        "heading": "Ordering Made Easy",
+        "btn-label": "FIND YOUR FIT",
+        "btn-link": "shopify:\/\/pages\/find-your-fit"
+      }
+    },
+    "reviews": {
+      "type": "findfit-reviews",
+      "blocks": {
+        "e4c886d2-81c7-4d0e-bed7-39ca9b523d80": {
+          "type": "text",
+          "settings": {
+            "text": "Love that they are so thin but very absorbent. Great product. Never going back to my old brand.",
+            "autor": "— CANDY K."
+          }
+        },
+        "0a8b1b71-3bc8-4940-a35a-0d080e0e77b1": {
+          "type": "text",
+          "settings": {
+            "text": "You've created an invaluable product, and I so appreciate your help and the option to connect with a \"real\" person, right away!",
+            "autor": "— KATHERINE L."
+          }
+        },
+        "aa79cd42-5ff8-43a7-bc9d-bf52a2b85e34": {
+          "type": "text",
+          "settings": {
+            "text": "I'm so much more comfortable and confident with long days wearing these pads! I also have no skin irritation at all, as well as no leaks.",
+            "autor": "— Lynn B."
+          }
+        }
+      },
+      "block_order": [
+        "e4c886d2-81c7-4d0e-bed7-39ca9b523d80",
+        "0a8b1b71-3bc8-4940-a35a-0d080e0e77b1",
+        "aa79cd42-5ff8-43a7-bc9d-bf52a2b85e34"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/happiness-image_042dea56-ec37-4e11-8e5d-1c5081d9fb4a.jpg",
+        "heading": "Why women love Attn: Grace",
+        "btn-label": "FIND YOUR FIT",
+        "btn-link": "shopify:\/\/pages\/find-your-fit-quiz"
+      }
+    },
+    "about": {
+      "type": "findfit-about",
+      "blocks": {
+        "469e0274-7578-4654-917b-133b50b0d1dc": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about-features-1.svg",
+            "text": "We’ll never expose your skin to toxic chemicals."
+          }
+        },
+        "36f4188f-0ba1-41f7-af94-62e16e272cac": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about-features-2.svg",
+            "text": "We’ll always be transparent about our ingredients, sourcing and manufacturing."
+          }
+        },
+        "e04acd88-7a5a-4ac0-98fe-540ddaf58cff": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about-features-3.svg",
+            "text": "We’ll always choose plant-based, renewable ingredients that are naturally better."
+          }
+        }
+      },
+      "block_order": [
+        "469e0274-7578-4654-917b-133b50b0d1dc",
+        "36f4188f-0ba1-41f7-af94-62e16e272cac",
+        "e04acd88-7a5a-4ac0-98fe-540ddaf58cff"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/about-poster.jpg",
+        "videourl": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a178b1644da946d9acab98e2a94ae96e.mp4",
+        "heading": "We outperform other brands in all the ways that matter most.",
+        "subheading": "Made with your wellness and the health of our planet in mind.",
+        "text": "<p><strong>Attn: Grace is a female-founded, Certified B Corporation™, meeting the highest verified standards of social and environmental performance, transparency and accountability.<\/strong><\/p><p>Our products incorporate the cleanest, most sustainable materials<br\/> possible without ever compromising on performance.<\/p>",
+        "btn-label": "FIND YOUR FIT",
+        "btn-link": "shopify:\/\/pages\/find-your-fit-quiz"
+      }
+    },
+    "designed": {
+      "type": "findfit-designed",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/designer-image.jpg",
+        "heading": "Designed by women who get it.",
+        "text": "<p>My mother, Eileen, was struggling to find products for her bladder leaks that didn’t cause more problems than they solved. Turns out, she wasn’t alone. Women everywhere are being let down by conventional incontinence pads that are bulky, uncomfortable, and full of bleaches, dyes, fragrance and other ingredients that irritate our skin.<\/p><p>We knew there had to be a more thoughtful approach to incontinence care, but we also knew that if we wanted a better way to exist in the world, we were going to have to build it ourselves.<br\/> So, we did!<\/p><p>We can’t wait for your to try our game-changing products.<\/p><p><strong>Mia + Alex<\/strong><br\/> CoFounders, Attn: Grace<\/p>",
+        "btn-label": "FIND YOUR FIT",
+        "btn-link": "shopify:\/\/pages\/find-your-fit-quiz"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "product",
+    "partners",
+    "imgtext",
+    "steps",
+    "reviews",
+    "about",
+    "designed"
+  ]
+}

@@ -1,0 +1,95 @@
+<div class="quiz-page">
+    <div class="quiz-main">
+        {% section "quiz-1" %}
+        {% section "quiz-2" %}
+        {% section "quiz-3" %}
+        {% section "quiz-4" %}
+        {% section "register-customer" %}
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"  crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        /* Quiz 1 */
+        $(".answer_for_quiz_1").click(function(){
+            var que1 = $(this).attr("que");
+            localStorage.setItem("question1", que1);
+            localStorage.setItem("answer1", $(this).val());
+            $(".quiz_div").hide();
+            $(".quiz_2").show();
+        });
+        $(".answer_for_quiz_1").each(function(){
+            var ans1 = localStorage.getItem("answer1");
+            if(ans1 && ans1 == $(this).val()){
+                $(this).attr("checked","checked");
+            }
+        });
+        /* End Quiz 1 */
+
+        /* Quiz 2 */
+        $(".answer_for_quiz_2").click(function(){
+            var que2 = $(this).attr("que");
+            localStorage.setItem("question2", que2);
+            localStorage.setItem("answer2", $(this).val());
+            $(".quiz_div").hide();
+            $(".quiz_3").show();
+        });
+        $(".answer_for_quiz_2").each(function(){
+            var ans2 = localStorage.getItem("answer2");
+            if(ans2 && ans2 == $(this).val()){
+                $(this).attr("checked","checked");
+            }
+        });
+        /* End Quiz 1 */
+
+        /* Quiz 3 */
+        $(".answer_for_quiz_3").click(function(){
+            var que3 = $(this).attr("que");
+            localStorage.setItem("question3", que3);
+            localStorage.setItem("answer3", $(this).val());
+            $(".quiz_div").hide();
+            $(".quiz_4").show();
+        });
+        $(".answer_for_quiz_3").each(function(){
+            var ans3 = localStorage.getItem("answer3");
+            if(ans3 && ans3 == $(this).val()){
+                $(this).attr("checked","checked");
+            }
+        });
+        /* End Quiz 3 */
+
+        /* Quiz 4 */
+        $(".answer_for_quiz_4").click(function(){
+            var que4 = $(this).attr("que");
+            localStorage.setItem("question4", que4);
+            localStorage.setItem("answer4", $(this).val());
+            $(".quiz_div").hide();
+            $(".email_register").show();
+            $("#note1").val(localStorage.getItem("answer1"));
+            $("#note2").val(localStorage.getItem("answer2"));
+            $("#note3").val(localStorage.getItem("answer3"));
+            $("#note4").val(localStorage.getItem("answer4"));
+
+        });
+        $(".answer_for_quiz_4").each(function(){
+            var ans4 = localStorage.getItem("answer4");
+            if(ans4 && ans4 == $(this).val()){
+                $(this).attr("checked","checked");
+            }
+        });
+        /* End Quiz 4 */
+        /* back button code */
+        $('.backto3').click(function(){
+            $(".quiz_div").hide();
+            $(".quiz_3").show();
+        });
+        $('.backto2').click(function(){
+            $(".quiz_div").hide();
+            $(".quiz_2").show();
+        });
+        $('.backto1').click(function(){
+            $(".quiz_div").hide();
+            $(".quiz_1").show();
+        });
+    });
+</script>

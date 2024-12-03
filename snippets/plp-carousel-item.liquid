@@ -1,0 +1,290 @@
+{% comment %}
+  @param item Product
+         The product to display.
+
+  @param placeholder String
+         If set, use a Shopify placeholder SVG as the product image.
+
+  @param title String
+         The product title to use. Only used if no `item` is passed.
+{% endcomment %}
+{% comment %} {{ 'style3l.css' | asset_url | stylesheet_tag: preload: true }} {% endcomment %}
+
+{% assign image_size = '512x' %}
+{% assign placeholder_style = placeholder | default: 'image' %}
+{% assign crop_image = null %}
+{% if section.settings.product_grid_image_crop %}
+  {% assign crop_image = 'center' %}
+{% endif %}
+
+{% if item.featured_media %}
+  {%- capture background_style -%}
+    {%
+      include 'rimg-home',
+      img: product.media[0],
+      size: image_size,
+      crop: crop_image,
+      lazy: false,
+      background: true
+    %}
+  {%- endcapture -%}
+{% endif %}
+
+{% comment %} alt version of recommended product with first 3 images static commented out underneath this one{% endcomment %}
+
+<div class="recommended-product">
+  {% include 'product-badge' %}
+  {% if product.id == 6787711434906 %}
+    {% comment %} div below is for rendering first image as full-size carousel (larger than the others), to change to static image for better performance, replace with commented out code underneath it  {% endcomment %}
+    <div class="ultimate-image-container">
+      <div class="page-product__gallery">
+        <div class="product-gallery-slider">
+          {% for media in product.media offset: 3 %}
+            <div class="product-gallery-slider__slide">
+              <div class="product-gallery-slider__item">
+                <a class="product-page-link" href="{{ item.url | within: collection | default: '#' }}">
+                  {{ media | image_url: width: 1024 | image_tag: class: 'ultimate-pad-image' }}
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+          {% for media in product.media limit: 3 %}
+            <div class="product-gallery-slider__slide">
+              <div class="product-gallery-slider__item">
+                <a class="product-page-link" href="{{ item.url | within: collection | default: '#' }}">
+                  {{ media | image_url: width: 1024 | image_tag: class: 'ultimate-pad-image' }}
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% comment %}
+      <div class="ultimate-image-container">
+        <a class="product-page-link ultimate-pad-link" href="{{ item.url | within: collection | default: '#' }}">
+          {% include 'rimg-home', img: product.media[3], lazy: false, class: 'ultimate-pad-image' %}
+        </a>
+      </div>
+    {% endcomment %}
+  {% else %}
+    <figure
+      class="
+        product-list-item-thumbnail
+        {% unless item.featured_media %}
+          product-list-item-thumbnail-placeholder
+        {% endunless %}
+      "
+    >
+      {% comment %} code for having all images as carousels, to have the first 3 products as static images for better performance, comment out the div below and uncomment code underneath it {% endcomment %}
+      <div class="page-product__gallery">
+        <div class="product-gallery-slider">
+          {% for media in product.media %}
+            <div class="product-gallery-slider__slide">
+              <div class="product-gallery-slider__item">
+                <a class="product-page-link" href="{{ item.url | within: collection | default: '#' }}">
+                  {{ media | image_url: width: 1024 | image_tag }}
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% comment %}
+        {% if product.id == 6787711434906 or product.id == 8273980227838 or product.id == 5577577267354 %}
+
+          <a class="product-page-link" href="{{ item.url | within: collection | default: '#' }}">
+            {% if item.featured_media %}
+              {% include 'rimg-home',
+                img: item.featured_media.preview_image,
+                size: image_size,
+                crop: crop_image,
+                lazy: false,
+                class: recommended-product-image
+              %}
+            {% else %}
+              {{ product.media[0] | image_url: width: 1024 | image_tag: preload: true }}
+            {% endif %}
+          </a>
+
+        {% else %}
+          <div class="page-product__gallery">
+            <div class="product-gallery-slider">
+              {% for media in product.media %}
+                <div class="product-gallery-slider__slide">
+                  <div class="product-gallery-slider__item">
+                    <a class="product-page-link" href="{{ item.url | within: collection | default: '#' }}">
+                      {{ media | image_url: width: 1024 | image_tag }}
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      {% endcomment %}
+    </figure>
+  {% endif %}
+  {% if template contains 'search' %}
+    <div class="search-item-product-details">
+      <span class="search-item-product-title">
+        {% if item %}
+          {{ item.title }}
+        {% else %}
+          {{ title }}
+        {% endif %}
+      </span>
+      {% if item.available %}
+        <span class="search-item-product-price">
+          {% if item.price_varies %}{{ 'products.product.from' | t }}{% endif %}
+          <span data-money>{{ item.price_min | money }}</span>
+        </span>
+      {% endif %}
+    </div>
+  {% else %}
+    <div class="recommended-product-desc {% if item.price %}has-price{% endif %}">
+      <h3 class="recommended-product-title">
+        <a href="{{ item.url | within: collection | default: '#' }}">
+          {% if item %}
+            {{ item.title }}
+          {% else %}
+            {{ title }}
+          {% endif %}
+        </a>
+      </h3>
+      <div style="display:flex">
+        <a href="{{ item.url | within: collection | default: '#' }}#okendo-reviews-widget-wrapper">
+          {% include 'okendo-reviews-product-rating-summary', product: product %}
+        </a>
+        {% if product.metafields.custom.category == 'Pads' %}
+          {% render 'fit-and-sizing-modal', product: product, item: item %}
+        {% endif %}
+      </div>
+
+      {% comment %}
+          <div class="recommended-short-desc">
+            {{ product.metafields.global.short_description }}
+          </div>
+        {% else %}
+          <div class="recommended-short-desc">
+            {{ variant.metafields.global.short_description }}
+          </div>
+        {% endif %}
+      {% endcomment %}
+
+      {% include 'product-grid-form' %}
+    </div>
+  {% endif %}
+</div>
+
+{% comment %} alt version of recommended product with first 3 images static {% endcomment %}
+{% comment %}
+  <div class="recommended-product">
+    {% include 'product-badge' %}
+    {% if product.id == 6787711434906 %}
+
+
+        <div class="ultimate-image-container">
+          <a class="product-page-link ultimate-pad-link" href="{{ item.url | within: collection | default: '#' }}">
+            {% include 'rimg-home', img: product.media[3], lazy: false, class: 'ultimate-pad-image' %}
+          </a>
+        </div>
+
+    {% else %}
+      <figure
+        class="
+          product-list-item-thumbnail
+          {% unless item.featured_media %}
+            product-list-item-thumbnail-placeholder
+          {% endunless %}
+        "
+        {{ background_style }}
+      >
+
+
+          {% if product.id == 6787711434906 or product.id == 8273980227838 or product.id == 5577577267354 %}
+
+            <a class="product-page-link" href="{{ item.url | within: collection | default: '#' }}">
+              {% if item.featured_media %}
+                {% include 'rimg-home',
+                  img: item.featured_media.preview_image,
+                  size: image_size,
+                  crop: crop_image,
+                  lazy: false,
+                  class: recommended-product-image
+                %}
+              {% else %}
+                {{ product.media[0] | image_url: width: 1024 | image_tag: preload: true }}
+              {% endif %}
+            </a>
+
+          {% else %}
+            <div class="page-product__gallery">
+              <div class="product-gallery-slider">
+                {% for media in product.media %}
+                  <div class="product-gallery-slider__slide">
+                    <div class="product-gallery-slider__item">
+                      <a class="product-page-link" href="{{ item.url | within: collection | default: '#' }}">
+                        {{ media | image_url: width: 1024 | image_tag }}
+                      </a>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+
+      </figure>
+    {% endif %}
+    {% if template contains 'search' %}
+      <div class="search-item-product-details">
+        <span class="search-item-product-title">
+          {% if item %}
+            {{ item.title }}
+          {% else %}
+            {{ title }}
+          {% endif %}
+        </span>
+        {% if item.available %}
+          <span class="search-item-product-price">
+            {% if item.price_varies %}{{ 'products.product.from' | t }}{% endif %}
+            <span data-money>{{ item.price_min | money }}</span>
+          </span>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="recommended-product-desc {% if item.price %}has-price{% endif %}">
+        <h3 class="recommended-product-title">
+          <a href="{{ item.url | within: collection | default: '#' }}">
+            {% if item %}
+              {{ item.title }}
+            {% else %}
+              {{ title }}
+            {% endif %}
+          </a>
+        </h3>
+        <div style="display:flex">
+          <a href="{{ item.url | within: collection | default: '#' }}#okendo-reviews-widget-wrapper">
+            {% include 'okendo-reviews-product-rating-summary', product: product %}
+          </a>
+          {% if product.metafields.custom.category == 'Pads' %}
+            {% render 'fit-and-sizing-modal', product: product, item: item %}
+          {% endif %}
+        </div>
+
+        {% comment %}
+            <div class="recommended-short-desc">
+              {{ product.metafields.global.short_description }}
+            </div>
+          {% else %}
+            <div class="recommended-short-desc">
+              {{ variant.metafields.global.short_description }}
+            </div>
+          {% endif %}
+        {% endcomment %}
+
+        {% include 'product-grid-form' %}
+      </div>
+    {% endif %}
+  </div>
+{% endcomment %}

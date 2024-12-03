@@ -1,0 +1,225 @@
+{{ 'glossary.css' | asset_url | stylesheet_tag }} 
+
+<div class="glossary-header">
+  <h1>
+    {{ section.settings.page_title }}
+  </h1>
+  <p>
+    {{ section.settings.page_description }}
+  </p>
+</div>
+<div class="glossary-page-width">
+  {% if section.settings.page_subtitle != blank %}
+    <div class="glossary-subheader">
+      <h2>{{ section.settings.page_subtitle }}</h2>
+      <p>{{ section.settings.page_subdescription }}</p>
+    </div>
+  {% endif %}
+</div>
+<div class="devider-line"></div>
+<div class="glossary-page-width">
+  <div class="glossary-nav"></div>
+  <div id="glossary"></div>
+
+  <div class="glossary-footer-wrapper">
+    <div class="glossary-footer">
+      <h3>{{ section.settings.footer_subtitle }}</h3>
+      <p>{{ section.settings.footer_subdescription }}</p>
+    </div>
+    <div class="glossary-footer-social">
+      <p>{{ section.settings.social_title }}</p>
+      <div class="glossary-footer-social-items">
+        <div class="glossary-footer-social-el">
+          {{ section.settings.social_icon_1 }}
+          {% if section.settings.social_link_1 != blank %}
+            <a href="{{ section.settings.social_link_1 }}">
+              {{ section.settings.social_text_1 }}
+            </a>
+          {% else %}
+            <span>
+              {{ section.settings.social_text_1 }}
+            </span>
+          {% endif %}
+        </div>
+        <div class="glossary-footer-social-el">
+          {{ section.settings.social_icon_2 }}
+          {% if section.settings.social_link_2 != blank %}
+            <a href="{{ section.settings.social_link_2 }}">
+              {{ section.settings.social_text_2 }}
+            </a>
+          {% else %}
+            <span>
+              {{ section.settings.social_text_2 }}
+            </span>
+          {% endif %}
+        </div>
+        <div class="glossary-footer-social-el">
+          {{ section.settings.social_icon_3 }}
+          {% if section.settings.social_link_3 != blank %}
+            <a href="{{ section.settings.social_link_3 }}">
+              {{ section.settings.social_text_3 }}
+            </a>
+          {% else %}
+            <span>
+              {{ section.settings.social_text_3 }}
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const glossaryItems = JSON.parse('{{ page.metafields.custom.glossary_items.value | json }}')
+  
+  const groupedItems = glossaryItems.reduce((acc, item) => {
+    const [title, description] = item.split(' | ');
+    const firstLetter = title.trim()[0].toUpperCase();
+    acc[firstLetter] = acc[firstLetter] || [];
+    acc[firstLetter].push({ title, description });
+    return acc;
+  }, {});
+  
+  const sortedKeys = Object.keys(groupedItems).sort();
+  
+  
+  const glossaryHTML = sortedKeys.map((key,i) => {
+    const itemsHTML = groupedItems[key].map(item => `
+        <div  class="glossary-item">
+            <div class="glossary-accordion-title">
+                <span>${item.title}</span>
+                <div class="glossary-accordion-icon-expand">
+                    {% render 'icon-accordion-plus' %}
+                </div>
+                <div style="display:none;" class="glossary-accordion-icon-collapse">
+                    {% render 'icon-accordion-minus' %}
+                </div>
+            </div>
+            <p class="glossary-content">${item.description}</p>
+        </div>
+    `).join('');
+    
+    return `
+        <div id=${key.trim()[0].toUpperCase()} class="glossary-section">
+            <span class="glossary-section-title">${key}</span>
+            <div class="glossary-items-container">${itemsHTML}</div>
+        </div>
+        ${i > 0 ? `<div  onclick='window.scrollTo({ top: 0, behavior: "smooth" })' class='back-to-top'>
+            back to top
+        </div>` : ''}
+     
+    `;
+  }).join('');
+  
+  // Function to check if there are items for a letter
+  const hasItems = letter => groupedItems.hasOwnProperty(letter);
+  
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const navHTML = alphabet.map(letter => `
+    <a href="#${letter}" class="glossary-nav-item ${hasItems(letter) ? '' : 'glossary-disabled-nav-item'}">${letter}</a>
+  `).join('');
+  
+  document.querySelector('.glossary-nav').innerHTML = navHTML;
+  
+  document.getElementById('glossary').innerHTML = glossaryHTML;
+    document.querySelectorAll('.glossary-item').forEach((item)=>{
+        item.addEventListener('click', () => {
+            if(item.querySelector('.glossary-accordion-icon-collapse').style.display === 'none'){
+                item.querySelector('.glossary-content').style.display = 'block'
+                item.querySelector('.glossary-accordion-icon-collapse').style.display = 'block'
+                item.querySelector('.glossary-accordion-icon-expand').style.display = 'none'
+            }else{
+                item.querySelector('.glossary-content').style.display = 'none'
+                item.querySelector('.glossary-accordion-icon-collapse').style.display = 'none'
+                item.querySelector('.glossary-accordion-icon-expand').style.display = 'block'
+            }
+        })
+    })
+</script>
+
+{% schema %}
+  {
+    "name": "Glossary",
+    "settings": [
+      {
+        "type": "text",
+        "id": "page_title",
+        "label": "Page title",
+        "default": "The Incontinence Glossary"
+      },
+      {
+        "type": "textarea",
+        "id": "page_description",
+        "label": "Page description",
+        "default": "Explore the following terms to gain a deeper understanding of incontinence and treatment options that may be available. *"
+      },
+      {
+        "type": "text",
+        "id": "page_subtitle",
+        "label": "Page title",
+        "default": "At Attn: Grace, we believe that knowledge is empowering."
+      },
+      {
+        "type": "textarea",
+        "id": "page_subdescription",
+        "label": "Page subdescription",
+        "default": "Whether you're seeking information for yourself or a loved one, we're here to support you on your journey towards greater confidence and comfort. If you have any questions or need further assistance, our team is here to help."
+      }, {
+        "type": "text",
+        "id": "footer_subtitle",
+        "label": "Footer title",
+        "default": "Disclaimer"
+      }, {
+        "type": "textarea",
+        "id": "footer_subdescription",
+        "label": "Footer subdescription",
+        "default": "* This glossary is for informational purposes only, whether or not it features the advice of physicians and/or medical practitioners. This glossary is not, nor is it intended to be, a substitute for professional medical advice, diagnosis, or treatment and should never be relied upon for specific medical advice. Any views expressed in this article are the views of the experts cited herein and do not necessarily represent the views of Attn: Grace."
+      }, {
+        "type": "text",
+        "id": "social_title",
+        "label": "Footer social title",
+        "default": "Have more questions? Reach out to us by email, phone or text."
+      }, {
+        "type": "html",
+        "id": "social_icon_1",
+        "label": "Social icon 1"
+      }, {
+        "type": "text",
+        "id": "social_text_1",
+        "label": "Social text 1",
+        "default": "hello@attngrace.com"
+      }, {
+        "type": "url",
+        "id": "social_link_1",
+        "label": "Social link 1"
+      }, {
+        "type": "html",
+        "id": "social_icon_2",
+        "label": "Social icon 2"
+      }, {
+        "type": "text",
+        "id": "social_text_2",
+        "label": "Social text 2",
+        "default": "+833 713 92 12"
+      }, {
+        "type": "url",
+        "id": "social_link_2",
+        "label": "Social link 2"
+      }, {
+        "type": "html",
+        "id": "social_icon_3",
+        "label": "Social icon 3"
+      }, {
+        "type": "text",
+        "id": "social_text_3",
+        "label": "Social text 3",
+        "default": "Fill the form"
+      }, {
+        "type": "url",
+        "id": "social_link_3",
+        "label": "Social link 3"
+      }
+    ]
+  }
+{% endschema %}

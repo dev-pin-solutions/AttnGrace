@@ -1,0 +1,335 @@
+
+.devider-line {
+    border-bottom: 1px solid #E0E0E0;
+  }
+  .back-to-top {
+    color: #000;
+    font-family: 'Acre';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: fit-content;
+    margin: 32px auto 0;
+    cursor: pointer;
+    border-bottom: 2px solid #000;
+    user-select: none;
+  }
+  .glossary-footer-wrapper {
+    margin-bottom: 40px;
+  }
+  .glossary-footer-social-el {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 0 28px 32px;
+  }
+  .glossary-footer-social-el:nth-child(2) {
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+  }
+
+  .glossary-footer-social-el a {
+    color: #000;
+    font-family: 'Acre';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+  }
+  .glossary-footer-social-el span {
+    color: #000;
+    font-family: 'Acre';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .glossary-footer-social p {
+    width: 50%;
+    color: #000;
+    font-family: 'BentonModDisp';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 52px;
+    margin: 0;
+  }
+  .glossary-footer-social-items {
+    width: 50%;
+    border-left: 1px solid #E0E0E0;
+
+  }
+  .glossary-footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #E0E0E0;
+  }
+
+  .glossary-active .glossary-content {
+    display: block;
+  }
+  .glossary-content {
+    margin: 0;
+    color: #000;
+    font-family: 'Acre';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    padding: 0 24px 24px;
+    display: none;
+  }
+  .glossary-section {
+    margin-top: 64px;
+  }
+  .glossary-accordion-icon-collapse {
+    border-radius: 24px;
+    background: #FBC9A6;
+    padding: 8px;
+    height: 42px;
+  }
+  .glossary-accordion-icon-expand {
+    border-radius: 24px;
+    background: rgba(184, 173, 168, 0.20);
+    padding: 8px;
+    height: 42px;
+  }
+  .glossary-section-title {
+    color: #000;
+    font-family: 'BentonModDisp';
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+    user-select: none;
+  }
+  .glossary-accordion-title span {
+    color: #000;
+    font-family: 'Acre';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .glossary-accordion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    cursor: pointer;
+  }
+  .glossary-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
+  }
+  .glossary-item {
+    width: 49%;
+    border-bottom: 1px solid #F2EAE6;
+  }
+  .glossary-nav {
+    margin-top: 100px;
+    display: flex;
+    border: 1px solid var(--bg, #F2EAE6);
+    border-radius: 8px;
+    width: fit-content;
+    flex-wrap: wrap;
+  }
+
+
+  .glossary-nav-item {
+    color: #000;
+    font-family: 'Acre';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 33.75px;
+    border-right: 1px solid var(--bg, #F2EAE6);
+    padding: 4.3px 15px;
+    cursor: pointer;
+    transition: 0.4s;
+    text-decoration: none;
+    user-select: none;
+  }
+  .glossary-disabled-nav-item {
+    cursor: unset;
+    color: #B8ADA8;
+  }
+  .glossary-nav-item:hover {
+    transition: 0.4s;
+    background: #F2EAE6;
+  }
+  .glossary-disabled-nav-item:hover {
+    background: transparent;
+  }
+  .glossary-page-width {
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  .glossary-subheader {
+    border-radius: 12px;
+    background: #F2EAE6;
+    display: flex;
+    padding: 52px;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    align-self: stretch;
+    margin: 44px 0;
+  }
+  .glossary-subheader h2 {
+    margin: 0;
+    color: #000;
+    text-align: center;
+    font-family: 'BentonModDisp';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+  .glossary-subheader p {
+    margin: 0;
+    color: #000;
+    font-family: 'Acre';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    /* 150% */
+  }
+
+
+  .glossary-footer {
+    border-radius: 12px 12px 0 0;
+    background: #F2EAE6;
+    display: flex;
+    padding: 52px;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    align-self: stretch;
+    margin-top: 44px;
+  }
+  .glossary-footer h3 {
+    margin: 0;
+    color: #000;
+    text-align: center;
+    font-family: 'BentonModDisp';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+  }
+  .glossary-footer p {
+    margin: 0;
+    color: #000;
+    font-family: 'Acre';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+  }
+  .glossary-header {
+    background-color: #7B7572;
+    padding: 67px 0;
+    margin: 0 auto;
+    background-image: url('data:image/svg+xml, <svg width="445" height="503" viewBox="0 0 445 503" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M171.261 216.885C183.862 237.619 206.01 251.505 231.43 251.505C257.164 251.505 279.513 237.246 292.023 216.083C293.755 214.345 296.24 208.454 296.489 207.57C300.386 198.462 302.644 188.436 302.644 177.833C302.644 160.724 296.775 145.179 287.312 132.676C271.612 102.304 245.368 67.3342 226.327 0C198.14 91.998 168.842 122.488 162.642 159.749C161.214 165.564 160.223 171.557 160.223 177.833C160.223 188.846 162.719 199.199 166.907 208.581C167.591 210.998 169.969 216.46 171.261 216.885Z" fill="%23867F7C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M223.127 424.069C174.256 323.468 82.9222 262.762 0.112532 273.889C-3.66994 388.568 88.2524 504.624 222.81 502.983C372.65 501.155 448.583 375.986 444.87 269.709C341.898 279.677 262.2 320.254 223.127 424.069Z" fill="%23867F7C"/></svg>');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position-y: center;
+    background-position-x: right;
+  }
+  .glossary-header h1 {
+    color: #FFF;
+    font-family: 'BentonModDisp';
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0 0 40px;
+    text-align: center;
+  }
+  .glossary-header p {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Acre';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    max-width: 670px;
+    margin: 0 auto;
+  }
+
+  @media(max-width: 1060px) {
+    .glossary-header p{
+        font-size: 16px;
+    }
+    .glossary-header h1{
+        font-size: 34px;
+        margin: 0 0 20px;
+    }
+    .glossary-header{
+       padding: 44px 15px;
+    }
+    .devider-line {
+      display: none;
+    }
+    .glossary-footer-wrapper {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .glossary-nav {
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 44px;
+    }
+    .glossary-item {
+      width: 100%;
+      margin: 0 15px;
+    }
+    .glossary-section {
+      margin-top: 44px;
+    }
+    .glossary-footer-social {
+      flex-direction: column;
+    }
+    .glossary-footer-social p {
+      width: 100%;
+      padding: 32px;
+    }
+    .glossary-footer-social-items {
+      width: 100%;
+    }
+    .glossary-footer {
+      padding: 32px;
+      align-items: flex-start;
+    }
+    .glossary-subheader h2{
+      font-size: 34px;
+    }
+    .glossary-footer h3{
+      font-size: 34px;
+    }
+    .glossary-subheader {
+      padding: 32px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .glossary-subheader h2 {
+      text-align: start;
+    }
+
+  }

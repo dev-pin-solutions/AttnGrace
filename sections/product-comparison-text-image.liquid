@@ -1,0 +1,69 @@
+<div class="page-width">
+    <div class="product-comparison">
+        <div class="column-wraper">
+            {% for block in section.blocks %}
+                {%- assign block-image = block.settings.column_image -%}
+                <div class="compare-image-column" {% if block.settings.bg_color != blank %}style="background-color:{{ block.settings.bg_color }}"{% endif %}>
+                    {% if block.settings.title != blank %}
+                      <h2 class="title">{{ block.settings.title }}</h2>
+                    {% endif %}
+                    <div class="col-inner">
+                        <div class="compare-product-info">{{ block.settings.text }}</div>
+                        <div class="compare-product-image">
+                        {%
+                            include 'rimg-home'
+                            img: block-image,
+                            size: '2048x2048',
+                            lazy: true,
+                        %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Image with Text",
+  "class": "product-text-image",
+  "max_blocks": 6,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "background-color"
+        },
+        {
+          "type": "html",
+          "id": "text",
+          "label": "content"
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image",
+          "label": "Image"
+        }
+      ]
+	  }
+  ],
+  "presets": [
+    {
+      "category": "Custom Blocks",
+      "name": "Product Image with Text"
+    }
+  ]
+}
+
+{% endschema %}

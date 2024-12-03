@@ -1,0 +1,85 @@
+<section class="home-column-content">
+    <div class="page-width">
+        <div class="column-content-inner">
+            {% if section.settings.heading != blank %}
+                <h2 class="heading">{{ section.settings.heading }}</h2>
+            {% endif %}
+            <div class="content-column-wraper">
+                {% for block in section.blocks %}
+                    {% assign image = block.settings.column_image %}
+                    <div class="content-col">
+                        <div class="col-inner">
+                            <div class="icon">
+                            {%
+                                include 'rimg-home'
+                                img: image,
+                                size: '2048x2048',
+                                lazy: true,
+                            %}
+                            </div>
+                            <h2 class="title">{{ block.settings.title }}</h2>
+                            <p>{{ block.settings.content }}</p>
+                            <a href="{{ block.settings.button_url }}" class="btn">{{ block.settings.button_text }}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <hr></hr>
+    </div>
+</section>
+{% schema %}
+{
+  "name": "3 Column Content",
+  "class": "index-section",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Attn Grace?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+	  "name": "Column",
+	  "settings": [
+		{
+          "type": "image_picker",
+		  "id": "column_image",
+		  "label": "Image"
+		},
+        {
+          "type": "text",
+		  "id": "title",
+		  "label": "Title"
+		},
+        {
+          "type": "textarea",
+		  "id": "content",
+		  "label": "Content"
+		},
+        {
+          "type": "text",
+		  "id": "button_text",
+		  "label": "Button Text"
+		},
+        {
+          "type": "url",
+		  "id": "button_url",
+		  "label": "Button Link"
+		}
+	  ]
+	}
+  ],
+  "presets": [
+    {
+      "category": "Custom Blocks",
+      "name": "3 Column Content"
+    }
+  ]
+}
+
+{% endschema %}

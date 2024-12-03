@@ -1,0 +1,124 @@
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('.select-frequency').forEach(function(element) {
+      element.addEventListener('change', function(event) {
+        event
+          .target
+          .parentNode
+          .querySelector('[name="selling_plan"]')
+          .value = event.target.value;
+      });
+    });
+  });
+  
+  var selectElements = document.querySelectorAll("select.select-frequency");
+  selectElements.forEach(function(selectElement) {
+    var optionToMove = selectElement.querySelector(".lastOption");
+    if (optionToMove) {
+      selectElement.appendChild(optionToMove);
+    }
+  });
+</script>
+<form class=" product-subscription-option" action="/cart/add">
+  <div class="subscription">
+    {% assign float_variant_price = product.variants.first.price | times: 1.0 %}
+    <select
+      name="frequency"
+      id="frequency"
+      class="select-frequency rc_select rc_select__frequency styled replaced">
+      {% assign selected = 'selected="selected"' %}
+      {% assign default_selling_plan = '' %}
+
+      <option value="" class="onetime" {{ selected }}>One-Time - ${{ product.price | money_without_currency }}</option>
+      {% assign recharge_selling_plan_groups = product.selling_plan_groups | where: 'app_id', '294517' %}
+      {% for plan_groups in recharge_selling_plan_groups %}
+        {% for selling_plan in plan_groups.selling_plans %}
+          {% assign price_adjustment = selling_plan.price_adjustments.first %}
+          {% assign selling_plan_discount = price_adjustment.value | times: 1.0 %}
+          {% assign selling_plan_discount_percentage = selling_plan_discount | divided_by: 100 %}
+          {% assign selling_plan_discount_amount_off = float_variant_price | times: selling_plan_discount_percentage %}
+          {% assign label_variant_price = float_variant_price | minus: selling_plan_discount_amount_off %}
+
+          {% assign label_delivery_frequency = selling_plan.name | remove: 'Delivery every ' | remove: 's' | remove: '- 10% off' %}
+
+          <option
+            class="recPrice"
+            value="{{ selling_plan.id }}"
+          >
+            {{ label_delivery_frequency }} - {{ label_variant_price | money }}
+          </option>
+
+        {% endfor %}
+      {% endfor %}
+    </select>
+    <label for="frequency" class="select-arrow"></label>
+   {% unless product.handle == 'ag-muslin-logo-drawcord-bags' %}
+    <input
+      type="hidden"
+      name="selling_plan"
+      value="{{ default_selling_plan }}">
+    {% endunless %}
+    <input
+      type="hidden"
+      id="unit_type"
+      name="unit_type"
+      value="{{ unit }}" />
+    <input
+      type="hidden"
+      id="id"
+      name="id"
+      value="{{ product.variants.first.id }}" />
+    <input
+      type="hidden"
+      id="product_id"
+      name="product_id"
+      value="{{ product.id }}" />
+    <input
+      type="hidden"
+      id="basePrice"
+      name="basePrice"
+      value="{{ product.price | money_without_currency }}" />
+    <input
+      type="hidden"
+      id="discPrice"
+      name="discPrice"
+      value="{{ product.variants.first.metafields.subscriptions.discount_variant_price }}" />
+  </div>
+
+  <div class="subscription-qty">
+    <select id="quantity" name="quantity">
+    {% unless product.title contains 'Wipes' %}
+      <option value="1">QTY 1</option>
+      <option value="2">QTY 2</option>
+      <option value="3">QTY 3</option>
+    {% endunless %}
+      <option value="4">QTY 4</option>
+      <option value="5">QTY 5</option>
+    {% if product.title contains 'Wipes' %}
+      <option value="6">QTY 6</option>
+      <option value="7">QTY 7</option>
+      <option value="8">QTY 8</option>
+      <option value="9">QTY 9</option>
+      <option value="10">QTY 10</option>
+    {% endif %}
+    </select>
+    <label for="quantity" class="select-arrow">
+      <img src="{{ 'select-bg.png' | asset_url }}" />
+    </label>
+  </div>
+  <div class="subscription-button">
+    <input
+      type="submit"
+      class="button product-add-available add-to-cart-list"
+      value="{% if product.tags contains 'preorder' %}Pre-Order{% elsif product.tags contains 'backorder' %}Backorder{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}"
+      {% if product.selected_or_first_available_variant.inventory_quantity <= 0 %}style="display: none;"{% endif %} />
+  </div>
+  {% if product.selected_or_first_available_variant.inventory_quantity <= 0 %}
+    <a
+      href="#"
+      class="BIS_trigger"
+      data-product-data='{{ item | json | escape }}'>
+      Notify Me When Available
+    </a>
+  {% endif %}
+</form>

@@ -1,0 +1,38 @@
+.qr-video-section .qr-video-wrapper {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	overflow: hidden;
+	padding-top: 44.25%;
+}
+.qr-video-section .qr-video-wrapper .responsive-iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	border: none;    
+}
+.qr-video-section .qr-content-wrapper {
+	background-image: linear-gradient(#fff, #f2ebe7);
+	padding: 25px 0;
+}
+.qr-video-section .qr-content-wrapper h1 {
+	margin: 0;
+	font-size: 60px;
+	line-height: 70px;
+	font-family: 'BentonMod';
+	text-align: center;
+	width: 67%;
+	min-width: 320px;
+	margin: auto;
+	font-weight: 400;
+}
+@media screen and (max-width: 768px) {
+	.qr-video-section .qr-content-wrapper h1 {
+		font-size: 30px;
+		line-height: 35px;
+	}
+}

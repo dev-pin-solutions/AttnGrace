@@ -1,0 +1,63 @@
+<section class="reasons-discount">
+  <div class='center-wrapper'>
+      <div class="reasons-discount__body">
+          <div class="reasons-discount__leftside">
+              <div class="reasons-discount__number">{{ section.settings.heading }}</div>
+              <div class="reasons-discount__title">{{ section.settings.subheading }}</div>
+          </div>
+          <div class="reasons-discount__rightside">
+              <div class="reasons-discount__text">{{section.settings.text}}</div>
+              <a href="{{ section.settings.btn-link }}" class="reasons-discount__btn btn">{{ section.settings.btn-label }}</a>
+              <div class="promo__note">{{section.settings.subtext}}</div>
+          </div>
+      </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Listicle Discount",
+    "settings": [
+      {
+        "type" : "text",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "30% OFF"
+      },
+       {
+        "type" : "text",
+        "id" : "subheading",
+        "label" : "SubHeading",
+        "default" : "your first order."
+      },
+      {
+        "type" : "richtext",
+        "id" : "text",
+        "label" : "Text",
+        "default" : "<p></p>"
+      },     
+       {
+            "type" : "text",
+            "id" : "btn-label",
+            "label" : "Button Label",
+            "default"   : "GET MY DISCOUNT"
+        },
+        {
+            "type" : "url",
+            "id" : "btn-link",
+            "label" : "Button Link"
+        },
+      {
+            "type" : "text",
+            "id" : "subtext",
+            "label" : "SubText",
+            "default" : "*Discount automatically applied at checkout"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

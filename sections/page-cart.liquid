@@ -1,0 +1,106 @@
+{% assign subscription = "no" %}
+{% assign starterkit = 'no' %}
+{% for item in cart.items %}
+  {% if item.product.tags contains 'starter kit' %}
+    {% assign starterkit = 'yes' %}
+  {% endif %}
+  {% for property in item.properties %}
+    {% if property.first == "subscription_id" %}
+      {% assign subscription = "yes" %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+<div class="cart-content">
+  <div data-cart-message></div>
+
+  {% include 'cart-form', in_sidebar: false %}
+</div>
+{% assign cartproducts = "" %}
+{% for item in cart.items %}
+  {% assign cartproducts = cartproducts | append: ',' | append: item.product.id %}
+{% endfor %}
+{% assign counter = 'no' %}
+{% if cart.item_count > 0 %}
+  {% if section.settings.recommended_products %}
+    <div class="cart-product-container" id="cart-product-container">
+      <h2 class="cart-recommended-products-title">You may also consider:</h2>
+    </div>
+    <div class="recommended-products-single-container">
+      <div class="recommended-products-items">
+        {% for product in collections[section.settings.recommended_products].products %}
+          {% unless cartproducts contains product.id %}
+          {% assign counter = 'yes' %}
+            <div class="recommended-product">
+              <a  href="{{ product.url | append: '?variant=' | append: product.first_available_variant.id }}">
+                <noscript data-rimg-noscript="">
+                  <img loading="lazy" src="{{ product.featured_image | img_url: 'master' }}"
+                       alt="{{ product.title }}"
+                       data-rimg="noscript"
+                       srcset="{{ product.featured_image | img_url: 'master' }}"
+                       class="recommended-product-image">
+                </noscript>
+                <img loading="lazy" src="{{ product.featured_image | img_url: 'master' }}" class="recommended-product-image" alt="{{ product.title }}" >
+              </a>
+              <div class="recommended-product-desc">
+                <h3 class="recommended-product-title">{{ product.title }}</h3>
+                {% render 'okendo-reviews-product-rating-summary', product: product %}
+                <span class="price"> from <span data-money="">{{ product.price_min | money  }}</span></span>
+              </div>
+              <p style=" text-align:center">
+                <input type="button" onclick="window.location.href = '/cart/add?id={{ product.first_available_variant.id }}'" style="width:80%; " class="button product-add-available" value="Add to cart" style="visibility: visible;"></p>
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
+{% if counter == 'no' %}
+  <script>
+    document.getElementById('cart-product-container').style.display = 'none';
+  </script>
+{% endif %}
+<script>
+  Theme.cart = {
+    itemRemoved: {{ 'cart.general.item_removed' | t: title: '** title **' | json }},
+    itemStock: {{ 'cart.general.item_stock' | t: quantity: '** quantity **', title: '** title **' | json }}
+  };
+</script>
+
+{% schema %}
+  {
+  "name": "Cart page",
+  "settings": [
+  {
+  "type": "checkbox",
+  "id": "enable_checkout_lock_icon",
+  "label": "Show lock icon on checkout button",
+  "default": false
+  },
+  {
+  "type": "checkbox",
+  "id": "enable_cart_notes",
+  "label": "Enable order notes"
+  },
+  {
+  "type": "checkbox",
+  "id": "show_shipping_calculator",
+  "label": "Show shipping rates calculator"
+  },
+  {
+  "type": "text",
+  "id": "shipping_calculator_default_country",
+  "label": "Default country selection",
+  "default": "United States",
+  "info": "If your customer is logged-in, the country in their default shipping address will be selected. If you are not sure about the spelling to use here, refer to the first checkout page."
+  },
+  {
+  "type": "collection",
+  "id": "recommended_products",
+  "label": "Select Recommended Products Collection"
+  }
+  ]
+  }
+
+{% endschema %}

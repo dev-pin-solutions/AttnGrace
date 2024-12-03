@@ -1,0 +1,86 @@
+
+<div class="quiz-page quiz-recommended">
+    <div class="quiz-main">
+        <div class="page-header"><h1>Recommended for you:</h1></div>
+        <div class="quiz-header">
+            <h2 class="main-title">Find Your Fit Quiz</h2>
+        </div>
+        <div class="recommended-products quiz-recommended">
+            <h2 class="sec-title">Recommended for you:</h2>
+            <div class="recommended-products-items">
+                {% for product in collections.quiz-recommendation.products %}
+                    {% include 'quiz-list-item', item: product %}
+                {% endfor %}
+            </div>
+        </div>
+        {% section "quiz-testimonials" %}        
+    </div>
+    {% section "quiz-text-slider" %}
+</div>
+<div class="quiz-bottom">
+    {% section "quiz-as-seen-in" %}
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"  crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        var q1 = localStorage.getItem("answer1");
+        var q2 = localStorage.getItem("answer2");
+        var q3 = localStorage.getItem("answer3");
+        var q4 = localStorage.getItem("answer4");
+
+        /* Light */
+        if(q2 == "Light" && q3 == "Here and there"){
+            $(".product_4627731120267").show(); // hybrid
+            $(".product_4627715981451").show(); // wipes
+            $(".product_4627715850379").show(); // liners
+        }
+        if(q2 == "Light" && q3 == "All the time"){
+            $(".product_4627731120267").show(); // hybrid
+            $(".product_4627715981451").show(); // wipes
+            $(".product_4627715850379").show(); // liners
+        }
+        if(q2 == "Light" && q3 == "When I sleep"){
+            $(".product_5577577267354").show(); // heavy
+            $(".product_4627715981451").show(); // wipes
+            $(".product_5577577070746").show(); // Moderate
+        }
+        /* Medium */
+        if(q2 == "Medium" && q3 == "All the time"){
+            $(".product_5577577267354").show(); // heavy
+            $(".product_4627715981451").show(); // wipes
+            $(".product_5577577070746").show(); // Moderate
+            $(".product_8273980227838").show()
+        }
+        if(q2 == "Medium" && q3 == "Here and there"){
+            $(".product_4627731120267").show(); // hybrid
+            $(".product_4627715981451").show(); // wipes
+            $(".product_5577577070746").show(); // Moderate
+        }
+        if(q2 == "Medium" && q3 == "When I sleep"){
+            $(".product_5577577267354").show(); // heavy
+            $(".product_4627715981451").show(); // wipes
+            $(".product_5577577070746").show(); // Moderate
+            $(".product_8273980227838").show()
+        }
+        /* Heavy */
+        if(q2 == "Heavy" && q3 == "All the time"){
+            $(".product_5577577267354").show(); // heavy
+            $(".product_4627715981451").show(); // wipes
+            $(".product_4769982972043").show(); // briefs
+            $(".product_6787711434906").show(); // ultimate
+            $(".product_8273980227838").show()
+        }
+        if(q2 == "Heavy" && q3 == "Here and there"){
+            $(".product_5577577267354").show(); // heavy
+            $(".product_4627715981451").show(); // wipes
+            $(".product_5577577070746").show(); // Moderate
+        }
+        if(q2 == "Heavy" && q3 == "When I sleep"){
+            $(".product_5577577267354").show(); // heavy
+            $(".product_4627715981451").show(); // wipes
+            $(".product_4769982972043").show(); // briefs
+            // $(".product_6787711434906").show(); // ultimate
+            $(".product_8273980227838").show()
+        }
+    });
+</script>

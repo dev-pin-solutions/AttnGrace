@@ -1,0 +1,140 @@
+<link rel="stylesheet" href="{{ 'attn-grace-difference.css' | asset_url }}" media="print" onload="this.media='all'">
+<section class="attn-grace-difference-section" data-section-id="{{ section.id }}">
+  <div class="attn-grace-difference-inner">
+    <div class="attn-grace-header">
+      {% if section.settings.title != blank %}
+        <h2 class="title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.subtext != blank %}
+        <div class="subtext">{{ section.settings.subtext }}</div>
+      {% endif %}
+    </div>
+    <div class="attn-grace-difference-wrapper">
+      <div class="chart-grid-second-column"></div>
+      <div class="chart-grid-wrapper">
+        {% for block in section.blocks %}
+          {% if block.type == 'grace-difference-header' %}
+            <div class="chart-row-wrapper header">
+              <div class="first-column"></div>
+              <div class="second-column">
+                {% if block.settings.grace_image != blank %}
+                  <img src="{{ block.settings.grace_image | img_url: 'original' }}" loading="lazy" />
+                {% endif %}
+                <span class="grace-title">{{ block.settings.grace_title }}</span>
+              </div>
+              <div class="third-column">{{ block.settings.other_title }}</div>
+            </div>
+          {% else block.type == 'grace-difference-content' %}
+            <div class="chart-row-wrapper question-answer">
+              <div class="first-column">
+                <div class="first-column-title">
+                  {% if block.settings.question_image != blank %}
+                    <img src="{{ block.settings.question_image | img_url: 'original' }}" loading="lazy" />
+                  {% else %}
+                    {{ block.settings.question }}
+                  {% endif %}
+                </div>
+              </div>
+              <div class="second-column">
+                {% if block.settings.attn_answer == 'yes' %}
+                  {% render 'checkmark' icon: 'checkmark' %}
+                {% else %}
+                  {% render 'checkmark' icon: 'cross' %}
+                {% endif %}
+              </div>
+              <div class="third-column">
+                {% if block.settings.other_answer == 'yes' %}
+                  {% render 'checkmark' icon: 'checkmark' %}
+                {% else %}
+                  {% render 'checkmark' icon: 'cross' %}
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Attn Grace Difference",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "The Attn: Grace Difference"
+      }, {
+        "type": "richtext",
+        "id": "subtext",
+        "label": "Sub Text",
+        "default": "<p>We're proud to be defining <strong>the gold standard</strong> in incontinence care</p>"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Grace Difference Header",
+        "type": "grace-difference-header",
+        "settings": [
+          {
+            "type": "text",
+            "id": "grace_title",
+            "label": "Attn Grace Title"
+          }, {
+            "type": "image_picker",
+            "id": "grace_image",
+            "label": "Attn Grace Image"
+          }, {
+            "type": "text",
+            "id": "other_title",
+            "label": "Other Title",
+            "default": "Other Brands"
+          }
+        ]
+      }, {
+        "name": "Grace Difference Content",
+        "type": "grace-difference-content",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          }, {
+            "type": "image_picker",
+            "id": "question_image",
+            "label": "Question in Image"
+          }, {
+            "type": "select",
+            "id": "attn_answer",
+            "label": "Select Attn answer",
+            "default": "yes",
+            "options": [
+              {
+                "label": "Yes",
+                "value": "yes"
+              }, {
+                "label": "No",
+                "value": "no"
+              }
+            ]
+          }, {
+            "type": "select",
+            "id": "other_answer",
+            "label": "Select Other answer",
+            "default": "no",
+            "options": [
+              {
+                "label": "Yes",
+                "value": "yes"
+              }, {
+                "label": "No",
+                "value": "no"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

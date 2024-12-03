@@ -1,0 +1,234 @@
+{% comment %} added styles for new homepage quote {% endcomment %}
+
+<div class="home-slider">
+  <div class="item-slide">
+    {% for block in section.blocks %}
+      {% assign carouselDesktopImage = block.settings.background_image | image_url: width: 1600, format: 'pjpg' %}
+      {% assign carouselMobileImage = block.settings.mobile_background_image| image_url: width: 650, height: 1050, crop: 'center' %}
+      <article class="slideshow-slide slideshow-slide-{{ section.id }}">
+        <picture>
+          <source
+            width="650"
+            height="1050"
+            srcset="{{ carouselMobileImage }}"
+            media="(max-width:767px)"
+          >
+                   {% comment %}
+
+          <img
+            width="{{ block.settings.background_image.width }}"
+            height="{{ block.settings.background_image.height }}"
+            src="{{ carouselDesktopImage }}"
+            alt="{{ block.settings.background_image.alt }}"
+            class="slideshow-slide__image"
+            loading="eager"
+            fetchPriority="high"
+          >
+           {% endcomment %}
+            {{ carouselDesktopImage | image_url: width: 2000 | image_tag: preload: true, alt: "Hero Image", class: "slideshow-slide__image", rel: "preload" }}
+        </picture>
+        <div class="slide-content">
+          {% if block.settings.heading != blank %}
+            <!-- <h1 class="heading">{{ block.settings.heading }}</h1> -->
+
+            <h1 class="heading" id="quote-text">
+              “The best pad ever - and I’ve tried them all!” <span class="quote-name"> - Shannon R.</span>
+            </h1>
+          {% endif %}
+          {% if block.settings.subheading != blank %}
+            <p class="subheading">{{ block.settings.subheading }}</p>
+          {% endif %}
+          {% if block.settings.short_description != blank %}
+            <p class="short-description">{{ block.settings.short_description }}</p>
+          {% endif %}
+          <div class="btn-wrapper">
+            {% if block.settings.button_link != blank and block.settings.button_label != blank %}
+              <a class="button small-button first-btn" href="{{ block.settings.button_link }}">
+                {{- block.settings.button_label -}}
+              </a>
+            {% endif %}
+            {% if block.settings.button_link2 != blank and block.settings.button_label2 != blank %}
+              <a aria-label="Learn About QR Code" class="button small-button second-btn" href="{{ block.settings.button_link2 }}">
+                {{- block.settings.button_label2 -}}
+                <span style="font-size: 0;">Learn About QR Code</span>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+        {% if block.settings.good_housekeeping != blank %}
+          <div class="housekeeping-container">
+            <img
+              src="{{ block.settings.good_housekeeping | img_url: 'master' }}"
+              alt="good housekeeping"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</div>
+<style>
+  #quote-text {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+
+  .quote-name {
+    display: block;
+    font-size: 22px;
+    font-family: Acre;
+    text-wrap: nowrap;
+  }
+  /* mobile  */
+  @media screen and (max-width: 900px){
+    .slideshow-slide .slide-content {
+     top: 1rem;
+    }
+
+   .slide-content > .heading, #quote-text {
+      font-size: 28px;
+      line-height: 30px;
+    }
+
+    .quote-name {
+      font-size: 18px;
+    }
+
+  }
+  @media screen and (min-width: 1500px){
+    #quote-text {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+
+    .heading {
+      width: 43% !important;
+    }
+  }
+
+</style>
+<style>
+   .housekeeping-container {
+    position: absolute;
+    right: 80px;
+    bottom: 60px;
+   }
+  .housekeeping-container img {
+    max-width: 220px;
+    display: none;
+  }
+
+  @media(max-width:768px){
+    .housekeeping-container {
+      right: 20px;
+      bottom: 20px;
+    }
+    .housekeeping-container img {
+        display: none;
+        max-width: 140px;
+    }
+  }
+  .slideshow-slide-{{ section.id }} .flickity-page-dots .dot.is-paused:before {
+    animation: flickity-progress {{ section.settings.slide_autoplay }}s linear;
+  }
+  {% for block in section.blocks %}
+    .slideshow-slide-{{ section.id }} {
+      background-color: {{ block.settings.background_color }};
+    }
+  {% endfor %}
+</style>
+
+{% schema %}
+ {
+  "name": "HeroSection",
+  "class": "home-hero",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#EBE2D8"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Desktop Background Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_background_image",
+          "label": "Mobile Background Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "good_housekeeping",
+          "label": "Good Housekeeping Seal Logo: "
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading",
+          "default": "Slide heading"
+        },
+        {
+          "id": "subheading",
+          "type": "text",
+          "label": "Subheading"
+        },
+        {
+          "id": "short_description",
+          "type": "text",
+          "label": "Short Description"
+        },
+        {
+          "id": "button_link",
+          "type": "url",
+          "label": "Button link"
+        },
+        {
+          "id": "button_label",
+          "type": "text",
+          "label": "Button label",
+          "default": "Slide link"
+        },
+        {
+          "id": "button_link2",
+          "type": "url",
+          "label": "Button 2 link"
+        },
+        {
+          "id": "button_label2",
+          "type": "text",
+          "label": "Button 2 label",
+          "default": "Slide link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "category": "Image",
+      "name": "HeroSection",
+      "blocks": [
+
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

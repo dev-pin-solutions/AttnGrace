@@ -1,0 +1,76 @@
+<link
+  rel="stylesheet"
+  href="{{ 'collection-banner.css' | asset_url }}"
+>
+<style>
+  .good_housekeeping_seal_logo {
+    position: absolute;
+    right: 20px;
+    top: -30px
+  }
+  .good_housekeeping_seal_logo img {
+    display: none;
+    width: 100%;
+    max-width: 190px;
+  }
+  @media(max-width: 1280px) {
+    .good_housekeeping_seal_logo {
+      top: -50px
+    }
+    .good_housekeeping_seal_logo img {
+      max-width: 120px;
+    }
+  }
+  .collection-banner .collection-banner__content-wrapper {
+    position: relative;
+    background-color: {{ section.settings.banner_color }};
+  }
+  .collection-banner__content-wrapper .collection-banner__heading {
+    z-index: 1;
+    position: relative;
+  }
+</style>
+<section class="collection-banner">
+  <div class="collection-banner__content-wrapper">
+    {% if section.settings.heading != blank %}
+      <h2 class="collection-banner__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.subheading != blank %}
+      <p class="collection-banner__subheading">{{ section.settings.subheading }}</p>
+    {% endif %}
+    <div class="good_housekeeping_seal_logo">
+      {% if collection.metafields.custom.good_housekeeping_seal_logo != blank %}
+        <img
+          src="{{ collection.metafields.custom.good_housekeeping_seal_logo | img_url: 'master'}}"
+          alt="good_housekeeping_seal_logo"
+        >
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Collection Banner",
+  "settings": [
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading"
+    }, {
+      "id": "subheading",
+      "type": "text",
+      "label": "Subheading"
+    }, {
+      "id": "banner_color",
+      "type": "color",
+      "label": "Banner Background Color"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Collection",
+      "name": "Collection Banner"
+    }
+  ]
+}
+{% endschema %}

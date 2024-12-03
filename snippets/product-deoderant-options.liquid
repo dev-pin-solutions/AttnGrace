@@ -1,0 +1,135 @@
+{% assign has_variants = false %}
+{% if product.available and product.has_only_default_variant == false %}
+    {% assign has_variants = true %}
+{% endif %}
+
+{% assign selected_variant_outofstock = false %}
+{% if product.selected_or_first_available_variant.available == false %}
+    {% assign selected_variant_outofstock = true %}
+{% endif %}
+<div
+        class="
+    product-form
+    {% if has_variants %} product-form-has-variants{% endif %}{% if selected_variant_outofstock %} product-form-selected-variant-outofstock{% endif %}{% if product.handle contains "drawcord-bags" %} normal-product-layout{% else %} new-product-layout{% endif %}{% if product.title contains "Briefs" %} briefs-product-layout{% endif %}"
+>
+    <form method="post" action="/cart/add" id="product_form_{{ product.id }}" accept-charset="UTF-8" class="111 shopify-product-form" enctype="multipart/form-data">
+
+        <div class="product-options">
+            <select id="product-select-{{ product.id }}"
+                    name="id"
+                    class="product-variants product-variants-main-select"
+                    data-product-variants
+                    data-product="{{ product | json | escape }}">
+
+                {% for variant in product.variants %}
+                    <option
+                            {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
+                            value="{{ variant.id }}">
+                        {{ variant.title }} - {{ variant.price | money }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            {% include 'product-option', current_option: option, selected_variant: variant %}
+			
+            
+        </div>
+
+        <a
+                href="#"
+                data-product-extended-open
+                class="button product-add product-add-select">
+            {{ 'products.product.select_options' | t }}
+        </a>
+
+        {% if product.available %}
+            {% unless product.handle contains 'drawcord-bags' %}
+			{% if product.handle == "wipes" %}
+            {% include 'subscription-product-common' , minm_quantity: 4 %}
+            {% else %}
+            {% include 'subscription-product-common' , minm_quantity: 1 %}
+            {% endif %}
+            {% endunless %}
+        {% endif %}
+
+        <div class="product-add-wrapper">
+        <div class="product-add">
+            <input id="AddtoCartBtn"
+                    type="submit"
+                    class="button product-add-available"
+                    value="{% if product.tags contains "preorder" %}Pre-Order{% elsif product.tags contains "backorder" %}Backorder{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}"/>
+
+            <input
+                    type="submit"
+                    class="button product-add-soldout"
+                    disabled
+                    value="{{ 'products.product.out_of_stock' | t }}"/>
+
+            <input
+                    type="button"
+                    class="button product-add-unavailable"
+                    disabled
+                    value="{{ 'products.product.unavailable' | t }}"/>
+
+            {% if section.settings.show_spb %}
+                {{ form | payment_button }}
+            {% endif %}
+        </div>
+        </div>
+        {% if product.selected_or_first_available_variant.inventory_quantity <= 0  %}
+        <a href="#" id="BIS_trigger" type="button" data-variant-id="{{ product.selected_or_first_available_variant.id }}">Notify Me When Available</a>
+        {% endif %}
+        <div class="product-bottom-info">
+            {% unless product.handle contains 'drawcord-bags' %}
+			{% if product.handle != "wipes" %}
+				<span class="product-add-price"></span>
+			{% endif %}
+            {% endunless %}
+        </div>
+        {% for tag in product.tags %}
+            {% if tag contains "preorder" %}
+                {% assign preordermsg = tag | remove: "preorder" %}
+                <input id="preorder" type="hidden" name="properties[Pre-Order]" value="{{ product.metafields.global.preorder }}">
+                <div class="preordermsg">{{ product.metafields.global.preorder }}</div>
+            {% endif %}
+      		{% if tag contains "backorder" %}
+                <input id="preorder" type="hidden" name="properties[Pre-Order]" value="{{ product.metafields.global.Backorder }}">
+                <div class="preordermsg">{{ product.metafields.global.Backorder }}</div>
+            {% endif %}
+        {% endfor %}
+    </form>
+    <div class="outofstock">
+      {% if product.metafields.global.outofstock %}
+      <p>{{ product.metafields.global.outofstock }}</p>
+      {% endif %}
+    </div>
+
+    <div class="product-featured-block">
+        <ul>
+          <li><img src="{{ 'pfp-package.svg' | asset_url }}" alt="{{ 'products.product.featured_text1' | t }}" > <p>{{ 'products.product.featured_text1' | t }}</p></li>
+          <li><img src="{{ 'pdp-cancel.svg' | asset_url }}" alt="{{ 'products.product.featured_text2' | t | newline_to_br }}" > <p>{{ 'products.product.featured_text2' | t | newline_to_br }}</p></li>
+          <li><img src="{{ 'pdp-truck.svg' | asset_url }}" alt="{{ 'products.product.featured_text3' | t | newline_to_br }}" > <p>{{ 'products.product.featured_text3' | t | newline_to_br }}</p></li>
+          <li><img src="{{ 'pdp-clock.svg' | asset_url }}" alt="{{ 'products.product.featured_text4' | t | newline_to_br }}" > <p>{{ 'products.product.featured_text4' | t | newline_to_br }}</p></li>
+        </ul>
+    </div>
+    
+    <div class="callout">
+        {% render 'deo-callout' %}
+    </div>
+	<div class="about_content">
+        <div class="testimonial_logo">
+            <img loading="lazy" src="{{ 'forwomen.svg' | asset_url }}" alt="for women by women" > 
+        </div>
+        <div class="testimonial_content">
+		    {{ product.metafields.global.testimonial_content }}
+        </div>
+	</div>
+</div>
+<style>
+    .preordermsg {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+</style>

@@ -1,0 +1,45 @@
+.qr-richtext-section {
+  padding: 120px 0;
+  background-image: linear-gradient(#f2ebe7, white);
+}
+.qr-richtext-section .qr-richtext-wrapper {
+  max-width: 575px;
+  margin: auto;
+  text-align: center;
+}
+.qr-richtext-section h3 {
+  margin: 0;
+  font-family: 'Acre';
+  color: #000;
+  font-size: 31px;
+  line-height: 47px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  font-weight: 300;
+  text-align: center;
+}
+.qr-richtext-section .subtext p {
+  font-family: 'Acre';
+  color: #000;
+  font-size: 18px;
+  line-height: 39px;
+}
+.qr-richtext-section .subtext p a {
+  font-weight: 600; 
+}
+@media screen and (max-width: 768px) {
+  .qr-richtext-section {
+    padding: 100px 0;
+  }
+  .qr-richtext-section .qr-richtext-wrapper {
+    width: 92%;
+  }
+  .qr-richtext-section h3 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .qr-richtext-section .subtext p {
+    font-size: 16px;
+    line-height: 35px;
+  }
+}

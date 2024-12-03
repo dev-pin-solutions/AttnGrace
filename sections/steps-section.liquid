@@ -1,0 +1,146 @@
+<div class="step-items">
+	<div class="step-item image-align-{{section.settings.step1_position}}">
+		<div class="step-image">
+			<img loading="lazy" src="{{section.settings.step1_image | img_url: 'master', scale: 2 }}" alt="{% if section.settings.step1_image.alt != blank %}{{ section.settings.step1_image.alt }}{% else %}{{section.settings.step1_title}}{% endif %}" />
+		</div>
+
+		<div class="step-content">
+			<h3>{{ section.settings.step1_title }}</h3>
+			<div class="devider">Devider</div>
+			{{ section.settings.step1_description }}
+		</div>
+	</div>
+	
+	<div class="step-item image-align-{{section.settings.step2_position}}">
+		<div class="step-image">
+			<img loading="lazy" src="{{section.settings.step2_image | img_url: 'master', scale: 2 }}" alt="{% if section.settings.step2_image.alt != blank %}{{ section.settings.step2_image.alt }}{% else %}{{section.settings.step2_title}}{% endif %}" />
+		</div>
+
+		<div class="step-content">
+			<h3>{{ section.settings.step2_title }}</h3>
+			<div class="devider">Devider</div>
+			{{ section.settings.step2_description }}
+		</div>
+	</div>
+	
+	<div class="step-item image-align-{{section.settings.step3_position}}">
+		<div class="step-image">
+			<img loading="lazy" src="{{section.settings.step3_image | img_url: 'master', scale: 2 }}" alt="{% if section.settings.step3_image.alt != blank %}{{ section.settings.step3_image.alt }}{% else %}{{section.settings.step3_title}}{% endif %}" />
+		</div>
+
+		<div class="step-content">
+			<h3>{{ section.settings.step3_title }}</h3>
+			<div class="devider">Devider</div>
+			{{ section.settings.step3_description }}
+		</div>
+	</div>
+</div>
+{% schema %}
+  {
+    "name": "3 Steps Section",
+    "class": "index-section step-section",
+
+    "settings": [
+      {
+        "type": "header",
+        "content": "Step1"
+      },
+      {
+        "type": "image_picker",
+        "id": "step1_image",
+        "label": "Step1 Image"
+      },
+	  {
+        "type": "select",
+        "id": "step1_position",
+        "default": "left",
+        "options": [
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+        ],
+        "label": "Step1 Image Position"
+      },
+      {
+        "type": "text",
+        "id": "step1_title",
+        "default": "Image Title",
+        "label": "Step1 Title"
+      },
+      {
+        "type": "richtext",
+        "id": "step1_description",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "label": "Step1 Description"
+      },
+	  {
+        "type": "header",
+        "content": "Step2"
+      },
+      {
+        "type": "image_picker",
+        "id": "step2_image",
+        "label": "Step2 Image"
+      },
+	  {
+        "type": "select",
+        "id": "step2_position",
+        "default": "left",
+        "options": [
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+        ],
+        "label": "Step2 Image Position"
+      },
+      {
+        "type": "text",
+        "id": "step2_title",
+        "default": "Image Title",
+        "label": "Step2 Title"
+      },
+      {
+        "type": "richtext",
+        "id": "step2_description",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "label": "Step2 Description"
+      },
+	  {
+        "type": "header",
+        "content": "Step3"
+      },
+      {
+        "type": "image_picker",
+        "id": "step3_image",
+        "label": "Step3 Image"
+      },
+	  {
+        "type": "select",
+        "id": "step3_position",
+        "default": "left",
+        "options": [
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+        ],
+        "label": "Step3 Image Position"
+      },
+      {
+        "type": "text",
+        "id": "step3_title",
+        "default": "Image Title",
+        "label": "Step3 Title"
+      },
+      {
+        "type": "richtext",
+        "id": "step3_description",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "label": "Step3 Description"
+      }
+    ],
+
+    "presets": [
+      {
+        "category": "3 Steps Section",
+        "name": "3 Steps Section"
+      }
+    ]
+  }
+{% endschema %} 

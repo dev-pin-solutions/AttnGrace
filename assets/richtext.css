@@ -1,0 +1,35 @@
+.richtext-section {
+    padding: 60px 0;
+    width: 100%;
+}
+
+.richtext-section .richtext-wrapper {
+    padding: 0 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.richtext-section .richtext-wrapper p {
+    font-family: 'Acre';
+    font-size: 22px;
+    line-height: 34px;
+    font-weight: 600;
+    text-align: left;
+}
+body.pageour-story div#shopify-section-footer {
+    padding-top: 0;
+}
+
+body.pageour-story .breadcrumb {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .richtext-section {
+        padding: 40px 0;
+    }
+    .richtext-section .richtext-wrapper p {
+        font-size: 18px;
+        line-height: 34px;    
+    }
+}

@@ -1,0 +1,229 @@
+{{ 'glossary.css' | asset_url | stylesheet_tag }}
+
+<div class="glossary-header">
+  <h1>
+    {{ section.settings.page_title }}
+  </h1>
+  <p>
+    {{ section.settings.page_description }}
+  </p>
+</div>
+<div class="glossary-page-width">
+  {% if section.settings.page_subtitle != blank %}
+    <div class="glossary-subheader">
+      <h2>{{ section.settings.page_subtitle }}</h2>
+      <p>{{ section.settings.page_subdescription }}</p>
+    </div>
+  {% endif %}
+
+  <div class="never-ever-list-wrapper">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'never-ever-list' %}
+          <div class="never-ever-item">
+            <span>
+              {{ block.settings.list_title }}
+            </span>
+            <p>
+              {{ block.settings.list_description }}
+            </p>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+
+  <div class="glossary-footer-wrapper">
+    <div class="glossary-footer">
+      <h3>{{ section.settings.footer_subtitle }}</h3>
+      <p>{{ section.settings.footer_subdescription }}</p>
+    </div>
+    <div class="glossary-footer-social">
+      <p>{{ section.settings.social_title }}</p>
+      <div class="glossary-footer-social-items">
+        <div class="glossary-footer-social-el">
+          {{ section.settings.social_icon_1 }}
+          {% if section.settings.social_link_1 != blank %}
+            <a href="{{ section.settings.social_link_1 }}">
+              {{ section.settings.social_text_1 }}
+            </a>
+          {% else %}
+            <span>
+              {{ section.settings.social_text_1 }}
+            </span>
+          {% endif %}
+        </div>
+        <div class="glossary-footer-social-el">
+          {{ section.settings.social_icon_2 }}
+          {% if section.settings.social_link_2 != blank %}
+            <a href="{{ section.settings.social_link_2 }}">
+              {{ section.settings.social_text_2 }}
+            </a>
+          {% else %}
+            <span>
+              {{ section.settings.social_text_2 }}
+            </span>
+          {% endif %}
+        </div>
+        <div class="glossary-footer-social-el">
+          {{ section.settings.social_icon_3 }}
+          {% if section.settings.social_link_3 != blank %}
+            <a href="{{ section.settings.social_link_3 }}">
+              {{ section.settings.social_text_3 }}
+            </a>
+          {% else %}
+            <span>
+              {{ section.settings.social_text_3 }}
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .never-ever-item span {
+    color: #000;
+    font-family: 'Acre';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .never-ever-item p {
+    margin: 20px 0 0;
+    color: #000;
+    font-family: 'Acre';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+
+  }
+  .never-ever-item {
+    padding: 24px;
+    border-bottom: 1px solid #F2EAE6;
+  }
+  .never-ever-list-wrapper {
+    margin-top: 100px;
+    border: 1px solid #F2EAE6;
+    border-radius: 12px;
+  }
+  .glossary-footer {
+    margin-top: 64px;
+  }
+  .glossary-footer h3 {
+    max-width: 805px;
+  }
+  @media(max-width: 1060px) {
+    .never-ever-list-wrapper {
+      margin: 64px 15px 0;
+    }
+    .never-ever-item span {
+      font-size: 22px;
+    }
+    .never-ever-item p {
+      font-size: 18px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Glossary",
+    "blocks": [
+      {
+        "name": "Never ever list",
+        "type": "never-ever-list",
+        "settings": [
+          {
+            "type": "text",
+            "id": "list_title",
+            "label": "List title"
+          }, {
+            "type": "textarea",
+            "id": "list_description",
+            "label": "List description"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "page_title",
+        "label": "Page title",
+        "default": "The Never Ever List"
+      },
+      {
+        "type": "textarea",
+        "id": "page_description",
+        "label": "Page description",
+        "default": "Below are examples of ingredients we never use to formulate our products and non-exhaustive lists of products where they can be found."
+      },
+      {
+        "type": "text",
+        "id": "page_subtitle",
+        "label": "Page title"
+      },
+      {
+        "type": "textarea",
+        "id": "page_subdescription",
+        "label": "Page subdescription"
+      }, {
+        "type": "text",
+        "id": "footer_subtitle",
+        "label": "Footer title",
+        "default": "Attn Grace Will Never Test Our Finished Products On Animals, Nor Do We Ask Others To."
+      }, {
+        "type": "textarea",
+        "id": "footer_subdescription",
+        "label": "Footer subdescription",
+        "default": "Sources: National Institutes of Environmental Health Sciences, CosIng, Health Canada, The Endocrine Disruption Exchange, EWG Skin Deep Cosmetics Database."
+      }, {
+        "type": "text",
+        "id": "social_title",
+        "label": "Footer social title",
+        "default": "Have more questions? Reach out to us by email, phone or text."
+      }, {
+        "type": "html",
+        "id": "social_icon_1",
+        "label": "Social icon 1"
+      }, {
+        "type": "text",
+        "id": "social_text_1",
+        "label": "Social text 1",
+        "default": "hello@attngrace.com"
+      }, {
+        "type": "url",
+        "id": "social_link_1",
+        "label": "Social link 1"
+      }, {
+        "type": "html",
+        "id": "social_icon_2",
+        "label": "Social icon 2"
+      }, {
+        "type": "text",
+        "id": "social_text_2",
+        "label": "Social text 2",
+        "default": "+833 713 92 12"
+      }, {
+        "type": "url",
+        "id": "social_link_2",
+        "label": "Social link 2"
+      }, {
+        "type": "html",
+        "id": "social_icon_3",
+        "label": "Social icon 3"
+      }, {
+        "type": "text",
+        "id": "social_text_3",
+        "label": "Social text 3",
+        "default": "Fill the form"
+      }, {
+        "type": "url",
+        "id": "social_link_3",
+        "label": "Social link 3"
+      }
+    ]
+  }
+{% endschema %}

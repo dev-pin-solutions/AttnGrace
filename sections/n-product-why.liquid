@@ -1,0 +1,51 @@
+<section class="love">
+    <div class='center-wrapper'>
+        <h2 class="love__title title_2">{{section.settings.heading}}</h2>
+        <div class="love__row">
+            {% for block in section.blocks %}
+            <div class="love__col">
+                <div class="love-item">
+                    <div class="love-item__icon">{{block.settings.image | img_url: 'maste' | img_tag }}</div>
+                    <div class="love-item__title">{{block.settings.heading}}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "New Product Why",
+    "settings" : [
+        {
+            "type" : "text",
+            "id" : "heading",
+            "label" : "Text",
+            "default" : "Why you’ll love our pads."
+          }       
+    ],
+    "blocks" : [
+      {
+        "type" : "image",
+        "name" : "Feature",
+        "name" : "Feature",
+        "settings": [
+          {
+            "type" : "image_picker",
+            "id" : "image",
+            "label" : "Image"
+          }  ,
+          {
+            "type" : "text",
+            "id" : "heading",
+            "label" : "Text",
+            "default" : "Super absorbent core"
+          }          
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+
+

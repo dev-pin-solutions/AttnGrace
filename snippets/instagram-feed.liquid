@@ -1,0 +1,13 @@
+<div class="instafeed-section">
+  <h2 class="mw-instagram-feed-top">{{ heading }}</h2>
+  <h3 class="mw-instagram-feed__title">
+    <a
+      class="instagram_url"
+      href="{{ settings.instagram_url }}"
+      target="_blank">@{{ 'general.general.instagram_title' | t }}</a>
+  </h3>
+  {{ section.settings.html_area }}
+  {% unless section.settings.html_area contains "feed-" %}
+    <div id="insta-feed"></div>
+  {% endunless %}
+</div>

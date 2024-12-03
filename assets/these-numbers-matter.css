@@ -1,0 +1,204 @@
+.numbers-matter-section {
+  background-image: linear-gradient(#f2ebe7, #fff);
+}
+.numbers-matter-section h2 {
+  font-size: 60px;
+  line-height: 70px;
+  font-weight: 600;
+  font-family: 'BentonMod';
+  width: 77%;
+  margin: auto;
+  margin-bottom: 70px;
+  min-width: 320px;
+  text-align: center;
+}
+.numbers-matter-section .numbers-matter-grid {
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(#f2ebe7, white);
+}
+.numbers-matter-section .nmg-wrapper {
+  width: 23%;
+}
+.numbers-matter-section .nmg-box {
+  text-align: center;
+  border-radius: 50px 50px 0 0;
+  padding: 50px 60px;
+  background-image: linear-gradient(#f49c5e, #f6ede6);
+  height: 305px;
+  position: relative;
+  margin-bottom: 40px;
+}
+.numbers-matter-section .down-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: -45px;
+  transform: translateX(-50%);
+}
+.numbers-matter-section .down-arrow img {
+  height: 70px;
+}
+.numbers-matter-section .ptitle {
+  font-family: 'BentonMod';
+  font-size: 90px;
+  color: #000;
+  margin: 0;
+  line-height: 90px;
+}
+.numbers-matter-section .nmg-box p {
+  font-size: 20px;
+  font-family: 'Acre';
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0;
+}
+.numbers-matter-section .below-text {
+  text-align: center;
+  padding: 0 50px;
+}
+.numbers-matter-section .below-text p {
+  font-size: 20px;
+  font-family: 'Acre';
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+}
+.numbers-matter-section .bottom-content-wrapper {
+  padding: 100px 0;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+} 
+.numbers-matter-section .circle-grid-item {
+  width: 35%;
+}
+.numbers-matter-section .circle-wrapper {
+  width: 535px;
+  height: 535px;
+  border-radius: 50%;
+  position: absolute;
+  left: -65px;
+  bottom: -95px;
+  background-color: #ebdad2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: 35%;
+  background-repeat: no-repeat;
+}
+.numbers-matter-section .signature-wrapper {
+  width: 65%;
+  padding-left: 35px;
+}
+.numbers-matter-section .image-text-wrapper {
+  text-align: center;
+}
+.numbers-matter-section .image-text-wrapper .text {
+  font-size: 44px;
+  line-height: 70px;
+  color: #000;
+  font-family: 'BentonMod';
+  margin: 0;
+}
+.numbers-matter-section .image-text-wrapper .text.founders-text {
+  font-size: 36px;
+}
+.numbers-matter-section .image {
+  width: 300px;
+  margin: auto;
+  margin-top: 45px;
+}
+.numbers-matter-section .image img {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .numbers-matter-section h2 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .numbers-matter-section .numbers-matter-grid {
+    flex-wrap: wrap;
+  }
+  .numbers-matter-section .nmg-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+  .numbers-matter-section .nmg-box {
+    border-radius: 0;
+    width: 50%;
+    background-color: #f49c5e;
+    background-image: none;
+    padding: 20px;
+    height: auto;
+    margin-bottom: 0;
+  }
+  .numbers-matter-section .down-arrow {
+    right: -40px;
+    top: calc(50% - 39px);
+    width: 70px;
+    height: 70px;
+    left: unset;
+    transform: translateX(0);
+  }
+  .numbers-matter-section .down-arrow img {
+    transform: rotate(270deg);
+  }
+  .numbers-matter-section .ptitle {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .numbers-matter-section .nmg-box p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .numbers-matter-section .below-text {
+    width: 50%;
+    padding: 0;
+    padding-left: 40px;
+  }
+  .numbers-matter-section .below-text p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .numbers-matter-section .bottom-content-wrapper {
+    flex-wrap: wrap;
+    padding: 50px 30px;
+  }
+  .numbers-matter-section .circle-grid-item {
+    width: 100%;
+    order: 2;
+    height: 220px;
+  }
+  .numbers-matter-section .circle-wrapper {
+    bottom: -70px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 320px;
+    height: 320px;
+  }
+  .numbers-matter-section .signature-wrapper {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  .numbers-matter-section .image-text-wrapper .text {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .numbers-matter-section .image-text-wrapper .text.founders-text {
+    font-size: 28px;
+  }
+  .numbers-matter-section .image {
+    width: 200px;
+    margin: auto;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,94 @@
+{% comment %}
+Naming convention used throughout - "uvt" is shorthand for us vs. them.
+{% endcomment %}
+
+{% for block in section.blocks %}
+<div class="uvt-section"
+  style="
+  {% comment %}
+  {% if block.settings.uvt_image != blank %}
+    background-image:url({{block.settings.bg_image | img_url: 'master', scale: 2 }});
+  {% endif %}
+  {% endcomment %}
+  {% if block.settings.text_color != blank %}
+    color:{{ block.settings.text_color }};
+  {% endif %} 
+  {% if block.settings.bg_color != blank %}
+    background-color:{{ block.settings.bg_color }};
+  {% endif %}"
+  
+  >
+
+  <h1 class="uvt-heading heading">{{ block.settings.heading }}
+  	{% if block.settings.flower_icon != blank %}
+  	<img loading="lazy" class="uvt-icon-image" src="{{block.settings.flower_icon | img_url: '125x125' }}"/>
+  	{% endif %}
+  </h1>
+  <div class="uvt-section-container">
+  {% if block.settings.bg_image != blank %}
+  	<img loading="lazy" class="uvt-image" src="{{block.settings.bg_image | img_url: '498x498' }}"/>
+  {% endif %}
+    <div class="uvt-content-container">
+    	<h2 class="uvt-content-header">US</h2>
+  		<p class="uvt-content-us">{{block.settings.content_us }}</p>
+    	<h2 class="uvt-content-header">THEM</h2>
+    	<p class="uvt-content-them">{{block.settings.content_them }}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% schema %}
+  {
+    "name": "Us vs. Them",
+    "class": "index-section",
+	"blocks": [
+	  {   
+		"type": "text",
+		"name": "testimonials block",
+		"settings": [
+          {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Section Image"
+          },
+            {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color"
+          },
+          {
+            "type": "image_picker",
+            "id": "flower_icon",
+            "label": "Icon Image"
+          },
+          {
+            "id": "heading",
+            "type": "text",
+            "label": "Section Title"
+          },
+          {
+            "id": "content_us",
+            "type": "text",
+            "label": "Section Content Us"
+          },
+          {
+            "id": "content_them",
+            "type": "text",
+            "label": "Section Content Them"
+          }
+        ]
+	  }
+	],
+    "presets": [
+      {
+        "category": "Us vs Them Block",
+        "name": "Us vs Them Block"
+      }
+    ]
+  }
+{% endschema %} 

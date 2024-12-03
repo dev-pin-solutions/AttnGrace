@@ -1,0 +1,68 @@
+{% comment %}
+Naming convention used throughout - "tcc" is shorthand for two column collapsible.
+{% endcomment %}
+
+<div class="tcc-section">
+  <div class="tcc-content-container">
+    <h2 class="tcc-content-header">{{section.settings.heading }}</h2>
+    <p class="tcc-content">{{section.settings.content }}</p>
+    {% if section.settings.button_link != blank and section.settings.button_label != blank %}
+    <a
+       class="image-bg-with-text-button button"
+       href="{{ section.settings.button_link }}"
+       >
+      {{ section.settings.button_label | escape }}
+    </a>
+    {% endif %}
+  </div>
+  <div class="tcc-image-container">
+    {% if section.settings.bg_image != blank %}
+      <img loading="lazy" class="tcc-image" src="{{section.settings.bg_image | img_url: '498x498' }}"/>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "TCC - Image and Content",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Section Image"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color"
+      },
+	  {
+		"id": "heading",
+        "type": "text",
+        "label": "Content Heading"
+      },
+	  {
+		"id": "content",
+        "type": "text",
+        "label": "Content Paragraph"
+      },
+      {
+      	"type": "url",
+      	"id": "button_link",
+      	"label": "Button link"
+      },
+      {
+      	"type": "text",
+      	"id": "button_label",
+      	"label": "Button label"
+      }
+    ],
+
+    "presets": [
+      {
+        "category": "Promotional",
+        "name": "Two-Column - Image and Content"
+      }
+    ]
+  }
+{% endschema %} 

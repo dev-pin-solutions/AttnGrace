@@ -1,0 +1,36 @@
+{% if section.settings.text != blank %}
+  <link
+    rel="stylesheet"
+    href="{{ 'richtext.css' | asset_url }}"
+    media="print"
+    onload="this.media='all'">
+  <div class="richtext-section" style="background-color: {{section.settings.bg_color}};">
+    <div class="richtext-wrapper">
+      {{ section.settings.text }}
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Richtext",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#dedc00"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Attn: Grace is proudly a female-founded company designing high-performing, more sustainable incontinence products that women can trust. As a Certified B Corp. we meet the highest verified standards of social and environmental performance, transparency and accountability.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "category": "text",
+        "name": "Richtext"
+      }
+    ]
+  }
+{% endschema %}

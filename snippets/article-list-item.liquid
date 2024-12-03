@@ -1,0 +1,50 @@
+<article class="article-item" data-article-item>
+{% if section.settings.view_post_images %}
+  {% if article.image %}
+    <a href="{{ article.url }}" class="article-item-image-link">
+      <figure
+        class="article-item-image
+        {% if section.settings.image_crop %}
+          article-item-image-crop-{{ section.settings.image_crop }}
+        {% endif %}"
+        aria-label="{{ article.image.alt | escape  }}"
+        {%
+          include 'rimg',
+          img: article.image,
+          size: '650x',
+          crop: 'center',
+          lazy: true,
+          background: true
+        %}
+      >
+        {%
+          include 'rimg',
+          img: article.image,
+          size: '650x',
+          crop: 'center',
+          lazy: true
+        %}
+      </figure>
+    </a>
+  {% endif %}
+{% endif %}
+
+  <div class="article-item-content-wrapper">
+    <div class="article-item-content">
+      <h2 class="article-item-title">
+        <a href="{{ article.url }}">
+          {{ article.title | truncatewords: 10 }}
+        </a>
+      </h2>
+      <p class="article-item-body rte">
+        {% if section.settings.show_excerpt %}
+          {% if article.excerpt != blank %}
+            {{ article.excerpt }}
+          {% else %}
+            {%- include 'truncate-words', truncate_text: article.excerpt_or_content, truncate_length: 20 -%}
+          {% endif %}
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</article>

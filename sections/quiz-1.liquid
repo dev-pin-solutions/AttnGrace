@@ -1,0 +1,67 @@
+<div class="quiz_1 quiz_div">
+    <div class="quiz-header">
+        <h2 class="main-title">Find Your Fit Quiz</h2>
+        <div class="quiz-stage">
+            <div class="top-title">
+                <label>Stage</label>
+                <span>1 / 4</span>
+            </div>
+            <ul>
+                <li class="active"><span>line</span></li>
+                <li><span>line</span></li>
+                <li><span>line</span></li>
+                <li><span>line</span></li>
+            </li>
+        </div>
+    </div>
+    <h3 class="question">{{ section.settings.question_1 }}</h3>
+    <div class="answers">
+    {% for block in section.blocks %}
+        <div class="ans">
+            <div class="ans-inner">
+                <input type="radio" que="{{ section.settings.question_1 }}" class="answer_for_quiz_1" name="answer_for_quiz_1" value="{{ block.settings.answer }}">
+                <img loading="lazy" src="{{ block.settings.answer_image | img_url }}" >
+                <label>{{ block.settings.answer }}</label>
+                <span>{{ block.settings.answer_subtext }}</span>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% schema %}
+    {
+    "name": "Quiz 1",
+    "class": "quiz-1",
+    "settings": [
+        {
+            "id": "question_1",
+            "type": "textarea",
+            "label": "Question 1"
+        }
+    ],
+    "max_blocks": 2,
+    "blocks": [
+        {
+            "type": "answers",
+            "name": "Answers",
+            "settings": [
+                {
+                    "id": "answer",
+                    "type": "text",
+                    "label": "Answer"
+                },
+                {
+                    "id": "answer_subtext",
+                    "type": "textarea",
+                    "label": "Answer Description"
+                },
+                {
+                    "id": "answer_image",
+                    "type": "image_picker",
+                    "label": "Answer image"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,49 @@
+<link
+  rel="stylesheet"
+  href="{{ 'our-story-content.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'">
+<div class="quote-section">
+  <div class="quote-section-wrapper">
+    {% for block in section.blocks %}
+      <div class="quote-block-wrapper">
+        {% if block.settings.quote != blank %}
+          <h2>{{ block.settings.quote }}</h2>
+        {% endif %}
+        {% if block.settings.paragraph != blank %}
+          <div class="paragraph">
+            {{ block.settings.paragraph }}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Quote and Paragraph",
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "Quote",
+        "settings": [
+          {
+            "type": "text",
+            "id": "quote",
+            "label": "Quote"
+          }, {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Paragraph"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "text",
+        "name": "Quote and Paragraph"
+      }
+    ]
+  }
+{% endschema %}

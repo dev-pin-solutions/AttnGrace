@@ -1,0 +1,213 @@
+<!-- Prive component -->
+
+<!-- <input type="hidden" name="quantity" id="hiddenqty" value="">
+
+<div class="recommend-wrapper">
+  <div class="recommend-option">
+    <div class="recommend-qty">
+      <label>QTY <span class="rec-qty">4</span></label>
+      <div class="recommend-qty-arrow-wrapper">
+      </div>
+    </div>
+    <div class="recommend-qty-options hidden">
+      {% for i in (1..10) %}
+        <div class="recommend-qty-option">{{i}}</div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% assign float_variant_price = variant.price | times: 1.0 %}
+
+
+
+<div id="prive_container">
+  <div class="product-subscription-section">
+    <div class="one-time-purchase">
+      <p class="product-subscription-title">One-Time Purchase</p>
+      {% for tag in product.tags %}
+      {% if tag contains 'one:' %}
+      {% assign suggested_qty = tag | remove: 'one:' | split: '-' %}
+      {% endif%}
+      {% endfor %}
+      <div class="subscribe-item subscribe-one-time">
+        <input type="radio" id="prive_purchase_type_one_time" name="purchase_type" value="" val="onetime" class="prive_radio prive_radio_one_time radio">
+        <label for="prive_purchase_type_one_time" class="label prive_label prive_label__onetime">
+          <span class="label-main-section">
+            <span class="title-price-per-pack">
+              <span class="label-title">{{ label_onetime }}</span>
+            </span>
+            <span class="subscribe-price-discount">
+              <span id="prive_price_onetime" class="price prive_price prive_price__onetime">{{ float_variant_price | money }}</span>
+            </span>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <div class="subscribe-save">
+      <p class="product-subscription-title">Subscribe & Save — 10% Every Time</p>
+
+      {% for selling_plan_group in product.selling_plan_groups %}
+      {% for selling_plan in selling_plan_group.selling_plans %}
+
+      {% for price_adjustment in selling_plan.price_adjustments %}
+      {% assign selling_plan_discount = price_adjustment.value | times: 1.0 %}
+      {% assign selling_plan_discount_percentage = selling_plan_discount | divided_by: 100 %}
+      {% assign selling_plan_discount_amount_off = float_variant_price | times: selling_plan_discount_percentage %}
+      {% assign label_variant_price = float_variant_price | minus: selling_plan_discount_amount_off  %}
+      {% endfor %}
+
+      {% if selling_plan.name contains "4 week" %}
+      {% assign label_delivery_frequency = "4 week" %}
+      <div class="subscribe-item subscribe-pm prive_block prive_block__type prive_block__type__autodeliver" >
+        <input type="radio" name="purchase_type" id="prive_purchase_type_autodeliver0" val="autodeliver" value="{{ selling_plan.id }}" class="prive_radio prive_radio__autodeliver radio">
+        <label for="prive_purchase_type_autodeliver0" class="label prive_label prive_label__autodeliver">
+          <span class="label-main-section">
+            <span class="title-price-per-pack">
+              <span class="label-title">{{ label_delivery_frequency }}</span>
+            </span>
+            <span class="subscribe-price-discount">
+              {% if selling_plan_discount_percentage > 0 %}
+              <span id="prive_price_autodeliver0" class="price">{{ label_variant_price | money }}</span>
+              {% endif %}
+              
+            </span>
+          </span>
+        </label>
+      </div>
+
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+
+      <input type="hidden" name="selling_plan" value="">
+      <input type="hidden" name="id" value="{{ variant.id }}">
+    </div>
+  </div> -->
+
+  <!-- <script>
+  document.addEventListener('readystatechange', event => {
+   var ad2 = jQuery('#prive_price_autodeliver1');
+     
+    var baseprice = jQuery('#prive_price_autodeliver0').html().replace('$', '');
+    var baseprice2 = ad2.length ? ad2.html().replace('$', '') : 0;
+    
+
+    // When HTML/DOM elements are ready:
+    if (event.target.readyState === "interactive") {   //does same as:  ..addEventListener("DOMContentLoaded"..
+
+    }
+
+    // When window loaded ( external resources are loaded too- `css`,`src`, etc...)
+    if (event.target.readyState === "complete") {
+      setTimeout(function(){
+        initialValues();
+      }, 3000);
+    
+
+      function initialValues() {
+        var qtyplus =  parseInt($(".rec-qty").html());
+        var newqty1 = qtyplus;
+        $('#prive_purchase_type_autodeliver0').attr('checked', true);
+        if ($('input[name="purchase_type"]:checked').attr('val') == "autodeliver") {
+
+          {% for variant in product.variants %}
+            var onetimeprice = '{{ variant.price | money_without_currency }}';
+          {% endfor %}
+          var defqty = newqty1;
+          var pp = (baseprice * defqty).toFixed(2);
+          var pp2 = (baseprice2 * defqty).toFixed(2);
+          var onetimeprice = (onetimeprice * defqty).toFixed(2);
+          var btntext = defqty+" packs for $"+pp+"  <s>$"+onetimeprice+"</s>";
+          $('.product-add-price').html(btntext);
+        }
+      }
+      
+ 
+      jQuery("input[name='purchase_type']").on("click", function() {
+
+        $(this).prop("checked", true);
+
+        jQuery("input[name='selling_plan']").attr('value', $(this).attr('value'));
+        jQuery('.rec-qty').html(1);
+
+        $("#prive_price_autodeliver0").html('$'+baseprice);
+        $("#prive_price_autodeliver1").html('$'+baseprice2);
+
+        {% for variant in product.variants %}
+        var onetimeprice = '{{ variant.price | money_without_currency }}';
+        {% endfor %}
+        var defqty = 1;
+        $("#hiddenqty").val(defqty);
+        $(".rec-qty").html(defqty);
+        $(".rec-qty").attr('data-rec-qty',defqty);
+        $("#prive_price_onetime").html("$"+onetimeprice);
+        $("#hiddenqty").val(1);
+        $(".rec-qty").html(1);
+
+        if ($(this).attr('val') == "autodeliver") {
+          $(".product-add-price").removeClass("onetime_hide");
+          var pp = (baseprice * defqty).toFixed(2);
+          var onetimeprice = (onetimeprice * defqty).toFixed(2);
+          var btntext = defqty+" packs for $"+pp+"  <s>$"+onetimeprice+"</s>";
+          $('.product-add-price').html(btntext);
+        }
+
+
+
+        if ($(this).attr('val') == "onetime") {
+          $(".product-add-price").addClass("onetime_hide");
+          $(".qty__label").show();
+        }
+
+      });
+
+
+    $('.recommend-qty').click(function(){
+
+      $('.recommend-qty-options').toggleClass('hidden');
+    });
+    $('.recommend-qty-option').click(function(){
+
+      $('.recommend-qty-options').toggleClass('hidden');
+      var newqty1 = $(this).html();
+      var defqty = newqty1;
+      {% for variant in product.variants %}
+          var onetimeprice = '{{ variant.price | money_without_currency }}';
+      {% endfor %}
+      $("#hiddenqty").val(defqty);
+      $(".rec-qty").html(defqty);
+      $(".rec-qty").attr('data-rec-qty',defqty);
+      
+      if ($('input[name="purchase_type"]:checked').attr('val') == "autodeliver") {
+
+        $(".qty__label").hide();
+        $(".liners__label").show();
+        //debugger;
+        $(".product-add-price").removeClass("onetime_hide");
+        //debugger;
+        
+        var pp = $('input[name="purchase_type"]:checked').attr('id') === 'prive_purchase_type_autodeliver0' ? (baseprice * defqty).toFixed(2) : baseprice;
+        var pp2 = $('input[name="purchase_type"]:checked').attr('id') === 'prive_purchase_type_autodeliver1' ? (baseprice2 * defqty).toFixed(2) : baseprice;
+        var newOnetimeprice =  (onetimeprice * defqty).toFixed(2);
+        //debugger; 
+        $("#prive_price_autodeliver0").html("$"+pp); 
+        $("#prive_price_autodeliver1").html("$"+pp2);
+        var btntext = defqty+" packs for $"+pp+" <s>$"+newOnetimeprice+"</s>";
+        $('.product-add-price').html(btntext);
+        $("#prive_price_onetime").html("$"+onetimeprice);
+        //debugger;
+      }
+      
+      if ($('input[name="purchase_type"]:checked').attr('val') == "onetime") {
+        var newOnetimeprice =  (onetimeprice * defqty).toFixed(2);
+        $("#prive_price_onetime").html("$"+newOnetimeprice);
+      }
+  
+      
+    });
+    $('#prive_purchase_type_one_time').click();
+  }
+  });
+</script> -->

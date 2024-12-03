@@ -1,0 +1,100 @@
+.why-us-section {
+	text-align: center;
+	padding: 70px 0;
+}
+
+.why-us-section .heading { 
+	font-family: 'BentonMod';
+	font-weight: 300;
+	font-size: 56px;
+	line-height: 22px;
+	color: #333333;
+	margin-top: 0;
+	margin-bottom: 45px;
+	position: relative;
+	display: inline-block;
+	padding: 0 10px;
+}
+
+.why-us-section .column-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	justify-content: space-between;
+}
+
+.why-us-section .icon-column {
+	width: 28%;
+	padding: 0 15px;
+}
+
+.why-us-section .title {
+	font-family: 'Acre';
+	font-size: 23px;
+	line-height: 26px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 0 auto 10px;
+}
+
+.why-us-section .icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 90px;
+	margin-bottom: 25px;
+}
+
+.why-us-section .icon img {
+	height: 100%;
+	width: auto;
+	max-width: unset;
+}
+
+.why-us-section .icon-column p {
+	font-size: 18px;
+	line-height: 28px;
+	margin: 0;
+}
+
+@media screen and (min-width: 1280px) {
+	.why-us-section .why-us-inner {
+		max-width: 1040px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.why-us-section .heading {
+		font-size: 40px;
+		margin-bottom: 37px;
+	}
+	.why-us-section .icon-column {
+		width: 100%;
+	}
+
+	.why-us-section .icon-column:not(:last-child) {
+		margin-bottom: 50px;
+	}
+
+	.why-us-section .title {
+		font-size: 20px;
+		margin: 0 0 17px;
+	}
+
+	.why-us-section .icon {
+		height: auto;
+		margin-bottom: 0;
+	}
+
+	.why-us-section .icon img {
+		height: auto;
+		width: 90px;
+	}
+
+	.why-us-section .icon-column p {
+		font-size: 16px;
+		line-height: 22px;
+		padding: 0 10px;
+	}
+}

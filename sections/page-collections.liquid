@@ -1,0 +1,485 @@
+{% assign using_linklist = false %}
+{% if linklists['all-collections'] and linklists['all-collections'].links.size > 0 %}
+  {% assign using_linklist = true %}
+{% endif %}
+<div class="page-content">
+    <div class="collections-list">
+    {% if using_linklist %}
+        {% for link in linklists['all-collections'].links %}
+        {% assign collection = link.object %}
+        {%
+            include 'collection-item-block',
+            first_product: true,
+            collection_cta_url: collection.url,
+            link_collection: false,
+            image_layout: section.settings.image_layout,
+        %}
+        {% endfor %}
+    {% else %}
+        <div class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+        <div class="breadcrumb-item">
+            <a href="/" title="Home">Home</a>
+                <span class="icon" aria-hidden="true">&gt;</span>
+                <a href="/collections" title="Home">Shop</a>
+                <span class="icon" aria-hidden="true">&gt;</span>
+                <span>Collections</span>
+        </div>
+        </div>
+        {% comment %} 
+        HIDE HERO SECTION FROM COLLECTIONS LIST PAGE - Ryan Koning 10.23.2020
+        {%- include 'clp-hero' -%}
+        {% endcomment %}
+        <div id="clp-grid" class="recommended-products-items plp-items-list">
+        {% for collection in collections %}
+            {%
+            include 'collection-grid-block',
+            first_product: true,
+            collection_cta_url: collection.url,
+            link_collection: false,
+            image_layout: section.settings.image_layout,
+            %}
+        {% endfor %}
+        {% if section.settings.cta_block1_display == true %}
+        <div class="recommended-product promotion-product-list four"
+            {% if section.settings.cta_block1_color %}
+            style="color: {{ section.settings.cta_block1_color }}";
+            {% endif %}
+            {% if section.settings.cta_bgimage_1 %}
+            {%
+                include 'rimg',
+                img: section.settings.cta_bgimage_1,
+                lazy: true,
+                background: true
+            %}
+            {% endif %}
+        >
+        <div class="content-area">
+            <h3>{{ section.settings.cta_heading_1 }}</h3>
+            {{ section.settings.cta_desc_1 }}
+            <a href="{{ section.settings.cta_url_1 }}">{{ section.settings.cta_label_1 }}</a>
+        </div>
+        </div>
+        {% endif %}
+        {% if section.settings.cta_block2_display == true %}
+        <div class="recommended-product promotion-product-list six"
+            {% if section.settings.cta_block2_color %}
+            style="color: {{ section.settings.cta_block2_color }}";
+            {% endif %}
+            {% if section.settings.cta_bgimage_2 %}
+            {%
+                include 'rimg',
+                img: section.settings.cta_bgimage_2,
+                lazy: true,
+                background: true
+            %}
+            {% endif %}
+        >
+        <div class="content-area">
+            <h3 {% if section.settings.should_logo %}class="show-logo"{% endif %}> {{ section.settings.cta_heading_2 }}</h3>
+            {{ section.settings.cta_desc_2 }}
+            {% if section.settings.cta_url_2 %}<a href="{{ section.settings.cta_url_2 }}">{{ section.settings.cta_label_2 }}</a>{% endif %}
+        </div>
+        </div>
+        {% endif %}
+        </div>
+        {% include 'blog-2column', item: product %}
+        {% include 'clp-image-overlay' %}
+    {% endif %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collections page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "id": "heroimage_desktop",
+      "type": "image_picker",
+      "label": "Cover image for Desktop"
+    },
+    {
+      "id": "leak_heading",
+      "type": "text",
+      "label": "Leak Title Heading",
+      "default": "How much do you leak?"
+    },
+    {
+      "type": "header",
+      "content": "Leak Slider Settings"
+    },
+    {
+      "id": "drop1_heading",
+      "type": "text",
+      "label": "Drop 1 Heading",
+      "default": "Drop 1 Heading"
+    },
+    {
+      "id": "drop1_subheading",
+      "type": "text",
+      "label": "Drop 1 Subheading"
+    },
+    {
+      "id": "drop1_yellow_button_link",
+      "type": "url",
+      "label": "Drop 1 Yellow Button link"
+    },
+    {
+      "id": "drop1_yellow_button_label",
+      "type": "text",
+      "label": "Drop 1 Yellow Button label"
+    },
+    {
+      "id": "drop1_blue_button_link",
+      "type": "url",
+      "label": "Drop 1 Blue Button link"
+    },
+    {
+      "id": "drop1_blue_button_label",
+      "type": "text",
+      "label": "Drop 1 Blue Button label"
+    },
+    {
+      "id": "drop2_heading",
+      "type": "text",
+      "label": "Drop 2 Heading",
+      "default": "Drop 2 Heading"
+    },
+    {
+      "id": "drop2_subheading",
+      "type": "text",
+      "label": "Drop 2 Subheading"
+    },
+    {
+      "id": "drop2_yellow_button_link",
+      "type": "url",
+      "label": "Drop 2 Yellow Button link"
+    },
+    {
+      "id": "drop2_yellow_button_label",
+      "type": "text",
+      "label": "Drop 2 Yellow Button label"
+    },
+    {
+      "id": "drop2_blue_button_link",
+      "type": "url",
+      "label": "Drop 2 Blue Button link"
+    },
+    {
+      "id": "drop2_blue_button_label",
+      "type": "text",
+      "label": "Drop 2 Blue Button label"
+    },
+    {
+      "id": "drop3_heading",
+      "type": "text",
+      "label": "Drop 3 Heading",
+      "default": "Drop 3 Heading"
+    },
+    {
+      "id": "drop3_subheading",
+      "type": "text",
+      "label": "Drop 3 Subheading"
+    },
+    {
+      "id": "drop3_yellow_button_link",
+      "type": "url",
+      "label": "Drop 3 Yellow Button link"
+    },
+    {
+      "id": "drop3_yellow_button_label",
+      "type": "text",
+      "label": "Drop 3 Yellow Button label"
+    },
+    {
+      "id": "drop3_blue_button_link",
+      "type": "url",
+      "label": "Drop 3 Blue Button link"
+    },
+    {
+      "id": "drop3_blue_button_label",
+      "type": "text",
+      "label": "Drop 3 Blue Button label"
+    },
+
+    {
+      "type": "header",
+      "content": "CTA Block 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_block1_display",
+      "label": "Check this if you want to show this Block",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "cta_block1_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "id": "cta_bgimage_1",
+      "type": "image_picker",
+      "label": "Cover image"
+    },
+
+    {
+      "type": "richtext",
+      "id": "cta_heading_1",
+      "label": "Heading"
+    },
+    
+    {
+      "type": "richtext",
+      "id": "cta_desc_1",
+      "label": "Description"
+    },
+
+    {
+      "type": "text",
+      "id": "cta_label_1",
+      "label": "Link Text",
+      "default": "Read More"
+    },
+
+    {
+      "type": "url",
+      "id": "cta_url_1",
+      "label": "Link"
+    },
+
+    {
+      "type": "header",
+      "content": "CTA Block 2"
+    },
+    {
+        "type": "checkbox",
+        "id": "cta_block2_display",
+        "label": "Check this if you want to show this Block",
+        "default": true
+    },
+    {
+      "type": "color",
+      "id": "cta_block2_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "id": "cta_bgimage_2",
+      "type": "image_picker",
+      "label": "Cover image"
+    },
+
+    {
+      "type": "richtext",
+      "id": "cta_heading_2",
+      "label": "Heading"
+    },
+
+    {
+      "id": "should_logo",
+      "type": "checkbox",
+      "label": "Heading Logo",
+      "default": true
+    },
+    
+    {
+      "type": "richtext",
+      "id": "cta_desc_2",
+      "label": "Description"
+    },
+
+    {
+      "type": "text",
+      "id": "cta_label_2",
+      "label": "Link Text",
+      "default": "Read More"
+    },
+
+    {
+      "type": "url",
+      "id": "cta_url_2",
+      "label": "Link"
+    },
+
+    {
+      "type": "header",
+      "content": "Blog List"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Recommended Reads"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "post_number",
+      "label": "Number of posts",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 2
+    },
+
+    
+    {
+      "type": "header",
+      "content": "Image with text overlay"
+    },
+
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": "Section height",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "fullscreen",
+          "label": "Fullscreen"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Desktop Image"
+    },
+    {
+      "id": "mobile_image",
+      "type": "image_picker",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "select",
+      "id": "text_justification",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_content_position",
+      "label": "Text content position",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "h2_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show overlay",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "default": "accent",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light text on dark overlay"
+        },
+        {
+          "value": "dark",
+          "label": "Dark text on light overlay"
+        },
+        {
+          "value": "accent",
+          "label": "Accent"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "opacity",
+      "label": "Opacity",
+      "min": 10,
+      "max": 90,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    }
+
+
+  ]
+}
+
+{% endschema %}

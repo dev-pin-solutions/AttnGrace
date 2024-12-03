@@ -1,0 +1,514 @@
+{% assign parent = product %}
+{% assign parent_collection = collection %}
+{% assign ingrediants_briefs = section.settings.briefs_ingredients %}
+{% assign ingrediants_pads = section.settings.pads_ingredients %}
+{% assign ingrediants_hybrid = section.settings.hybrid_ingredients %}
+{% assign ingrediants_liners = section.settings.liners_ingredients %}
+{% assign ingrediants_wipes = section.settings.wipes_ingredients %}
+{% assign baseingrediants = section.settings.ingredients %}
+
+{% assign subscriptiondetails = section.settings.subscription %}
+{% assign sizing_briefs = section.settings.briefs_sizing %}
+{% assign sizing_pads = section.settings.pads_sizing %}
+{% assign sizing_hybrid = section.settings.hybrid_sizing %}
+{% assign sizing_liners = section.settings.liners_sizing %}
+{% assign sizing_wipes = section.settings.wipes_sizing %}
+{% assign basesizing = section.settings.sizing %}
+{% assign variant = product.selected_or_first_available_variant %}
+
+<style>
+  .product-title-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .good_housekeeping_seal_logo img{
+    max-width: 164px;
+  }
+  @media(max-width:990px){
+    .desktop-title-wrapper .good_housekeeping_seal_logo {
+      display: none;
+    }
+    .good_housekeeping_seal_logo img{
+        max-width: 120px;
+     }
+  }
+</style>
+
+<div class="wrapper">
+    <section class="page-product">
+        <div class='center-wrapper'>
+            <div class="page-product__body">
+                <div class="page-product__gallery">
+                    <div class="product-gallery-thumbs">
+                      {%  for media in product.media %}
+                        <div class="product-gallery-thumbs__slide">
+                            <div class="product-gallery-thumbs__item">
+                              {{ media | img_url : 'master' | img_tag }}
+                            </div>
+                        </div>
+                        {%  endfor %}
+                    </div>
+                    <div class="product-gallery-slider">
+                      {% for media in product.media %}
+                        <div class="product-gallery-slider__slide">
+                            <div class="product-gallery-slider__item">
+                              {{ media | img_url : 'master' | img_tag }}
+                            </div>
+                        </div>
+                        {%  endfor %}
+                    </div>
+                </div>
+                <div class="page-product__content">
+                    <div class="product-title-wrapper desktop-title-wrapper">
+                      <div class="page-product__top">
+                          <div class="page-product__title">{{ product.title }}</div>
+                          <div class="page-product__ratings">
+                              <div class="page-product__rating">{% render 'okendo-reviews-product-rating-summary', product: product %}</div>
+                              <div class="page-product__rating">
+                                {% for link in linklists.pad-menu.links %}
+                                  {% assign phandle = link.url | remove: "/products/" %}
+                                  {% if phandle == product.handle %}
+                                  <li class="product-option {{ phandle }} {% if phandle == product.handle %}selected{% endif %}">
+                                    for  {{ link.title | replace: "Pads", " " }} leaks
+                                          <div class="image-wrap">
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                          </div>
+                                  </li>
+                                {% endif %}
+                              {% endfor %}
+                              </div>
+                          </div>
+                      </div>
+                      <div class="good_housekeeping_seal_logo">
+                        {% if product.metafields.custom.good_housekeeping_seal_logo != blank %}
+                          <img src="{{ product.metafields.custom.good_housekeeping_seal_logo | img_url: 'master'}}" alt="good_housekeeping_seal_logo">
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="page-product__desc">
+                        <div class="page-product__text">Attn: Grace Ultimate Pads offer maximum protection, for day or night, with no added thickness. Featuring our Skin-Safe, plant-based top sheet and powerful absorbent core, they’re tough on leaks and gentle on skin, keeping you dry and comfortable.</div>
+                        <ul class="page-product__features">
+                            <li>Perfect for locking away surges or gushes of pee (up to 380 ml / 1.6 cups of liquid)</li>
+                            <li>As thin (.5 mm) as our Heavy Pads, almost double the absorbency and over 2 inches longer in length (400 mm), these pads are perfect for both day and night</li>
+                        </ul>
+                    </div>
+                    <div class="option product-variants-options">
+                        <div class="variant-option-head">
+                            <label for="select-variants">What absorbency do you need? </label>
+                            <span class="packs-guide" pdp-modal-id="packs-guide">
+                                <span class="pack">Need Help?</span>
+                            </span>
+                        </div>
+                        {% assign values = '' %}
+                        <ul class="product-options-wrap pads-options">
+                            {% for link in linklists.pad-menu.links %}
+                                {% assign phandle = link.url | remove: "/products/" %}
+                                <li class="product-option {{ phandle }} {% if phandle == product.handle %}selected{% endif %}">
+                                    <a href="{{ link.url }}">
+                                        <div class="image-wrap">
+                                            {% render 'icon-drops' %}
+                                            {% render 'icon-drops' %}
+                                            {% render 'icon-drops' %}
+                                            {% render 'icon-drops' %}
+                                            {% render 'icon-drops' %}
+                                            {% render 'icon-drops' %}
+                                            {% render 'icon-drops' %}
+                                        </div>
+                                        <h2>{{ link.title | replace: "Pads", " " }}</h2>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+ <form method="post" action="/cart/add" id="product_form_{{ product.id }}" accept-charset="UTF-8" class="111 shopify-product-form" enctype="multipart/form-data">
+
+                      {%  assign minm_quantity = 4 %}
+                      {% for tag in product.tags %}
+                      {% if tag contains 'pack:' %}
+                      {% assign pack = tag | remove: 'pack:' | remove: ' Pack' %}
+                      {% endif %}
+                    {% endfor %}
+                    {% if product.title contains "Pad" %}
+                    {% assign pr = "Pad" %}
+                    {% endif %}
+                    {% if product.title contains "Liner" %}
+                    {% assign pr = "Liner" %}
+                    {% endif %}
+                    {% if product.title contains "Brief" %}
+                    {% assign pr = "Brief" %}
+                    {% endif %}
+                    {% assign bprice = product.price | money_without_currency %}
+                    {% assign label_free_shipping = "Free Shipping" %}
+                    
+                    
+                    {% for variant in product.variants %}{% assign rec_price = variant.metafields.subscriptions.discount_variant_price %} {% assign rec_price2 = variant.metafields.subscriptions.discount_variant_price_two %} {% endfor %}
+                    
+                    
+                      {% assign label_onetime = "One-Time" %}
+                    {% assign label_autodeliver = "Savings For Life" %}
+                    {% assign label_everymonth = "Every Month" %}
+                    {% assign label_everytwo = "Every 2 Months" %}
+                    {% assign label_deliver_every = "How Often Should We Ship?" %}
+                    {% assign label_save = "SAVINGS EVERY TIME" %}
+                    
+                    <style type="text/css">
+                      .prive_label__discount {
+                      	font-weight: 600 !important;
+                        font-size: 14px !important;
+                        line-height: 17px !important;
+                        margin-top: 10px !important;
+                      }
+                    </style>
+                    <!-- Prive component --> 
+                      {% assign float_variant_price = variant.price | times: 1.0 %}
+                      <div id="prive_container" >
+                        <div class="product-subscription-section page-product__subs">
+                          <div class="one-time-purchase">
+                            <p class="product-subscription-title">One-Time Purchase</p>
+                            {% for tag in product.tags %}
+                            {% if tag contains 'one:' %}
+                            {% assign suggested_qty = tag | remove: 'one:' | split: '-' %}
+                            {% endif%}
+                            {% endfor %}
+                            <div class="subscribe-item subscribe-one-time">
+                              <input type="radio" id="prive_purchase_type_one_time" name="purchase_type" value="" val="onetime" class="prive_radio prive_radio_one_time radio">
+                              <label for="prive_purchase_type_one_time" class="label prive_label prive_label__onetime">
+                                <span class="label-main-section">
+                                  <span class="title-price-per-pack">
+                                    <span class="label-title">{{ label_onetime }}</span>
+                                    {% if pr %}
+                                      <span class="price-per-pack">{% assign price_split = bprice | divided_by : pack | round: 2 | split: "." %} {% assign integral = price_split[0] %} {% assign fractional = price_split[1] | append: "00" | truncate: 2, "" %} (${{ integral }}.{{ fractional }}/{{ pr }})</span>
+                                    {% endif %}
+                    	            </span>
+                    	      
+                                  <span class="subscribe-price-discount">
+                    		            {% assign bundle_pack_price = float_variant_price | times: minm_quantity | money %}
+                    	              <span id="prive_price_onetime" class="price prive_price prive_price__onetime">{{ bundle_pack_price }}</span>
+                                  </span>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                      
+                          <div class="subscribe-save">
+                            <p class="product-subscription-title">Subscribe & Save <span>Save 10% Every Time</span></p>
+
+                            {% for selling_plan_group in product.selling_plan_groups %}
+                            {% assign selling_plans = selling_plan_group.selling_plans | sort: "name" %}
+                            {% for selling_plan in selling_plans %}
+                      
+                            {% for price_adjustment in selling_plan.price_adjustments %}
+                            {% assign selling_plan_discount = price_adjustment.value | times: 1.0 %}
+                            {% assign selling_plan_discount_percentage = selling_plan_discount | divided_by: 100 %}
+                            {% assign selling_plan_discount_amount_off = float_variant_price | times: selling_plan_discount_percentage %}
+                            {% assign label_variant_price = float_variant_price | minus: selling_plan_discount_amount_off  %}
+                            {% endfor %}
+                      
+                            {% if selling_plan.name contains "4 week" %}
+                            {% assign label_delivery_frequency = "4 week" %}
+                            <div class="subscribe-item subscribe-pm prive_block prive_block__type prive_block__type__autodeliver" >
+                              <input type="radio" name="purchase_type" id="prive_purchase_type_autodeliver0" val="autodeliver" value="{{ selling_plan.id }}" class="prive_radio prive_radio__autodeliver radio">
+                              <label for="prive_purchase_type_autodeliver0" class="label prive_label prive_label__autodeliver">
+                                <span class="label-main-section">
+                                  <span class="title-price-per-pack">
+                                    <span class="label-title">{{ label_delivery_frequency }}</span>
+                                    {% if pr %}
+                                    <span class="price-per-pack recc_per_pack">(${{ rec_price | divided_by : pack | round: 2 }}/{{ pr }})</span>
+                                    {% endif %}
+                                  </span>
+                                  <span class="subscribe-price-discount">
+                                    {% if selling_plan_discount_percentage > 0 %}
+                                      {% assign bundle_pack_price = label_variant_price | times: minm_quantity %}
+                                      <span id="prive_price_autodeliver0" class="price" data-price="{{ label_variant_price | money_without_currency }}">{{ bundle_pack_price | money }}</span>
+                                    {% endif %}
+                                    
+                                  </span>
+                                </span>
+                              </label>
+                            </div>
+                            {% endif %}
+                    
+                            {% if selling_plan.name contains "6 week" %}
+                            {% assign label_delivery_frequency = "6 week" %}
+                            <div class="subscribe-item subscribe-pm prive_block prive_block__type prive_block__type__autodeliver" >
+                              <input type="radio" name="purchase_type" id="prive_purchase_type_autodeliver1" val="autodeliver" value="{{ selling_plan.id }}" class="prive_radio prive_radio__autodeliver radio">
+                              <label for="prive_purchase_type_autodeliver1" class="label prive_label prive_label__autodeliver">
+                                <span class="label-main-section">
+                                  <span class="title-price-per-pack">
+                                    <span class="label-title">{{ label_delivery_frequency }}</span>
+                                    {% if pr %}
+                                      <span class="price-per-pack recc_per_pack">(${{ rec_price | divided_by : pack | round: 2 }}/{{ pr }})</span>
+                                    {% endif %}
+                                  </span>
+                                  <span class="subscribe-price-discount">
+                                    {% if selling_plan_discount_percentage > 0 %}
+                                      {% assign bundle_pack_price = label_variant_price | times: minm_quantity %}
+                                      <span id="prive_price_autodeliver1" class="price" data-price="{{ label_variant_price | money_without_currency }}">{{ label_variant_price | times: 4 | money }}</span>
+                                    {% endif %}
+                                    
+                                  </span>
+                                </span>
+                              </label>
+                            </div>
+                            {% endif %}
+                      
+                            {% if selling_plan.name contains "8 week" %}
+                            {% assign label_delivery_frequency = "8 week" %}
+                            <div class="subscribe-item subscribe-pm prive_block prive_block__type prive_block__type__autodeliver" >
+                              <input type="radio" name="purchase_type" id="prive_purchase_type_autodeliver2" val="autodeliver" value="{{ selling_plan.id }}" class="prive_radio prive_radio__autodeliver radio">
+                              <label for="prive_purchase_type_autodeliver2" class="label prive_label prive_label__autodeliver">
+                                <span class="label-main-section">
+                                  <span class="title-price-per-pack">
+                                    <span class="label-title">{{ label_delivery_frequency }}</span>
+                                    {% if pr %}
+                                      <span class="price-per-pack recc_per_pack">(${{ rec_price | divided_by : pack | round: 2 }}/{{ pr }})</span>
+                                    {% endif %}
+                                  </span>
+                                  <span class="subscribe-price-discount">
+                                    {% if selling_plan_discount_percentage > 0 %}
+                                      {% assign bundle_pack_price = label_variant_price | times: minm_quantity %}
+                                      <span id="prive_price_autodeliver2" class="price" data-price="{{ label_variant_price | money_without_currency }}">{{ label_variant_price | times: 4 | money }}</span>
+                                    {% endif %}
+                                  </span>
+                                </span>
+                              </label>
+                            </div>
+                            {% endif %}
+                    
+                            {% if selling_plan.name contains "12 week" %}
+                            {% assign label_delivery_frequency = "12 week" %}
+                            <div class="subscribe-item subscribe-item3 subscribe-pm prive_block prive_block__type prive_block__type__autodeliver" >
+                              <input type="radio" name="purchase_type" id="prive_purchase_type_autodeliver3" val="autodeliver" value="{{ selling_plan.id }}" class="prive_radio prive_radio__autodeliver radio">
+                              <label for="prive_purchase_type_autodeliver3" class="label prive_label prive_label__autodeliver">
+                                <span class="label-main-section">
+                                  <span class="title-price-per-pack">
+                                    <span class="label-title">{{ label_delivery_frequency }}</span>
+                                    {% if pr %}
+                                      <span class="price-per-pack recc_per_pack">(${{ rec_price | divided_by : pack | round: 2 }}/{{ pr }})</span>
+                                    {% endif %}
+                                  </span>
+                                  <span class="subscribe-price-discount">
+                                    {% if selling_plan_discount_percentage > 0 %}
+                                      {% assign bundle_pack_price = label_variant_price | times: minm_quantity %}
+                                      <span id="prive_price_autodeliver3" class="price" data-price="{{ label_variant_price | money_without_currency }}">{{ label_variant_price | times: 4 | money }}</span>
+                                    {% endif %}
+                                    
+                                  </span>
+                                </span>
+                              </label>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                            {% endfor %}
+                      
+                            <input type="hidden" name="purchase_type" id="purchase_type" value="">
+                            <input type="hidden" name="selling_plan" id="selling_plan" value="">
+                            <input type="hidden" name="id" value="{{ variant.id }}">
+                          </div>
+                        </div>
+                      
+                      <script>
+                        document.addEventListener('readystatechange', event => {
+                          var radioInputs = Array.from(document.querySelectorAll('.prive_radio'));
+                          {% for variant in product.variants %}
+                          var oneTimePrice = '{{ variant.price | money_without_currency }}';
+                          {% endfor %}
+                          var minQuantity = {{minm_quantity}};
+                      
+                          // When HTML/DOM elements are ready:
+                          if (event.target.readyState === "interactive") {   
+                            // does same as:  ..addEventListener("DOMContentLoaded"..
+                          }
+                      
+                          // When window loaded ( external resources are loaded too- `css`,`src`, etc...)
+                          if (event.target.readyState === "complete") {
+                            
+                            radioInputs.forEach(function(input) {
+                              input.addEventListener('click', function() {
+                                var purchaseType = input.getAttribute('val');
+                                var planID = '';
+                      
+                                input.checked = true;
+                                document.getElementById('purchase_type').value = purchaseType;
+                                document.getElementById('selling_plan').value = input.value;
+                      
+                                if (purchaseType === 'autodeliver') {
+                                  let inputID = input.id;
+                                  planID = inputID.charAt(inputID.length - 1);
+                                }
+                      
+                                resetPriceDisplay();
+                                updateQuantity(minQuantity);
+                                updateSavingsText(minQuantity, purchaseType, planID);
+                              });
+                            });
+                      
+                            
+                          
+                            function resetPriceDisplay() {
+                              radioInputs.forEach(function(input) {
+                                var price = (oneTimePrice * minQuantity).toFixed(2);
+                                var purchaseType = input.getAttribute('val');
+                      
+                                if (purchaseType === 'autodeliver') {
+                                  let planID = input.id.charAt(input.id.length - 1);
+                                  price = (document.getElementById(`prive_price_autodeliver${planID}`).dataset.price * minQuantity).toFixed(2);
+                                  purchaseType = purchaseType + planID;
+                                }
+                      
+                                document.getElementById(`prive_price_${purchaseType}`).innerHTML = `$${price}`;
+                              });
+                            }
+                      
+                            function updatePriceDisplay(price, qty, ID) {
+                              var updatedPrice = (Number(price) * qty).toFixed(2);
+                      
+                              if (ID) {
+                                document.getElementById(`prive_price_autodeliver${ID}`).innerHTML = `$${updatedPrice}`;
+                              } else {
+                                document.getElementById('prive_price_onetime').innerHTML = `$${updatedPrice}`;
+                              }
+                            }
+                      
+                            function updateQuantity(qty) {
+                              console.log(`[updateQuantity] qty ${qty}`);
+                              var quantityEl = document.querySelector('.rec-qty');
+                              document.getElementById('hiddenqty').value = qty;
+                              quantityEl.setAttribute('data-rec-qty', qty);
+                              quantityEl.innerHTML = qty;
+                            }
+                      
+                            function updateSavingsText(currQuantity, type, ID) {
+                              console.log(`[updateSavingsText] purchaseType ${type}, ID ${ID}, currQuantity: ${currQuantity}`);
+                              var btnText = '';
+                      
+                              if (type === 'autodeliver') {
+                                let subscriptionPrice = document.getElementById(`prive_price_autodeliver${ID}`).dataset.price;
+                                let discountedPrice = (Number(subscriptionPrice) * currQuantity).toFixed(2);
+                                let originalPrice = (oneTimePrice * currQuantity).toFixed(2);
+                                btnText = `${currQuantity} packs for $${discountedPrice} <s>$${originalPrice}</s>`;
+                              }
+                      
+                              document.querySelector('.product-add-price').innerHTML = btnText;
+                            }
+                            document.querySelector('.recommend-qty').addEventListener('click', function() {
+                      
+                              document.querySelector('.recommend-qty-options').classList.toggle('hidden')
+                            });
+                            
+                            let recomendQty = document.querySelectorAll('.recommend-qty-option');
+                            for(let i=0;i<recomendQty.length;i++){
+                              recomendQty[i].addEventListener('click', function() {
+                        
+                                document.querySelector('.recommend-qty-options').classList.toggle('hidden');
+                                var newQuantity = this.innerHTML;
+                                var planType = document.getElementById('purchase_type').value;
+                                var planID = '';
+                                var price = oneTimePrice;
+                                if (planType === 'autodeliver') {
+                                  let inputID = document.querySelector('input[val="autodeliver"]:checked').id;
+                                  planID = inputID.charAt(inputID.length - 1);
+                                  price = document.getElementById(`prive_price_autodeliver${planID}`).dataset.price;
+                                }
+                        
+                                updateQuantity(newQuantity);
+                                updateSavingsText(newQuantity, planType, planID);
+                                updatePriceDisplay(price, newQuantity, planID);
+                                
+                              })
+                            }
+                            document.getElementById('prive_purchase_type_one_time').click();
+                          }
+                        });
+                      </script>
+
+                    
+                    <div class="page-product__actions">
+                        <div class="page-product__quantity">
+                            <div class="quantity">
+                                <button class="quantity__btn btn_minus" tabindex="-1">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 13.2583H5V11.7583H11.25H12.75H19V13.2583H12.75H11.25Z" fill="black"/>
+                                    </svg>
+                                </button>
+                                <input name="quantity" id="hiddenqty" class="quantity__value" value="1" tabindex="-1" type="text">
+                                <button class="quantity__btn btn_plus" tabindex="-1">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.25 13.2583H5V11.7583H11.25V5.5083H12.75V11.7583H19V13.2583H12.75V19.5083H11.25V13.2583Z" fill="black"/>
+                                    </svg>                                        
+                                </button>
+                            </div>
+                        </div>
+                        <input id="AddtoCartBtn"
+                            type="submit"
+                            class=" page-product__btn btn"
+                            value="{% if product.variants.first.inventory_quantity <= 0 %}Pre-Order{% elsif product.tags contains "preorder" %}Pre-Order{% elsif product.tags contains "backorder" %}Backorder{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}"/>        
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </div><!-- end center-wrapper -->
+    </section><!-- end page-product -->
+</div><!-- end wrapper -->
+                                          
+
+
+    <script>
+        $(document).ready(function(){
+            $('.product-gallery-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                infinite: false,
+                asNavFor: '.product-gallery-thumbs',
+                responsive: [
+                    {
+                    breakpoint: 576,
+                    settings: {
+                        variableWidth: true,
+                        fade: false,
+                        arrows: false,
+                        slidesToShow: 1
+                    }
+                    }
+                ]
+            });
+            
+            $('.product-gallery-thumbs').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                vertical: true,
+                infinite: false,
+                asNavFor: '.product-gallery-slider',
+                focusOnSelect: true
+            });
+
+            // Change quantity 
+            $('.quantity__btn').click(function(event) {
+                let n = parseInt($(this).parent().find('.quantity__value').val());
+                if($(this).hasClass('btn_minus')){
+                    n = n - 1;
+                    if(n < 1){n = 1;}
+                }else{
+                    n = n + 1;
+                }
+                $(this).parent().find('.quantity__value').val(n);
+                return false;
+            });
+        }); 
+    </script>
+    <script>$(document).ready(function(){
+      $("#select-variants").change(function(){
+        window.location.href = $(this).val();
+      });
+    });</script>

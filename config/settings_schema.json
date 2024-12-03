@@ -1,0 +1,885 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Vogue",
+    "theme_author": "Pixel Union",
+    "theme_version": "4.5.0",
+    "theme_documentation_url": "http:\/\/support.pixelunion.net\/category\/243-vogue\/",
+    "theme_support_url": "https:\/\/support.pixelunion.net\/hc\/en-us\/requests\/new"
+  },
+  {
+    "name": "Color",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "color",
+        "id": "body_text_color",
+        "label": "Text"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button text"
+      },
+      {
+        "type": "color",
+        "id": "button_background_color",
+        "label": "Button background"
+      },
+      {
+        "type": "header",
+        "content": "Sidebar and alternate header"
+      },
+      {
+        "type": "color",
+        "id": "sidebar_background_color",
+        "label": "Background"
+      },
+      {
+        "type": "header",
+        "content": "Product listings"
+      },
+      {
+        "type": "color",
+        "id": "listing_text_color",
+        "label": "Text",
+        "info": "Text color when shown over a product image."
+      },
+      {
+        "type": "color",
+        "id": "listing_text_background_color",
+        "label": "Background"
+      },
+      {
+        "type": "range",
+        "id": "listing_text_background_alpha",
+        "label": "Background opacity",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "default": 90,
+        "unit": "%"
+      },
+      {
+        "type": "header",
+        "content": "Collection colors"
+      },
+      {
+        "type": "paragraph",
+        "content": "The settings below allow you to assign a specific color to each of your collections. You’ll notice these colors wherever a collection is featured, as well as on the collections list page."
+      },
+      {
+        "type": "color",
+        "id": "collection_color_default",
+        "label": "Default collection color",
+        "info": "This color will be used if no color has been set to a collection"
+      },
+      {
+        "type": "header",
+        "content": "Collection 1"
+      },
+      {
+        "type": "collection",
+        "id": "collection_1",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_1_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 2"
+      },
+      {
+        "type": "collection",
+        "id": "collection_2",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_2_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 3"
+      },
+      {
+        "type": "collection",
+        "id": "collection_3",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_3_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 4"
+      },
+      {
+        "type": "collection",
+        "id": "collection_4",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_4_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 5"
+      },
+      {
+        "type": "collection",
+        "id": "collection_5",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_5_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 6"
+      },
+      {
+        "type": "collection",
+        "id": "collection_6",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_6_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 7"
+      },
+      {
+        "type": "collection",
+        "id": "collection_7",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_7_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 8"
+      },
+      {
+        "type": "collection",
+        "id": "collection_8",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_8_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 9"
+      },
+      {
+        "type": "collection",
+        "id": "collection_9",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_9_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 10"
+      },
+      {
+        "type": "collection",
+        "id": "collection_10",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_10_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 11"
+      },
+      {
+        "type": "collection",
+        "id": "collection_11",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_11_color",
+        "label": "Color"
+      },
+      {
+        "type": "header",
+        "content": "Collection 12"
+      },
+      {
+        "type": "collection",
+        "id": "collection_12",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "collection_12_color",
+        "label": "Color"
+      }
+    ]
+  },
+  {
+    "name": "Ingredients & Sustainability",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 1"
+      },
+      {
+        "type": "text",
+        "id": "ing_name1",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description1",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image1",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 2"
+      },
+      {
+        "type": "text",
+        "id": "ing_name2",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description2",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image2",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 3"
+      },
+      {
+        "type": "text",
+        "id": "ing_name3",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description3",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image3",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 4"
+      },
+      {
+        "type": "text",
+        "id": "ing_name4",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description4",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image4",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 5"
+      },
+      {
+        "type": "text",
+        "id": "ing_name5",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description5",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image5",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 6"
+      },
+      {
+        "type": "text",
+        "id": "ing_name6",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description6",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image6",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 7"
+      },
+      {
+        "type": "text",
+        "id": "ing_name7",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description7",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image7",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 8"
+      },
+      {
+        "type": "text",
+        "id": "ing_name8",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description8",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image8",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 9"
+      },
+      {
+        "type": "text",
+        "id": "ing_name9",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description9",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image9",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 10"
+      },
+      {
+        "type": "text",
+        "id": "ing_name10",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description10",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image10",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 11"
+      },
+      {
+        "type": "text",
+        "id": "ing_name11",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description11",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image11",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 12"
+      },
+      {
+        "type": "text",
+        "id": "ing_name12",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description12",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image12",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 13"
+      },
+      {
+        "type": "text",
+        "id": "ing_name13",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description13",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image13",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 14"
+      },
+      {
+        "type": "text",
+        "id": "ing_name14",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description14",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image14",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 15"
+      },
+      {
+        "type": "text",
+        "id": "ing_name15",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description15",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image15",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 16"
+      },
+      {
+        "type": "text",
+        "id": "ing_name16",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description16",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image16",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 17"
+      },
+      {
+        "type": "text",
+        "id": "ing_name17",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description17",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image17",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 18"
+      },
+      {
+        "type": "text",
+        "id": "ing_name18",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description18",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image18",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 19"
+      },
+      {
+        "type": "text",
+        "id": "ing_name19",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description19",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image19",
+        "label": "Ingredients & Sustainability Image"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients & Sustainability 20"
+      },
+      {
+        "type": "text",
+        "id": "ing_name20",
+        "label": "Ingredients & Sustainability Name"
+      },
+      {
+        "type": "text",
+        "id": "ing_description20",
+        "label": "Ingredients & SustainabilityDescription"
+      },
+      {
+        "type": "image_picker",
+        "id": "ing_image20",
+        "label": "Ingredients & Sustainability Image"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_headings",
+        "label": "Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": "Body text"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": "Testimonials and tweets"
+      },
+      {
+        "type": "select",
+        "id": "font_testimonials_tweets",
+        "label": "Font",
+        "options": [
+          {
+            "value": "font_headings",
+            "label": "Headings font"
+          },
+          {
+            "value": "font_body",
+            "label": "Body font"
+          }
+        ],
+        "default": "font_headings"
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      {
+        "type": "select",
+        "id": "grid_spacing",
+        "label": "Grid spacing",
+        "options": [
+          {
+            "label": "None",
+            "value": "0px"
+          },
+          {
+            "label": "Small",
+            "value": "2px"
+          },
+          {
+            "label": "Large",
+            "value": "10px"
+          }
+        ],
+        "default": "0px"
+      }
+    ]
+  },
+  {
+    "name": "Currency",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_currency_switcher",
+        "label": "Enable currency conversion",
+        "default": true,
+        "info": "Even though prices are displayed in different currencies, orders will still be processed in your store's currency."
+      },
+      {
+        "type": "select",
+        "id": "currency_switcher_format",
+        "label": "Format",
+        "options": [
+          {
+            "value": "money_format",
+            "label": "Without currency ($10.00)"
+          },
+          {
+            "value": "money_with_currency_format",
+            "label": "With currency ($10.00 CAD)"
+          }
+        ],
+        "default": "money_with_currency_format"
+      },
+      {
+        "type": "text",
+        "id": "currency_switcher_supported_currencies",
+        "label": "Supported currencies",
+        "default": "INR GBP CAD USD AUD EUR JPY",
+        "info": "Use the country's ISO [currency code](http:\/\/www.xe.com\/iso4217.php). Separate your currency codes with a space."
+      },
+      {
+        "type": "text",
+        "id": "currency_switcher_default",
+        "label": "Default currency",
+        "default": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "Will be scaled down to 32 x 32px"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "social_default_image",
+        "label": "Default social sharing image",
+        "info": "The image shown when sharing a link if a page-specific image isn't available"
+      },
+      {
+        "type": "header",
+        "content": "Accounts"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_url",
+        "label": "Facebook",
+        "info": "https:\/\/facebook.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_url",
+        "label": "Twitter",
+        "info": "https:\/\/twitter.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_url",
+        "label": "Pinterest",
+        "info": "https:\/\/pinterest.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_url",
+        "label": "Instagram",
+        "info": "https:\/\/instagram.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_url",
+        "label": "Vimeo",
+        "info": "https:\/\/vimeo.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_url",
+        "label": "YouTube",
+        "info": "https:\/\/www.youtube.com\/user\/PixelUnionThemes"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_url",
+        "label": "Tiktok",
+        "info": "https:\/\/www.tiktok.com\/attngrace"
+      },
+      {
+        "type": "text",
+        "id": "social_email_address",
+        "label": "Email address",
+        "info": "info@example.com"
+      }
+    ]
+  },
+  {
+    "name": "Instagram",
+    "settings": [
+      {
+        "id": "instagram_url",
+        "type": "text",
+        "label": "Instagram Url",
+        "default": "https:\/\/www.instagram.com\/attngrace"
+      },
+      {
+        "id": "access_token",
+        "type": "textarea",
+        "label": "Access token",
+        "info": "[Generate access token](https:\/\/appstore.mageworx.com\/instagram-access-token)"
+      },
+      {
+        "id": "section_title",
+        "type": "text",
+        "label": "Section title",
+        "default": "Our Instagram feed"
+      },
+      {
+        "id": "number_of_images",
+        "type": "range",
+        "label": "Number of recent images to load",
+        "max": 50,
+        "min": 1,
+        "step": 1,
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "number_of_slides",
+        "label": "Number of images to show",
+        "max": 9,
+        "min": 3,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "range",
+        "id": "rotation_speed",
+        "label": "Change slides every",
+        "max": 10,
+        "min": 1,
+        "step": 1,
+        "unit": "sec",
+        "default": 3
+      }
+    ]
+  }
+]

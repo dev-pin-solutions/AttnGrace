@@ -1,0 +1,60 @@
+<div class="ingredients-collection collection-info" style="background-color:{{ section.settings.bg_color }}">
+    <div class="item">
+        <div class="icon"><img loading="lazy" src='{{ section.settings.image1 | img_url: "master" }}'></div>
+        {{ section.settings.text1 }}
+    </div>
+    <div class="item">
+        <div class="icon"><img loading="lazy" src='{{ section.settings.image2 | img_url: "master" }}'></div>
+        {{ section.settings.text2 }}
+    </div>
+
+    <div class="item">
+        <div class="icon"><img loading="lazy" src='{{ section.settings.image3 | img_url: "master" }}'></div>
+        {{ section.settings.text3 }}
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Ingredients Collection",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "id": "image1",
+      "type": "image_picker",
+      "label": "Information Block Image 1"
+    },
+    {
+      "type": "richtext",
+      "id": "text1",
+      "label": "Text 1"
+    },
+    {
+      "id": "image2",
+      "type": "image_picker",
+      "label": "Information Block Image 2"
+    },
+    {
+      "type": "richtext",
+      "id": "text2",
+      "label": "Text 2"
+    },
+    {
+      "id": "image3",
+      "type": "image_picker",
+      "label": "Information Block Image 3"
+    },
+    {
+      "type": "richtext",
+      "id": "text3",
+      "label": "Text 3"
+    }
+  ]
+}
+
+{% endschema %}

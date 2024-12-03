@@ -1,0 +1,59 @@
+<section class="reasons-review reasons-review_reverse">
+  <div class='center-wrapper'>
+      <div class="reasons-review__body">
+          <div class="reasons-review__image">{{section.settings.image | img_url : 'master' | img_tag }}</div>
+          <div class="reasons-review__content">
+              {%  if section.settings.heading != blank %}
+              <h2 class="reasons-review__title">{{section.settings.heading}}</h2>
+              {%  endif %}
+              <div class="reasons-review__text">{{section.settings.text}}</div>
+              <div class="reasons-review__btnwrap">
+                  <a href="{{section.settings.btn-link}}" class="reasons-review__btn btn btn_white">{{section.settings.btn-label}}</a>
+                  <div class="reasons-review__note">{{section.settings.subtext}}</div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Final3 Try Risk",
+    "settings" : [
+      {
+        "type" : "image_picker",
+        "id" : "image",
+        "label" : "Image"
+      },
+      {
+        "type" : "text",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "Try us,<br> RISK FREE"
+      },   
+      {
+        "type" : "richtext",
+        "id" : "text",
+        "label" : "Text",
+        "default" : "<p>If you're not satisfied with your first order, we’ll help you find the right product for your needs, or issue you a complete refund. Whichever you prefer.</p>"
+      }, 
+      {
+        "type" : "text",
+        "id" : "btn-label",
+        "label" : "Button Label",
+        "default"   : "SHOP NOW"
+    },
+    {
+        "type" : "url",
+        "id" : "btn-link",
+        "label" : "Button Link"
+    }   ,
+    {
+      "type" : "text",
+      "id" : "subtext",
+      "label" : "SubText",
+      "default" : "*Discount automatically applied at checkout"
+    }
+    ]
+  }
+{% endschema %}

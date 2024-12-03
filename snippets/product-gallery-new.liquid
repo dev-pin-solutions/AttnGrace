@@ -1,0 +1,262 @@
+{% comment %}
+  @param product {Product}
+    The product object in question
+{% endcomment %}
+
+
+{% assign models = product.media | where: 'media_type', 'model' %}
+{% assign first_model = models | first %}
+{% assign media_without_first = product.media | slice: 1, product.media.size %}
+{% assign product-id = product.id %}
+<div class="page-product__gallery">
+  <div class="product-gallery-slider">
+      {% if template.suffix == 'ultimate' %}
+      {% for media in product.media %}
+          <div class="product-gallery-slider__slide">
+              <div class="product-gallery-slider__item">
+                  {% if media.media_type == 'image' %}
+                      {{ media | image_url: width: 1000 | image_tag: preload: true, alt: "Product Image" }}
+                  {% elsif media.media_type == 'video' %}
+                  {% liquid
+                      assign media_two = media
+                      assign video_url = media.preview_image.src | replace: "files/preview_images/", "" | split: "."
+                      assign video_url = "https://cdn.shopify.com/videos/c/o/v/" | append: video_url[0] | append:".mp4"
+                  %}
+                      <video сlass="source_video" controls preload="metadata" width="100%" height="100%" {% if product.metafields.custom._video_preview_image != blank %}poster={{ product.metafields.custom._video_preview_image | img_url: 'master' }}{% endif %}>
+                          <source src="{{ video_url }}"/>
+                      </video>
+                  {% endif %}
+              </div>
+          </div>
+      {% endfor %}
+    {% else %}
+      {% for media in product.media %}
+        <div class="product-gallery-slider__slide">
+            <div class="product-gallery-slider__item">
+              {{ media | image_url: width: 1000 | image_tag: preload: true, alt: "Product Image" }}
+            </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div  class="product-gallery-thumbs">
+      {% if template.suffix == 'ultimate' %}
+      {% for media in product.media %}
+          <div class="product-gallery-thumbs__slide">
+              <div class="product-gallery-thumbs__item">
+                  {% if media.media_type == 'video' %}
+                      {% if product.metafields.custom._video_preview_image != blank %}
+                          {{ product.metafields.custom._video_preview_image | image_url: width: 250 | image_tag: preload: true, alt: "Product Thumb" }}
+                      {% else %}
+                          {{ media | image_url: width: 250 | image_tag: preload: true, alt: "Product Thumb" }}
+                      {% endif %}
+                  {% else %}
+                      {{ media | image_url: width: 250 | image_tag: preload: true, alt: "Product Thumb" }}
+                  {% endif %}
+
+              </div>
+          </div>
+      {% endfor %}
+    {% else %}
+      {% for media in product.media %}
+        <div class="product-gallery-thumbs__slide">
+            <div class="product-gallery-thumbs__item">
+               {{ media | image_url: width: 250 | image_tag: preload: true, alt: "Product Thumb" }}
+            </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  {% if template.suffix == 'ultimate' %}
+      <div class="portable-product-gallery">
+          <div class="portable-product-gallery__flex">
+              {% for media in media_without_first %}
+                  <div  class="portable-product-gallery__item" data-index="{{ forloop.index0 | plus: 1 }}">
+                      {% if media.media_type == 'video' %}
+                          {% if product.metafields.custom._video_preview_image != blank %}
+                              {% liquid
+                                  assign media_two = media
+                                  assign video_url = media.preview_image.src | replace: "files/preview_images/", "" | split: "."
+                                  assign video_url = "https://cdn.shopify.com/videos/c/o/v/" | append: video_url[0] | append:".mp4"
+                              %}
+                              <img  class="video_item" src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/2024-10-04_20.56.01_2.jpg?v=1729685125" alt="Product Image" data-video-src="{{ video_url }}" />
+                          {% else %}
+                              <img src="{{ media | img_url: 'master' }}" alt="Product Image" />
+                          {% endif %}
+                          {% else %}
+                          <img src="{{ media | img_url: 'master' }}" alt="Product Image" />
+                      {% endif %}
+                  </div>
+              {% endfor %}
+          </div>
+      </div>
+      <div class="portable-image-popup" id="portable-image-popup">
+          <div class="portable-image-popup__content">
+              <span class="portable-image-popup__close">&times;</span>
+              <img src="" alt="Popup Image" id="portable-popup-image" style="display: none;">
+              <video id="portable-popup-video" controls style="display: none;">
+                  <source src="" type="video/mp4">
+              </video>
+          </div>
+      </div>
+
+  {% endif %}
+</div>
+    {% if template.suffix == 'ultimate' %}
+    <style>
+        .portable-image-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .portable-image-popup__content {
+            position: relative;
+            max-width: 80vw;
+            max-height: 90vh;
+            width: 100%;
+            height: auto;
+            border: 2px solid white;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .portable-image-popup__content img,
+        .portable-image-popup__content video {
+            width: 100%;
+            height: 90vh;
+            object-fit: contain;
+        }
+
+        .portable-image-popup__close {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: black;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            padding: 2px 9px;
+        }
+
+
+
+
+        .portable-product-gallery__flex {
+
+            display: flex;
+            flex-wrap: wrap;
+            margin: -5px;
+            margin-top: 10px;
+        }
+        .portable-product-gallery__item {
+            flex: 0 0 calc(50% - 20px);
+            box-sizing: border-box;
+            margin: 10px;
+            border: 1px solid lightgrey;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .portable-product-gallery__item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .portable-product-gallery__item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portable-product-gallery__item:active {
+            border-color: orange;
+        }
+        @media(max-width: 768px) {
+            .portable-product-gallery {
+                display: none;
+            }
+            .page-product__gallery .product-gallery-thumbs .product-gallery-thumbs__slide {
+                width: 70px;
+                margin: 0 1px;
+            }
+            .page-product__gallery .product-gallery-thumbs .product-gallery-thumbs__slide:first-child {
+            }
+
+            .page-product__gallery .product-gallery-thumbs .product-gallery-thumbs__slide:last-child {
+
+            }
+        }
+         @media(min-width: 768px) {
+             .product-gallery-thumbs {
+                display: none;
+            }
+        }
+
+    </style>
+    <script>
+        if (window.innerWidth >= 1281) {
+            const items = document.querySelectorAll('.portable-product-gallery__item');
+            const popup = document.getElementById('portable-image-popup');
+            const popupImage = document.getElementById('portable-popup-image');
+            const popupVideo = document.getElementById('portable-popup-video');
+            const popupClose = document.querySelector('.portable-image-popup__close');
+
+            items.forEach(item => {
+                item.addEventListener('click', function () {
+                    // items.forEach(i => i.style.borderColor = 'lightgrey');
+                    // item.style.borderColor = 'orange';
+                    // const index = this.getAttribute('data-index');
+                    //
+                    // // Переход к соответствующему слайду в слайдере
+                    // $('.product-gallery-slider').slick('slickGoTo', index);
+
+                    // Проверка на наличие класса 'video_item'
+                    const imgElement = item.querySelector('img');
+
+                    if (imgElement && imgElement.classList.contains('video_item')) {
+                        const videoSrc = imgElement.getAttribute('data-video-src'); // Получаем источник видео из атрибута
+                        popupVideo.querySelector('source').src = videoSrc;
+                        popupVideo.load(); // Загрузить видео
+                        popupImage.style.display = 'none';
+                        popupVideo.style.display = 'block';
+                        popup.style.display = 'flex';
+                    } else {
+                        console.log('343434');
+                        const imgSrc = imgElement.src;
+                        popupImage.src = imgSrc;
+                        popupImage.style.display = 'block';
+                        popupVideo.style.display = 'none';
+                        popup.style.display = 'flex';
+                    }
+                });
+            });
+            popupClose.addEventListener('click', () => {
+                popup.style.display = 'none';
+                popupVideo.pause();
+            });
+
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    popup.style.display = 'none';
+                    popupVideo.pause();
+                }
+            });
+        }
+
+
+    </script>
+{% endif %}

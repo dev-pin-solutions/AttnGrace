@@ -1,0 +1,47 @@
+{% comment %} Turn on/off Optimization {% endcomment %}
+	{%- if content_for_header contains 'preview_bar' -%}
+		{%- assign optimization = true -%}
+	{%- else -%}
+		{%- assign optimization = true -%}
+	{%- endif -%}
+
+{%- assign is_optimized = false -%}
+
+{%- if optimization -%}
+
+	{%- if template contains 'index' -%}
+		{%- assign is_optimized = true -%}
+	{%- endif -%}
+
+	{%- if template contains 'product' -%}
+		{%- assign is_optimized = true -%}
+	{%- endif -%}
+
+	{%- if template contains 'collection' -%}
+		{%- assign is_optimized = true -%}
+	{%- endif -%}
+
+	{%- if template contains 'page' -%}
+		{%- assign is_optimized = true -%}
+	{%- endif -%}
+
+	{%- if template contains 'blog' -%}
+		{%- assign is_optimized = true -%}
+	{%- endif -%}
+
+	{%- if template contains 'cart' -%}
+		{%- assign is_optimized = false -%}
+	{%- endif -%}
+ 
+	{%- if request.path == '/checkout' -%}
+		{%- assign is_optimized = false -%}
+	{%- endif -%}
+
+	{%- if request.design_mode -%}
+		{%- assign is_optimized = false -%}
+	{%- endif -%}
+
+{%- endif -%}
+
+  {%- if is_optimized -%}<script>for(var urls=['//cdn.shopify.com/s/files/1/0432/1781/3656/t/21/assets/databg.js?v='],i=0;i<urls.length;i++){var s=document.createElement("link");s.rel="preload",s.href=urls[i]+(new Date).getHours()+(new Date).getMinutes()+(new Date).getSeconds(),s.as="script";var x=document.getElementsByTagName("head")[0];x.parentNode.insertBefore(s,x),(s=document.createElement("script")).type='text/javascript',s.defer=!0,s.src=urls[i]+(new Date).getHours()+(new Date).getMinutes()+(new Date).getSeconds(),(x=document.getElementsByTagName("head")[0]).parentNode.insertBefore(s,x)}</script>{%- endif -%} {%- if is_optimized -%}{%-assign content_for_header=content_for_header | replace: '/javascript', '/jаvascript' |replace: 's.srxc', 's.dataset.src' |replace:"MCo","Mco"|replace:' src=',' type="text/jаvascript" src='-%}{%- endif -%}
+  

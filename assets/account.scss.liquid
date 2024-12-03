@@ -1,0 +1,355 @@
+.account-page .page-title {
+	margin-bottom: 40px;
+	padding-top: 50px;
+	text-align: left;
+	font-size: 42px;
+	font-family: 'BentonMod';
+	font-weight: normal;
+	border-bottom: 1px solid #000000;
+    padding-bottom: 8px;
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	a {
+		font-size: 18px;
+		margin-left: auto;
+		background: url(sign-out.svg) no-repeat;
+		padding-left: 30px;
+		background-size: 22px;
+		font-family: "Acre", serif;
+	}
+}
+.account-page h2 {
+	font-size: 16px;
+	font-weight: 600;
+	font-family: "Acre", serif;
+	border-bottom: 1px solid #DCDDDE;
+	padding-left: 13px;
+	margin-bottom: 22px;
+}
+.page-sub-title {
+	font-size: 22px;
+	font-weight: 600;
+	font-family: "Acre", serif;
+	margin: 0;
+    margin-bottom: 40px;
+}
+.account-page h2.page-sub-title {
+	font-size: 22px;
+	font-weight: 600;
+	font-family: "Acre", serif;
+	margin: 42px 0 10px;
+	border-bottom: none;
+	padding: 0;
+}
+.account-page span {
+	font-size: 16px;
+	font-weight: normal;
+	font-family: "Acre", serif;
+	padding-left: 13px;
+}
+.account-page .button {
+	padding: 15px 35px;
+	color: #000;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0;
+	font-family: "Acre", serif;
+	text-transform: uppercase;
+	line-height: normal;
+}
+.account-page .button.edit-address.secondary {
+	padding: 15px 35px;
+	background: transparent;
+	color: #000;
+	border: 1px solid #DCDDDE;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0;
+	font-family: "Acre", serif;
+	text-transform: uppercase;
+	line-height: normal;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.account-page .button.delete-address {
+	padding: 15px 35px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0;
+	color: #000;
+	font-family: "Acre", serif;
+	text-transform: uppercase;
+	line-height: normal;
+	margin-bottom: 10px;
+}
+.account-page a {
+	text-decoration: none;
+}
+.orders .first {
+	padding-left: 12px;
+}
+.orders .last {
+	padding-right: 12px;
+}
+.account-page table span {
+	padding-left: 0;
+}
+.account-page .order-totals span {
+	padding-right: 13px;
+}
+.order .order-vendor {
+    font-weight: 600;
+}
+.account-page .order .price,
+.account-page .order .total {
+	    text-align: unset;
+}
+.account-page .order-total {
+	border-top: 1px solid #DCDDDE;
+	padding-top: 10px;
+}
+.account-page .order-totals .order-total .subtotal-label,
+.account-page .order-totals .order-total .subtotal-value {
+    font-weight: 600;
+}
+.shipping-info {
+	display: flex;
+    flex-wrap: wrap;
+}
+.shipping-info .customer-address.shipping-address {
+	width: 50%;
+}
+.customer-address.shipping-address.first {
+    padding-right: 25px;
+}
+.customer-address.shipping-address span {
+	display: inline-flex;
+}
+
+@media only screen and (max-width: 767px) {
+	.account-page table.order td.first:before {
+		content: none;
+	}
+	.account-page .page-title {
+		font-size: 32px;
+		margin-bottom: 20px;
+    	padding-top: 20px;
+	}
+	.account-page h2 {
+ 		margin-top: 0;
+ 	}
+	.order .product-item .product-wrap .order-title {
+	    width: 100%;
+	    text-align: left;
+	    float: left;
+	}
+	.account-page table {
+		margin: 0;
+	}
+	.sidebar-always-visible .order-image {
+		display: block;
+	}
+	.order .product-wrap .order-vendor {
+		display: flex;
+	}
+	.account-page .shipping-info span {
+		display: inline-flex;
+		flex-wrap: wrap;
+	}
+	.account-page .customer-address span {
+		display: inline-flex;
+		flex-wrap: wrap;
+	}
+	.shipping-info .customer-address.shipping-address {
+		width: 100%;
+	}
+	.customer-address.shipping-address.first {
+	    padding-right: 0;
+	}
+	.sidebar-always-visible .order td {
+		justify-content: normal;
+	}
+	.orders .first {
+		padding-left: 0;
+	}
+	.orders .last {
+		padding-right: 0;
+	}
+	.account-page h2 {
+		padding-left: 0;
+	}
+	.account-page table {
+    	border: 0;
+    }
+    .account-page table thead {
+      display: none;
+    }
+    .account-page table tr {
+      	margin-bottom: 10px;
+      	display: block;
+        border-bottom: 1px solid #DCDDDE;
+    	border-top: none;
+    }
+    .account-page table td {
+      	display: block;
+      	text-align: left;
+      	font-size: 13px;
+      	padding: 10px;
+      	padding-left: 0;
+        border-top: none;
+    	border-bottom: 1px solid #DCDDDE;
+    }
+    .account-page table td.first {
+    	padding-top: 0;
+    }
+    .account-page table td:last-child {
+      	border-bottom: 0;
+    }
+    .account-page table td:before {
+      	content: attr(data-label) ':';
+      	padding-right: 5px;
+      	text-transform: uppercase;
+      	font-weight: bold;
+        margin-top: 2px;
+    }
+    .shipping-info {
+    	margin-top: 20px;
+    }
+    .shipping-info .customer-address {
+    	margin-bottom: 10px;
+    }
+    .sidebar-always-visible .order-totals {
+    	width: 100%;
+    }
+    .account-info .customer-address {
+    	margin-bottom: 22px;
+    }
+    .account-page h2.page-sub-title {
+    	margin: 6px 0 22px 0;
+    }
+    .account-page h2 {
+    	margin-top: 22px;
+    }
+    .account-page .order-totals span {
+    	padding-right: 0;
+    	padding-left: 0;
+	}
+	
+ }
+
+ @media (max-width: 959px) {
+     .account-page {
+         table td {
+             font-weight: 500;
+		 }
+		 
+		 .page-title {
+			margin-bottom: 0;
+			padding-top: 30px;
+		 }
+	 }
+
+	 .template-customers-order,
+     .template-customers-account {
+
+         .breadcrumb .breadcrumb-item,
+         .account-page {
+             padding: 0 25px;
+         }
+	 }
+	 
+	 .template-customers-order {
+		.account-page .page-title {
+		   margin-bottom: 10px;
+		}
+	}
+ }
+
+ @media only screen and (max-width: 640px) {
+ 	.button.change-password {
+	    margin-top: 10px;
+	}
+	.account-page .order-totals .subtotal-label {
+		width: 80%;
+		display: inline-block;
+	}
+
+	.account-page {
+	    .page-title {
+	        margin-bottom: 0;
+	        padding-top: 20px;
+	    }
+
+	    .page-sub-title {
+	        padding-top: 30px;
+	    }
+	}
+ }
+
+@media (min-width: 768px) and (max-width: 959px) {
+		
+	.sidebar-always-visible .order thead {
+ 		display: block;
+ 	}
+ 	.sidebar-always-visible .order tr {
+ 		flex-direction: unset;
+ 		display: table;
+ 	}
+ 	.sidebar-always-visible .order td {
+
+ 	}
+ 	.sidebar-always-visible .order-image {
+ 		display: block;
+ 	}
+ 	.order th {
+ 		width: 100%;
+ 	}
+ 	.sidebar-always-visible .order td {
+ 		display: table-cell;
+ 		padding: 25px 2vw;
+ 	}
+ 	.account-page table.order span {
+ 		padding-left: 13px;
+ 		text-align: left;
+ 	}
+ 	.account-page .order .price,
+ 	.account-page .order .total {
+ 		padding: 0px 2vw;
+ 		text-align: right;
+ 	}
+ 	.order-totals {
+ 		margin-top: 0;
+ 	}
+ 	.shipping-info span {
+ 		display: inline-flex;
+ 		flex-wrap: wrap;
+ 	}
+ 	.account-page .order-totals span {
+ 		padding-right: 0;
+ 		padding-left: 0;
+	 }
+	 
+	 .account-page table td {
+	     align-items: baseline;
+	 }
+
+ }
+
+ @media (min-width: 960px) and (max-width: 1113px) {
+ 	.sidebar-always-visible .order-totals {
+ 		width: 60%;
+ 	}
+ 	.account-page .order-totals span {
+	    padding-left: 0;
+	    padding-right: 0;
+	}
+	.shipping-info .customer-address.shipping-address {
+		margin-bottom: 0;
+	}
+	.customer-address.shipping-address span {
+		display: inline-flex;
+	}
+ }
+

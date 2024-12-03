@@ -1,0 +1,91 @@
+<section class="team">
+  <div class='center-wrapper'>
+      <h2 class="team__title">{{section.settings.heading}}</h2>
+      <div class="team__row">
+          <div class="team__col">
+              <div class="team-item">
+                  <div class="team-item__image">{{section.settings.image1 | img_url : 'master' | img_tag }}</div>
+                  <div class="team-item__title">{{section.settings.heading1}}</div>
+                  <div class="team-item__desc">{{section.settings.text1}}</div>
+              </div>
+          </div>
+          <div class="team__vs">VS.</div>
+          <div class="team__col">
+              <div class="team-item">
+                  <div class="team-item__image"><span>{{section.settings.image2 | img_url : 'master' | img_tag }}</span></div>
+                  <div class="team-item__title">{{section.settings.heading2}}</div>
+                  <div class="team-item__desc">{{section.settings.text2}}</div>
+              </div>
+          </div>
+      </div>
+      <div class="get-discount">
+          <a href="{{section.settings.btn-link}}" class="get-discount__btn btn">{{section.settings.btn-label}}</a>
+          <div class="get-discount__note">{{section.settings.subtext}}</div>
+      </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Final3 Vs2",
+    "settings" : [
+      {
+        "type" : "html",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "<span>DESIGNED BY WOMEN</span> who get it"
+      },   
+      {
+        "type" : "image_picker",
+        "id" : "image1",
+        "label" : "Image 1"
+      },
+      {
+        "type" : "text",
+        "id" : "heading1",
+        "label" : "Heading1",
+        "default" : "MIA + ALEX <span>FOUNDERS</span>"
+      }, 
+      {
+        "type" : "richtext",
+        "id" : "text1",
+        "label" : "Text 1",
+        "default" : "<p>We knew there had to be a better way to manage bladder leaks, <strong>so we built it.</strong></p>"
+      }, 
+      {
+        "type" : "image_picker",
+        "id" : "image2",
+        "label" : "Image 2"
+      },
+      {
+        "type" : "text",
+        "id" : "heading2",
+        "label" : "Heading 2",
+        "default" : "..........?"
+      }, 
+      {
+        "type" : "richtext",
+        "id" : "text2",
+        "label" : "Text 2",
+        "default" : "<p>Most of the incontinence category is dominated by massive international conglomerates.</p>"
+      }, 
+     
+      {
+        "type" : "text",
+        "id" : "btn-label",
+        "label" : "Button Label",
+        "default"   : "GET 30% OFF YOUR FIRST ORDER*"
+    },
+    {
+        "type" : "url",
+        "id" : "btn-link",
+        "label" : "Button Link"
+    }   ,
+    {
+      "type" : "text",
+      "id" : "subtext",
+      "label" : "SubText",
+      "default" : "*Discount automatically applied at checkout"
+    }
+    ]
+  }
+{% endschema %}

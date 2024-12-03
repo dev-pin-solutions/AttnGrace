@@ -1,0 +1,39 @@
+.collection-banner {
+  max-width: 1440px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+.collection-banner .collection-banner__content-wrapper {
+  border-radius: 15px;
+  text-align: center;
+  margin: 25px auto 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.collection-banner .collection-banner__heading {
+  width: 95%;
+  font-family: 'BentonMod', serif;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 44px;
+  letter-spacing: 1px;
+  margin: 0 auto 15px;
+}
+.collection-banner .collection-banner__subheading {
+  width: 95%;
+  font-family: 'Acre', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+	.collection-banner .collection-banner__heading {
+		font-size: 30px;
+		line-height: 33px;
+	}
+  .collection-banner .collection-banner__subheading {
+		font-size: 20px;
+		line-height: 26px;
+	}
+}

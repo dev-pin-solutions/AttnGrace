@@ -1,0 +1,62 @@
+{{ 'style3l.css' | asset_url | stylesheet_tag }} 
+<section class="promo promo_way">
+    <div class='center-wrapper'>
+        <div class="promo__body">
+            <h1 class="promo__title2">{{section.settings.heading}}</h1>
+            <div class="promo__text">{{section.settings.subheading}}</div>
+            <div class="promo__btnwrap">
+                <a href="{{section.settings.btn-link}}" class="promo__btn btn">{{section.settings.btn-label}}</a>
+                <div class="promo__note">{{section.settings.subtext}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="promo__image promo__image_desktop">{{section.settings.image | img_url : 'master' | img_tag }}</div>
+    <div class="promo__image promo__image_mobile">{{section.settings.image_mob | img_url : 'master' | img_tag }}</div>
+</section>
+{% schema %}
+  {
+    "name": "Final3 Hero",
+    "settings" : [
+      {
+        "type" : "image_picker",
+        "id" : "image",
+        "label" : "Image"
+      },
+      {
+        "type" : "image_picker",
+        "id" : "image_mob",
+        "label" : "Image Mobile"
+      },
+      {
+        "type" : "html",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "The <span>BEST</span> way to stay dry."
+      },
+     
+      {
+        "type" : "richtext",
+        "id" : "text",
+        "label" : "Text",
+        "default" : "<p>Our bladder leak pads are changing the game, beating the competition when it comes to keeping you dry, protecting your skin and caring for our planet. Keep scrolling to see how!</p>"
+      },
+       {
+            "type" : "text",
+            "id" : "btn-label",
+            "label" : "Button Label",
+            "default"   : "GET 30% OFF YOUR FIRST ORDER*"
+        },
+        {
+            "type" : "url",
+            "id" : "btn-link",
+            "label" : "Button Link"
+        },
+        {
+            "type" : "text",
+            "id" : "subtext",
+            "label" : "SubText",
+            "default" : "*Discount automatically applied at checkout"
+        }
+    ]
+  }
+{% endschema %}

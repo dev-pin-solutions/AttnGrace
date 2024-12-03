@@ -1,0 +1,90 @@
+<script type="text/javascript">
+ window.addEventListener('load', function() { 
+  console.log(`[data-layers-events] running`);
+
+  {% if template.name == "index" %}
+    window.dataLayer.push({
+      'event': 'HomeView',
+      'pageType': 'home'
+    });
+  {% elsif template contains 'article' %}
+    window.dataLayer.push({
+      'author': {{ article.author | json }},
+      'title': {{ article.title | json }},
+      'dateCreated': {{ article.created_at | json }},
+      'pageType': 'Blog',
+      'event': 'blog'
+    });
+  {% elsif template contains "product" %}
+    window.dataLayer.push({
+      'pageType': 'product'
+    });
+  {% elsif template contains 'checkout' %}
+    window.dataLayer.push({
+      'pageType': 'checkout'
+    });
+  {% else %}
+    window.dataLayer.push({
+      'pageType': 'other'
+    });
+  {% endif %}
+  
+  {% if template contains 'collection' %}
+    var ecommerce = {
+      'items': [
+        {% for product in collection.products %}{
+        'sku': {{ product.selected_variant.sku | json }},
+        'item_id': {{ product.id | json }},             	 
+        'item_variant': {{ product.selected_or_first_available_variant.id | json }},        	 
+        'item_name': {{ product.title | json }},
+        'brand': {{ product.vendor | json }},
+        'price': {{ product.price | money_without_currency | replace: ',', '.' | json }},
+        'item_list_name': {{ collection.title | json }},
+        'imageURL': "https:{{product.featured_image.src|img_url:'grande'}}",
+        'productURL': '{{shop.secure_url}}{{product.url}}'
+        },{% endfor %}]
+    };  
+    window.dataLayer.push({
+      'productList': {{ collection.title | json }},
+      'pageType': 'Collection',
+      'event': 'view_item_list',
+      ecommerce
+    });
+  {% endif %}
+
+  {% if template contains 'product' %}  
+    var ecommerce = {
+      'items': [{
+        'sku': {{ product.selected_variant.sku | json }},
+        'item_id': {{ product.id | json }},             	 
+        'item_variant': {{ product.selected_or_first_available_variant.id | json }},        	 
+        'item_name': {{ product.title | json }},
+        'brand': {{ product.vendor | json }},
+        'price': {{ product.price | money_without_currency | replace: ',', '.' | json }},
+        'description': {{ product.description | strip_newlines | strip_html | json }},
+        'imageURL': "https:{{product.featured_image.src|img_url:'grande'}}",
+        'productURL': '{{shop.secure_url}}{{product.url}}'
+      }]
+    };        	 
+    window.dataLayer.push({
+      'pageType' : 'Product',
+      'event'	: 'view_item',
+      ecommerce
+    });
+    document.querySelector('form[action="/cart/add"] [type="submit"]').addEventListener('click', function() {
+      console.log(`[data-layers-events] item added to cart`);
+      window.dataLayer.push({               	 
+        'event': 'add_to_cart',
+        ecommerce
+      });
+    });        	 
+  {% endif %}
+
+  document.querySelector('.main-sidebar-tool-item-cart a').addEventListener('click', function() {
+    console.log(`[data-layers-events] cart drawer opened`);
+    window.dataLayer.push({               	 
+      'event': 'cart_view'
+    });
+  }); 
+});
+</script>

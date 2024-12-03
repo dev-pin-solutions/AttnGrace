@@ -1,0 +1,98 @@
+{% schema %}
+{
+"name": "Products on Shogun",
+"settings": [{
+"type": "header",
+"content": "Products on Landing Pages"
+}],
+"blocks": [
+{
+"type": "products",
+"name": "Products",
+"settings": [
+
+{
+"id": "select_product",
+"type": "url",
+"label": "Select Product"
+}
+]
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+                            setTimeout(function(){
+    //your code here
+
+    $(".shg-product-title-component h2 span").each(function(){
+      var pptitle = $(this).html();
+      
+      {% for block in section.blocks %}
+        {% assign phandle = block.settings.select_product | remove: "/products/" %}
+        {% assign product = all_products[phandle] %}
+          var ptitle = '{{ product.title }}';
+          var product_id = '{{ product.id }}'
+          var price = '{{ product.price | money }}';
+          var prod_variant_id = '{{ product.first_available_variant.id }}';
+          if(pptitle == ptitle)
+          {	
+            var discount = '{{ product.metafields.subscriptions.discount_percentage  | round: 2 }}';
+            {% for meta in product.metafields.subscriptions.original_to_hidden_variant_map %}
+              {% for mm in meta[1] %}
+                  {% if mm[0] == "discount_variant_id" %}
+                       {% assign rechargevariant = mm[1] %}
+            var recharge_var_id = '{{ rechargevariant }}';
+                  {% endif %}
+
+                  {% if mm[0] == "discount_variant_price" %}
+                       {% assign rechargevariantprice = mm[1] %}
+            var recharge_var_price = '{{ rechargevariantprice }}';
+                  {% endif %}
+
+              {% endfor %}
+            {% endfor %}
+            
+            var test = '<form name="add'+product_id+'" mathod="post" action="/cart/add"><input type="hidden" id="variant'+product_id+'" name="id" value="'+prod_variant_id+'"><input name="" class="intervalvariant'+product_id+'" type="hidden" value="" /><input class="unittypevariant'+product_id+'"  name="" type="hidden" value="" /><div class="product-subscription-section"><div class="subscribe-item subscribe-one-time rc_block rc_block__type rc_block__type__onetime rc_block__type--active">  <input type="radio"  data-hidden="variant'+product_id+'" id="rc_purchase_type_onetime-'+recharge_var_id+'" name="purchase_type'+recharge_var_id+'" value="'+prod_variant_id+'" checked="" class="rc_radio rc_radio__onetime radio">  <label for="rc_purchase_type_onetime-'+recharge_var_id+'" class="label rc_label rc_label__onetime">    <span class="label-title">One-time purchase</span>    <span id="rc_price_onetime" class="price rc_price rc_price__onetime">'+price+'</span>  </label></div><div class="subscribe-item subscribe-pm rc_block rc_block__type rc_block__type__autodeliver ">  <input type="radio" data-hidden="variant'+product_id+'" name="purchase_type'+recharge_var_id+'" id="rc_purchase_type_autodeliver-'+recharge_var_id+'" value="'+recharge_var_id+'" class="rc_radio rc_radio__autodeliver radio">  <label for="rc_purchase_type_autodeliver-'+recharge_var_id+'" class="label rc_label rc_label__autodeliver">    <span class="rc_label__discount label-title">Subscribe &amp; Save (10%)</span>    <span id="rc_price_autodeliver" class="price rc_price rc_price__autodeliver">$'+recharge_var_price+'</span>  </label></div></div><input type="submit" value="Add to Cart"></form>';
+            $(test).insertAfter($(this).closest(".shg-c").next());
+            //$("<span>Discount: "+discount+" ==========  Price: "+price+" ========== Recharge var: "+recharge_var_id+" ========= Recharge Var Price: "+recharge_var_price+"</span>").insertAfter($(this).closest(".shg-c").next());
+          }
+      {% endfor %}
+    });
+    
+  jQuery(".rc_radio__autodeliver").on("click",function(){
+    var hiddenid = jQuery(this).attr("data-hidden");
+    var val = jQuery(this).val();
+    jQuery("#"+hiddenid).val(val);
+    jQuery(".interval"+hiddenid).val('1');
+    jQuery(".unittype"+hiddenid).val('Months');
+    jQuery(".interval"+hiddenid).attr('name','properties[shipping_interval_frequency]');
+    jQuery(".unittype"+hiddenid).attr('name','properties[shipping_interval_unit_type]');
+    
+    
+    
+  });
+  
+  jQuery(".rc_radio__onetime").on("click",function(){
+    var hiddenid = jQuery(this).attr("data-hidden");
+    var val = jQuery(this).val();
+    jQuery("#"+hiddenid).val(val);
+     jQuery(".interval"+hiddenid).val('');
+    jQuery(".unittype"+hiddenid).val('');
+    jQuery(".interval"+hiddenid).attr('name','');
+    jQuery(".unittype"+hiddenid).attr('name','');
+  });  
+  }, 3000);
+  
+  
+  
+  });
+</script>

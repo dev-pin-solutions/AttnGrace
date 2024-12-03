@@ -1,0 +1,57 @@
+<section class="upgrade">
+  <div class='center-wrapper'>
+      <div class="upgrade__body">
+          <div class="upgrade__image">{{ section.settings.image | img_url : 'master' | img_tag }}</div>
+          <div class="upgrade__content">
+              <div class="upgrade__caption">{{ section.settings.heading }}</div>
+              <div class="upgrade__desc">{{ section.settings.subheading }}</div>
+              <ul class="upgrade__list">
+                  {{section.settings.text}}
+              </ul>
+              <a href="{{ section.settings.btn-link }}" class="upgrade__btn btn">{{ section.settings.btn-label }} {% render 'icon-arrow-3l' %}</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Findfit Product",
+    "settings": [
+      {
+        "type" : "image_picker",
+        "id" : "image",
+        "label" : "Image"
+      },
+      {
+        "type" : "text",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "Upgrade your incontinence care."
+      },
+       {
+        "type" : "text",
+        "id" : "subheading",
+        "label" : "SubHeading",
+        "default" : "Attn: Grace outperforms other brands<br> in all the ways that matter most:"
+      },
+      {
+        "type" : "html",
+        "id" : "text",
+        "label" : "Text",
+        "default" : "<li>Powerfully absorbent</li><li>Keeps you drier, longer</li><li>Safe and gentle on your skin</li><li>Sustainably sourced, designed and packaged</li><li>Contains less conventional plastic</li>"
+      },     
+       {
+            "type" : "text",
+            "id" : "btn-label",
+            "label" : "Button Label",
+            "default"   : "FIND YOUR FIT"
+        },
+        {
+            "type" : "url",
+            "id" : "btn-link",
+            "label" : "Button Link"
+        }
+    ]
+  }
+{% endschema %}

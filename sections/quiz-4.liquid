@@ -1,0 +1,68 @@
+<div class="quiz_4 quiz_div" style="display:none">
+    <div class="quiz-header">
+        <h2 class="main-title">Find Your Fit Quiz</h2>
+        <div class="quiz-stage">
+            <div class="top-title">
+                <label>Stage</label>
+                <span>4 / 4</span>
+            </div>
+            <ul>
+                <li class="active"><span>line</span></li>
+                <li class="active"><span>line</span></li>
+                <li class="active"><span>line</span></li>
+                <li class="active"><span>line</span></li>
+            </li>
+        </div>
+        <a href="javascript:;" class="backbtn backto3">back</a>
+    </div>
+    <h3 class="question">{{ section.settings.question_4 }}</h3>
+    <div class="answers">
+        {% for block in section.blocks %}
+            <div class="ans">
+                <div class="ans-inner">
+                    <input type="radio" class="answer_for_quiz_4" name="answer_for_quiz_4" value="{{ block.settings.answer }}">
+                    <img loading="lazy" src="{{ block.settings.answer_image | img_url }}" >
+                    <label>{{ block.settings.answer }}</label>
+                    <span>{{ block.settings.answer_subtext }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% schema %}
+    {
+    "name": "Quiz 4",
+    "class": "quiz-4",
+    "settings": [
+    {
+    "id": "question_4",
+    "type": "textarea",
+    "label": "Question 4"
+    }
+    ],
+    "max_blocks": 5,
+    "blocks": [
+    {
+    "type": "answers",
+    "name": "Answers",
+    "settings": [
+    {
+    "id": "answer",
+    "type": "text",
+    "label": "Answer"
+    },
+    {
+    "id": "answer_subtext",
+    "type": "textarea",
+    "label": "Answer Description"
+    },
+    {
+    "id": "answer_image",
+    "type": "image_picker",
+    "label": "Answer image"
+    }
+    ]
+    }
+    ]
+    }
+{% endschema %}

@@ -1,0 +1,183 @@
+{% comment %}
+    @param current_option
+    The current product option we want to render.
+
+    @param selected_variant
+    The currently selected variant. Used to set the `checked` attribute
+    on the appropriate inputs.
+{% endcomment %}
+
+{% assign found_option = false %}
+{% assign option_index = 0 %}
+
+{% for option in product.options %}
+    {% if option == current_option %}
+        {% assign found_option = true %}
+        {% assign option_index = forloop.index0 %}
+    {% endif %}
+{% endfor %}
+{% assign tmp = 'no' %}
+{% for tag in product.tags %}
+    {% if tag contains 'variant:' %}
+        {% assign tmp = 'yes' %}
+    {% endif %}
+{% endfor %}
+{% if tmp == 'yes' %}
+    {% if product.tags contains "Pads" %}
+        <div class="option product-variants-options">
+            <div class="variant-option-head">
+                <label for="select-variants">What absorbency do you need? </label>
+                <span class="packs-guide" pdp-modal-id="packs-guide">
+                    <span class="pack">Need Help?</span>
+                </span>
+              
+            </div>
+            {% assign values = '' %}
+            <ul class="product-options-wrap pads-options">
+                {% if template.suffix == "new" %}
+                    {% assign padlinks = linklists.pad-menu-new-template %}
+                    {% else %}
+                    {% assign padlinks = linklists.pad-menu %}
+                {% endif %}
+                {% for link in padlinks.links %}
+                    {% assign phandle = link.url | remove: "/products/" %}
+                    <li class="product-option {{ phandle }} {% if phandle == product.handle %}selected{% endif %}">
+                        <a href="{{ link.url }}">
+                            <div class="image-wrap">
+                                {% render 'icon-drops' %}
+                                {% render 'icon-drops' %}
+                                {% render 'icon-drops' %}
+                                {% render 'icon-drops' %}
+                                {% render 'icon-drops' %}
+                                {% render 'icon-drops' %}
+                                {% render 'icon-drops' %}
+                            </div>
+                            <h2>{{ link.title | replace: "Pads", " " }}</h2>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- Add Point 1 -->
+       <div class="point1-addtional-description">
+            <div class="point1-leftbar"></div>
+            {% comment %} need to have 3 bullet points each bullet being an icon {% endcomment %}
+            <div class="point1-addtional-description-wrap">
+                <div class="point1-addtional-description-icon">
+                    {% render 'icon-cup' %}
+                </div>
+                <div class="point1-addtional-description-text">
+                    <p>Holds up to {{ product.metafields.custom.pad_liquid }} of liquid</p>
+                </div>
+            </div>
+         <div class="point1-addtional-description-wrap">
+                <div class="point1-addtional-description-icon">
+                    {% render 'icon-multiarrow' %}
+                </div>
+                <div class="point1-addtional-description-text">
+                    <p><strong>Extra long.</strong> Measures {{ product.metafields.custom.pad_length }} long</p>
+                </div>
+            </div>
+         <div class="point1-addtional-description-wrap">
+                <div class="point1-addtional-doubledash-icon">
+                    {% render 'icon-doubledash' %}
+                </div>
+                <div class="point1-addtional-description-text">
+                    <p>{{ product.metafields.custom.pad_thickness }} thin</p>
+                </div>
+            </div>
+
+         
+
+        </div>
+      
+        <!-- End Point 1 -->
+      
+    {% elsif product.tags contains "Deoderant" %}
+         <div class="option product-variants-options">
+            <div class="variant-option-head">
+                <label for="select-variants">Select your scent:</label>
+                <span class="packs-guide" pdp-modal-id="packs-guide">
+                    <span class="pack">Need Help?</span>
+                </span>
+            </div>
+            {% assign values = '' %}
+            <ul class="product-options-wrap">
+                {% for link in linklists.scent-menu.links %}
+                    {% assign phandle = link.url | remove: "/products/" %}
+                    <li class="product-option {{ phandle }} {% if phandle == product.handle %}selected{% endif %}">
+                        <a href="{{ link.url }}">
+                            <div class="image-wrap">
+                                {% if link.title contains "Unscented" %}
+                                    {% include 'icon-unscent' %}
+                                {% else %}
+                                    {% include 'icon-lavender' %}
+                                {% endif %}
+                            </div>
+                            <h2>{{ link.title | replace: "Pads", " " }}</h2>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% elsif product.tags contains "Briefs" %}
+        <div class="option product-variants-options briefs-options">
+            <div class="variant-option-head">
+                <label for="select-variants">What's Your Size?</label>
+                <span class="packs-guide" pdp-modal-id="size-guide">
+                    <span class="pack">Need Help?</span>
+                </span>
+            </div>
+            {% assign values = '' %}
+            <ul class="product-options-wrap">
+                {% for link in linklists.briefs-menu.links %}
+                    {% assign phandle = link.url | remove: "/products/" %}
+                    <li class="product-option {{ phandle }} {% if phandle == product.handle %}selected{% endif %}">
+                        <a href="{{ link.url }}">
+                            <h2>{{ link.title | replace: "Pads", " " }}</h2>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <div class="option product-variants-options">
+            <div class="variant-option-head">
+                <label for="select-variants">What's Your Size?</label>
+                <span class="packs-guide" pdp-modal-id="size-guide">
+                    <span class="pack">Need Help?</span>
+                </span>
+            </div>
+            {% assign values = '' %}
+            <select id="select-variants" name="variant_{{ current_option | replace: ' ', '-' }}" class="optiondropdown">
+                <option img=""  value="{{ product.handle }}" >{{ product.title  }}</option>
+                {% for tag1 in product.tags %}
+                    {% if tag1 contains 'variant:' %}
+                        {% assign aaa = tag1 | remove: 'variant:' %}
+                        <option img=""  value="{{ tag1 | remove: 'variant:' }}" >{{ all_products[aaa].title }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        {% endif %} 
+{% else %}
+    {% if found_option %}
+        <div class="option product-variants-options">
+            <label for="select-variants">Select:</label>
+            {% assign values = '' %}
+            <select id="select-variants" name="variant_{{ current_option | replace: ' ', '-' }}" class="optiondropdown">
+                {% for variant in product.variants %}
+                    {% assign value = variant.options[option_index] %}
+
+                    {% unless values contains value %}
+                    {% assign values = values | join: ',' %}
+                    {% assign values = values | append: ',' | append: value %}
+                    {% assign values = values | split: ',' %}
+                        <option img="image-{{ value }}" {% if variant.id == product.selected_variant.id %}selected{% endif %} op-index="option{{ forloop.index }}" value="{{ variant.id }}" availability="{% if variant.available %}option-available{% else %}option-soldout{% endif %}">{{ value | escape }}</option>
+                    {% endunless %}
+                {% endfor %}
+            </select>
+        </div>
+    {% endif %}
+{% endif %}  
+

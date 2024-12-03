@@ -1,0 +1,90 @@
+<section class="home-image-text-column" data-section-id="{{ section.id }}" data-home-section>
+{% for block in section.blocks %}
+    {%- assign block-image = block.settings.image -%}
+    <div class="feature-row {% if block.settings.image_position == 'right' %}right{% endif %}">
+        <div class="feature-row__item featured-row-image">
+            {%
+                include 'rimg-home'
+                img: block-image,
+                size: '2048x2048',
+                lazy: true,
+            %}
+        </div>
+        <div class="feature-row__item featured-row-text">
+            <div class="text-wraper">
+                <h2 class="title">{{ block.settings.heading }}</h2>
+                <p class="text">{{ block.settings.text }}</p>
+                <a href="{{ block.settings.button_link }}" class="shop-now-btn">{{ block.settings.button_label }}</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Image Text Column",
+  "class": "home-image-text-wraper",
+  "max_blocks": 3,
+  "settings": [
+    
+  ],
+  "blocks": [
+    {
+      "type": "row",
+	  "name": "Row",
+	  "settings": [
+		{
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "type": "select",
+            "id": "image_position",
+            "label": "Image Position",
+            "options": [
+                {
+                "value": "left",
+                "label": "Left"
+                },
+                {
+                "value": "right",
+                "label": "Right"
+                }
+            ],
+            "default": "left"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label",
+            "default": "Shop now"
+        }
+	  ]
+	}
+  ],
+  "presets": [
+    {
+      "category": "Custom Blocks",
+      "name": "Image Text Column"
+    }
+  ]
+}
+
+{% endschema %}

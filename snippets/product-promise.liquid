@@ -1,0 +1,13 @@
+{% if product.metafields.global.promise-text != blank %}
+<div class="product-promise">
+	<div class="feature-row__item featured-row-text">
+        <div>
+              <h2 class="title">{{ product.metafields.global.promise-heading }}</h2>
+          <div class="ul-flex">
+            {{ product.metafields.global.promise-text }}
+          </div>
+          </div>
+      </div>
+  <div class="feature-row__item featured-row-image"><img loading="lazy" src="{{ product.metafields.global.promise-img }}" alt="our promise"></div>
+</div>
+{% endif %}

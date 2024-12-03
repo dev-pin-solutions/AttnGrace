@@ -1,0 +1,102 @@
+<div class="cost-saving-section" style="background-color:{{ section.settings.bg_color }}">
+	{% if section.settings.cost_saving_title != blank %}
+		<h2>
+			{{ section.settings.cost_saving_title }}
+		</h2>
+	{% endif %}
+
+	<div class="cost-saving-price">
+		<span class="cost_bundle">{{ section.settings.cost_bundle }}</span>
+		<span class="cost_value">{{ section.settings.cost_value }}</span>
+	</div>
+
+	<div class="cost-saving-usp">
+		<div class="cost-saving-usp-item">
+			<h3>{{ section.settings.shipping_title }}</h3>
+			{{ section.settings.shipping_description }}
+		</div>
+		<div class="cost-saving-usp-item">
+			<h3>{{ section.settings.returns_title }}</h3>
+			{{ section.settings.returns_description }}
+		</div>
+		<div class="cost-saving-usp-item">
+			<h3>{{ section.settings.hidden_fees_title }}</h3>
+			{{ section.settings.hidden_fees_description }}
+		</div>
+	</div>
+</div>
+{% schema %}
+  {
+    "name": "Cost Saving",
+    "class": "index-section cost-saving",
+
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "text",
+        "id": "cost_saving_title",
+        "default": "Cost Savings",
+        "label": "Cost Saving Title"
+      },
+      {
+        "type": "text",
+        "id": "cost_bundle",
+        "default": "$79.95/Bundle",
+        "label": "Cost Bundle"
+      },
+      {
+        "type": "text",
+        "id": "cost_value",
+        "default": "($96.45 Value)",
+        "label": "Cost value"
+      },
+      {
+        "type": "text",
+        "id": "shipping_title",
+        "default": "Free Shipping",
+        "label": "Free Shipping Title"
+      },
+      {
+        "type": "richtext",
+        "id": "shipping_description",
+        "default": "<p>Free Shipping Description</p>",
+        "label": "Free Shipping Description"
+      },
+      {
+        "type": "text",
+        "id": "returns_title",
+        "default": "Free Returns",
+        "label": "Free Returns Title"
+      },
+      {
+        "type": "richtext",
+        "id": "returns_description",
+        "default": "<p>Free Returns Description</p>",
+        "label": "Free Returns Description"
+      },
+      {
+        "type": "text",
+        "id": "hidden_fees_title",
+        "default": "No Hidden Fees",
+        "label": "Hidden Fees Title"
+      },
+      {
+        "type": "richtext",
+        "id": "hidden_fees_description",
+        "default": "<p>Free Returns Description</p>",
+        "label": "Hidden Fees Description"
+      }
+    ],
+
+    "presets": [
+      {
+        "category": "Cost Saving",
+        "name": "Cost Saving"
+      }
+    ]
+  }
+{% endschema %} 

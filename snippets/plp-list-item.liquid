@@ -1,0 +1,119 @@
+{% comment %}
+  @param item Product
+         The product to display.
+
+  @param placeholder String
+         If set, use a Shopify placeholder SVG as the product image.
+
+  @param title String
+         The product title to use. Only used if no `item` is passed.
+{% endcomment %}
+
+{% assign image_size = '512x' %}
+{% assign placeholder_style = placeholder | default: 'image' %}
+{% assign crop_image = null %}
+{% if section.settings.product_grid_image_crop %}
+  {% assign crop_image = 'center' %}
+{% endif %}
+
+{% if item.featured_media %}
+  {%- capture background_style -%}
+    {%
+      include 'rimg-home',
+      img: item.featured_media.preview_image,
+      size: image_size,
+      crop: crop_image,
+      lazy: true,
+      background: true
+    %}
+  {%- endcapture -%}
+{% else %}
+  {%- capture placeholder_uri -%}
+    {%-
+      include 'placeholder_svg_uri',
+      placeholder: placeholder_style
+    -%}
+  {%- endcapture -%}
+
+  {%- capture background_style -%}
+    style="background-image: url('{{ placeholder_uri }}');"
+  {%- endcapture -%}
+{% endif %}
+
+<div class="recommended-product">
+  {% include 'product-badge' %}
+  <figure
+    class="
+      product-list-item-thumbnail
+      {% unless item.featured_media %}
+        product-list-item-thumbnail-placeholder
+      {% endunless %}
+    "
+    {% comment %} this caused LCP performance issues and not needed: {{ background_style }} {% endcomment %}
+  >
+    <a href="{{ item.url | within: collection | default: '#' }}">
+      {% if item.featured_media %}
+        {% include 'rimg-home',
+          img: item.featured_media.preview_image,
+          size: image_size,
+          crop: crop_image,
+          lazy: false,
+          class: recommended-product-image
+        %}
+      {% else %}
+        <img
+          loading="lazy"
+          src="{{ placeholder_uri }}"
+          alt="{{ title | default: product.title | escape }}"
+          class="recommended-product-image"
+        >
+      {% endif %}
+    </a>
+  </figure>
+
+  {% if template contains 'search' %}
+    <div class="search-item-product-details">
+      <span class="search-item-product-title">
+        {% if item %}
+          {{ item.title }}
+        {% else %}
+          {{ title }}
+        {% endif %}
+      </span>
+      {% if item.available %}
+        <span class="search-item-product-price">
+          {% if item.price_varies %}{{ 'products.product.from' | t }}{% endif %}
+          <span data-money>{{ item.price_min | money }}</span>
+        </span>
+      {% endif %}
+    </div>
+  {% else %}
+    <div class="recommended-product-desc {% if item.price %}has-price{% endif %}">
+      <h3 class="recommended-product-title">
+        <a href="{{ item.url | within: collection | default: '#' }}">
+          {% if item %}
+            {{ item.title }}
+          {% else %}
+            {{ title }}
+          {% endif %}
+        </a>
+      </h3>
+      <a href="{{ item.url | within: collection | default: '#' }}#okendo-reviews-widget-wrapper">
+        {% include 'okendo-reviews-product-rating-summary', product: product %}
+      </a>
+
+      {% comment %}
+          <div class="recommended-short-desc">
+            {{ product.metafields.global.short_description }}
+          </div>
+        {% else %}
+          <div class="recommended-short-desc">
+            {{ variant.metafields.global.short_description }}
+          </div>
+        {% endif %}
+      {% endcomment %}
+
+      {% include 'product-grid-form' %}
+    </div>
+  {% endif %}
+</div>

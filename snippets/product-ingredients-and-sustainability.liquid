@@ -1,0 +1,21 @@
+{% assign count_cert = 0 %}
+{% if product %}
+  {% for block in section.blocks %}
+    {% for tag in product.tags %}
+      {% if tag == block.settings.description %}
+        <div class="certification-item">
+          <img loading="lazy" src="{{ block.settings.image | img_url: 'large' }}" alt="{{block.settings.description}}" />
+          <p>{{block.settings.description}}</p>
+        </div>
+        {% assign count_cert = count_cert | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}
+{% if count_cert == 0 %}
+<style type="text/css">
+  .product-certifications__inner {
+    display: none;
+  }
+</style>
+{% endif %}

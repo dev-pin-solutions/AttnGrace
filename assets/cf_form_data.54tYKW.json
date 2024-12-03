@@ -1,0 +1,377 @@
+{
+  "form": {
+    "id": "54tYKW",
+    "name": "Contact Form",
+    "handle": "contact-form-3",
+    "theme_id": "133271159038",
+    "settings": {
+      "locales": {
+        "back": "Back",
+        "next": "Next",
+        "cancel": "Cancel",
+        "edit_link": "Edit account",
+        "fix_errors": "Please fix errors before continuing",
+        "is_invalid": "{{label}} is invalid",
+        "email_taken": "Email has already been taken",
+        "phone_taken": "Phone number has already been taken",
+        "server_error": "Could not save form, please try again later",
+        "step_counter": "Step {{current}} of {{total}}",
+        "verify_email": "Check your email for a verification link to activate your account.",
+        "not_available": "An error occurred while saving your account, please try again in a few minutes.",
+        "create_account": "Submit",
+        "update_account": "Update account",
+        "recaptcha_error": "Challenge verification failed, please try again",
+        "creating_account": "Submitting...",
+        "updating_account": "Updating account...",
+        "reset_password_link": "Reset your password",
+        "invalid_email_domain": "Email contains an invalid domain name",
+        "reset_password_email_sent": "Check your inbox for a link to reset your password.",
+        "reset_password_too_many_attempts": "You tried to reset your password too many times. Please wait and try again later."
+      },
+      "customCSS": "div[data-cf-field-id=\"462262\"] {\n    display: none;\n}\n#create_customer {\n    margin: 0 auto;\n    width: 60%;\n    min-width: 320px;\n}",
+      "whitelistedTags": "",
+      "markRequiredFields": true,
+      "displayCancelButton": false,
+      "redirectAfterSubmit": false,
+      "goBackAfterSubmission": false,
+      "cancelButtonRedirectUrl": "\/account\/login",
+      "postSubmissionRedirectUrl": "\/account",
+      "showSuccessStepAfterSubmit": true,
+      "goBackAfterCancelButtonClick": false
+    },
+    "install_locations": [
+      "manual"
+    ],
+    "created_at": "2022-06-10T20:52:02Z",
+    "updated_at": "2022-06-13T15:20:06Z",
+    "revision_ids": [
+      "MDTAwZg",
+      "58TLD6V",
+      "kdT28Kw",
+      "orTM6q2",
+      "d7TvZ40",
+      "yzTO5aP",
+      "6XTg8Ye",
+      "7kToDnO",
+      "xMTL1Xp",
+      "orTM6rb",
+      "9pTGkg5",
+      "p4Tb6P5",
+      "6XTg8bE",
+      "evTeaOg",
+      "kdT28m4",
+      "wDT5Bx9",
+      "9pTGkwK",
+      "xMTL1gV"
+    ]
+  },
+  "revision": {
+    "id": "MDTAwZg",
+    "created_at": "2022-06-14T02:18:59Z",
+    "updated_at": "2022-06-14T02:18:59Z",
+    "embed_version": "4.10.4",
+    "published_at": null,
+    "fields": [
+      {
+        "id": 310065,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 0,
+        "type": "heading",
+        "stepId": 150006,
+        "default": "",
+        "label": "New heading field",
+        "placeholder": "",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12,
+          "alignment": "center"
+        },
+        "settings": {
+          "size": 1,
+          "content": "Get In Touch",
+          "hideLabel": true,
+          "fontWeight": "bold"
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 478138,
+        "dataColumn": {
+          "key": "first_name",
+          "label": "First name",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 1,
+        "type": "text",
+        "stepId": 150006,
+        "default": "",
+        "label": "Name",
+        "placeholder": "Your name",
+        "description": null,
+        "enum": null,
+        "appearance": {
+          "width": 12
+        },
+        "settings": {},
+        "validations": [],
+        "sensitive": null,
+        "preset": "first_name",
+        "autotag": null
+      },
+      {
+        "id": 462262,
+        "dataColumn": {
+          "key": "last_name_1",
+          "label": "Last Name",
+          "dataType": "single_line_text"
+        },
+        "parentId": null,
+        "position": 2,
+        "type": "text",
+        "stepId": 150006,
+        "default": "",
+        "label": "Last Name",
+        "placeholder": "Last Name",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {},
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 213817,
+        "dataColumn": {
+          "key": "email",
+          "label": "Email address",
+          "dataType": "email"
+        },
+        "parentId": null,
+        "position": 3,
+        "type": "email",
+        "stepId": 150006,
+        "default": "",
+        "label": "Email address",
+        "placeholder": "your@email.com",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {},
+        "validations": [
+          {
+            "operator": "is_valid_email",
+            "comparand": null,
+            "errorMessage": "Please provide a valid email address"
+          },
+          {
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank",
+            "metadata": {
+              "hiddenInApp": true
+            }
+          }
+        ],
+        "sensitive": null,
+        "preset": "email_address",
+        "autotag": null
+      },
+      {
+        "id": 227452,
+        "dataColumn": {
+          "key": "phone",
+          "label": "Phone number",
+          "dataType": "phone"
+        },
+        "parentId": null,
+        "position": 4,
+        "type": "phone",
+        "stepId": 150006,
+        "default": "",
+        "label": "Phone",
+        "placeholder": "555-555-5555",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "disableAutoformat": true,
+          "defaultCountryCode": "US"
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": "phone_number",
+        "autotag": null
+      },
+      {
+        "id": 137390,
+        "dataColumn": {
+          "key": "message",
+          "label": "Message",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 5,
+        "type": "textarea",
+        "stepId": 150006,
+        "default": "",
+        "label": "Message",
+        "placeholder": "Write your message here",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "rows": 5
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 764561,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 0,
+        "type": "heading",
+        "stepId": 719477,
+        "default": "",
+        "label": "Account request sent heading",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12,
+          "alignment": "center"
+        },
+        "settings": {
+          "size": 1,
+          "content": "Success!",
+          "hideLabel": true,
+          "fontWeight": "bold"
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 560150,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 1,
+        "type": "paragraph",
+        "stepId": 719477,
+        "default": "",
+        "label": "Reviewing submission explanation",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "content": "<p style=\"text-align: center;\">The form has been successfully submitted.<\/p>",
+          "fontSize": 14,
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 916756,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 2,
+        "type": "link",
+        "stepId": 719477,
+        "default": "",
+        "label": "Back to home link",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12,
+          "alignment": "center"
+        },
+        "settings": {
+          "url": "\/",
+          "content": "Back to home",
+          "fontSize": 14,
+          "hideLabel": true,
+          "fontWeight": "normal",
+          "openInNewTab": false
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      }
+    ],
+    "steps": [
+      {
+        "id": 150006,
+        "title": "Step 1",
+        "description": ""
+      },
+      {
+        "id": 719477,
+        "title": "Submission success",
+        "description": "",
+        "metadata": {
+          "isSuccessStep": true
+        }
+      }
+    ],
+    "rules": [
+      {
+        "id": 155270,
+        "title": "New rule 1",
+        "conditionChaining": "all",
+        "conditions": [
+          {
+            "operand": null,
+            "operator": "not_blank",
+            "metadata": {
+              "column": {
+                "id": "DlF7o2K",
+                "key": "last_name_1",
+                "label": "Last Name",
+                "dataType": "single_line_text",
+                "readOnly": false,
+                "dedicated": false,
+                "createdAt": "2022-06-13T15:18:39.072Z",
+                "archivedAt": null,
+                "expandedLabel": "Last Name",
+                "favorite": false
+              }
+            }
+          }
+        ],
+        "actions": [
+          {
+            "effect": "disable_form_submission",
+            "metadata": {}
+          }
+        ]
+      }
+    ]
+  }
+}

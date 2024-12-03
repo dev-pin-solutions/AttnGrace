@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="{{ 'icon-gallery.css' | asset_url }}" media="print" onload="this.media='all'">
+<div class="icon-gallery-section">
+  <div class="icon-gallery-inner">
+    <div class="icon-gallery-header">
+      {% if section.settings.title != blank %}
+        <h2 class="title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.subtext != blank %}
+        <h3 class="subtext">{{ section.settings.subtext }}</h3>
+      {% endif %}
+    </div>
+    <div class="icon-gallery-wrapper">
+      <div class="icon-grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'icon' %}
+            <div class="icon-wrapper">
+              <img src="{{ block.settings.icon | img_url: 'original' }}" loading="lazy" />
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="percentage-chart-wrapper">
+      <div class="percentage-chart-grid">
+        <div class="percentage-grid-chart">
+          {% for block in section.blocks %}
+            {% if block.type == 'percentage-chart' %}
+              <div class="pc-wrapper">
+                <div class="pc-chart-wrap">
+                  <div class="percentage-chart" style="width:{{ block.settings.select_percentage }}%;">
+                    <span>{{ block.settings.text }}</span>
+                  </div>
+                  {% if block.settings.select_percentage != blank %}
+                    <div class="percentage-text">{{ block.settings.select_percentage }}%</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="percentage-grid-title">
+          {% if section.settings.per_title != blank %}
+            <div class="per-title">{{ section.settings.per_title }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Icon Gallery",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Heading",
+        "default": "<strong>What if we told you that you weren’t alone? </strong>That 50% of adult women leak a little pee (and sometimes a lot)"
+      }, {
+        "type": "text",
+        "id": "subtext",
+        "label": "Sub Heading",
+        "default": "…Approximately 19 million others, that is."
+      }, {
+        "type": "text",
+        "id": "per_title",
+        "label": "Percentage Chart Title",
+        "default": "and So. Many. Others."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icon",
+        "name": "Icon",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          }
+        ]
+      }, {
+        "type": "percentage-chart",
+        "name": "Percentage Chart",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          }, {
+            "type": "range",
+            "id": "select_percentage",
+            "label": "Select Percentage",
+            "max": 100,
+            "min": 1,
+            "step": 1,
+            "default": 45,
+            "unit": "%"
+
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

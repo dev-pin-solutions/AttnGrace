@@ -1,0 +1,45 @@
+<!-- sections/mobile-image-section.liquid -->
+<section class="mobile-image-section">
+  <img src="{{ section.settings.mobile_image | img_url: '373x434' }}" alt="Mobile Image">
+</section>
+
+<!-- CSS styling -->
+<style>
+.mobile-image-section {
+  text-align: center;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+}
+
+.mobile-image-section img {
+  width: 100%;
+  max-width: 373px;
+  height: auto;
+}
+
+  @media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+</style>
+
+<!-- Section settings -->
+{% schema %}
+{
+  "name": "Mobile Image Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

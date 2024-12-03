@@ -1,0 +1,33 @@
+{% assign blog = blogs[section.settings.blog] %}
+{% if section.settings.blog != 'none' and blog.articles.size > 0 %}
+  <section
+    class="home-blog-posts-section plp-blog-list"
+    data-section-id="{{ section.id }}"
+    data-section-type="home-blog-posts"
+    data-home-section>
+    <div class="home-featured-blog">
+      <div class="home-featured-blog-header-container">
+        <h2 class="home-featured-blog-heading">
+          {{ section.settings.heading | escape }}
+        </h2>
+      </div>
+      <div class="article-item-content-wrapper">
+        {% for article in blog.articles limit: section.settings.post_number %}
+          <div class="article-item-content">
+            {% if article.image %}
+              <div class="article-item-image">
+              
+              </div>
+            {% endif %}
+            <div class="article-item-title">
+              <a href="{{ article.url }}"><img src="{{ article.image.src | img_url: 'original' }}" alt="{{ article.image.alt | escape }}" loading="lazy" />{{ article.title }} <img src="{{ 'right-arrow.svg' | asset_url }}" loading="lazy" /></a>
+            </div>
+            <p class="article-item-body rte">
+              {{ article.excerpt }}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}

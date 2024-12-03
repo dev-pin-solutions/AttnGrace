@@ -1,0 +1,92 @@
+<div class="email_register quiz_div" style="display:none;">
+    <div class="quiz-header">
+        <h2 class="main-title">Find Your Fit Quiz</h2>
+    </div>
+    {%- assign formId = 'Contact_' | append: section.id -%}
+    <div class="form-wraper">
+        <div class="register-header">
+            <h2>{{ section.settings.heading }}</h2>
+            <p>{{ section.settings.subheading }}</p>
+        </div>
+        {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+            <input type="hidden" name="return_to" value="/pages/quiz-recommendation"/>
+            {%- if form.posted_successfully? -%}
+                <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                    {{ 'general.newsletter_form.confirmation' | t }}
+                </p>
+            {%- endif -%}
+            <input type="hidden" name="contact[tags]" value="Quiz">
+            <input type="hidden" id="note1" name="contact[note][Is bladder leakage new for you?]" value="">
+            <input type="hidden" id="note2" name="contact[note][How would you describe your leaks?]" value="">
+            <input type="hidden" id="note3" name="contact[note][When do you leak?]" value="">
+            <input type="hidden" id="note4" name="contact[note][What best describes your life stage?]" value="">
+            <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+                <input type="email"
+                       name="contact[email]"
+                       id="{{ formId }}-email"
+                       class="input-group__field{% if form.errors %} input--error{% endif %}"
+                       value="{{ form.email }}"
+                       placeholder="{{ 'general.register_form.email_placeholder' | t }}"
+                       aria-label="{{ 'general.register_form.email_placeholder' | t }}"
+                       aria-required="true"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       required
+                        {% if form.errors %}
+                            aria-invalid="true"
+                            aria-describedby="{{ formId }}-email-error"
+                            data-form-status
+                        {% endif %}
+                >
+                <span class="input-group__btn">
+                    <button type="submit" class="btn" name="commit" id="seeMyResult">
+                        <span>{{ 'general.register_form.submit-btn' | t }}</span>
+                    </button>
+                </span>
+            </div>
+
+            {%- if form.errors contains 'email' -%}
+                <span id="{{ formId }}-email-error" class="input-error-message">
+                    <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                    {% include 'icon-error' %}
+                    <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                </span>
+            {%- endif -%}
+        {% endform %}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Register Customer",
+        "class": "register-customer",
+        "settings": [
+            {
+                "id": "heading",
+                "type": "text",
+                "label": "Heading"
+            },
+            {
+                "id": "subheading",
+                "type": "textarea",
+                "label": "Sub Heading"
+            }
+        ]
+    }
+{% endschema %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("seeMyResult").addEventListener("click", function(event) {
+            var emailField = document.getElementById("{{ formId }}-email");
+            var email = emailField.value;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                emailField.focus();
+                event.preventDefault();
+            }
+        });
+    });
+</script>

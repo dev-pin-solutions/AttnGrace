@@ -1,0 +1,25 @@
+<div class="template-blog blog-details">
+<article class="contained">
+  <header class="blog-header">
+    <h1 class="page-title"><span>{{ article.title }}</span></h1>
+
+      <figure class="article-image">
+        {%
+          include 'rimg',
+          img: article.image,
+          size: '1000x',
+          lazy: true
+        %}
+      </figure>
+  </header>
+  <div class="article-body rte mb0">
+    {{ article.content }}
+  </div>
+
+  <footer class="article-footer">
+    <p class="site-icon">
+      {%- include 'icon-logo' -%}
+    </p>
+  </footer>
+</article>
+</div>

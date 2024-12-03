@@ -1,0 +1,74 @@
+<section class="designed">
+  <div class="designed__image">{{section.settings.image |img_url : 'master' | img_tag }}</div>
+  <div class='center-wrapper'>
+      <div class="designed__body">
+          <div class="designed__row">
+              <h2 class="designed__title">{{section.settings.heading}}</h2>
+              <div class="designed__content">
+                  <div class="designed__text">
+                      {{section.settings.text}}
+                  </div>
+              </div>
+          </div>
+          <div class="designed__btn">
+              <a href="{{section.settings.btn-link}}" class="btn">{{section.settings.btn-label}}{% render 'icon-arrow-3l' %}</a>
+          </div>
+      </div>
+  </div><!-- end center-wrapper -->
+</section><!-- end designed -->
+
+{% schema %}
+  {
+    "name": "Findfit Steps",
+    "settings" : [
+      {
+        "type" : "image_picker",
+        "id" : "image",
+        "label" : "Image"
+      },
+      {
+        "type" : "text",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "Designed by women who get it."
+      },
+      {
+        "type" : "richtext",
+        "id" : "text",
+        "label" : "Text",
+        "default" : "<p>My mother, Eileen, was struggling to find products for her bladder leaks that didn’t cause more problems than they solved. Turns out, she wasn’t alone. Women everywhere are being let down by conventional incontinence pads that are bulky, uncomfortable, and full of bleaches, dyes, fragrance and other ingredients that irritate our skin.</p> <p>We knew there had to be a more thoughtful approach to incontinence care, but we also knew that if we wanted a better way to exist in the world, we were going to have to build it ourselves.<br> So, we did!</p> <p>We can’t wait for your to try our game-changing products.</p> <p><strong>Mia + Alex</strong><br> CoFounders, Attn: Grace</p>"
+      },
+       {
+            "type" : "text",
+            "id" : "btn-label",
+            "label" : "Button Label",
+            "default"   : "FIND YOUR FIT"
+        },
+        {
+            "type" : "url",
+            "id" : "btn-link",
+            "label" : "Button Link"
+        }
+    ],
+    "blocks" : [
+      {
+        "type" : "text",
+        "name" : "Step",
+        "settings" : [
+            {
+              "type" : "text",
+              "id" : "title",
+              "label" : "Title",
+              "default" : "One-Time Purchase"
+            },
+            {
+              "type" : "text",
+              "id" : "text",
+              "label" : "Text",
+              "default" : "Pick the products that suit your needs and check out. No subscription required."
+            }   
+        ]
+      }
+    ]
+  }
+{% endschema %}

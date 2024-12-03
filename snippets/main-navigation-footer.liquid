@@ -1,0 +1,11 @@
+<div class="main-navigation-footer">
+  {% include 'currency-switcher' %}
+  {% include 'main-navigation-social' %}
+
+  {% if section.settings.show_payment_icons %}
+    {% include 'payment-icons' %}
+  {% endif %}
+  {% if section.settings.show_copyright_text %}
+    {% include 'footer-copyright' %}
+  {% endif %}
+</div>

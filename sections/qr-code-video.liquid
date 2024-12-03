@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="{{ 'qr-code-video.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<section class="qr-video-section" data-section-id="{{ section.id }}">
+  {% capture qrvideo %}
+    {% if section.settings.video_url != blank %}
+      <div class="qr-video-wrapper">
+        <div class="responsive-iframe">
+          {% assign video_src = '//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720&autoplay=0&enablejsapi=1' %}
+          {% if section.settings.video_url.type == "vimeo" %}
+            {% assign video_src = '//player.vimeo.com/video/'
+             | append: section.settings.video_url.id
+             | append: '?byline=0&portrait=0&badge=0&autoplay=1' %}
+          {% endif %}
+          {% if section.settings.video_url.type == "youtube" %}
+            {% assign video_src = '//www.youtube.com/embed/'
+             | append: section.settings.video_url.id
+             | append: '?rel=0?version=3&showinfo=0&vq=720&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&playsinline=1&playlist='
+             | append: section.settings.video_url.id %}
+          {% endif %}
+
+          <iframe
+            class="home-video-iframe"
+            frameborder="0"
+            scrolling="0"
+            overflow="hidden"
+            allowfullscreen
+            src="{{ video_src }}"></iframe>
+        </div>
+      </div>
+    {% endif %}
+  {% endcapture %}
+  {% capture qrcontent %}
+    {% if section.settings.title != blank %}
+      <div class="qr-content-wrapper">
+        <h1>{{ section.settings.title }}</h1>
+      </div>
+    {% endif %}
+  {% endcapture %}
+  {% if section.settings.text-position == 'top' %}
+    <div class="qr-main-wrapper">
+      {{ qrcontent }}
+      {{ qrvideo }}
+    </div>
+  {% else %}
+    <div class="qr-main-wrapper">
+      {{ qrvideo }}
+      {{ qrcontent }}
+    </div>
+  {% endif %}
+
+
+</section>
+{% schema %}
+  {
+    "name": "Video",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Video"
+      },
+      {
+        "id": "video_url",
+        "type": "video_url",
+        "label": "Youtube or Vimeo link",
+        "accept": [
+          "youtube", "vimeo"
+        ],
+        "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "select",
+        "id": "text-position",
+        "label": "Content Position",
+        "default": "bottom",
+        "options": [
+          {
+            "label": "Top",
+            "value": "top"
+          }, {
+            "label": "Bottom",
+            "value": "bottom"
+          }
+        ]
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Attn: Grace outperforms other brands in all the ways that matter most."
+      }
+    ]
+  }
+{% endschema %}

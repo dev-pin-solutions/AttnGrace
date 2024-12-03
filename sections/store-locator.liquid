@@ -1,0 +1,105 @@
+<style>
+#shopify-section-store-locator {
+  background-color: {{ section.settings.bg_color }};
+}
+</style>
+<div class="store-locator-main">
+  <div class="store-locator-header">
+    <div class="store-locator-wrapper">
+      {% if section.settings.title != blank or section.settings.subtext != blank %}
+        <div class="content-wrapper">
+          <div class="title-subtext-wrapper">
+            {% if section.settings.title != blank %}
+                <h2 class="title">{{ section.settings.title }}</h2>
+            {% endif %}
+            {% if section.settings.subtext != blank %}
+                <div class="subtext">
+                {{ section.settings.subtext }}
+                </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+      <div class="logo-wrapper">
+        {% if section.settings.logo != blank %}
+          <div class="logo first-logo">
+            <img src="{{ section.settings.logo | img_url: 'original' }}" loading="lazy" />
+          </div>
+        {% endif %}
+        {% if section.settings.slogo != blank %}
+          <div class="logo second-logo">
+            <img src="{{ section.settings.slogo | img_url: 'original' }}" loading="lazy" />
+          </div>
+        {% endif %}
+        {% if section.settings.tlogo != blank %}
+          <div class="logo third-logo">
+            <img src="{{ section.settings.tlogo | img_url: 'original' }}" loading="lazy" />
+          </div>
+        {% endif %}
+        {% if section.settings.flogo != blank %}
+          <div class="logo fourth-logo">
+            <img src="{{ section.settings.flogo | img_url: 'original' }}" loading="lazy" />
+          </div>
+        {% endif %}
+         {% if section.settings.fflogo != blank %}
+          <div class="logo fifth-logo">
+            <img src="{{ section.settings.fflogo | img_url: 'original' }}" loading="lazy" />
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div id="storepoint-container" data-map-id="164359d010bf9b"></div>
+    <script>// <![CDATA[
+    (function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://cdn.storepoint.co/api/v1/js/164359d010bf9b.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);}());
+    // ]]></script>
+</div>
+{% schema %}
+  {
+    "name": "Store Locator",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#f6ebe8"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "slogo",
+        "label": "Second Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "tlogo",
+        "label": "Third Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "flogo",
+        "label": "Fourth image"
+      },
+      {
+        "type": "image_picker",
+        "id": "fflogo",
+        "label": "Fifth image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "You asked for it, and we made it happen."
+      }, {
+        "type": "richtext",
+        "id": "subtext",
+        "label": "Sub-Text",
+        "default": "<p>Attn: Grace can now be found on Walmart.com, and in 1,500+ Supercenters across the country. Enter your city or zipcode below to find your nearest retail location.</p>"
+      }
+    ]
+  }
+{% endschema %}

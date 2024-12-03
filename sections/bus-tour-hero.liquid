@@ -1,0 +1,357 @@
+<style>
+       .custom-hero-container {
+         display: block;
+         width: 100%;
+         overflow: hidden; /* Hides any part of the image that exceeds the container's width */
+         margin: 0;
+         padding: 0;
+         position: relative; /* Ensures positioning is relative to this container */
+       }
+
+       .custom-hero-image {
+         width: 100%;
+         height: 100%; /* Set height to 100% to fill the container */
+         object-fit: cover; /* Ensure the image covers the container */
+         object-position: top; /* Adjust the position to cut from the bottom */
+         display: none; /* Hide images by default */
+         z-index: -1; /* Ensure background images stay in the back */
+       }
+
+       .hero-content-container {
+         position: absolute;
+         top: 10%;
+         left: 55%; /* Move the container more to the left */
+         width: 40%; /* Adjust the width if necessary */
+         text-align: center; /* Center align the text */
+         color: #000;
+         z-index: 1;
+       }
+
+       .main-title {
+         font-family: BentonMod, sans-serif;
+         color: #000;
+         font-size: 80px;
+         font-weight: 300;
+         line-height:
+     28.6p;
+         margin: 20px 0 0;
+         text-align: center;
+         width: 100%;
+         box-sizing: border-box; /* Ensures padding is included in the width */
+       }
+
+       .subtitle {
+         font-family: Acre-Regular, sans-serif;
+         color: #000;
+         margin-top: 15px;
+         font-size: 22px;
+         line-height: 1.2;
+         margin: 15px 0 20px;
+         width: 100%;
+         text-align: center;
+       }
+
+       .subheader {
+         font-family: Acre-Regular, sans-serif;
+         color: #000;
+         margin-top: 15px;
+         font-size: 22px;
+         line-height: 25px;
+         margin: 15px 0 20px;
+         width: 100%;
+         text-align: center;
+       }
+
+        .bold {
+         font-weight: bold;
+       }
+
+       .btn {
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         padding: 20px 20px;
+         gap: 10px;
+         background: #F88B50;
+         border-radius: 36.7893px;
+         text-transform: uppercase;
+         color: #FFFFFF;
+         font-family: 'Acre-Semibold', sans-serif;
+         font-size: 14px;
+         line-height: 100%;
+         height: 14px;
+         text-align: center;
+         margin: 20px auto 0; /* Center the button and add space above */
+
+         border: none;
+       }
+
+       .image-columns-container {
+         padding: 0 20px; /* Adds padding inside the container, affecting space at the sides */
+         display: flex;
+         justify-content: center; /* Centers the columns in the container */
+         align-items: flex-start; /* Ensures children align to the top */
+         flex-direction: column; /* Explicitly set to ensure horizontal layout */
+         flex-wrap: nowrap; /* Prevents wrapping into a new line */
+         gap: 20px; /* Adjust the gap between columns */
+         margin: 20px auto; /* Center the container and add space above */
+         width: 90%;
+       }
+
+       .image-column {
+         flex: 1; /* Each column will grow to fill the space */
+         padding: 10px; /* Provides space between the images */
+         text-align: center; /* Ensures text is centered under the image */
+         display: flex; /* Added */
+         flex-direction: column; /* Added */
+         align-items: center; /* Ensures center alignment for both img and p */
+         max-width: 30%;
+       }
+
+       .image-column img {
+         width: clamp(50px, 10vw, 100px);
+         height: auto; /* Fixed height to maintain aspect ratio */
+         object-fit: cover; /* Ensures the images cover the area */
+       }
+
+       .image-column p {
+         font-size: 18px;
+         line-height: 25px;
+         color: #000;
+         margin: 4px 0; /* Adds top and bottom margins */
+         box-sizing: border-box;
+         font-weight: 400;
+       }
+
+       /* Show the desktop image on larger screens */
+       @media (min-width: 769px) {
+         .desktop-hero-image {
+           display: block;
+         }
+       }
+
+       /* Show the mobile image on smaller screens */
+       @media (max-width: 768px) {
+         .custom-hero-container {
+           height: 70%;
+         }
+
+         .hero-content-container {
+           top: 10px; /* Adjust based on your needs */
+           left: 10%; /* Adjust left position for mobile */
+           width: 80%; /* Adjust width for mobile */
+           text-align: center; /* Center align text on mobile */
+         }
+
+         .mobile-hero-image {
+           display: block;
+         }
+
+         .main-title, .subtitle, .subheader {
+           width: 100%; /* Allows text to use the entire width of its container */
+           font-size: 36px;
+         }
+
+         .subtitle, .subheader {
+           font-size: 14px;
+           margin-bottom: 0; /* Remove bottom margin for subtitle and subheader */
+         }
+
+         .image-columns-container {
+           margin-top: 0; /* Remove top margin to align closely with subtitle */
+           padding: 0 5px; /* Further reduce padding for mobile */
+           width: 95%; /* Further increase width for mobile to reduce side gaps */
+         }
+
+         .image-column {
+           padding: 5px; /* Provides space between the images */
+           margin-top: 0; /* Remove top margin for images */
+           max-width: 33%;
+         }
+
+         .image-column img {
+           width: 70px;
+           height: auto; /* Fixed height to maintain aspect ratio */
+           object-fit: cover; /* Ensures the images cover the area */
+         }
+
+         .image-column p {
+           font-size: 16px;
+           line-height: 1.4;
+         }
+
+         .btn {
+           margin-top: 30px;
+         }
+       }
+
+       /* Tablet to desktop transition */
+       @media (min-width: 768px) and (max-width: 1200px) {
+         .hero-content-container {
+           top: 20px; /* Example fixed adjustment for this specific range */
+           right: 5%; /* Adjust position for this range */
+           /* width: 50%;  Adjust width for this range */
+         }
+
+         .main-title {
+           font-size: 36px;
+         }
+
+         .subtitle, .subheader {
+           font-size: 15px;
+           margin-bottom: 0;
+         }
+
+         .image-columns-container {
+           margin-top: 0; /* Remove top margin to align closely with subtitle */
+           padding-right: 30px;
+         }
+
+         .image-column p {
+           font-size: 16px;
+           line-height: 1.4;
+         }
+
+         .image-column img {
+           width: 60px;
+         }
+       }
+
+       @media (min-width: 1119px) and (max-width: 1919px) {
+         .hero-content-container {
+           top: 20px; /* Example fixed adjustment for this specific range */
+           right: 10%; /* Adjust position for this range */
+           width: 40%; /* Adjust width for this range */
+         }
+
+         .main-title {
+           font-size: clamp(36px, 4vw, 76px);
+           line-height: 1;
+         }
+
+         .image-columns-container {
+           margin-top: 0; /* Remove top margin to align closely with subtitle */
+           padding-right: 40px;
+         }
+
+         .image-column img {
+           width: clamp(60px, 8vw, 80px); /* Smaller than on larger screens */
+         }
+       }
+
+       /* Larger desktop screens */
+       @media (min-width: 1920px) {
+         /* .hero-content-container {
+         position: absolute;
+         top: 20px;
+         left: 65%; /* Move the container more to the left */
+         width: 40%; /* Adjust the width if necessary */
+         text-align: center; /* Center align the text */
+         color: #000;
+         z-index: 1;
+       }
+    */
+         .main-title {
+              font-size: clamp(60px, 4vw, 80px);
+           line-height: 1;
+           width: 60%;
+         }
+
+         /* .subtitle, .subheader {
+           font-size: clamp(22px, 4vw, 25px);
+           width: 60%;
+         } */
+
+         .image-column img {
+           width: 90px;
+         }
+  /*
+         .btn {
+           margin: 20px 160px 20px;
+         } */
+       }
+</style>
+
+<div class="custom-hero-container">
+  <!-- New wrapping container -->
+  <div class="hero-content-container">
+    <div class="hero-text-container">
+      <h1 class="main-title">{{ section.settings.main_title }}</h1>
+      <p class="subtitle">
+        <br>
+        Liners, pads and disposable briefs for postpartum bleeding, bladder leaks and everything in between
+        <br>
+        <br>
+        Plant-based, free from harsh chemicals and skin-safe
+        <br>
+        <br>
+        Designed for moms, by moms.
+        <br>
+        <br>
+        Customize your Postpartum Perfect<sup>TM</sup> bundle below and get 20% off your first order with code
+        <strong>PUMP20</strong> at checkout.
+      </p>
+      <p class="subheader">{{ section.settings.subheader }}</p>
+      <button class="btn">BUILD YOUR BUNDLE</button>
+    </div>
+  </div>
+
+  <!-- Desktop image -->
+  <img
+    src="{{ section.settings.background_image_desktop | img_url: '1440x' }}"
+    alt="Hero Image"
+    class="custom-hero-image desktop-hero-image"
+  >
+
+  <!-- Mobile image -->
+  <img
+    src="{{ section.settings.background_image_mobile | img_url: '375x' }}"
+    alt="Hero Image Mobile"
+    class="custom-hero-image mobile-hero-image"
+  >
+</div>
+
+{% schema %}
+{
+  "name": "Bus Tour Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image_desktop",
+      "label": "Background Image (Desktop)",
+      "info": "The background image used on desktop devices."
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background Image (Mobile)",
+      "info": "The background image used on mobile devices."
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Your Main Title Here"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Your subtitle here"
+    },
+    {
+      "type": "text",
+      "id": "subheader",
+      "label": "Subheader",
+      "default": "Your subheader here"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bus Tour Hero",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

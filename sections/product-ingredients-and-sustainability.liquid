@@ -1,0 +1,54 @@
+
+<div class="product-certifications__inner page-width">
+  <div class="product-certifications-items">
+    {% include 'product-ingredients-and-sustainability', product: product %}
+  </div>
+</div>
+{%- if section.settings.show_product_certifications -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "settings": [
+      {
+      "type": "checkbox",
+      "id": "show_ingred_sust",
+      "label": "Show Ingredients & Sustainability?"
+      },
+	{
+      "type": "text",
+      "id": "heading",
+      "label": "Ingredients & Sustainability"
+      }
+	],
+    "blocks": [
+      {
+        "type": "ingred_sust",
+        "name": "Ingredients",
+        "settings": [
+          {
+            "type": "text",
+            "id": "ing_name",
+            "label": "Ingredients & Sustainability Name"
+          },
+          {
+            "type": "text",
+            "id": "ing_description",
+            "label": "Ingredients & SustainabilityDescription"
+          },
+          {
+            "type": "image_picker",
+            "id": "ing_image",
+            "label": "Ingredients & Sustainability Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

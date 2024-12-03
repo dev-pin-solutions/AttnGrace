@@ -1,0 +1,29 @@
+<!-- Section: Custom Bundle Selection Status -->
+{{ 'custom_recharge_bundle_selection_status.css' | asset_url | stylesheet_tag }}
+
+<div class="customBundle-section">
+  <h2 class="customBundle-title">Your Bundle Title</h2>
+  <p class="customBundle-sub-title">Select up to 8 items for your bundle</p>
+  
+  <div class="customBundle-container-list">
+    {% for i in (1..8) %}
+    <div class="customBundle-container-item">
+      <!-- Placeholder for item -->
+      Item {{ i }}
+    </div>
+    {% endfor %}
+  </div>
+
+  <p class="customBundle-delivery-schedule">
+    Delivery Schedule
+  </p>
+</div>
+
+<!-- Optional: JavaScript for additional functionality -->
+
+{% schema %}
+{
+  "name": "CustomBundleStatus",
+  "settings": []
+}
+{% endschema %}

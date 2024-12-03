@@ -1,0 +1,61 @@
+<div class="image-bg-section"
+  style="
+  {% if section.settings.bg_image != blank %}
+    background-image:url({{section.settings.bg_image | img_url: 'master', scale: 2 }});
+  {% endif %}
+  {% if section.settings.text_color != blank %}
+    color:{{ section.settings.text_color }};
+  {% endif %} 
+  {% if section.settings.bg_color != blank %}
+    background-color:{{ section.settings.bg_color }};
+  {% endif %}"
+  
+  >
+	<div class="image-bg-content">
+		{% if section.settings.image_title != blank %}
+			<h2>{{ section.settings.image_title }}</h2>
+		{% endif %}
+
+		{% if section.settings.image_description != blank %}
+			<div class="image-description">
+				{{ section.settings.image_description }}
+			</div>
+		{% endif %}
+	</div>
+</div>
+{% schema %}
+  {
+    "name": "Image Bg With Text",
+    "class": "index-section",
+
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background Image"
+      },
+	    {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color"
+      },
+      {
+        "type": "text",
+        "id": "image_title",
+        "default": "Image Title",
+        "label": "Image Title"
+      },
+      {
+        "type": "richtext",
+        "id": "image_description",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "label": "Image Description"
+      }
+    ]
+  }
+{% endschema %} 

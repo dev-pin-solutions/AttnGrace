@@ -1,0 +1,728 @@
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('.select-frequency').forEach(function(element) {
+      element.addEventListener('change', function(event) {
+        event
+          .target
+          .parentNode
+          .querySelector('[name="selling_plan"]')
+          .value = event.target.value;
+      });
+    });
+  });
+</script>
+
+<style>
+  .product-compare-tabs .product-subscription-section .product-subscription-option {
+    min-width: 320px;
+  }
+  @media screen and (max-width: 767px) {
+    .product-compare-tabs .product-subscription-section {
+      display: block !important;
+    }
+  }
+</style>
+<section class="product-compare-block">
+  <div class="product-compare-wrapper">
+    <div class="page-width">
+      <h1 class="page-title">{{ section.settings.page_heading | escape }}</h1>
+      <div class="product-compare-list">
+        <div class="size-chart">
+          <span class="size-value">400mm</span>
+          <span class="size-value">340mm</span>
+          <span class="size-value">265mm</span>
+          <span class="size-value">230mm</span>
+          <span class="size-value">190mm</span>
+        </div>
+
+        <div class="product-item-list">
+          <div class="product-item-slider item-slider-1">
+            <div class="product-item-img">
+              <div class="product-img-wrapper">
+                {{ 'product-compare-1.png' | file_url | img_tag }}
+              </div>
+            </div>
+            <div class="product-item-details">
+              <form class="atcGridSub">
+                <h2>Liners</h2>
+                <p>Lightest <br/> absorption</p>
+                <input type="hidden" id="product_id" name="product_id" value="32700968304779"/>
+
+                <input type="hidden" id="frequency" name="frequency" value="onetime"/>
+                <input id="quantity" type="hidden" name="quantity" value="1" min="1"/>
+                {% assign selectedProduct = all_products['light-liner'] %}
+                {% if selectedProduct.selected_or_first_available_variant.inventory_quantity > 0 %}
+                  <input type="submit" class="button" value="Add to Cart"/>
+                {% elsif selectedProduct.selected_or_first_available_variant.inventory_quantity <= 0 and selectedProduct.tags contains 'preorder' %}
+                  <input type="submit" class="button" value="Pre-Order"/>
+                {% else %}
+                  <a href="#" type="button" class="BIS_trigger bis-collection-button button" data-product-data="{{ selectedProduct | json | escape }}">Notify Me When Available</a>
+                {% endif %}
+                {% comment %}
+                  <a href="#" class="button">Add To Cart</a>
+                {% endcomment %}
+              </form>
+              <div class="compare-field checkbox-field">
+                <input type="checkbox" id="liners">
+                <label data-attr="liners" for="liners"></label>
+              </div>
+            </div>
+          </div>
+          <div class="product-item-slider item-slider-2">
+            <div class="product-item-img">
+              <div class="product-img-wrapper">
+                {{ 'product-compare-2.png' | file_url | img_tag }}
+              </div>
+            </div>
+            <div class="product-item-details">
+              <form class="atcGridSub">
+                <h2>Hybrid</h2>
+                <p>Light absorption, <br/>period needs</p>
+                <input type="hidden" id="product_id" name="product_id" value="32805112971403"/>
+                <input type="hidden" id="frequency" name="frequency" value="onetime"/>
+                <input id="quantity" type="hidden" name="quantity" value="1" min="1"/>
+                {% assign selectedProduct = all_products['light-hybrid-pads'] %}
+                {% if selectedProduct.selected_or_first_available_variant.inventory_quantity > 0 %}
+                  <input type="submit" class="button" value="Add to Cart"/>
+                {% elsif selectedProduct.selected_or_first_available_variant.inventory_quantity <= 0 and selectedProduct.tags contains 'preorder' %}
+                  <input type="submit" class="button" value="Pre-Order"/>
+                {% else %}
+                  <a href="#" type="button" class="BIS_trigger bis-collection-button button" data-product-data="{{ selectedProduct | json | escape }}">Notify Me When Available</a>
+                {% endif %}
+                {% comment %}
+                  <a href="#" class="button">Add To Cart</a>
+                {% endcomment %}
+              </form>
+              <div class="compare-field checkbox-field">
+                <input type="checkbox" id="hybrid">
+                <label data-attr="hybrid" for="hybrid"></label>
+              </div>
+            </div>
+          </div>
+          <div class="product-item-slider item-slider-3">
+            <div class="product-item-img">
+              <div class="product-img-wrapper">
+                {{ 'product-compare-3.png' | file_url | img_tag }}
+              </div>
+            </div>
+            <div class="product-item-details">
+              <form class="atcGridSub">
+                <h2>Moderate</h2>
+                <p>Moderate <br/> absorption</p>
+                <input type="hidden" id="product_id" name="product_id" value="35558350717082"/>
+                <input type="hidden" id="frequency" name="frequency" value="onetime"/>
+                <input id="quantity" type="hidden" name="quantity" value="1" min="1"/>
+                {% assign selectedProduct = all_products['moderate-pads'] %}
+                {% if selectedProduct.selected_or_first_available_variant.inventory_quantity > 0 %}
+                  <input type="submit" class="button" value="Add to Cart"/>
+                {% elsif selectedProduct.selected_or_first_available_variant.inventory_quantity <= 0 and selectedProduct.tags contains 'preorder' %}
+                  <input type="submit" class="button" value="Pre-Order"/>
+                {% else %}
+                  <a href="#" type="button" class="BIS_trigger bis-collection-button button" data-product-data="{{ selectedProduct | json | escape }}">Notify Me When Available</a>
+                {% endif %}
+                {% comment %}
+                  <a href="#" class="button">Add To Cart</a>
+                {% endcomment %}
+              </form>
+              <div class="compare-field checkbox-field">
+                <input type="checkbox" id="moderate">
+                <label data-attr="moderate" for="moderate"></label>
+              </div>
+            </div>
+          </div>
+          <div class="product-item-slider item-slider-4">
+            <div class="product-item-img">
+              <div class="product-img-wrapper">
+                {{ 'product-compare-4.png' | file_url | img_tag }}
+              </div>
+            </div>
+            <div class="product-item-details">
+              <form class="atcGridSub">
+                <h2>Heavy</h2>
+                <p>Heavy <br/> absorption</p>
+                <input type="hidden" id="product_id" name="product_id" value="35558351437978"/>
+                <input type="hidden" id="frequency" name="frequency" value="onetime"/>
+                <input id="quantity" type="hidden" name="quantity" value="1" min="1"/>
+                {% assign selectedProduct = all_products['heavy-pads'] %}
+                {% if selectedProduct.selected_or_first_available_variant.inventory_quantity > 0 %}
+                  <input type="submit" class="button" value="Add to Cart"/>
+                {% elsif selectedProduct.selected_or_first_available_variant.inventory_quantity <= 0 and selectedProduct.tags contains 'preorder' %}
+                  <input type="submit" class="button" value="Pre-Order"/>
+                {% else %}
+                  <a href="#" type="button" class="BIS_trigger bis-collection-button button" data-product-data="{{ selectedProduct | json | escape }}">Notify Me When Available</a>
+                {% endif %}
+                {% comment %}
+                  <a href="#" class="button">Add To Cart</a>
+                {% endcomment %}
+              </form>
+              <div class="compare-field checkbox-field">
+                <input type="checkbox" id="heavy">
+                <label data-attr="heavy" for="heavy"></label>
+              </div>
+            </div>
+          </div>
+          <div class="product-item-slider item-slider-5">
+            <div class="product-item-img">
+              <div class="product-img-wrapper">
+                {{ 'product-compare-5.png' | file_url | img_tag }}
+              </div>
+            </div>
+            <div class="product-item-details">
+              <form class="atcGridSub">
+                <h2>Ultimate</h2>
+                <p>Maximum protection,<br/>day to night</p>
+                <input type="hidden" id="product_id" name="product_id" value="40026853474458"/>
+                <input type="hidden" id="frequency" name="frequency" value="onetime"/>
+                <input id="quantity" type="hidden" name="quantity" value="1" min="1"/>
+                {% assign selectedProduct = all_products['ultimate-pad-for-bladder-leakage'] %}
+                {% if selectedProduct.selected_or_first_available_variant.inventory_quantity > 0 %}
+                  <input type="submit" class="button" value="Add to Cart"/>
+                {% elsif selectedProduct.selected_or_first_available_variant.inventory_quantity <= 0 and selectedProduct.tags contains 'preorder' %}
+                  <input type="submit" class="button" value="Pre-Order"/>
+                {% else %}
+                  <a href="#" type="button" class="BIS_trigger bis-collection-button button" data-product-data="{{ selectedProduct | json | escape }}">Notify Me When Available</a>
+                {% endif %}
+                {% comment %}
+                  <a href="#" class="button">Add To Cart</a>
+                {% endcomment %}
+              </form>
+              <div class="compare-field checkbox-field">
+                <input type="checkbox" id="ultimate">
+                <label data-attr="ultimate" for="ultimate"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <label class="compare-label">Compare</label>
+      </div>
+    </div>
+  </div>
+  <div class="product-compare-tabs">
+    <div class="page-width">
+      <div class="compare-tab-wrapper">
+        <div class="compare-tab liners">
+          {% assign linersProduct = all_products['light-liner'] %}
+          <h2>Liners</h2>
+          <div class="tab-img-slider">
+            <div class="tab-img-item tab-img-item--adjusted-width">
+              {{ 'Liners.png' | file_url | img_tag }}
+            </div>
+            {% for image in linersProduct.images %}
+              <div class="tab-img-item">
+                <img loading="lazy" src="{{ image | image_url: width: 500 }}">
+              </div>
+            {% endfor %}
+          </div>
+          <p class="tab-info">Ideal for the lightest of bladder leaks.</p>
+          <div class="product-subscription-section">
+
+            <form class=" product-subscription-option" action="/cart/add">
+              <div class="subscription">
+                {% assign float_variant_price = linersProduct.variants.first.price | times: 1.0 %}
+
+                <select name="frequency" id="frequency" class="select-frequency rc_select rc_select__frequency styled replaced">
+                  <option value="" class="onetime">One-Time - ${{ linersProduct.price | money_without_currency }}</option>
+                  {% for selling_plan_group in linersProduct.selling_plan_groups %}
+                    {% assign selling_plans = selling_plan_group.selling_plans | sort: "name" %}
+                    {% for selling_plan in selling_plans %}
+                      {% for price_adjustment in selling_plan.price_adjustments %}
+                        {% assign selling_plan_discount = price_adjustment.value | times: 1.0 %}
+                        {% assign selling_plan_discount_percentage = selling_plan_discount | divided_by: 100 %}
+                        {% assign selling_plan_discount_amount_off = float_variant_price | times: selling_plan_discount_percentage %}
+                        {% assign label_variant_price = float_variant_price | minus: selling_plan_discount_amount_off  %}
+                      {% endfor %}
+
+
+                      {% if selling_plan.name contains "4 week" %}
+                        {% assign label_delivery_frequency = "Every 4 Weeks" %}
+                        {% assign selected = 'selected="selected"' %}
+                        {% assign default_selling_plan = selling_plan.id %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+                      {% if selling_plan.name contains "6 week" %}
+                        {% assign label_delivery_frequency = "Every 6 Weeks" %}
+                        {% assign selected = '' %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+                      {% if selling_plan.name contains "8 week" %}
+                        {% assign label_delivery_frequency = "Every 8 Weeks" %}
+                        {% assign selected = '' %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+
+                    {% endfor %}
+                  {% endfor %}
+                </select>
+
+                <input type="hidden" name="selling_plan" value="{{ default_selling_plan }}">
+                <input type="hidden" id="unit_type" name="unit_type" value="{{ unit }}"/>
+                <input type="hidden" id="id" name="id" value="{{ linersProduct.variants.first.id }}"/>
+                <input type="hidden" id="product_id" name="product_id" value="{{ linersProduct.id }}"/>
+                <input type="hidden" id="basePrice" name="basePrice" value="{{ linersProduct.price | money_without_currency }}"/>
+                <input type="hidden" id="discPrice" name="discPrice" value="{{ linersProduct.variants.first.metafields.subscriptions.discount_variant_price }}"/>
+              </div>
+
+              <div class="subscription-qty">
+                <select id="quantity" name="quantity">
+                  <option value="1">QTY 1</option>
+                  <option value="2">QTY 2</option>
+                  <option value="3">QTY 3</option>
+                  <option value="4">QTY 4</option>
+                  <option value="5">QTY 5</option>
+                </select>
+                <label for="quantity" class="select-arrow">
+                  <img src="{{ 'select-bg.png' | asset_url }}" />
+                </label>
+              </div>
+              <div class="subscription-button">
+                {% if linersProduct.selected_or_first_available_variant.inventory_quantity > 0 or linersProduct.tags contains 'preorder' %}
+                  <input type="submit" class="button product-add-available add-to-cart-list" value="{% if linersProduct.variants.first.inventory_quantity > 0 %}Add to Cart{% elsif linersProduct.tags contains "preorder" %}Pre-Order{% endif %}"/>
+                  {%- comment -%}
+                    <input type="submit" class="button product-add-soldout add-to-cart-list" disabled value="{{ 'products.product.add_to_cart' | t }}"/>
+
+                    <input type="button" class="button product-add-unavailable add-to-cart-list" disabled value="{{ 'products.product.unavailable' | t }}"/>
+                  {%- endcomment -%}
+                {% else %}
+                  <a href="#" type="button" class="BIS_trigger bis-collection-button button add-to-cart-list" data-product-data="{{ linersProduct | json | escape }}">Notify Me When Available</a>
+                {% endif %}
+              </div>
+            </form>
+          </div>
+          {% comment %}
+            <a href="#" class="button">Add To Cart</a>
+          {% endcomment %}
+
+          <div class="review-block">
+            <span class="rating-star">{{ 'ratings.png' | file_url | img_tag }}</span>
+            <h3>
+              <q>So impressed! Light, functional, and I forgot I was even wearing it.</q>
+            </h3>
+            <p>- JILL</p>
+          </div>
+        </div>
+        <div class="compare-tab hybrid">
+          {% assign hybridProduct = all_products['light-hybrid-pads'] %}
+          <h2>Hybrid Pads</h2>
+          <div class="tab-img-slider">
+            <div class="tab-img-item">
+              {{ 'hybrid-pad.png' | file_url | img_tag }}
+            </div>
+            {% for image in hybridProduct.images %}
+              <div class="tab-img-item">
+                <img loading="lazy" src="{{ image | image_url: width: 500 }}">
+              </div>
+            {% endfor %}
+          </div>
+          <p class="tab-info">Suitable for light bladder or period leaks.</p>
+          <div class="product-subscription-section">
+            <form class=" product-subscription-option" action="/cart/add">
+              <div class="subscription">
+                {% assign float_variant_price = hybridProduct.variants.first.price | times: 1.0 %}
+
+                <select name="frequency" id="frequency" class="select-frequency rc_select rc_select__frequency styled replaced">
+                  <option value="" class="onetime">One-Time - ${{ hybridProduct.price | money_without_currency }}</option>
+                  {% for selling_plan_group in hybridProduct.selling_plan_groups %}
+                    {% assign selling_plans = selling_plan_group.selling_plans | sort: "name" %}
+                    {% for selling_plan in selling_plans %}
+                      {% for price_adjustment in selling_plan.price_adjustments %}
+                        {% assign selling_plan_discount = price_adjustment.value | times: 1.0 %}
+                        {% assign selling_plan_discount_percentage = selling_plan_discount | divided_by: 100 %}
+                        {% assign selling_plan_discount_amount_off = float_variant_price | times: selling_plan_discount_percentage %}
+                        {% assign label_variant_price = float_variant_price | minus: selling_plan_discount_amount_off  %}
+                      {% endfor %}
+
+
+                      {% if selling_plan.name contains "4 week" %}
+                        {% assign label_delivery_frequency = "Every 4 Weeks" %}
+                        {% assign selected = 'selected="selected"' %}
+                        {% assign default_selling_plan = selling_plan.id %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+                      {% if selling_plan.name contains "6 week" %}
+                        {% assign label_delivery_frequency = "Every 6 Weeks" %}
+                        {% assign selected = '' %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+                      {% if selling_plan.name contains "8 week" %}
+                        {% assign label_delivery_frequency = "Every 8 Weeks" %}
+                        {% assign selected = '' %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+
+                    {% endfor %}
+                  {% endfor %}
+                </select>
+
+                <input type="hidden" name="selling_plan" value="{{ default_selling_plan }}">
+                <input type="hidden" id="unit_type" name="unit_type" value="{{ unit }}"/>
+                <input type="hidden" id="id" name="id" value="{{ hybridProduct.variants.first.id }}"/>
+                <input type="hidden" id="product_id" name="product_id" value="{{ hybridProduct.id }}"/>
+                <input type="hidden" id="basePrice" name="basePrice" value="{{ hybridProduct.price | money_without_currency }}"/>
+                <input type="hidden" id="discPrice" name="discPrice" value="{{ hybridProduct.variants.first.metafields.subscriptions.discount_variant_price }}"/>
+              </div>
+
+              <div class="subscription-qty">
+                <select id="quantity" name="quantity">
+                  <option value="1">QTY 1</option>
+                  <option value="2">QTY 2</option>
+                  <option value="3">QTY 3</option>
+                  <option value="4">QTY 4</option>
+                  <option value="5">QTY 5</option>
+                </select>
+                <label for="quantity" class="select-arrow">
+                  <img src="{{ 'select-bg.png' | asset_url }}" />
+                </label>
+              </div>
+              <div class="subscription-button">
+                {% if hybridProduct.selected_or_first_available_variant.inventory_quantity > 0 or hybridProduct.tags contains 'preorder' %}
+                  <input type="submit" class="button product-add-available add-to-cart-list" value="{% if hybridProduct.variants.first.inventory_quantity > 0 %}Add to Cart{% elsif hybridProduct.tags contains "preorder" %}Pre-Order{% endif %}"/>
+                  {%- comment -%}
+                    <input type="submit" class="button product-add-soldout add-to-cart-list" disabled value="{{ 'products.product.add_to_cart' | t }}"/>
+
+                    <input type="button" class="button product-add-unavailable add-to-cart-list" disabled value="{{ 'products.product.unavailable' | t }}"/>
+                  {%- endcomment -%}
+                {% else %}
+                  <a href="#" type="button" class="BIS_trigger bis-collection-button button add-to-cart-list" data-product-data="{{ hybridProduct | json | escape }}">Notify Me When Available</a>
+                {% endif %}
+              </div>
+            </form>
+          </div>
+          {% comment %}
+            <a href="#" class="button">Add To Cart</a>
+          {% endcomment %}
+          <div class="review-block">
+            <span class="rating-star">{{ 'ratings.png' | file_url | img_tag }}</span>
+            <h3>
+              <q>Now that my period is lighter and unpredictable, I use these ultra-thin pads no matter what time of the month.</q>
+            </h3>
+            <p>- ELAINE</p>
+          </div>
+        </div>
+        <div class="compare-tab moderate">
+          {% assign moderateProduct = all_products['moderate-pads'] %}
+          <h2>Moderate Pads</h2>
+          <div class="tab-img-slider">
+            <div class="tab-img-item tab-img-item--adjusted-width">
+              {{ 'product-comparison-moderate-pad.png' | file_url | img_tag }}
+            </div>
+            {% for image in moderateProduct.images %}
+              <div class="tab-img-item">
+                <img loading="lazy" src="{{ image | image_url: width: 500 }}">
+              </div>
+            {% endfor %}
+          </div>
+          <p class="tab-info">Suitable for moderate bladder leakage.</p>
+          <div class="product-subscription-section">
+            <form class=" product-subscription-option" action="/cart/add">
+              <div class="subscription">
+                {% assign float_variant_price = moderateProduct.variants.first.price | times: 1.0 %}
+
+                <select name="frequency" id="frequency" class="select-frequency rc_select rc_select__frequency styled replaced">
+                  <option value="" class="onetime">One-Time - ${{ moderateProduct.price | money_without_currency }}</option>
+                  {% for selling_plan_group in moderateProduct.selling_plan_groups %}
+                    {% assign selling_plans = selling_plan_group.selling_plans | sort: "name" %}
+                    {% for selling_plan in selling_plans %}
+                      {% for price_adjustment in selling_plan.price_adjustments %}
+                        {% assign selling_plan_discount = price_adjustment.value | times: 1.0 %}
+                        {% assign selling_plan_discount_percentage = selling_plan_discount | divided_by: 100 %}
+                        {% assign selling_plan_discount_amount_off = float_variant_price | times: selling_plan_discount_percentage %}
+                        {% assign label_variant_price = float_variant_price | minus: selling_plan_discount_amount_off  %}
+                      {% endfor %}
+
+
+                      {% if selling_plan.name contains "4 week" %}
+                        {% assign label_delivery_frequency = "Every 4 Weeks" %}
+                        {% assign selected = 'selected="selected"' %}
+                        {% assign default_selling_plan = selling_plan.id %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+                      {% if selling_plan.name contains "6 week" %}
+                        {% assign label_delivery_frequency = "Every 6 Weeks" %}
+                        {% assign selected = '' %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+                      {% if selling_plan.name contains "8 week" %}
+                        {% assign label_delivery_frequency = "Every 8 Weeks" %}
+                        {% assign selected = '' %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+
+                    {% endfor %}
+                  {% endfor %}
+                </select>
+
+                <input type="hidden" name="selling_plan" value="{{ default_selling_plan }}">
+                <input type="hidden" id="unit_type" name="unit_type" value="{{ unit }}"/>
+                <input type="hidden" id="id" name="id" value="{{ moderateProduct.variants.first.id }}"/>
+                <input type="hidden" id="product_id" name="product_id" value="{{ moderateProduct.id }}"/>
+                <input type="hidden" id="basePrice" name="basePrice" value="{{ moderateProduct.price | money_without_currency }}"/>
+                <input type="hidden" id="discPrice" name="discPrice" value="{{ moderateProduct.variants.first.metafields.subscriptions.discount_variant_price }}"/>
+              </div>
+
+              <div class="subscription-qty">
+                <select id="quantity" name="quantity">
+                  <option value="1">QTY 1</option>
+                  <option value="2">QTY 2</option>
+                  <option value="3">QTY 3</option>
+                  <option value="4">QTY 4</option>
+                  <option value="5">QTY 5</option>
+                </select>
+                <label for="quantity" class="select-arrow">
+                  <img src="{{ 'select-bg.png' | asset_url }}" />
+                </label>
+              </div>
+              <div class="subscription-button">
+                {% if moderateProduct.selected_or_first_available_variant.inventory_quantity > 0 or moderateProduct.tags contains 'preorder' %}
+                  <input type="submit" class="button product-add-available add-to-cart-list" value="{% if moderateProduct.variants.first.inventory_quantity > 0 %}Add to Cart{% elsif moderateProduct.tags contains "preorder" %}Pre-Order{% endif %}"/>
+                  {%- comment -%}
+                    <input type="submit" class="button product-add-soldout add-to-cart-list" disabled value="{{ 'products.product.add_to_cart' | t }}"/>
+
+                    <input type="button" class="button product-add-unavailable add-to-cart-list" disabled value="{{ 'products.product.unavailable' | t }}"/>
+                  {%- endcomment -%}
+                {% else %}
+                  <a href="#" type="button" class="BIS_trigger bis-collection-button button add-to-cart-list" data-product-data="{{ moderateProduct | json | escape }}">Notify Me When Available</a>
+                {% endif %}
+              </div>
+            </form>
+          </div>
+          {% comment %}
+            <a href="#" class="button">Add To Cart</a>
+          {% endcomment %}
+          <div class="review-block">
+            <span class="rating-star">{{ 'ratings.png' | file_url | img_tag }}</span>
+            <h3>
+              <q>Immediately locks away wetness so that I'm never interrupted with an embarrassing leak anymore.</q>
+            </h3>
+            <p>- SUSANNE</p>
+          </div>
+        </div>
+        <div class="compare-tab heavy">
+          {% assign heavyProduct = all_products['heavy-pads'] %}
+          <h2>Heavy Pads</h2>
+          <div class="tab-img-slider">
+            <div class="tab-img-item tab-img-item--adjusted-width">
+              {{ 'HEAVY.png' | file_url | img_tag }}
+            </div>
+            {% for image in heavyProduct.images %}
+              <div class="tab-img-item">
+                <img loading="lazy" src="{{ image | image_url: width: 500 }}">
+              </div>
+            {% endfor %}
+          </div>
+          <p class="tab-info">Perfect for heavy bladder leakage.</p>
+          <div class=" product-subscription-section">
+            <form class=" product-subscription-option" action="/cart/add">
+              <div class="subscription">
+                {% assign float_variant_price = heavyProduct.variants.first.price | times: 1.0 %}
+
+                <select name="frequency" id="frequency" class="select-frequency rc_select rc_select__frequency styled replaced">
+                  <option value="" class="onetime">One-Time - ${{ heavyProduct.price | money_without_currency }}</option>
+                  {% for selling_plan_group in heavyProduct.selling_plan_groups %}
+                    {% assign selling_plans = selling_plan_group.selling_plans | sort: "name" %}
+                    {% for selling_plan in selling_plans %}
+                      {% for price_adjustment in selling_plan.price_adjustments %}
+                        {% assign selling_plan_discount = price_adjustment.value | times: 1.0 %}
+                        {% assign selling_plan_discount_percentage = selling_plan_discount | divided_by: 100 %}
+                        {% assign selling_plan_discount_amount_off = float_variant_price | times: selling_plan_discount_percentage %}
+                        {% assign label_variant_price = float_variant_price | minus: selling_plan_discount_amount_off  %}
+                      {% endfor %}
+
+
+                      {% if selling_plan.name contains "4 week" %}
+                        {% assign label_delivery_frequency = "Every 4 Weeks" %}
+                        {% assign selected = 'selected="selected"' %}
+                        {% assign default_selling_plan = selling_plan.id %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+                      {% if selling_plan.name contains "6 week" %}
+                        {% assign label_delivery_frequency = "Every 6 Weeks" %}
+                        {% assign selected = '' %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+                      {% if selling_plan.name contains "8 week" %}
+                        {% assign label_delivery_frequency = "Every 8 Weeks" %}
+                        {% assign selected = '' %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+
+                    {% endfor %}
+                  {% endfor %}
+                </select>
+
+                <input type="hidden" name="selling_plan" value="{{ default_selling_plan }}">
+                <input type="hidden" id="unit_type" name="unit_type" value="{{ unit }}"/>
+                <input type="hidden" id="id" name="id" value="{{ heavyProduct.variants.first.id }}"/>
+                <input type="hidden" id="product_id" name="product_id" value="{{ heavyProduct.id }}"/>
+                <input type="hidden" id="basePrice" name="basePrice" value="{{ heavyProduct.price | money_without_currency }}"/>
+                <input type="hidden" id="discPrice" name="discPrice" value="{{ heavyProduct.variants.first.metafields.subscriptions.discount_variant_price }}"/>
+              </div>
+
+              <div class="subscription-qty">
+                <select id="quantity" name="quantity">
+                  <option value="1">QTY 1</option>
+                  <option value="2">QTY 2</option>
+                  <option value="3">QTY 3</option>
+                  <option value="4">QTY 4</option>
+                  <option value="5">QTY 5</option>
+                </select>
+                <label for="quantity" class="select-arrow">
+                  <img src="{{ 'select-bg.png' | asset_url }}" />
+                </label>
+              </div>
+              <div class="subscription-button">
+                {% if heavyProduct.selected_or_first_available_variant.inventory_quantity > 0 or heavyProduct.tags contains 'preorder' %}
+                  <input type="submit" class="button product-add-available add-to-cart-list" value="{% if heavyProduct.variants.first.inventory_quantity > 0 %}Add to Cart{% elsif heavyProduct.tags contains "preorder" %}Pre-Order{% endif %}"/>
+                  {%- comment -%}
+                    <input type="submit" class="button product-add-soldout add-to-cart-list" disabled value="{{ 'products.product.add_to_cart' | t }}"/>
+
+                    <input type="button" class="button product-add-unavailable add-to-cart-list" disabled value="{{ 'products.product.unavailable' | t }}"/>
+                  {%- endcomment -%}
+                {% else %}
+                  <a href="#" type="button" class="BIS_trigger bis-collection-button button add-to-cart-list" data-product-data="{{ heavyProduct | json | escape }}">Notify Me When Available</a>
+                {% endif %}
+              </div>
+            </form>
+          </div>
+          {% comment %}
+            <a href="#" class="button">Add To Cart</a>
+          {% endcomment %}
+          <div class="review-block">
+            <span class="rating-star">{{ 'ratings.png' | file_url | img_tag }}</span>
+            <h3>
+              <q>The best thing is how comfortable they are compared to other products I have tried.</q>
+            </h3>
+            <p>- DIANE T.</p>
+          </div>
+        </div>
+        <div class="compare-tab ultimate">
+          {% assign ultimateProduct = all_products['ultimate-pad-for-bladder-leakage'] %}
+          <h2>Ultimate Pads</h2>
+          <div class="tab-img-slider">
+            <div class="tab-img-item tab-img-item--adjusted-width">
+              {{ 'ULTIMATE.png' | file_url | img_tag }}
+            </div>
+            {% for image in ultimateProduct.images %}
+              <div class="tab-img-item">
+                <img loading="lazy" src="{{ image | image_url: width: 500 }}">
+              </div>
+            {% endfor %}
+          </div>
+          <p class="tab-info">Perfect for maximum protection for day or night.</p>
+          <div class="product-subscription-section" data-vid="{{ ultimateProduct.variants.first.id }}">
+            <form class=" product-subscription-option" action="/cart/add">
+              <div class="subscription">
+                {% assign float_variant_price = ultimateProduct.variants.first.price | times: 1.0 %}
+
+                <select name="frequency" id="frequency" class="select-frequency rc_select rc_select__frequency styled replaced">
+                  <option value="" class="onetime">One-Time - ${{ ultimateProduct.price | money_without_currency }}</option>
+                  {% for selling_plan_group in ultimateProduct.selling_plan_groups %}
+                    {% assign selling_plans = selling_plan_group.selling_plans | sort: "name" %}
+                    {% for selling_plan in selling_plans %}
+                      {% for price_adjustment in selling_plan.price_adjustments %}
+                        {% assign selling_plan_discount = price_adjustment.value | times: 1.0 %}
+                        {% assign selling_plan_discount_percentage = selling_plan_discount | divided_by: 100 %}
+                        {% assign selling_plan_discount_amount_off = float_variant_price | times: selling_plan_discount_percentage %}
+                        {% assign label_variant_price = float_variant_price | minus: selling_plan_discount_amount_off  %}
+                      {% endfor %}
+
+
+                      {% if selling_plan.name contains "4 week" %}
+                        {% assign label_delivery_frequency = "Every 4 Weeks" %}
+                        {% assign selected = 'selected="selected"' %}
+                        {% assign default_selling_plan = selling_plan.id %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+                      {% if selling_plan.name contains "6 week" %}
+                        {% assign label_delivery_frequency = "Every 6 Weeks" %}
+                        {% assign selected = '' %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+                      {% if selling_plan.name contains "8 week" %}
+                        {% assign label_delivery_frequency = "Every 8 Weeks" %}
+                        {% assign selected = '' %}
+                        <option class="recPrice" value="{{ selling_plan.id }}" {{ selected }}>{{ label_delivery_frequency }} - {{ label_variant_price | money }}</option>
+                      {% endif %}
+
+
+                    {% endfor %}
+                  {% endfor %}
+                </select>
+
+                <input type="hidden" name="selling_plan" value="{{ default_selling_plan }}">
+                <input type="hidden" id="unit_type" name="unit_type" value="{{ unit }}"/>
+                <input type="hidden" id="id" name="id" value="{{ ultimateProduct.variants.first.id }}"/>
+                <input type="hidden" id="product_id" name="product_id" value="{{ ultimateProduct.id }}"/>
+                <input type="hidden" id="basePrice" name="basePrice" value="{{ ultimateProduct.price | money_without_currency }}"/>
+                <input type="hidden" id="discPrice" name="discPrice" value="{{ ultimateProduct.variants.first.metafields.subscriptions.discount_variant_price }}"/>
+              </div>
+
+              <div class="subscription-qty">
+                <select id="quantity" name="quantity">
+                  <option value="1">QTY 1</option>
+                  <option value="2">QTY 2</option>
+                  <option value="3">QTY 3</option>
+                  <option value="4">QTY 4</option>
+                  <option value="5">QTY 5</option>
+                </select>
+                <label for="quantity" class="select-arrow">
+                  <img src="{{ 'select-bg.png' | asset_url }}" />
+                </label>
+              </div>
+              <div class="subscription-button">
+
+                {% if ultimateProduct.selected_or_first_available_variant.inventory_quantity > 0 or ultimateProduct.tags contains 'preorder' %}
+                  <input type="submit" class="button product-add-available add-to-cart-list" value="{% if ultimateProduct.variants.first.inventory_quantity > 0 %}Add to Cart{% elsif ultimateProduct.tags contains "preorder" %}Pre-Order{% endif %}"/>
+                  {%- comment -%}
+                    <input type="submit" class="button product-add-soldout add-to-cart-list" disabled value="{{ 'products.product.add_to_cart' | t }}"/>
+
+                    <input type="button" class="button product-add-unavailable add-to-cart-list" disabled value="{{ 'products.product.unavailable' | t }}"/>
+                  {%- endcomment -%}
+                {% else %}
+                  <a href="#" type="button" class="BIS_trigger bis-collection-button button add-to-cart-list" data-product-data="{{ ultimateProduct | json | escape }}">Notify Me When Available</a>
+                {% endif %}
+              </div>
+            </form>
+          </div>
+          {% comment %}
+            <a href="#" class="button">Add To Cart</a>
+          {% endcomment %}
+          <div class="review-block">
+            <span class="rating-star">{{ 'ratings.png' | file_url | img_tag }}</span>
+            <h3>
+              <q>These are thin and very absorbent so there is no panic that leakage is happening. So comfortable against the skin as well.</q>
+            </h3>
+            <p>- DEANNA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Comparison",
+    "settings": [
+      {
+        "type": "text",
+        "id": "page_heading",
+        "label": "Heading",
+        "default": "A Range Of Daily Needs, Always The Perfect Fit"
+      }
+    ]
+  }
+{% endschema %}

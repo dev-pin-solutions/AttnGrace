@@ -1,0 +1,95 @@
+{% comment %}
+@param logo {Image}
+Image object to use as logo
+
+@param logo_width {Integer}
+Width to be used for the logo
+
+@param mobile_logo {Image}
+Image object to use as logo on mobile
+
+@param mobile_logo_width {Integer}
+Width to be used for the logo on mobile
+
+@param show_announcement {Boolean}
+Include announcement bar
+
+@param hide_nav {Boolean}
+If true, hide the `Menu` and `Cart` links
+{% endcomment %}
+
+{% if show_announcement %}
+  {% include 'announcement-bar' %}
+{% endif %}
+
+<meta name="google-site-verification" content="s_hRk_bW30j1sxNvxe0xfdR4PmTGpUznwoyBOS2Rl5o" />
+
+<div id="fsb_placeholder"></div>
+<div class="main-header" data-main-header>
+  <div class="header">
+    <div class="logo-wrapper">
+      {%
+        include 'header-logo',
+        logo: section.settings.logo,
+        logo_width: section.settings.logo_width %}
+    </div>
+    {% include 'main-navigation' %}
+    <div class="header-right-icons">
+      <ul class="icon-list">
+        <li class="user-account icon">
+          <a aria-label="Customer Account" href="{{ shop.url }}/account">
+            <span>
+              {% if customer %}MY ACCOUNT {% else %}SIGN IN
+              {% endif %}
+            </span>
+            {% include 'icon-user' %}</a>
+        </li>
+        <li class="main-sidebar-tool-item main-sidebar-tool-item-cart cart{% if cart.item_count >= 1 %}-full{% endif %}">
+          <a href="/cart">{% include 'icon-cart' %}<span class="cart-count">{{ cart.item_count }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="header-mobile">
+    {% unless hide_nav %}
+      <div class="main-header-item main-header-menu-item">
+        <a
+          class="main-header-link"
+          href="#"
+          title="{{ 'layout.navigation.menu' | t }}"
+          data-overnav-open
+          aria-controls="overnav"
+          aria-expanded="false">
+          {%- include 'icon-menu' -%}
+          <span class="d-none">Mobile Nav</span>
+        </a>
+      </div>
+    {% endunless %}
+
+    <div class="main-header-logo main-logo-mobile">
+      {%
+        include 'header-logo',
+        logo: mobile_logo,
+        logo_width: mobile_logo_width %}
+    </div>
+
+    {% unless hide_nav %}
+      <div class="main-header-item main-header-cart-item">
+        <a
+          class="main-header-link {% if cart.item_count > 0 %}cart-has-contents{% endif %}"
+          href="/cart"
+          title="{{ 'layout.navigation.cart' | t }}">
+          {% if cart.item_count >= 1 %}
+            {%- include 'icon-cart-full' -%}
+            {% include 'cart-count' %}
+          {% else %}
+            {%- include 'icon-cart' -%}
+            {% include 'cart-count' %}
+          {% endif %}
+          <span class="d-none">Cart</span>
+        </a>
+      </div>
+    {% endunless %}
+  </div>
+</div>

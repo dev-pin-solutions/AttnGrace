@@ -1,0 +1,86 @@
+{% comment %}
+
+  @param item Product
+         The product to display.
+
+  @param placeholder String
+         If set, use a Shopify placeholder SVG as the product image.
+
+  @param title String
+         The product title to use. Only used if no `item` is passed.
+
+{% endcomment %}
+
+{% assign image_size = '1024x' %}
+{% assign placeholder_style = placeholder | default: 'image' %}
+{% assign crop_image = nil %}
+{% if section.settings.product_grid_image_crop %}
+  {% assign crop_image = 'center' %}
+{% endif %}
+
+{% if item.featured_media %}
+  {%- capture background_style -%}
+    {%
+      include 'rimg',
+      img: item.featured_media.preview_image,
+      size: image_size,
+      crop: crop_image,
+      lazy: true,
+      background: true
+    %}
+  {%- endcapture -%}
+{% else %}
+  {%- capture placeholder_uri -%}
+    {%-
+      include 'placeholder_svg_uri',
+      placeholder: placeholder_style
+    -%}
+  {%- endcapture -%}
+
+  {%- capture background_style -%}
+    style="background-image: url('{{ placeholder_uri }}');"
+  {%- endcapture -%}
+{% endif %}
+
+<div class="recommended-product product_{{ product.id }}" style="display:none">
+  {% include 'product-badge' %}
+    <figure
+      class="
+        product-list-item-thumbnail
+        {% unless item.featured_media %}
+          product-list-item-thumbnail-placeholder
+        {% endunless %}
+      "
+      {{ background_style }}
+    >
+      {% if item.featured_media %}
+        {%
+          include 'rimg',
+          img: item.featured_media.preview_image,
+          size: image_size,
+          crop: crop_image,
+          lazy: true,
+          class: recommended-product-image
+        %}
+      {% else %}
+        <img loading="lazy"
+          src="{{ placeholder_uri }}"
+          alt="{{ title | default: product.title | escape }}"
+          class="recommended-product-image"
+        >
+      {% endif %}
+    </figure>
+    <div class="recommended-product-desc {% if item.price %}has-price{% endif %}">
+    <h3 class="recommended-product-title">
+        {% if item %}
+            {{ item.title }}
+        {% else %}
+            {{ title }}
+        {% endif %}
+    </h3>
+    <p>{{ item.description | strip_html | truncate: 60 }}</p>
+    <div class="product-link">
+        <a class="btn" href="{{ item.url | within: collection | default: '#' }}">Add to Cart</a>
+    </div>
+    </div>
+</div>

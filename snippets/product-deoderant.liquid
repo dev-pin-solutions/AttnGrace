@@ -1,0 +1,24 @@
+{% comment %}
+  @param show_pagination
+         If true, show the product pagination.
+
+  @param product
+         The product to render.
+{% endcomment %}
+
+<article class="product" data-product-id="{{ product.id }}">
+  {% if show_pagination %}
+    {% include 'product-pagination' %}
+  {% endif %}
+  <div class="product-body">
+    {% include 'product-gallery', product: product %}
+    {% include 'product-deoderant-details' %}
+  </div>
+</article>
+<script>
+  $(document).ready(function(){
+    $("#select-variants").change(function(){
+      window.location.href = $(this).val();
+    });
+  });
+</script>

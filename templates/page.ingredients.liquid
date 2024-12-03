@@ -1,0 +1,13 @@
+<div class="page-content full-width">
+  <h1 class="page-title">{{ page.title }}</h1>
+    {% section 'ingredients-banner' %}
+    {% section 'ingredients-collection' %}
+    {% section 'ingredients-features' %}
+    {% section 'ingredients-info' %}
+    <div class="logo-icon">
+      {%- include 'icon-logo' -%}
+    </div>
+  <div class="rte">
+    {{ page.content }}
+  </div>
+</div>

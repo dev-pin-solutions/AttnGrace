@@ -1,0 +1,90 @@
+<script defer>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5XV2DRM');
+</script>
+
+{% if first_time_accessed %}
+  <script>
+    (function(dataLayer){
+
+    	var customer_type = ({{ customer.orders_count }} > 1) ? 'repeatcustomer' : 'newcustomer';
+    	var discounts = "{{ order.discounts | map: 'code' | join: ',' | upcase }}";
+
+    	var products = [];
+    	{% for line_item in line_items %}
+    	products.push({
+    		'id': '{{ line_item.product_id }}',
+    		'name': '{{ line_item.product.title }}',
+    		'category': '{{ line_item.product.type }}',
+    		'brand': '{{ line_item.vendor }}',
+    		'variant': '{{ line_item.variant.title }}',
+    		'coupon': "{{ line_item.discounts | map : 'code' | join: ',' | upcase }}",
+    		'price': {{ line_item.price | times: 0.01 }},
+    		'quantity': {{ line_item.quantity }}
+    	});
+    	{% endfor %}
+
+    	dataLayer.push({
+        'event': 'purchase',
+        'customerType': customer_type,
+        'ecommerce': {
+          'transaction_id': '{{ order.order_number }}',
+          'value': {{ total_price | times: 0.01 }},
+          'tax': {{ order.tax_price | times: 0.01 }},
+          'shipping': {{ order.shipping_price | times: 0.01 }},
+          'currency': "{{ order.currency }}",
+          'affiliation': 'Shopify {{ shop.name }}',
+          'value': {{ order.total_price | times: 0.01 }},
+          'coupon': discounts,
+          'items': [
+            {% for line_item in line_items %}{
+            sku: "{{ line_item.sku }}",
+            item_id: "{{ line_item.product_id }}",
+            item_name: "{{ line_item.title }}",
+            brand: "{{ line_item.vendor }}",
+            variant: "{{ line_item.variant.title }}",
+            coupon: "{{ line_item.discounts | map : 'code' | join: ',' | upcase }}",
+            price: {{ line_item.final_price | times: 0.01 }},
+            quantity: {{ line_item.quantity }}
+            },{% endfor %}
+          ]
+        }
+      });
+
+      setTimeout(function() {
+        // Clear the ecommerce data for subsequent hits.
+        dataLayer.push({ 'ecommerce': null });
+    	}, 3);
+
+    }(window.dataLayer = window.dataLayer || []));
+  </script>
+{% endif %}
+
+{% if first_time_accessed %}
+  <script>
+    let orderId = Shopify.checkout.order_id.toString() || '{{ order.order_number }}';
+    window.addEventListener('load', function() {
+      window.dataLayer = window.dataLayer || [];
+      {% if customer %}
+        window.dataLayer.push({
+          visitorType: "Logged In",
+          visitorId: '{{ customer.id | remove: "'" }}',
+          CustomerId: '{{ customer.id | remove: "'" }}',
+          CustomerEmail: "{{ customer.email }}",
+          CustomerFirstName: "{{ customer.first_name }}",
+          CustomerPhone: "{{ customer.default_address.phone }}",
+          CustomerLastName: "{{ customer.last_name }}",
+          CustomerOrdersCount: {{ customer.orders_count }},
+          CustomerTotalSpent: {{ customer.total_spent | divided_by: 100 }},
+        });
+      {% else %}
+        window.dataLayer.push({
+          visitorType: "Guest"
+        });
+      {% endif %}
+    }, false);
+  </script>
+{% endif %}

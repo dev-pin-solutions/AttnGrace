@@ -1,0 +1,197 @@
+{%- assign bb_total_price = 0 -%}
+
+{%- for item in cart.items -%}
+    {%- assign _final_price = item.final_line_price -%}
+    {%- assign _original_price = item.original_line_price -%}
+    {%- for property in item.properties -%}
+        {%- if property.first == price_key -%}
+            {%- assign _final_price = property.last | times: item.quantity -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- for property in item.properties -%}
+        {%- if property.first == price_with_currency_key -%}
+            {%- assign _final_price = property.last | times: item.quantity -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- assign bb_total_price = bb_total_price | plus: _final_price -%}
+{%- endfor -%}
+
+{% assign bb_items_subtotal_price = bb_total_price %}
+{%- for discount_application in cart.cart_level_discount_applications -%}
+    {%- assign bb_total_price = bb_total_price | minus: discount_application.total_allocated_amount -%}
+{% endfor %}
+
+
+{%- assign bb_total_price1 = 0 -%}
+
+{%- for item in cart.items -%}
+    {%- assign _final_price1 = item.final_line_price -%}
+    {%- assign _original_price1 = item.original_line_price -%}
+    {%- for property in item.properties -%}
+        {%- if property.first == price_key -%}
+            {%- assign _final_price1 = property.last | times: item.quantity -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- for property in item.properties -%}
+        {%- if property.first == price_with_currency_key -%}
+            {%- assign _final_price1 = property.last | times: item.quantity -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- assign bb_total_price1 = bb_total_price1 | plus: _final_price1 -%}
+{%- endfor -%}
+
+{% assign bb_items_subtotal_price = bb_total_price1 %}
+{%- for discount_application in cart.cart_level_discount_applications -%}
+    {%- assign bb_total_price1 = bb_total_price1 | minus: discount_application.total_allocated_amount -%}
+{% endfor %}
+
+{% if section.settings.show_hide_bar == true %}
+
+    {% assign cval = section.settings.min_cart_value | times: 100 | plus: 0 %}
+    {% assign cval = cval | plus: 0 %}
+    {% if bb_total_price < cval and bb_total_price != 0 %}
+        {% assign remaining = cval | minus: bb_total_price %}
+        {% assign remaining_1 = remaining | divided_by: 100 %}
+        {% assign remaining_2 = remaining | modulo: 100 %}
+		{% if remaining_2 == 0 %}
+			{% assign remaining_2 = "00" %}
+		{% endif %}
+        {% assign remaining = "<span style='color: rgb(255, 243, 217);'>$" | append: remaining_1 | append: '.' | append: remaining_2 | append: "</span>" %}
+        <div class="free_shipping_bar free_shipping_bar_1 custombar" cart_value="{{ cart.total_price }}" threshold="{{ cval }}" bundle_price="{{ bundle_price }}" default_message="{{ section.settings.default_message }}" remaining_message="{{ section.settings.remaining_message }}" final_message="{{ section.settings.final_message }}">{{ section.settings.remaining_message | replace: '%',remaining }}</div>
+        {% elsif bb_total_price >= cval %}
+        <div class="free_shipping_bar free_shipping_bar_1 custombar" cart_value="{{ cart.total_price }}" threshold="{{ cval }}" bundle_price="{{ bundle_price }}" default_message="{{ section.settings.default_message }}" remaining_message="{{ section.settings.remaining_message }}" final_message="{{ section.settings.final_message }}">{{ section.settings.final_message }}</div>
+    {% else %}
+        {% assign cartval = "<span style='color: rgb(255, 243, 217);'>$" | append: section.settings.min_cart_value | append: "</span>" %}
+        <div class="free_shipping_bar free_shipping_bar_1 custombar" cart_value="{{ cart.total_price }}" threshold="{{ cval }}" bundle_price="{{ bundle_price }}" default_message="{{ section.settings.default_message }}" remaining_message="{{ section.settings.remaining_message }}" final_message="{{ section.settings.final_message }}">{{ section.settings.default_message }}</div>
+    {% endif %}
+{% endif %}
+
+{% if section.settings.show_hide_bar2 == true %}
+    {% assign cval1 = section.settings.min_cart_value2 | times: 100 | plus: 0 %}
+    {% assign cval1 = cval1 | plus: 0 %}
+    {% if bb_total_price1 < cval1 and bb_total_price1 != 0 %}
+        {% assign remaining1 = cval1 | minus: bb_total_price1 %}
+        {% assign remaining1_1 = remaining1 | divided_by: 100 %}
+        {% assign remaining1_2 = remaining1 | modulo: 100 %}
+		{% if remaining1_2 == 0 %}
+			{% assign remaining1_2 = "00" %}
+		{% endif %}
+        {% assign remaining1 = "<span style='color: rgb(255, 243, 217);'>$" | append: remaining1_1 | append: '.' | append: remaining1_2 | append: "</span>" %}
+        <div class="free_shipping_bar free_shipping_bar_2 custombar" cart_value="{{ cart.total_price }}" threshold="{{ cval1 }}" bundle_price1="{{ bundle_price1 }}" default_message2="{{ section.settings.default_message2 }}" remaining_message2="{{ section.settings.remaining_message2 }}" final_message2="{{ section.settings.final_message2 }}">{{ section.settings.remaining_message | replace: '%',remaining1 }}</div>
+        {% elsif bb_total_price1 >= cval %}
+        <div class="free_shipping_bar free_shipping_bar_2 custombar" cart_value="{{ cart.total_price }}" threshold="{{ cval1 }}" bundle_price1="{{ bundle_price1 }}" default_message2="{{ section.settings.default_message2 }}" remaining_message2="{{ section.settings.remaining_message2 }}" final_message2="{{ section.settings.final_message2 }}">{{ section.settings.final_message2 }}</div>
+    {% else %}
+        {% assign cartval1 = "<span style='color: rgb(255, 243, 217);'>$" | append: section.settings.min_cart_value2 | append: "</span>" %}
+        <div class="free_shipping_bar free_shipping_bar_2 custombar" cart_value="{{ cart.total_price }}" threshold="{{ cval1 }}" bundle_price1="{{ bundle_price1 }}" default_message2="{{ section.settings.default_message2 }}" remaining_message2="{{ section.settings.remaining_message2 }}" final_message2="{{ section.settings.final_message2 }}">{{ section.settings.default_message2 | replace: '%',cartval1 }}</div>
+    {% endif %}
+{% endif %}
+{% schema %}
+    {
+        "name": "Free Shipping Bar",
+        "settings": [{
+            "type": "checkbox",
+            "id": "show_hide_bar",
+            "label": "Enable/Disable Shipping Bar",
+            "default": false
+        },
+        {
+            "type": "text",
+            "id": "min_cart_value",
+            "label": "Min Cart Value"
+        },
+        {
+            "type": "textarea",
+            "id": "default_message",
+            "label": "Default Message"
+        },
+        {
+            "type": "textarea",
+            "id": "remaining_message",
+            "label": "Remaining cart value Message"
+        },
+        {
+            "type": "textarea",
+            "id": "final_message",
+            "label": "Message when eligible for free shipping"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_hide_bar2",
+            "label": "Enable/Disable Shipping Bar 2",
+            "default": false
+        },
+        {
+            "type": "text",
+            "id": "min_cart_value2",
+            "label": "Min Cart Value 2"
+        },
+        {
+            "type": "textarea",
+            "id": "default_message2",
+            "label": "Default Message 2"
+        },
+        {
+            "type": "textarea",
+            "id": "remaining_message2",
+            "label": "Remaining cart value Message 2"
+        },
+        {
+            "type": "textarea",
+            "id": "final_message2",
+            "label": "Message when eligible for free shipping 2"
+        }
+    ]}
+{% endschema %}
+<style>
+    @media only screen and (max-width: 600px) {
+        .free_shipping_bar {
+            text-align: center;
+            margin: 0px;
+            padding: 12px 10px;
+            left: 0px;
+            height: auto;
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            background-color: #fb9650;
+            color: rgb(255, 255, 255);
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: 600;
+            font-family: "Acre", sans-serif;
+        }
+    }
+    @media only screen and (min-width: 600px) {
+        .free_shipping_bar {
+            text-align: center;
+            margin: 0px;
+            padding: 12px 10px;
+            left: 0px;
+            height: auto;
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            background-color: #fb9650;
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 600;
+            font-family: "Acre", sans-serif;
+        }
+    }
+</style>
+<script>
+const freeShippingBars = Array.from(document.querySelectorAll('.free_shipping_bar'));
+
+if (freeShippingBars.length > 1) {
+    document.body.classList.add('has-shipping-banners');
+} else {
+    document.body.classList.remove('has-shipping-banners');
+}
+
+if (freeShippingBars.length == 1) {
+    document.body.classList.add('has-shipping-banner');
+} else {
+    document.body.classList.remove('has-shipping-banner');
+}
+</script>

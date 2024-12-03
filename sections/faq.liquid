@@ -1,0 +1,33 @@
+<div class="faq-section">
+	<div class="title-with-border"><span>Frequently Asked Questions</span></div>
+	<h2><span>FAQ’s</span></h2>
+	<div class="faq-tabs">
+		{{ section.settings.faq_short_code }}
+	</div>
+</div>
+{% schema %}
+  {
+    "name": "FAQ",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "FAQ Section"
+      },
+	  {
+        "type": "text",
+        "id": "faq_short_code",
+        "default": "FAQ Short Code",
+        "label": "FAQ Category Short Code",
+		"info": "[Generate Category Short Code](https://faq.ndnapps.com/)"
+      }
+	],
+
+	"presets": [
+      {
+        "category": "FAQ",
+        "name": "FAQ"
+      }
+	]
+  }
+{% endschema %}

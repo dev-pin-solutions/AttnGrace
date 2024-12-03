@@ -1,0 +1,529 @@
+{% comment %}
+  REMOVE DEFAULT SHOPIFY IMAGE AND DESCRIPTION HEADER FROM PAGE - Ryan K. 11.07.2020
+  {% include 'plp-collection-item-block',
+  block_tag: 'div',
+  first_product: false,
+  link_collection: false,
+  show_description: section.settings.show_description,
+  image_layout: section.settings.image_layout,
+  %}
+{% endcomment %}
+
+{% comment %} fit and sizing modal styles {% endcomment %}
+
+<style>
+    :root {
+      --vh: 100%;
+  }
+
+    .dim {
+      background-color: #000000;
+      opacity: 0.5;
+    }
+
+    .cover {
+        top: 0;
+        bottom: 0;
+        z-index: 2000;
+    }
+
+    .overlay {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+    }
+
+
+      .no-scroll {
+        overflow: hidden;
+      }
+
+        .hide {
+          display: none !important
+        }
+
+
+    .fit-and-sizing-modal-close-btn{
+      border: none;
+      background: none;
+    }
+
+        .modal-btn-container, .btn-content {
+          font-family: 'SF Pro Text', sans-serif ;
+           display: flex;
+           align-items: center;
+           margin: auto;
+         }
+
+         .fit-and-sizing-modal-btn {
+           text-wrap: nowrap;
+           color: black;
+           background-color: white;
+           border: 1.7px solid #FA541C;
+           padding: 6px;
+           font-size: 1rem;
+         }
+
+     .bucket-icon {
+        margin-right: 9px;
+        display: flex;
+        align-items: center;
+      }
+
+
+
+      .modal-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 12%;
+      }
+
+        .modal-product-title {
+          margin: 0px;
+          font-family: SF Pro Text;
+          font-size: 18.78px;
+          font-weight: 700;
+          line-height: 4rem;
+          text-align: left;
+        }
+
+        .modal-product-details p {
+          font-family: 'Inter', sans-serif;
+          font-size: 1rem;
+          line-height: 20px;
+          text-align: left;
+          width: 100%;
+        }
+
+      .modal-product-details div {
+        display: flex;
+        width: 100%;
+      }
+
+        .modal-pop-up-container {
+          display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow-y: scroll;
+          font-family: 'SF Pro Text', sans-serif;
+          text-align:center;
+          position: fixed;
+          top: 0px;
+          bottom: 0px;
+          left: 70vw;
+          height: 100vh;
+          width: 30vw;
+          z-index: 9000;
+          background-color: white;
+          opacity: 0.95;
+        }
+
+
+        .fit-and-sizing-header {
+          display: flex;
+          justify-content: space-between;
+
+          margin: auto;
+
+          font-weight: 'bold'
+        }
+
+        .fit-and-sizing-text {
+          /* Auto layout */
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 13.75px;
+
+          font-family: 'SF Pro Text', sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 21.45px;
+          line-height: 36px;
+          /* identical to box height, or 167% */
+
+          color: #000000;
+
+
+          /* Inside auto layout */
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+        }
+
+        .modal-product-info-container {
+          padding: 2.5rem;
+        }
+
+        .explore-btn {
+          color: white;
+          background-color: black;
+          margin: auto;
+          font-family: 'SF Pro Text', sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16.6162px;
+          line-height: 31px;
+          text-align: center;
+          text-decoration-line: underline;
+          padding: 15px 30px;
+          border-radius: 10px;
+        }
+
+
+        .fit-and-sizing-modal-footer {
+          background-color: rgba(245, 245, 245, 1);
+          padding: 3rem;
+          padding-top: 0px;
+          padding-bottom: 40%;
+        }
+
+        .fit-and-sizing-modal-footer > p {
+          font-size: 18px
+        }
+
+        .find-your-fit-link {
+          color: white;
+          background-color: black;
+          margin: auto;
+          font-family: 'SF Pro Text', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16.6162px;
+          line-height: 31px;
+          text-align: center;
+          padding: 15px 60px;
+        }
+
+        /* mobile styles */
+          @media screen and (max-width: 768px){
+          .modal-pop-up-container {
+        justify-content: space-between;
+              left: 0px;
+              right: 0px;
+              height: 100vh;
+              width: 100vw;
+          }
+
+          .modal-product-title {
+
+          line-height: 2rem;
+
+        }
+
+        }
+</style>
+
+{% comment %} product and carousel styles {% endcomment %}
+<style>
+  .ultimate-image-container {
+    width: calc(100% + 50px);
+    display: flex;
+    justify-content: center;
+    margin-top: -55px;
+  }
+
+  .ultimate-pad-link {
+    width: calc(100% + 50px);
+  }
+
+  .ultimate-pad-image {
+    width: calc(100% + 60px) !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    margin: 0 -25px 0 0 !important;
+    border-radius: 25px 25px 0 0;
+  }
+
+    .slick-arrow.slick-prev:before {
+        content: url("data:image/svg+xml,%0A%3Csvg width='44' height='44' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 6L9 12L15 18' stroke='%23222222'/%3E%3C/svg%3E%0A");
+    }
+    .slick-arrow.slick-next:before{
+        content: url("data:image/svg+xml,%0A%3Csvg width='44' height='44' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 6L15 12L9 18' stroke='%23222222'/%3E%3C/svg%3E%0A");
+    }
+
+      .slick-arrow {
+    position: absolute;
+    display: block;
+    top: 50%;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    font-size: 0;
+    background: transparent;
+    z-index: 20;
+  }
+
+  .slick-prev{
+    left: 0px
+  }
+
+  .slick-next{
+    right: 0px;
+  }
+    .product-list-item-thumbnail{
+      max-width: 300px;
+      max-height: 300px;
+    }
+      {% comment %}
+    Initially hiding the slider elements until the jquery code below has run in order to prevent layout shift after slider js code takes effect.
+    {% endcomment %}
+    .product-gallery-slider {
+      width: 100%;
+       visibility: hidden;
+    }
+
+    .page-product__gallery{
+    max-width: 100%
+  }
+
+  .slick-slider {
+    position: relative;
+    display: block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .product-gallery-slider__item {
+        height: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        border-radius: 20px;
+        /* background: rgb(233 233 233); */
+        }
+        .product-gallery-slider__item img {
+        max-width: 100%;
+        max-height: 100%;
+        }
+</style>
+<div class="page-content">
+  <div class="subcategory-wrapper third-grid-wrapper remove-subscribe-save">
+    <div class="recommended-products-items plp-items-list">
+      {% for product in collection.products %}
+        {% unless product.tags contains 'hide' %}
+          {% include 'plp-carousel-item', item: product %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script>
+         $(document).ready(function(){
+
+       const modalCloseBtn = document.querySelectorAll('.fit-and-sizing-modal-close-btn');
+       const modalOpenBtn = document.querySelectorAll('.fit-and-sizing-modal-btn');
+       const overlayEl = $('.overlay')[0]
+       const body = $('body')[0]
+       const productContainer = document.querySelector('.recommended-product')
+
+       // to open modal
+       modalOpenBtn.forEach(button => button.addEventListener('click', function(event){
+         // show the modal container
+         event.currentTarget.parentNode.children[1].classList.toggle('hide')
+
+         // dim the overlay and position it over the full screen
+        overlayEl.classList.toggle('dim');
+        overlayEl.classList.toggle('cover');
+        // prevent body from scrolling in background
+        body.classList.toggle('no-scroll')
+        productContainer.classList.toggle('no-scroll')
+       }));
+
+       // to close modal on close btn click
+       modalCloseBtn.forEach(button => button.addEventListener('click', function(event){
+         // traverse up to parent modal container and hide it
+         event.currentTarget.closest('.modal-pop-up-container').classList.toggle('hide')
+         overlayEl.classList.toggle('dim');
+         overlayEl.classList.toggle('cover');
+         // bring back scroll to body
+        body.classList.toggle('no-scroll')
+        productContainer.classList.toggle('no-scroll')
+       }));
+
+     // close modal on overlay click (can click anywhere outside modal to close it)
+     document.addEventListener('click', function(event){
+       if($(event.target)[0].classList.contains('overlay')){
+       console.log(event.target)
+       // check all modals and hide the ones that aren't currently hidden
+       $('.modal-pop-up-container').each((index, modal) => {
+         if (!$(modal)[0].classList.contains('hide')) $(modal)[0].classList.toggle('hide')
+       })
+       overlayEl.classList.toggle('dim');
+       overlayEl.classList.toggle('cover');
+       // bring back scroll to body
+        body.classList.toggle('no-scroll')
+         productContainer.classList.toggle('no-scroll')
+
+     }
+     });
+
+
+  // if modal is open (overlay is covering), turn off touch scrolling
+    body.addEventListener('touchmove', function(event){
+               if (overlayEl.classList.contains('cover')) event.preventDefault();
+           }, { passive: false });
+
+         // dont redirect to product page if modal btn is clicked
+         document.querySelector('.product-gallery-slider').addEventListener('click', (e)=> {
+         if (e.target.classList.contains('slick-arrow')) {
+           e.preventDefault()
+           e.stopPropagation()
+           }
+         })
+
+           {% comment %} Show the slider elements once the DOM is ready and they can be styled by slider.js code {% endcomment %}
+             $('.product-gallery-slider').css('visibility', 'visible');
+            {% comment %} code below ensures that slick is not initilaized until all images for the container have loaded (prevents bug of some images not showing) {% endcomment %}
+
+       $('.product-gallery-slider').each(function() {
+           var $slider = $(this);
+           var images = $slider.find('img');
+           var imagesLoadedCount = 0;
+
+           images.each(function() {
+               if (this.complete) {
+                   imagesLoadedCount++;
+               } else {
+                   $(this).on('load', function() {
+                       imagesLoadedCount++;
+                       if (imagesLoadedCount === images.length) {
+                           initializeSlick($slider);
+                       }
+                   }).on('error', function() {
+                       imagesLoadedCount++;
+                       if (imagesLoadedCount === images.length) {
+                           initializeSlick($slider);
+                       }
+                   });
+               }
+           });
+
+           if (imagesLoadedCount === images.length) {
+               initializeSlick($slider);
+           }
+       });
+
+       function initializeSlick($slider) {
+           $slider.slick({
+               slidesToShow: 1,
+               slidesToScroll: 1,
+               arrows: true,
+               variable_width: true
+               {% comment %} dots: true {% endcomment %}
+           });
+       }
+
+       });
+</script>
+{% include 'blog-2column', item: product %}
+
+{% schema %}
+{
+  "name": "Collection pages",
+  "settings": [
+    {
+      "type": "select",
+      "id": "image_layout",
+      "label": "Collection image layout",
+      "options": [
+        {
+          "value": "two_column",
+          "label": "Two column"
+        }, {
+          "value": "full_width",
+          "label": "Full Width"
+        }
+      ],
+      "default": "two_column"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show description",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_tag_filtering",
+      "label": "Enable tag filtering",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "pagination",
+      "label": "Products per page",
+      "min": 6,
+      "max": 30,
+      "step": 6,
+      "default": 12
+    }, {
+      "type": "header",
+      "content": "Product cards"
+    }, {
+      "type": "select",
+      "id": "product_grid_image_style",
+      "label": "Media aspect ratio",
+      "options": [
+        {
+          "value": "natural",
+          "label": "Natural"
+        }, {
+          "value": "small",
+          "label": "Short (4:3)"
+        }, {
+          "value": "medium",
+          "label": "Square (1:1)"
+        }, {
+          "value": "large",
+          "label": "Tall (2:3)"
+        }
+      ],
+      "default": "natural"
+    }, {
+      "type": "checkbox",
+      "id": "product_grid_image_crop",
+      "label": "Enable image crop",
+      "default": false,
+      "info": "If disabled, white space will be applied around the image. Has no effect when media aspect ratio is set to natural."
+    }, {
+      "type": "header",
+      "content": "Blog List"
+    }, {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Recommended Reads"
+    }, {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    }, {
+      "type": "range",
+      "id": "post_number",
+      "label": "Number of posts",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 2
+    }
+  ]
+}
+{% endschema %}

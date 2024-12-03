@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="{{ 'these-numbers-matter.css' | asset_url }}" media="print" onload="this.media='all'">
+<div class="numbers-matter-section">
+  <div class="numbers-matter-inner">
+    {% if section.settings.title != blank %}
+      <div class="number-matter-header">
+        <h2>{{ section.settings.title }}</h2>
+      </div>
+    {% endif %}
+    <div class="numbers-matter-wrapper">
+      <div class="numbers-matter-grid">
+        {% for block in section.blocks %}
+          <div class="nmg-wrapper">
+            <div class="nmg-box">
+              {% if block.settings.percent_text != blank %}
+                <h3 class="ptitle">{{ block.settings.percent_text }}</h3>
+              {% endif %}
+              {% if block.settings.text1 != blank %}
+                <div class="text">
+                  {{ block.settings.text1 }}
+                </div>
+              {% endif %}
+              <div class="down-arrow">
+                <img src="{{ 'qr-down-arrow.png' | asset_img_url:'original' }}" loading="lazy" />
+              </div>
+            </div>
+            {% if block.settings.text2 != blank %}
+              <div class="below-text">
+                {{ block.settings.text2 }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="bottom-content-wrapper">
+        <div class="circle-grid-item">
+          {% if section.settings.cimage != blank %}
+          <div class="circle-wrapper" style="background-image:url('{{ section.settings.cimage | img_url: 'original' }};')">
+          </div>
+          {% endif %}
+        </div>
+        <div class="signature-wrapper">
+          <div class="image-text-wrapper">
+            {% if section.settings.btext != blank %}
+              <p class="text">{{ section.settings.btext }}</p>
+            {% endif %}
+            {% if section.settings.simage != blank %}
+              <div class="image">
+                <img src="{{ section.settings.simage | img_url: 'original' }}" loading="lazy" />
+              </div>
+            {% endif %}
+            <p class="text founders-text">Founders</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "These Numbers Matter",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "These numbers matter because you matter."
+      },
+      {
+        "type": "header",
+        "content": "Circle Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "cimage",
+        "label": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Section Below text and signature Image"
+      }, {
+        "type": "text",
+        "id": "btext",
+        "label": "Text",
+        "default": "You have our attention, and always will."
+      }, {
+        "type": "image_picker",
+        "id": "simage",
+        "label": "Signature Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text-column",
+        "name": "Text Column",
+        "settings": [
+          {
+            "type": "text",
+            "id": "percent_text",
+            "label": "Percent Text"
+          }, {
+            "type": "richtext",
+            "id": "text1",
+            "label": "Text"
+          }, {
+            "type": "richtext",
+            "id": "text2",
+            "label": "Below Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

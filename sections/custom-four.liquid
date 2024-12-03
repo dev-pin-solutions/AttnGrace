@@ -1,0 +1,171 @@
+<style>
+/* General styles for the section */
+.custom-four-section {
+  background-color: #ffffff; /* Adds a background color to the entire section
+  /* background-color: #ffffff; */
+  margin: 0;
+  padding: 20px 0;
+  margin-top:-24px;
+}
+
+.custom-four-section .section-title {
+  text-align: center;
+  font-family: BentonMod, sans-serif;
+  font-size: 50px;
+  line-height: 1.6;
+  color: #000;
+  margin-top: 20px; /* Adds space between the top of the section and the title */
+  width: 80%; /* Adjusted for better readability */
+  margin-left: auto; /* Centers the title block horizontally */
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-weight: normal; 
+}
+
+.custom-four-section .column p {
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+  .section-title {
+    padding-top: 20px;
+  }
+
+
+/* Styles for the columns container */
+.four-columns-container {
+    display: flex;
+    justify-content: space-between; /* Adjusted for even spacing */
+    text-align: center;
+    padding: 0 40px; /* Add padding on both sides */
+    margin-top: 0px; /* Decreased space between title and columns */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+    width: 60%; /* Fixed width for regular mode */
+}
+
+/* Styles for each column */
+.column {
+    width: 23%; /* Adjusted for even distribution of columns */
+    padding: 10px; /* Add padding inside each column for spacing */
+  
+}
+
+.column h3 {
+    font-family: BentonMod, sans-serif;
+    margin-bottom: 5px; /* Space between the column title and text */
+    font-size: 50px;
+    margin-bottom: 0; /* Reduce space below each column title */
+  font-weight: normal; 
+  margin-top: 20px;
+}
+
+.column p {
+    /* Text styles adjustments */
+    font-family: BentonMod, sans-serif;
+    font-size: 22px;
+    line-height: 20px;
+    text-align: center; /* Ensures text is centered */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .four-columns-container {
+    flex-direction: column;
+    padding: 0 10px; /* Reduced padding for tighter layout */
+    width: 98%; /* Adjust width to fit screen */
+    gap: 5px; /* Reduce space between rows */
+    
+  }
+
+  .column {
+    display: flex; /* Continues to use flexbox */
+    align-items: center; /* Keeps items aligned */
+    width: 100%; /* Ensures column takes full width */
+    padding: 10px 0; /* Reduces vertical space */
+    
+  }
+
+  .column h3 {
+    margin: 10px;
+    flex-basis: auto; /* Adjusts basis based on content size */
+    flex-grow: 0; /* Prevents it from growing */
+    padding-right: 10px; /* Space between title and paragraph */
+  }
+
+  .column p {
+    flex-grow: 1; /* Allows paragraph to take up remaining space */
+    text-align: left; /* Aligns paragraph text to the left */
+    margin: 0 10 0 auto; /* Adjusts margin to push text to the right */
+  }
+}
+
+.four-columns-container {
+    width: 100%;
+    max-width: 960px;
+    padding: 0 20px;
+
+}
+
+
+
+</style>
+
+
+
+
+<div class="custom-four-section">
+<div class="custom-four-section">
+  <h3 class="section-title">{{ section.settings.main_title }}</h3>
+  
+  <div class="four-columns-container">
+    {% for block in section.blocks %}
+      <div class="column">
+        <h3>{{ block.settings.column_title }}</h3>
+        <p>{{ block.settings.column_text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Custom Four",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Default Main Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "column_title",
+          "label": "Column Title",
+          "default": "Default Column Title"
+        },
+        {
+          "type": "textarea",
+          "id": "column_text",
+          "label": "Column Text",
+          "default": "Default column text."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Four",
+      "category": "Custom"
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}

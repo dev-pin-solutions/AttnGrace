@@ -1,0 +1,54 @@
+<div class="home-slider clp-banner"
+		{% if section.settings.heroimage_desktop %}
+			{%
+				include 'rimg',
+				img: section.settings.heroimage_desktop,
+				lazy: true,
+				background: true
+			%}
+		{% endif %}
+  > 
+
+	<div class="banner-bottom">
+		<h2>{{ section.settings.leak_heading }}</h2>
+		<div class="leak-review">
+			<p>A Little</p>
+			<div class="leak-points">
+				<hr/>
+				<div class="point first-point dot-point">
+					<div class="points-content">
+						<h3>{{ section.settings.drop1_heading }}</h3>
+						<p>{{ section.settings.drop1_subheading }}</p>
+						<div class="button-action">
+							<a class="button small-button button-primary" href="{{ section.settings.drop1_yellow_button_link }}">{{ section.settings.drop1_yellow_button_label }}</a>
+							<a class="button small-button button-secondary" href="{{ section.settings.drop1_blue_button_link }}">{{ section.settings.drop1_blue_button_label }}</a>
+						</div>
+					</div>
+				</div>
+				<div class="point second-point dot-point active">
+					<div class="points-content">
+            <h3>{{ section.settings.drop2_heading }}</h3>
+            <p>{{ section.settings.drop2_subheading }}</p>
+            <div class="button-action">
+              <a class="button small-button button-primary" href="{{ section.settings.drop2_yellow_button_link }}">{{ section.settings.drop2_yellow_button_label }}</a>
+              <a class="button small-button button-secondary" href="{{ section.settings.drop2_blue_button_link }}">{{ section.settings.drop2_blue_button_label }}</a>
+            </div>
+        </div>
+				</div>
+				<div class="point third-point dot-point">
+					<div class="points-content">
+              <h3>{{ section.settings.drop3_heading }}</h3>
+              <p>{{ section.settings.drop3_subheading }}</p>
+              <div class="button-action">
+                <a class="button small-button button-primary" href="{{ section.settings.drop3_yellow_button_link }}">{{ section.settings.drop3_yellow_button_label }}</a>
+                <a class="button small-button button-secondary" href="{{ section.settings.drop3_blue_button_link }}">{{ section.settings.drop3_blue_button_label }}</a>
+              </div>
+            </div>
+				</div>
+			</div>
+			<p>A Lot</p>
+		</div>
+		<div class="mobile-leak-points">
+		</div>
+	</div>
+</div>

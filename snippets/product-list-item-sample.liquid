@@ -1,0 +1,134 @@
+{% comment %}
+
+  @param item Product
+         The product to display.
+
+  @param placeholder String
+         If set, use a Shopify placeholder SVG as the product image.
+
+  @param title String
+         The product title to use. Only used if no `item` is passed.
+
+{% endcomment %}
+{% for tag in product.tags %}
+{% if tag contains "color:" %}
+{% assign colorclass = tag | remove: "color:" %}
+{% endif %}
+{% if tag contains "drops:" %}
+{% assign dropclass = tag | remove: "drops:" %}
+{% endif %}
+{% endfor %}
+
+{% assign image_size = '1024x' %}
+{% assign placeholder_style = placeholder | default: 'image' %}
+{% assign crop_image = nil %}
+{% if section.settings.product_grid_image_crop %}
+  {% assign crop_image = 'center' %}
+{% endif %}
+
+{% if item.featured_media %}
+  {%- capture background_style -%}
+    {%
+      include 'rimg',
+      img: item.featured_media.preview_image,
+      size: image_size,
+      crop: crop_image,
+      lazy: true,
+      background: true
+    %}
+  {%- endcapture -%}
+{% else %}
+  {%- capture placeholder_uri -%}
+    {%-
+      include 'placeholder_svg_uri',
+      placeholder: placeholder_style
+    -%}
+  {%- endcapture -%}
+
+  {%- capture background_style -%}
+    style="background-image: url('{{ placeholder_uri }}');"
+  {%- endcapture -%}
+{% endif %}
+
+<article class="product-list-item sample-{{ colorclass }}">
+  {% include 'product-badge' %}
+
+  <style>#shopify-section-page-sample-collection #sample-collection-{{product.id}} { background-color: {{ product.metafields.product.product_img_bg }};}</style>
+    <figure
+      class="
+        product-list-item-thumbnail
+        {% unless item.featured_media %}
+          product-list-item-thumbnail-placeholder
+        {% endunless %}
+      "
+      id="sample-collection-{{product.id}}"
+      {{ background_style }}
+    >
+      {% if item.featured_media %}
+        {%
+          include 'rimg',
+          img: item.featured_media.preview_image,
+          size: image_size,
+          crop: crop_image,
+          lazy: true
+        %}
+      {% else %}
+        <img loading="lazy"
+          src="{{ placeholder_uri }}"
+          alt="{{ title | default: product.title | escape }}"
+        >
+      {% endif %}
+    </figure>
+
+    {% if template contains 'search' %}
+      <div class="search-item-product-details">
+        <span class="search-item-product-title">
+          {% if item %}
+            {{ item.title }}
+          {% else %}
+            {{ title }}
+          {% endif %}
+        </span>
+        {% if item.available %}
+          <span class="search-item-product-price">
+            {% if item.price_varies %}{{ 'products.product.from' | t }}{% endif %}
+            <span data-money>{{ item.price_min | money }}</span>
+          </span>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="product-list-item-details {% if item.price %}has-price{% endif %}">
+        {% comment %} <span class="drop drop-{{ dropclass }}"></span> {% endcomment %}
+
+        <h2 class="product-list-item-title">
+
+          {% if item %}
+            {{ item.title }}
+          {% else %}
+            {{ title }}
+          {% endif %}
+
+          {% if item.available %}
+            <span class="product-list-item-price">
+              - {% if item.price_varies %}{{ 'products.product.from' | t }}{% endif %}
+              <span data-money>{{ item.price_min | money }}</span>
+            </span>
+          {% endif %}
+        </h2>
+
+        <div class="product-desc">
+             {{ item.description }}
+        </div>
+
+        <form method="post" action="/cart/add" id="form_{{ product.variants.first.id }}">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+          <input type="hidden" min="1" name="quantity" value="1"/>
+          <input type="hidden" name="properties[shipping_interval_unit_type]" id="shipping_interval_unit_type" value="Months"/>
+          <input type="hidden" name="properties[shipping_interval_frequency]" id="shipping_interval_frequency" value="1"/>
+          <input type="hidden" name="properties[subcription_id]" id="subscription_id" value="{{ product.metafields.subscriptions.subscription_id }}" />
+
+          <button type="submit" class="btn button product-add-available" formid="{{ product.variants.first.id }}" subscription_id = "{{ product.metafields.subscriptions.subscription_id }}" varid="{{ product.variants.first.id }}" >{% if product.variants.first.inventory_quantity <= 0 %}Pre-Order{% elsif product.tags contains "preorder" %}Pre-Order{% elsif product.tags contains "backorder" %}Backorder{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}</button>
+        </form>
+      </div>
+    {% endif %}
+</article>

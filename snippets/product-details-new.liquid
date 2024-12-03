@@ -1,0 +1,106 @@
+{% assign variant = product.selected_or_first_available_variant %}
+
+{% if variant.compare_at_price > variant.price %}
+  {% assign has_compare_price = true %}
+{% else %}
+  {% assign has_compare_price = false %}
+{% endif %}
+
+{% comment %}
+  Since the height of the header can change depending on the title length, we
+  want to limit this to be the approx height of 1 line of text.
+{% endcomment %}
+
+<style>
+  .product-title-wrapper{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 60px;
+  }
+  .good_housekeeping_seal_logo img{
+    max-width: 164px;
+  }
+  @media(max-width:990px){
+    .product-title-wrapper{
+      gap: unset;
+      justify-content: space-between;
+    }
+    .good_housekeeping_seal_logo img{
+        max-width: 140px;
+     }
+  }
+</style>
+
+
+
+
+<div class="page-product__content product-details">
+                    <div class="product-title-wrapper desktop-title-wrapper">
+                      <div class="page-product__top">
+                          <div class="page-product__title">{{ product.title }}</div>
+                          <div class="page-product__ratings">
+                              <div class="page-product__rating">{% render 'okendo-reviews-product-rating-summary', product: product %}</div>
+                              <!-- <div class="page-product__rating">
+                                {% for link in linklists.pad-menu.links %}
+                                  {% assign phandle = link.url | remove: "/products/" %}
+                                  {% if phandle == product.handle %}
+                                  <li class="product-option {{ phandle }} {% if phandle == product.handle %}selected{% endif %}">
+                                    for  {{ link.title | replace: "Pads", " " }} leaks
+                                      
+                                          <div class="image-wrap">
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                              {% render 'icon-drops' %}
+                                          </div>
+                                      
+                                  </li>
+                                {% endif %}
+                              {% endfor %}
+                                
+                                
+                            </div> -->
+                          </div>
+                      </div>
+                      <div class="good_housekeeping_seal_logo">
+                        {% if product.metafields.custom.good_housekeeping_seal_logo != blank %}
+                          <img src="{{ product.metafields.custom.good_housekeeping_seal_logo | img_url: 'master'}}" alt="good_housekeeping_seal_logo">
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="page-product__desc">
+
+                      {% if product.description != blank %}
+			<div class="product-description product-description-excerpt">
+				{%- include 'truncate-words', truncate_text: product.description, truncate_length: 38 -%}
+				<a href="#" class="product-description-readmore" data-product-extended-open>{{ 'products.product.read_more' | t }}</a>
+			</div>
+		{% endif %}
+        {% if product.description contains "<!-- split -->" %}
+         {% assign pdesc = product.description | split: '<!-- split -->' %}
+         {% for desc in pdesc %}
+       <div class="product-description options product-description-full rte option{{ forloop.index }}" style="display:none;">
+            <div class="page-product__text">Attn: Grace Ultimate Pads offer maximum protection, for day or night, with no added thickness. Featuring our Skin-Safe, plant-based top sheet and powerful absorbent core, they’re tough on leaks and gentle on skin, keeping you dry and comfortable.</div>
+                        <ul class="page-product__features">
+                            <li>Perfect for locking away surges or gushes of pee (up to 380 ml / 1.6 cups of liquid)</li>
+                            <li>As thin (.5 mm) as our Heavy Pads, almost double the absorbency and over 2 inches longer in length (400 mm), these pads are perfect for both day and night</li>
+                        </ul>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="product-description product-description-full rte common">
+         {{ product.description }}
+        </div>
+        {% endif %}
+
+
+
+                      
+                    </div>
+                    {% include 'product-options-new', variant: variant %}
+                   
+                </div>

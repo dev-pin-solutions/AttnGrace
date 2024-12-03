@@ -1,0 +1,38 @@
+body.pageqr-code .moving-text-section span:after { 
+  display: none;
+}
+
+.moving-text-section {
+  padding: 25px 0;
+  line-height: 0;
+}
+
+.moving-text-section marquee {
+  line-height: 0;
+}
+
+.moving-text-section span {
+  font-size: 28px;
+  line-height: 28px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 25px;
+  position: relative;
+  font-family: 'Acre';
+}
+
+.moving-text-section.product-moving-text {
+  clear: both;
+}
+
+@media screen and (max-width: 768px) { 
+  .moving-text-section {
+    padding: 15px 0;
+  }
+  
+  .moving-text-section span {
+    font-size: 20px;
+    margin: 0 15px;
+  }
+}

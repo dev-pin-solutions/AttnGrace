@@ -1,0 +1,30 @@
+<section class="shopnow">
+  <div class='center-wrapper'>
+      <div class="shopnow__title">{{section.settings.text}}</div>
+      <a href="{{section.settings.btn-link}}" class="shopnow__btn btn">{{section.settings.btn-label}}</a>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Final3 Text",
+    "settings" : [
+      {
+        "type" : "html",
+        "id" : "text",
+        "label" : "Text",
+        "default" : "9-out-of-10 of our customers say they <span>FELT A DIFFERENCE ALMOST IMMEDIATELY</span> after switching to Attn: Grace."
+      },    
+      {
+        "type" : "text",
+        "id" : "btn-label",
+        "label" : "Button Label",
+        "default"   : "SHOP NOW"
+    },
+    {
+        "type" : "url",
+        "id" : "btn-link",
+        "label" : "Button Link"
+    }   
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="{{ 'qr-richtext.css' | asset_url }}" media="print" onload="this.media='all'">
+<div class="qr-richtext-section">
+  <div class="qr-richtext-wrapper">
+    {% if section.settings.title != blank %}
+      <h3>{{ section.settings.title }}</h3>
+    {% endif %}
+    {% if section.settings.subtext != blank %}
+      <div class="subtext">
+        {{ section.settings.subtext }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "QR Richtext",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Heading",
+        "default": "DID YOU KNOW THAT<br/> <strong>URINARY INCONTINENCE IS TREATABLE?</strong>"
+      }, {
+        "type": "richtext",
+        "id": "subtext",
+        "label": "Sub Text",
+        "default": "<p>We want you to live life fully. Check out our <a href='/pages/resource-library'>Resource Library</a> where you can explore potential treatment options and find providers in your area who may be able to help.</p>"
+      }
+    ]
+  }
+{% endschema %}

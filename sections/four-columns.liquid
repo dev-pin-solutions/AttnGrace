@@ -1,0 +1,82 @@
+<style>
+.text-columns-wrapper {
+  text-align: center;
+}
+
+.text-columns-wrapper .section-title {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.columns-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.column {
+  width: 20%; /* Adjust based on design preference */
+  min-width: 200px; /* Ensures usability on smaller screens */
+  margin: 10px; /* Adds space between columns */
+}
+
+.column-title {
+  font-weight: bold;
+  margin-bottom: 10px; /* Spacing between title and subtitle */
+}
+
+.column-subtitle {
+  font-weight: normal;
+}
+</style>
+
+<div class="text-columns-wrapper">
+  <h2 class="section-title">{{ section.settings.main_title }}</h2>
+  <div class="columns-container">
+    {% for block in section.blocks %}
+      <div class="column">
+        <h3 class="column-title">{{ block.settings.title }}</h3>
+        <p class="column-subtitle">{{ block.settings.subtitle }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Four Columns",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Main Section Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Column Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Column Subtitle"
+        }
+      ],
+      "limit": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default"
+    }
+  ]
+}
+{% endschema %}

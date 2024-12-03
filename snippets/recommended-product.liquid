@@ -1,0 +1,49 @@
+{% comment %}
+  @param item
+         The product to render.
+
+  @param collection
+         The collection to use to create the product link.
+{% endcomment %}
+
+<a class="recommended-product" href="{{ item.handle }}">
+  {% if item.available %}
+    {% if item.compare_at_price_min > item.price_min %}
+      <span class="product-badge product-badge-sale">{{ 'products.product.on_sale' | t }}</span>
+    {% endif %}
+  {% else %}
+    <span class="product-badge product-badge-unavailable">{{ 'products.product.sold_out' | t }}</span>
+  {% endif %}
+
+    {% assign product_image = item.featured_media.preview_image %}
+    {%
+        include 'rimg-home'
+        img: product_image,
+        size: '2048x2048',
+        lazy: true,
+    %}
+  <div class="recommended-product-desc">
+    <h3 class="recommended-product-title">
+      {% if item.metafields.global.plp_title %}
+        {{ item.metafields.global.plp_title | remove: " Pads" }}
+      {% else %}
+        {{ item.title }}
+      {% endif %}
+    </h3>
+    <div class="review-n-price-wrapper">
+      {% render 'okendo-reviews-product-rating-summary', product: product %}
+      {% if item.available %}
+        {% if item.price_varies %}
+          <span class="price">
+            {% if item.price_varies %}{{ 'products.product.from' | t }}{% endif %}
+            <span data-money>{{ item.price_min | money }}</span>
+          </span>
+        {% else %}
+          {% if item.price_min %}
+            <span class="price" data-money>{{ item.price_min | money }}</span>
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</a>

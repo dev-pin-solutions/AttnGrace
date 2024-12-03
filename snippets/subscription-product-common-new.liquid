@@ -1,0 +1,341 @@
+{% for tag in product.tags %}
+  {% if tag contains 'pack:' %}
+  {% assign pack = tag | remove: 'pack:' | remove: ' Pack'%}
+  {% endif %}
+{% endfor %}
+{% if product.title contains "Pad" %}
+{% assign pr = "Pad" %}
+{% endif %}
+{% if product.title contains "Liner" %}
+{% assign pr = "Liner" %}
+{% endif %}
+{% if product.title contains "Brief" %}
+{% assign pr = "Brief" %}
+{% endif %}
+{% assign bprice = product.price | money_without_currency %}
+{% assign label_free_shipping = "Free Shipping" %}
+
+
+{% for variant in product.variants %}{% assign rec_price = variant.metafields.subscriptions.discount_variant_price | times: 1.0 %} {% assign rec_price2 = variant.metafields.subscriptions.discount_variant_price_two | times: 1.0 %} {% endfor %}
+{% assign label_onetime = "One-Time" %}
+{% assign label_autodeliver = "Savings For Life" %}
+{% assign label_everymonth = "Every Month" %}
+{% assign label_everytwo = "Every 2 Months" %}
+{% assign label_deliver_every = "How Often Should We Ship?" %}
+{% assign label_save = "SAVINGS EVERY TIME" %}
+
+<style type="text/css">
+  .prive_label__discount {
+      font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    margin-top: 10px !important;
+  }
+</style>
+
+    
+<!-- Prive component -->
+
+<input type="hidden" name="quantity" id="hiddenqty" value="">
+
+  <div class="recommend-wrapper">
+    <div class="recommend-option">
+      <div class="recommend-qty">
+        <label>QTY <span class="rec-qty">{{minm_quantity}}</span></label>
+        <div class="recommend-qty-arrow-wrapper">
+        </div>
+      </div>
+      <div class="recommend-qty-options hidden">
+        {% for i in (minm_quantity..10) %}
+          <div class="recommend-qty-option">{{i}}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+  {% assign float_variant_price = variant.price | times: 1.0 %}
+  <div id="prive_container">
+    <div class="product-subscription-section page-product__subs">
+      <div class="one-time-purchase">
+        <p class="product-subscription-title">One-Time Purchase</p>
+        {% for tag in product.tags %}
+        {% if tag contains 'one:' %}
+        {% assign suggested_qty = tag | remove: 'one:' | split: '-' %}
+        {% endif%}
+        {% endfor %}
+        <div class="subscribe-item subscribe-one-time">
+          <input type="radio" id="prive_purchase_type_one_time" name="purchase_type" value="" val="onetime" class="prive_radio prive_radio_one_time radio">
+          <label for="prive_purchase_type_one_time" class="label prive_label prive_label__onetime">
+            <span class="label-main-section">
+              <span class="title-price-per-pack">
+                <span class="label-title">{{ label_onetime }}</span>
+                {% if pr %}
+                  <span class="price-per-pack">{% assign price_split = bprice | divided_by : pack | round: 2 | split: "." %} {% assign integral = price_split[0] %} {% assign fractional = price_split[1] | append: "00" | truncate: 2, "" %} (${{ integral }}.{{ fractional }}/{{ pr }})</span>
+                {% endif %}
+                </span>
+          
+              <span class="subscribe-price-discount">
+                    {% assign bundle_pack_price = float_variant_price | times: minm_quantity | money %}
+                  <span id="prive_price_onetime" class="price prive_price prive_price__onetime">{{ bundle_pack_price }}</span>
+              </span>
+            </span>
+          </label>
+        </div>
+      </div>
+  
+      <div class="subscribe-save">
+        <p class="product-subscription-title">Subscribe & Save <span>Save 10% Every Time</span></p>
+
+        {% for selling_plan_group in product.selling_plan_groups %}
+        {% assign selling_plans = selling_plan_group.selling_plans | sort: "name" %}
+        {% for selling_plan in selling_plans %}
+  
+        {% for price_adjustment in selling_plan.price_adjustments %}
+        {% assign selling_plan_discount = price_adjustment.value | times: 1.0 %}
+        {% assign selling_plan_discount_percentage = selling_plan_discount | divided_by: 100 %}
+        {% assign selling_plan_discount_amount_off = float_variant_price | times: selling_plan_discount_percentage %}
+        {% assign label_variant_price = float_variant_price | minus: selling_plan_discount_amount_off  %}
+        {% endfor %}
+  
+        {% if selling_plan.name contains "4 week" %}
+        {% assign label_delivery_frequency = "4 week" %}
+        <div class="subscribe-item subscribe-pm prive_block prive_block__type prive_block__type__autodeliver" >
+          <input type="radio" name="purchase_type" id="prive_purchase_type_autodeliver0" val="autodeliver" value="{{ selling_plan.id }}" class="prive_radio prive_radio__autodeliver radio">
+          <label for="prive_purchase_type_autodeliver0" class="label prive_label prive_label__autodeliver">
+            <span class="label-main-section">
+              <span class="title-price-per-pack">
+                <span class="label-title">{{ label_delivery_frequency }}</span>
+                {% if pr %}
+                <span class="price-per-pack recc_per_pack">
+                  {% for variant in product.variants %} 
+                    {% assign price_subscribe = variant.metafields.subscriptions.discount_variant_price | append: '' %}
+                    {% assign price_subscribe = price_subscribe | plus: 0 %}
+                    (${{ price_subscribe | divided_by: pack | round: 2 }}/{{ pr }})
+                  {% endfor %}
+                </span>
+                {% endif %}
+              </span>
+              <span class="subscribe-price-discount">
+                {% if selling_plan_discount_percentage > 0 %}
+                  {% assign bundle_pack_price = label_variant_price | times: minm_quantity %}
+                  <span id="prive_price_autodeliver0" class="price" data-price="{{ label_variant_price | money_without_currency }}">{{ bundle_pack_price | money }}</span>
+                {% endif %}
+                
+              </span>
+            </span>
+          </label>
+        </div>
+        {% endif %}
+
+        {% if selling_plan.name contains "6 week" %}
+        {% assign label_delivery_frequency = "6 week" %}
+        <div class="subscribe-item subscribe-pm prive_block prive_block__type prive_block__type__autodeliver" >
+          <input type="radio" name="purchase_type" id="prive_purchase_type_autodeliver1" val="autodeliver" value="{{ selling_plan.id }}" class="prive_radio prive_radio__autodeliver radio">
+          <label for="prive_purchase_type_autodeliver1" class="label prive_label prive_label__autodeliver">
+            <span class="label-main-section">
+              <span class="title-price-per-pack">
+                <span class="label-title">{{ label_delivery_frequency }}</span>
+                {% if pr %}
+                  <span class="price-per-pack recc_per_pack">
+                    {% for variant in product.variants %} 
+                      {% assign price_subscribe = variant.metafields.subscriptions.discount_variant_price | append: '' %}
+                      {% assign price_subscribe = price_subscribe | plus: 0 %}
+                      (${{ price_subscribe | divided_by: pack | round: 2 }}/{{ pr }})
+                    {% endfor %}
+                  </span>
+                {% endif %}
+              </span>
+              <span class="subscribe-price-discount">
+                {% if selling_plan_discount_percentage > 0 %}
+                  {% assign bundle_pack_price = label_variant_price | times: minm_quantity %}
+                  <span id="prive_price_autodeliver1" class="price" data-price="{{ label_variant_price | money_without_currency }}">{{ label_variant_price | times: 4 | money }}</span>
+                {% endif %}
+                
+              </span>
+            </span>
+          </label>
+        </div>
+        {% endif %}
+  
+        {% if selling_plan.name contains "8 week" %}
+        {% assign label_delivery_frequency = "8 week" %}
+        <div class="subscribe-item subscribe-pm prive_block prive_block__type prive_block__type__autodeliver" >
+          <input type="radio" name="purchase_type" id="prive_purchase_type_autodeliver2" val="autodeliver" value="{{ selling_plan.id }}" class="prive_radio prive_radio__autodeliver radio">
+          <label for="prive_purchase_type_autodeliver2" class="label prive_label prive_label__autodeliver">
+            <span class="label-main-section">
+              <span class="title-price-per-pack">
+                <span class="label-title">{{ label_delivery_frequency }}</span>
+                {% if pr %}
+                  <span class="price-per-pack recc_per_pack">
+                  {% for variant in product.variants %} 
+                    {% assign price_subscribe = variant.metafields.subscriptions.discount_variant_price | append: '' %}
+                    {% assign price_subscribe = price_subscribe | plus: 0 %}
+                    (${{ price_subscribe | divided_by: pack | round: 2 }}/{{ pr }})
+                  {% endfor %}
+                </span>
+                {% endif %}
+              </span>
+              <span class="subscribe-price-discount">
+                {% if selling_plan_discount_percentage > 0 %}
+                  {% assign bundle_pack_price = label_variant_price | times: minm_quantity %}
+                  <span id="prive_price_autodeliver2" class="price" data-price="{{ label_variant_price | money_without_currency }}">{{ label_variant_price | times: 4 | money }}</span>
+                {% endif %}
+              </span>
+            </span>
+          </label>
+        </div>
+        {% endif %}
+        {%  endfor %}
+        {% for selling_plan in selling_plans %}
+        {% if selling_plan.name contains "12 week" %}
+        {% assign label_delivery_frequency = "12 week" %}
+        <div class="subscribe-item subscribe-item3 subscribe-pm prive_block prive_block__type prive_block__type__autodeliver" >
+          <input type="radio" name="purchase_type" id="prive_purchase_type_autodeliver3" val="autodeliver" value="{{ selling_plan.id }}" class="prive_radio prive_radio__autodeliver radio">
+          <label for="prive_purchase_type_autodeliver3" class="label prive_label prive_label__autodeliver">
+            <span class="label-main-section">
+              <span class="title-price-per-pack">
+                <span class="label-title">{{ label_delivery_frequency }}</span>
+                {% if pr %}
+                  <span class="price-per-pack recc_per_pack">
+                  {% for variant in product.variants %} 
+                    {% assign price_subscribe = variant.metafields.subscriptions.discount_variant_price | append: '' %}
+                    {% assign price_subscribe = price_subscribe | plus: 0 %}
+                    (${{ price_subscribe | divided_by: pack | round: 2 }}/{{ pr }})
+                  {% endfor %}
+                </span>
+                {% endif %}
+              </span>
+              <span class="subscribe-price-discount">
+                {% if selling_plan_discount_percentage > 0 %}
+                  {% assign bundle_pack_price = label_variant_price | times: minm_quantity %}
+                  <span id="prive_price_autodeliver3" class="price" data-price="{{ label_variant_price | money_without_currency }}">{{ label_variant_price | times: 4 | money }}</span>
+                {% endif %}
+                
+              </span>
+            </span>
+          </label>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+  
+        <input type="hidden" name="purchase_type" id="purchase_type" value="">
+        <input type="hidden" name="selling_plan" id="selling_plan" value="">
+        <input type="hidden" name="id" value="{{ variant.id }}">
+      </div>
+    </div>
+  
+  <script>
+    document.addEventListener('readystatechange', event => {
+      var radioInputs = Array.from(document.querySelectorAll('.prive_radio'));
+      {% for variant in product.variants %}
+      var oneTimePrice = '{{ variant.price | money_without_currency }}';
+      {% endfor %}
+      var minQuantity = {{minm_quantity}};
+  
+      // When HTML/DOM elements are ready:
+      if (event.target.readyState === "interactive") {   
+        // does same as:  ..addEventListener("DOMContentLoaded"..
+      }
+  
+      // When window loaded ( external resources are loaded too- `css`,`src`, etc...)
+      if (event.target.readyState === "complete") {
+        
+        radioInputs.forEach(function(input) {
+          input.addEventListener('click', function() {
+            var purchaseType = input.getAttribute('val');
+            var planID = '';
+  
+            input.checked = true;
+            document.getElementById('purchase_type').value = purchaseType;
+            document.getElementById('selling_plan').value = input.value;
+  
+            if (purchaseType === 'autodeliver') {
+              let inputID = input.id;
+              planID = inputID.charAt(inputID.length - 1);
+            }
+  
+            resetPriceDisplay();
+            updateQuantity(minQuantity);
+            updateSavingsText(minQuantity, purchaseType, planID);
+          });
+        });
+  
+        
+      
+        function resetPriceDisplay() {
+          radioInputs.forEach(function(input) {
+            var price = (oneTimePrice * minQuantity).toFixed(2);
+            var purchaseType = input.getAttribute('val');
+  
+            if (purchaseType === 'autodeliver') {
+              let planID = input.id.charAt(input.id.length - 1);
+              price = (document.getElementById(`prive_price_autodeliver${planID}`).dataset.price * minQuantity).toFixed(2);
+              purchaseType = purchaseType + planID;
+            }
+  
+            document.getElementById(`prive_price_${purchaseType}`).innerHTML = `$${price}`;
+          });
+        }
+  
+        function updatePriceDisplay(price, qty, ID) {
+          var updatedPrice = (Number(price) * qty).toFixed(2);
+  
+          if (ID) {
+            document.getElementById(`prive_price_autodeliver${ID}`).innerHTML = `$${updatedPrice}`;
+          } else {
+            document.getElementById('prive_price_onetime').innerHTML = `$${updatedPrice}`;
+          }
+        }
+  
+        function updateQuantity(qty) {
+          console.log(`[updateQuantity] qty ${qty}`);
+          var quantityEl = document.querySelector('.rec-qty');
+          document.getElementById('hiddenqty').value = qty;
+          quantityEl.setAttribute('data-rec-qty', qty);
+          quantityEl.innerHTML = qty;
+        }
+  
+        function updateSavingsText(currQuantity, type, ID) {
+          console.log(`[updateSavingsText] purchaseType ${type}, ID ${ID}, currQuantity: ${currQuantity}`);
+          var btnText = '';
+  
+          if (type === 'autodeliver') {
+            let subscriptionPrice = document.getElementById(`prive_price_autodeliver${ID}`).dataset.price;
+            let discountedPrice = (Number(subscriptionPrice) * currQuantity).toFixed(2);
+            let originalPrice = (oneTimePrice * currQuantity).toFixed(2);
+            btnText = `${currQuantity} packs for $${discountedPrice} <s>$${originalPrice}</s>`;
+          }
+  
+          document.querySelector('.product-add-price').innerHTML = btnText;
+        }
+        // document.querySelector('.recommend-qty').addEventListener('click', function() {
+  
+        //   document.querySelector('.recommend-qty-options').classList.toggle('hidden')
+        // });
+        
+        let recomendQty = document.querySelectorAll('.recommend-qty-option');
+        for(let i=0;i<recomendQty.length;i++){
+          recomendQty[i].addEventListener('click', function() {
+    
+            document.querySelector('.recommend-qty-options').classList.toggle('hidden');
+            var newQuantity = this.innerHTML;
+            var planType = document.getElementById('purchase_type').value;
+            var planID = '';
+            var price = oneTimePrice;
+            if (planType === 'autodeliver') {
+              let inputID = document.querySelector('input[val="autodeliver"]:checked').id;
+              planID = inputID.charAt(inputID.length - 1);
+              price = document.getElementById(`prive_price_autodeliver${planID}`).dataset.price;
+            }
+    
+            updateQuantity(newQuantity);
+            updateSavingsText(newQuantity, planType, planID);
+            updatePriceDisplay(price, newQuantity, planID);
+            
+          })
+        }
+        document.getElementById('prive_purchase_type_one_time').click();
+      }
+    });
+  </script>

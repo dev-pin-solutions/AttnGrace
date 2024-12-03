@@ -1,0 +1,215 @@
+{% assign variant = product.selected_or_first_available_variant %}
+
+{% if variant.compare_at_price > variant.price %}
+  {% assign has_compare_price = true %}
+{% else %}
+  {% assign has_compare_price = false %}
+{% endif %}
+
+{% comment %}
+  Since the height of the header can change depending on the title length, we
+  want to limit this to be the approx height of 1 line of text.
+{% endcomment %}
+<style>
+  .product-title-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+</style>
+
+<header
+  class="product-details-header-mobile {% if product.handle == "wipes" %}normal-product-layout{% else %}new-product-layout{% endif %}"
+  data-height="{% if collection %}86{% else %}64{% endif %}">
+
+  <div class="product-title-wrapper">
+    <div class="product-details-header-mobile-content">
+      {% if section.settings.show_product_vendor and product.vendor %}
+        <span class="product-vendor-title">
+          {{ product.vendor }}
+        </span>
+      {% endif %}
+    
+      {% if section.settings.show_product_vendor and product.vendor %}
+        {% if collection %}
+          <a class="product-collection-link" href="{{ collection.url }}">{{ collection.title }}</a>
+        {% endif %}
+      {% endif %}
+
+      <h1 class="product-title">{{ product.title }}</h1>
+      {% render 'okendo-reviews-product-rating-summary', product: product %}
+    </div>
+  </div>
+
+
+  <a
+    class="product-mobile-toggle"
+    href="#"
+    data-product-extended-mobile>
+    {{ 'layout.navigation.product_details_open' | t }}
+  </a>
+
+</header>
+
+<div
+  class="product-details {% if product.available == false %}product-variant-soldout{% endif %}"
+  data-product-url="{{ shop.url }}{{ product.url | within: collection }}"
+>
+
+  <div class="product-details-panel" data-product-details-panel>
+    <header class="product-details-header {% if product.handle == "wipes" or product.handle contains "drawcord-bags" %}normal-product-layout{% else %}new-product-layout{% endif %}">
+       <div class="product-title-wrapper desktop-title-wrapper">
+          <div class="product-details-header-content">
+
+            {% if section.settings.show_product_vendor and product.vendor %}
+              <span class="product-vendor-title">
+                {{ product.vendor }}
+              </span>
+            {% endif %}
+      
+              {% if section.settings.show_product_vendor and product.vendor %}
+                {% if collection %}
+                  <a
+                  class="product-collection-link"
+                  href="{{ collection.url }}">
+                  {{ collection.title }}
+                  </a>
+                {% endif %}
+              {% endif %}
+                <h1 class="product-title">
+                  {{ product.title }}
+                  <a href="#" class="product-details-close" data-product-extended-close>{% include 'icon-close' %}</a>
+                </h1>
+                {% render 'okendo-reviews-product-rating-summary', product: product %}    
+          </div>
+        </div>
+      <p
+        class="product-price"
+        data-price-area
+      >
+
+        <span class="product-price-unavailable">{{ 'products.product.unavailable' | t }}</span>
+
+        <span class="product-price-minimum product-price-money" data-price-original data-money>
+          {{ variant.price | money }}
+        </span>
+
+        <span
+          class="
+            product-price-compare
+            product-price-money
+            {% if has_compare_price %}product-price-has-compare{% endif %}
+          "
+          data-price-compare
+          data-money>
+          {% if has_compare_price %}
+            {{ variant.compare_at_price | money }}
+          {% endif %}
+        </span>
+      </p>
+    </header>
+	
+	<div class="product-description-details">
+		 <div class="product-pack">{% for tag in product.tags %}{% if tag contains "pack" %}{{ tag | remove: 'pack:' }}{% endif %}{% endfor %}</div>
+		{% if product.description != blank %}
+			<div class="product-description product-description-excerpt">
+				{%- include 'truncate-words', truncate_text: product.description, truncate_length: 38 -%}
+				<a href="#" class="product-description-readmore" data-product-extended-open>{{ 'products.product.read_more' | t }}</a>
+			</div>
+		{% endif %}
+        {% if product.description contains "<!-- split -->" %}
+         {% assign pdesc = product.description | split: '<!-- split -->' %}
+         {% for desc in pdesc %}
+       <div class="product-description options product-description-full rte option{{ forloop.index }}" style="display:none;">
+            {{ desc }}
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="product-description product-description-full rte common">
+          {{ product.description }}
+        </div>
+        {% endif %}
+ 		{% if product.title == "Pads" %}
+            {% for var in product.variants %}
+                {% if var.title == 'Hybrid' and product.selected_variant.title == var.title and product.metafields.global.seo_copy_desc_hybrid != blank %}
+                    <div  class="seocopy Hybrid">{{ product.metafields.global.seo_copy_desc_hybrid }}</div>
+                {% endif %}
+                {% if var.title == 'Moderate' and product.selected_variant.title == var.title and product.metafields.global.seo_copy_desc_moderate != blank %}
+                    <div  class="seocopy Moderate">{{ product.metafields.global.seo_copy_desc_moderate }}</div>
+                {% endif %}
+                {% if var.title == 'Heavy' and product.selected_variant.title == var.title and product.metafields.global.seo_copy_desc_heavy != '' %}
+                    <div  class="seocopy Heavy">{{product.metafields.global.seo_copy_desc_heavy }}</div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <div class="seocopy">{{ product.metafields.global.seo_copy_desc }}</div>
+        {% endif %}
+	</div>
+
+  {% include 'product-options', variant: variant %}
+  {% unless product.handle contains 'drawcord-bags' %}
+	{% include 'product-bottom' %}
+  {% endunless %}
+  {% include 'share-buttons', settings: section.settings %}
+    {% if section.settings.enable_single == false %}
+      <div class="recommended-products" data-product-recommendations-container></div>
+    {% endif %}
+  </div>
+</div>
+{% if product.title contains "Brief" %}
+<div id="size-guide" class="popup-main">
+    <div class="size-popup-overlay"></div>
+    <div class="size-guide-wrap">
+        <header class="header">
+            <h2>What Size am I?</h2>
+            <div class="close-icon">{% include 'icon-popup-close' %}</div>
+        </header>
+        <div class="body-text">
+            {{ product.metafields.content.sizeguide_content }}
+          
+        </div>
+    </div>
+</div>
+{% endif %}
+<div id="packs-guide" class="popup-main">
+    <div class="size-popup-overlay"></div>
+    <div class="size-guide-wrap">
+        <header class="header">
+            <h2 class="whypacktitle">HOW MANY PACKS?</h2>
+            <div class="close-icon">{% include 'icon-popup-close' %}</div>
+        </header>
+        <div class="body-text whysizecopydiv">
+          {% comment %}{{ product.metafields.packssize.packsguide_content }}{% endcomment %}
+          {{ product.metafields.global.why_size_copy_before }} <span class="whypackcontent"></span> {{ product.metafields.global.why_size_copy_after }} <span class="monthcontent"></span><br><br>If you have any further questions about how many packs might be right for you, setting up auto-restock, or how it works feel free to reach out to us at <a href="mailto:hello@attngrace.com">hello@attngrace.com</a> or text or call us at 833-713-9212.
+        </div>
+    </div>
+</div>
+<div id="new_packs-guide" class="popup-main">
+    <div class="size-popup-overlay"></div>
+    <div class="size-guide-wrap">
+        <header class="header">
+            <h2 class="whypacktitle">SUBSCRIPTION DETAILS</h2>
+            <div class="close-icon">{% include 'icon-popup-close' %}</div>
+        </header>
+        <div class="body-text whysizecopydiv">
+            <div class="new_subscribe_popup_content">
+                <p class="title"><span>1.</span>Curate your bag</p>
+                <p>Pick the products that suit your needs, and decide how often you want to have them delivered.</p>
+                <p class="title"><span>2.</span>Thoughtful Delivery</p>
+                <p >We’ll send you a reminder email five days before your next order processes to ensure you have time to adjust.</p>
+                <p class="title"><span>3.</span>Adjust and Reorder</>
+                <p>Need to change the frequency of your delivery, types of products, skip or even cancel? No problem. Managing your account is designed for ease.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

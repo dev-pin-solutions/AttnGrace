@@ -1,0 +1,92 @@
+{% comment %}
+  @param show_pagination
+         If true, show the product pagination.
+
+  @param product
+         The product to render.
+{% endcomment %}
+
+<!-- <article class="product" data-product-id="{{ product.id }}"> -->
+    {% if show_pagination %}
+        {% include 'product-pagination' %}
+      {% endif %}
+        <section class="page-product">
+            <div class='center-wrapper'>
+          <div class="page-product__body">
+          {% include 'product-gallery-new', product: product %}
+          {% include 'product-details-new' %}
+          </div>
+        </div>
+        </section>
+    <!-- </article> -->
+    
+    <style>
+        .slick-arrow.slick-prev:before{
+            content: url("data:image/svg+xml,%0A%3Csvg width='44' height='44' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 6L9 12L15 18' stroke='%23222222'/%3E%3C/svg%3E%0A");
+        }
+        .slick-arrow.slick-next:before{
+            content: url("data:image/svg+xml,%0A%3Csvg width='44' height='44' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 6L15 12L9 18' stroke='%23222222'/%3E%3C/svg%3E%0A");
+        }
+    </style>
+    
+        <script>
+            $(document).ready(function(){
+                $('.product-gallery-slider').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    fade: true,
+                   //draggable:false,
+                    // loop: true,
+                    // infinite:true,
+                    asNavFor: '.product-gallery-thumbs',
+                    responsive: [
+                        {
+                        breakpoint: 576,
+                        settings: {
+                            // variableWidth: true,
+                            fade: false,
+                            slidesToShow: 1,
+                          
+                        }
+                        }
+                    ]
+                });
+                
+                $('.product-gallery-thumbs').slick({
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    // loop: true,
+                    // draggable:false,
+                    // infinite:true,
+                    asNavFor: '.product-gallery-slider',
+                    сenterMode: true,
+                    focusOnSelect: true,
+                  
+                });
+    
+                // Change quantity 
+                $('.quantity__btn').click(function(event) {
+                    let n = parseInt($(this).parent().find('.quantity__value').val());
+                    if($(this).hasClass('btn_minus')){
+                        n = n - 1;
+                        if(n < 1){n = 1;}
+                    }else{
+                        n = n + 1;
+                    }
+                    $(this).parent().find('.quantity__value').val(n);
+                    return false;
+                });
+            }); 
+        </script>
+    
+    
+    
+    
+    
+    <script>$(document).ready(function(){
+      $("#select-variants").change(function(){
+        window.location.href = $(this).val();
+      });
+    });</script>

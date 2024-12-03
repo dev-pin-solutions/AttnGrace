@@ -1,0 +1,374 @@
+{
+  "form": {
+    "id": "0ktn59",
+    "name": "New Contact Form",
+    "handle": "new-contact-form",
+    "theme_id": "133351735550",
+    "settings": {
+      "locales": {
+        "back": "Back",
+        "next": "Next",
+        "cancel": "Cancel",
+        "edit_link": "Edit account",
+        "fix_errors": "Please fix errors before continuing",
+        "is_invalid": "{{label}} is invalid",
+        "email_taken": "Email has already been taken",
+        "phone_taken": "Phone number has already been taken",
+        "server_error": "Could not save form, please try again later",
+        "step_counter": "Step {{current}} of {{total}}",
+        "verify_email": "Check your email for a verification link to activate your account.",
+        "not_available": "An error occurred while saving your account, please try again in a few minutes.",
+        "create_account": "Submit",
+        "update_account": "Update account",
+        "recaptcha_error": "Challenge verification failed, please try again",
+        "creating_account": "Sending...",
+        "updating_account": "Updating account...",
+        "reset_password_link": "Reset your password",
+        "invalid_email_domain": "Email contains an invalid domain name",
+        "reset_password_email_sent": "Check your inbox for a link to reset your password.",
+        "reset_password_too_many_attempts": "You tried to reset your password too many times. Please wait and try again later."
+      },
+      "customCSS": ".cf-field-hp {\n    display: none;\n}\n#create_customer {\n    margin: 0 auto;\n    width: 60%;\n    min-width: 320px;\n}",
+      "whitelistedTags": "",
+      "markRequiredFields": true,
+      "displayCancelButton": false,
+      "redirectAfterSubmit": false,
+      "goBackAfterSubmission": false,
+      "cancelButtonRedirectUrl": "\/account\/login",
+      "postSubmissionRedirectUrl": "\/account",
+      "showSuccessStepAfterSubmit": true,
+      "goBackAfterCancelButtonClick": false
+    },
+    "install_locations": [
+      "manual"
+    ],
+    "created_at": "2022-06-14T15:03:15Z",
+    "updated_at": "2022-06-14T15:15:24Z",
+    "revision_ids": [
+      "xMTL15D",
+      "OzT20Y8",
+      "mLTgpAV",
+      "VNTzwqP",
+      "evTeaPa",
+      "1wTR34Y",
+      "NMToxg2",
+      "B5Tv482"
+    ]
+  },
+  "revision": {
+    "id": "xMTL15D",
+    "created_at": "2022-06-14T15:17:17Z",
+    "updated_at": "2022-06-14T15:17:17Z",
+    "embed_version": "4.10.4",
+    "published_at": null,
+    "fields": [
+      {
+        "id": 967919,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 0,
+        "type": "heading",
+        "stepId": 135363,
+        "default": "",
+        "label": "New heading field",
+        "placeholder": "",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12,
+          "alignment": "center"
+        },
+        "settings": {
+          "size": 1,
+          "fontWeight": "bold",
+          "content": "Get In Touch",
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 175224,
+        "dataColumn": {
+          "key": "first_name",
+          "label": "First name",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 1,
+        "type": "text",
+        "stepId": 135363,
+        "default": "",
+        "label": "Name",
+        "placeholder": "Your name",
+        "description": null,
+        "enum": null,
+        "appearance": {
+          "width": 12
+        },
+        "settings": {},
+        "validations": [],
+        "sensitive": null,
+        "preset": "first_name",
+        "autotag": null
+      },
+      {
+        "id": 102002,
+        "dataColumn": {
+          "key": "last_name",
+          "label": "Last name",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 2,
+        "type": "text",
+        "stepId": 135363,
+        "default": "",
+        "label": "Last name",
+        "placeholder": "",
+        "description": null,
+        "enum": null,
+        "appearance": {
+          "width": 12,
+          "cssClass": "cf-field-hp"
+        },
+        "settings": {},
+        "validations": [],
+        "sensitive": null,
+        "preset": "last_name",
+        "autotag": null
+      },
+      {
+        "id": 851179,
+        "dataColumn": {
+          "key": "email_address",
+          "label": "Email address",
+          "dataType": "single_line_text"
+        },
+        "parentId": null,
+        "position": 3,
+        "type": "text",
+        "stepId": 135363,
+        "default": "",
+        "label": "Email address",
+        "placeholder": "your@email.com",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {},
+        "validations": [
+          {
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank",
+            "metadata": {
+              "hiddenInApp": true
+            }
+          }
+        ],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 550260,
+        "dataColumn": {
+          "key": "phone_1",
+          "label": "Phone",
+          "dataType": "single_line_text"
+        },
+        "parentId": null,
+        "position": 4,
+        "type": "text",
+        "stepId": 135363,
+        "default": "",
+        "label": "Phone",
+        "placeholder": "555-555-5555",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {},
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 591936,
+        "dataColumn": {
+          "key": "message",
+          "label": "Message",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 5,
+        "type": "textarea",
+        "stepId": 135363,
+        "default": "",
+        "label": "Message",
+        "placeholder": "Write your message here",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "rows": 5
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 249087,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 0,
+        "type": "heading",
+        "stepId": 172579,
+        "default": "",
+        "label": "Account request sent heading",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12,
+          "alignment": "center"
+        },
+        "settings": {
+          "size": 1,
+          "content": "Success!",
+          "hideLabel": true,
+          "fontWeight": "bold"
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 114564,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 1,
+        "type": "paragraph",
+        "stepId": 172579,
+        "default": "",
+        "label": "Reviewing submission explanation",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "content": "<p style=\"text-align: center;\">The form has been successfully submitted.<\/p>",
+          "fontSize": 14,
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 357400,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 2,
+        "type": "link",
+        "stepId": 172579,
+        "default": "",
+        "label": "Back to home link",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12,
+          "alignment": "center"
+        },
+        "settings": {
+          "url": "\/",
+          "content": "Back to home",
+          "fontSize": 14,
+          "hideLabel": true,
+          "fontWeight": "normal",
+          "openInNewTab": false
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      }
+    ],
+    "steps": [
+      {
+        "id": 135363,
+        "title": "Step 1",
+        "description": ""
+      },
+      {
+        "id": 172579,
+        "title": "Submission success",
+        "description": "",
+        "metadata": {
+          "isSuccessStep": true
+        }
+      }
+    ],
+    "rules": [
+      {
+        "id": 138905,
+        "title": "New rule 1",
+        "conditionChaining": "all",
+        "conditions": [
+          {
+            "operand": null,
+            "operator": "not_blank",
+            "metadata": {
+              "column": {
+                "id": null,
+                "key": "last_name",
+                "label": "Last name",
+                "dataType": "text",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": null,
+                "dedicated": true,
+                "archivedAt": null,
+                "expandedLabel": "Last name"
+              }
+            }
+          }
+        ],
+        "actions": [
+          {
+            "effect": "disable_form_submission",
+            "metadata": {}
+          }
+        ]
+      },
+      {
+        "id": 164005,
+        "title": "New rule 2",
+        "conditionChaining": "all",
+        "conditions": [],
+        "actions": [
+          {
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "contact_form_submission"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

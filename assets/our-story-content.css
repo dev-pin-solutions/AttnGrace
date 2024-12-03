@@ -1,0 +1,54 @@
+.quote-section {
+  background-color: #fff;
+  padding: 80px 0;
+  width: 100%;
+}
+
+.quote-section-wrapper {
+  padding: 0 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.quote-section-wrapper h2 {
+  font-family: 'BentonMod';
+  font-size: 58px;
+  line-height: 68px;
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 1px solid #000;
+  margin: 0 auto 80px;
+  width: 75%;
+  min-width: 320px;
+}
+
+.quote-section-wrapper .paragraph p {
+  font-family: 'Acre';
+  font-size: 18px;
+  line-height: 30px;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.quote-section .quote-block-wrapper:last-child p:last-child {
+  margin: 0;
+}
+
+.quote-section-wrapper .paragraph p a {
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .quote-section {
+    padding: 20px 0 40px;
+  }
+  .quote-section-wrapper h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .quote-section-wrapper .paragraph p {
+    line-height: 26px;
+  }
+}

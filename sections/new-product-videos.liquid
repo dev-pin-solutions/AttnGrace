@@ -1,0 +1,166 @@
+
+{{ 'style3l.css' | asset_url | stylesheet_tag }}
+
+<section class="keep">
+    <div class='center-wrapper'>
+        <div class="keep__row">
+            <div class="keep__col">
+                <h2 class="keep__title title_2">{{section.settings.heading}}</h2>
+                <div class="keep-video">
+                    <button class="keep-video__play lvideo" data-url="{{ section.settings.videourl }}">
+                      <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.0003 0.379883C8.96013 0.379883 0 9.33988 0 20.3799C0 31.4199 8.96013 40.3799 20.0003 40.3799C31.0405 40.3799 40.0006 31.4199 40.0006 20.3799C40.0006 9.33988 31.0405 0.379883 20.0003 0.379883ZM16.0002 27.3799V13.3799C16.0002 12.5599 16.9402 12.0799 17.6003 12.5799L26.9404 19.5799C27.4804 19.9799 27.4804 20.7799 26.9404 21.1799L17.6003 28.1799C16.9402 28.6799 16.0002 28.1999 16.0002 27.3799Z" fill="white"/>
+                      <path d="M16 27.38V13.38C16 12.56 16.94 12.08 17.6 12.58L26.9402 19.58C27.4802 19.98 27.4802 20.78 26.9402 21.18L17.6 28.18C16.94 28.68 16 28.2 16 27.38Z" fill="#121212"/>
+                      <path d="M16 27.38V13.38C16 12.56 16.94 12.08 17.6 12.58L26.9402 19.58C27.4802 19.98 27.4802 20.78 26.9402 21.18L17.6 28.18C16.94 28.68 16 28.2 16 27.38Z" fill="#121212"/>
+                      </svg>
+                      </button>
+                    <div class="keep-video__poster lvideo" data-url="{{ section.settings.videourl }}">{{section.settings.image1 | img_url : 'master' |  img_tag}}</div>
+                </div>
+            </div>
+            <div class="keep__col">
+                <div class="keep-video">
+                    <button class="keep-video__play lvideo" data-url="{{ section.settings.videourl2 }}"><svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.0003 0.379883C8.96013 0.379883 0 9.33988 0 20.3799C0 31.4199 8.96013 40.3799 20.0003 40.3799C31.0405 40.3799 40.0006 31.4199 40.0006 20.3799C40.0006 9.33988 31.0405 0.379883 20.0003 0.379883ZM16.0002 27.3799V13.3799C16.0002 12.5599 16.9402 12.0799 17.6003 12.5799L26.9404 19.5799C27.4804 19.9799 27.4804 20.7799 26.9404 21.1799L17.6003 28.1799C16.9402 28.6799 16.0002 28.1999 16.0002 27.3799Z" fill="white"/>
+                      <path d="M16 27.38V13.38C16 12.56 16.94 12.08 17.6 12.58L26.9402 19.58C27.4802 19.98 27.4802 20.78 26.9402 21.18L17.6 28.18C16.94 28.68 16 28.2 16 27.38Z" fill="#121212"/>
+                      <path d="M16 27.38V13.38C16 12.56 16.94 12.08 17.6 12.58L26.9402 19.58C27.4802 19.98 27.4802 20.78 26.9402 21.18L17.6 28.18C16.94 28.68 16 28.2 16 27.38Z" fill="#121212"/>
+                      </svg>
+                      </button>
+                    <div class="keep-video__poster lvideo" data-url="{{ section.settings.videourl }}">{{section.settings.image2 | img_url : 'master' |  img_tag}}</div>
+                </div>
+                <div class="keep__desc">{{section.settings.description}}</div>
+                <div class="keep__note">{{section.settings.notes}}</div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+  // Video
+document.querySelectorAll(".lvideo").forEach((d) => d.addEventListener("click", playVideos));
+const body = document.body;
+
+function playVideos(e) {
+  lvideo(e.currentTarget.dataset.url);
+
+  body.classList.add("lvideo-active");
+
+  var lvideoWrap = document.createElement("DIV");
+  lvideoWrap.setAttribute("id", "lvideo-wrap");
+  document.body.appendChild(lvideoWrap);
+
+  // console.log(this.dataset.url)
+  // console.log(this.dataset.video)
+
+  const wrapper = document.getElementById("lvideo-wrap");
+  wrapper.classList.add("active");
+
+  const url = this.dataset.url;
+
+  const startModal = `<span onclick="lvideoClose();" class="lvideo-overlay"></span> <div class="lvideo-container">`;
+  const finishModal = `</div><button onclick="lvideoClose();" class="lvideo-close">x</button>`;
+
+  // if (url.indexOf("youtube") !== -1) {
+  if (url.indexOf("youtube") !== -1 || url.indexOf("youtu") !== -1) {
+    //console.log("is youtube")
+
+    const ytUrl = [this.dataset.url];
+
+    var i,
+      r,
+      regExp = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+
+    for (i = 0; i < ytUrl.length; ++i) {
+      r = ytUrl[i].match(regExp);
+      //console.log(r[1])
+
+      document.getElementById(
+        "lvideo-wrap"
+      ).innerHTML = `${startModal}<iframe width="560" height="315" title="YouTube Video" src='https://www.youtube.com/embed/${r[1]}?rel=0&autoplay=1&mute=1&loop=1&playlist=${r[1]}' frameborder="0" allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>${finishModal}`;
+    }
+  } else if (url.indexOf("vimeo") !== -1) {
+    // console.log("is Vimeo")
+
+    const vimeoURL = this.dataset.url;
+    const regExp = /https:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/;
+
+    const match = vimeoURL.match(regExp);
+
+    if (match) {
+      document.getElementById(
+        "lvideo-wrap"
+      ).innerHTML = `${startModal}<iframe title="Vimeo" src="https://player.vimeo.com/video/${match[2]}?autoplay=1&loop=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>${finishModal}`;
+    } else {
+      alert("Not a Vimeo!  URL example:\n https://vimeo.com/120206922");
+    }
+  
+  } else if (url.indexOf("mp4") !== -1 || url.indexOf("m4v") !== -1) {
+    
+    document.getElementById(
+      "lvideo-wrap"
+    ).innerHTML = `${startModal}<video controls loop playsinline autoplay><source src='${this.dataset.url}' type="video/mp4"></video>${finishModal}`;
+  } else {
+    alert("No video link found.");
+  }
+}
+
+// CLOSE MODAL LVIDEO
+const lvideoClose = () => {
+  body.classList.remove("lvideo-active");
+
+  const wrapper = document.getElementById("lvideo-wrap");
+  wrapper.parentNode.removeChild(wrapper);
+};
+
+// LAUNCH
+function lvideo(){}
+</script>
+{% schema %}
+  {
+    "name": "New Product Videos",
+    "settings" : [
+        {
+            "type" : "html",
+            "id" : "heading",
+            "label" : "Heading",
+            "default" : "Our pads keep you <span>drier, longer.</span>"
+          }  ,
+      {
+        "type" : "text",
+        "id" : "videourl",
+        "label" : "Video",
+        "default" : "https://cdn.shopify.com/videos/c/o/v/a178b1644da946d9acab98e2a94ae96e.mp4"
+      }     ,
+      {
+        "type" : "text",
+        "id" : "videourl2",
+        "label" : "Description",
+        "default" : "https://cdn.shopify.com/videos/c/o/v/a178b1644da946d9acab98e2a94ae96e.mp4"
+      }  ,   
+        
+    {
+        "type" : "image_picker",
+        "id" : "image1",
+        "label" : "Image Poster1"
+      }  ,
+      {
+        "type" : "image_picker",
+        "id" : "image2",
+        "label" : "Image Poster2"
+      }  ,
+      {
+        "type" : "text",
+        "id" : "description",
+        "label" : "Description",
+        "default" : "Pads don't just have to absorb leaks, they have to retain them. Our pads absorb leaks quickly AND then keep them locked away — so you stay dry, even when the pad is soaked to capacity."
+      }      ,
+      {
+        "type" : "text",
+        "id" : "notes",
+        "label" : "Notes",
+        "default" : "*Testing performed by an independent, third party lab measuring Attn: Grace pads vs. leading drugstore brands."
+      }      
+    ]
+  }
+{% endschema %}
+
+
+

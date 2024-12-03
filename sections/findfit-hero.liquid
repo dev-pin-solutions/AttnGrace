@@ -1,0 +1,63 @@
+{{ 'style3l.css' | asset_url | stylesheet_tag }} 
+<section class="promo">
+    <div class='center-wrapper'>
+        <div class="promo__body">
+            <div class="promo-quote">
+                <h1 class="promo-quote__text">{{ section.settings.heading }}</h1>
+                <div class="promo-quote__author">{{ section.settings.subheading }}</div>
+            </div>
+            <div class="promo__text">{{ section.settings.text }}</div>
+            <a href="{{ section.settings.btn-link }}" class="promo__btn btn">{{ section.settings.btn-label }} {% render 'icon-arrow-3l' %} </a>
+        </div>
+    </div>
+    <div class="promo__image promo__image_desktop">{{ section.settings.image | img_url : 'master' | img_tag }}</div>
+    <div class="promo__image promo__image_mobile">{{ section.settings.image_mob | img_url : 'master' | img_tag }}</div>
+</section>
+
+{% schema %}
+  {
+    "name": "Findfit Promo",
+    "settings": [
+        {
+            "type" : "image_picker",
+            "id" : "image",
+            "label" : "Image"
+        },
+        {
+          "type" : "image_picker",
+          "id" : "image_mob",
+          "label" : "Image Mobile"
+      },
+      {
+        "type" : "text",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "The BEST pads<br> I’ve ever used — and<br> I’ve tried them all.”"
+      },
+       {
+        "type" : "text",
+        "id" : "subheading",
+        "label" : "SubHeading",
+        "default" : "— ANITA V."
+      },
+      {
+        "type" : "text",
+        "id" : "text",
+        "label" : "Text",
+        "default" : "Incontinence care that’s tough on leaks, safe on skin, and gentler on the planet."
+      },     
+      
+       {
+            "type" : "text",
+            "id" : "btn-label",
+            "label" : "Button Label",
+            "default"   : "FIND YOUR FIT"
+        },
+        {
+            "type" : "url",
+            "id" : "btn-link",
+            "label" : "Button Link"
+        }
+    ]
+  }
+{% endschema %}

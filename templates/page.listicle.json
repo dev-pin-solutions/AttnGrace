@@ -1,0 +1,113 @@
+{
+  "sections": {
+    "hero": {
+      "type": "listicle",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/promo-image2.png",
+        "heading": "5 Reasons",
+        "subheading": "Attn: Grace makes living with incontinence easier.",
+        "text": "You're here because you want to find a better way to manage your bladder leaks. Attn: Grace is here to help.",
+        "btn-label": "GET 30% OFF YOUR FIRST ORDER",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+        "subtext": "Use code: 30OFFFIRSTORDER"
+      }
+    },
+    "steps": {
+      "type": "listicle-steps",
+      "blocks": {
+        "8f31c49d-1a2e-4fd1-9f03-3deef103d2e1": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/reasons-steps-image1_1bfea9a5-af5b-4caf-8a0e-b23c20865614.jpg",
+            "heading": "50% of adult women have bladder leaks.",
+            "text": "You're not alone, and now there's finally a solution that's tough on leaks, safe on skin and gentler on the planet.",
+            "btn-label": "GET MY DISCOUNT",
+            "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+            "subtext": "Use code: 30OFFFIRSTORDER"
+          }
+        },
+        "3692368d-6673-4a1c-93d3-806c7e30c1c1": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/reasons-steps-image2.jpg",
+            "heading": "An immediate game-changer.",
+            "text": "Ready to stay drier, longer? 9-out-of-10 women say they \u2028felt a difference almost immediately \u2028after switching to Attn: Grace.",
+            "btn-label": "GET MY DISCOUNT",
+            "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+            "subtext": "Use code: 30OFFFIRSTORDER"
+          }
+        },
+        "ffdc5c36-96b7-4ae0-9f75-9b5f6e10624e": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/reasons-steps-image3.jpg",
+            "heading": "Ditch the itch.",
+            "text": "No more itching or painful skin irritation. Attn: Grace is skin-safe, meaning our pads and briefs are free of bleaches, dyes, fragrance and other harsh chemicals — plus they’re dermatologist tested and approved.",
+            "btn-label": "GET MY DISCOUNT",
+            "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+            "subtext": "Use code: 30OFFFIRSTORDER"
+          }
+        },
+        "2d19dcd8-ff47-467f-94ff-89731290ef7d": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/reasons-steps-image4.jpg",
+            "heading": "Luxuriously soft…",
+            "text": "Comfort matters. A lot. Our top sheet not only stays dry, it’s famously soft to the touch. Trust us, you won’t be disappointed.",
+            "btn-label": "GET MY DISCOUNT",
+            "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+            "subtext": "Use code: 30OFFFIRSTORDER"
+          }
+        },
+        "e7f20879-effb-495d-a056-0efaf4b3aac4": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/reasons-steps-image5.jpg",
+            "heading": "Be a Force for Good.™",
+            "text": "Want to find a better way to manage your leaks and feel good about it? Attn: Grace is a Certified B Corp.™ – meaning we hold ourselves to the highest standards of social and environmental responsibility. Our products are all sustainably sourced, designed, produced and packaged.",
+            "btn-label": "GET MY DISCOUNT",
+            "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+            "subtext": "Use code: 30OFFFIRSTORDER"
+          }
+        }
+      },
+      "block_order": [
+        "8f31c49d-1a2e-4fd1-9f03-3deef103d2e1",
+        "3692368d-6673-4a1c-93d3-806c7e30c1c1",
+        "ffdc5c36-96b7-4ae0-9f75-9b5f6e10624e",
+        "2d19dcd8-ff47-467f-94ff-89731290ef7d",
+        "e7f20879-effb-495d-a056-0efaf4b3aac4"
+      ],
+      "settings": {}
+    },
+    "discount": {
+      "type": "listicle-discount",
+      "settings": {
+        "heading": "30% OFF",
+        "subheading": "your first order.",
+        "text": "<p>We’re so excited to have you experience our skin-safe incontinence products, that we are willing to give you 30% OFF your first order at <a href=\"https:\/\/attngrace.com.\" title=\"https:\/\/attngrace.com.\"><strong>attngrace.com<\/strong>.<\/a><\/p>",
+        "btn-label": "GET MY DISCOUNT",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+        "subtext": "Use code: 30OFFFIRSTORDER"
+      }
+    },
+    "imgtext": {
+      "type": "listicle-imgtext",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/reasons-review-photo.jpg",
+        "heading": "\"I cannot believe   the difference.",
+        "text": "I really didn't know what was happening... The itch and irritation was maddening. For over a year I tried cream after cream, every product imaginable thinking it was hormones, menopause, skin changes. I would wake up in the middle of the night because the itch was so unbearable. WHO KNEW IT WAS THE PADS?? I cannot believe the difference. With Attn: Grace, it's just gone. And the fit and absorbency are so excellent. I just signed up for a subscription, and hope to not be without these pads, EVER.\"",
+        "autor": "— LORI A.",
+        "btn-label": "GET MY DISCOUNT",
+        "btn-link": "https:\/\/attngrace.com\/discount\/30OFFFIRSTORDER?redirect=\/collections\/shop-all",
+        "subtext": "Use code: 30OFFFIRSTORDER"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "steps",
+    "discount",
+    "imgtext"
+  ]
+}

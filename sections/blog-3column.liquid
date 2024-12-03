@@ -1,0 +1,192 @@
+<style>
+  .section-heading {
+    font-size: 40px;
+    font-family: BentonModDisp;
+        font-weight: 300;
+
+  }
+
+  .blog-container {
+    background-color: white
+  }
+
+  .article-container {
+    display: flex;
+  }
+
+  .blog-section-subtitle {
+    /* Science-backed research, pro tips and the latest wellness trends we're following. */
+    font-family: Acre;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #000000;
+  }
+
+
+  .article-img-container img {
+          max-height: 300px;
+       max-width: 300px;
+  }
+
+  .read-more-btn {
+    text-decoration: none;
+    width: 150px;
+    background-color: black;
+        color: white;
+    margin: auto;
+    display: block;
+    font-family: Acre-Semibold;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .subtitle-container {
+        width: 40%;
+    margin: auto;
+  }
+
+
+    .article-item-content {
+      /* margin: 1rem; */
+    }
+
+    p.article-item-body:hover {
+       text-decoration: underline !important;
+     }
+
+
+  @media only screen and (max-width: 768px) {
+
+    .subtitle-container{
+      width: 100%
+    }
+
+    .home-blog-posts-section {
+      padding: 1rem;
+      border: 0;
+    }
+
+    .article-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .article-item-content {
+      display: flex;
+      align-items: center;
+      /* margin: 0; */
+    }
+
+    .article-img-container {
+      min-width: 50%;
+      display: flex;
+      align-items: center
+    }
+
+    .article-img-container img {
+      width: 160px;
+
+    }
+
+    p.article-item-body {
+      font-size: 1rem !important;
+      line-height: 1rem !important;
+    }
+
+     p.article-item-body:hover {
+       text-decoration: underline !important;
+
+     }
+
+    .read-more-btn-container {
+       padding: 2rem
+    }
+  }
+</style>
+
+<section
+  class="home-blog-posts-section plp-blog-list blog-container"
+  data-section-id="{{ section.id }}"
+  data-section-type="home-blog-posts"
+  data-home-section
+>
+  {% assign blog = blogs[section.settings.blog] %}
+
+  <div class="home-featured-blog">
+    <div class="">
+      <h2 class="section-heading">Explore Our Postpartum Resources</h2>
+    </div>
+    <div class="subtitle-container">
+      <p class="blog-section-subtitle">
+        Science-backed research, pro tips and the latest wellness trends we're following.
+      </p>
+    </div>
+    <div class="article-container">
+      {% for article in blog.articles %}
+        {% if article.id == 589392380158 or article.id == 589149634814 or article.id == 586888085758 %}
+          <div class="article-item-content">
+            <div class="article-img-container">
+              <a href="{{ article.url }}">
+                <img
+                  src="{{ article.image.src | img_url: 'original' }}"
+                  alt="{{ article.image.alt | escape }}"
+                  width="300"
+                >
+              </a>
+            </div>
+            <p class="article-item-body">
+              <a href="{{ article.url }}">
+                {{ article.title }}
+              </a>
+            </p>
+          </div>
+        {% endif %}
+      {% endfor %}
+      <div class="article-item-content">
+        <div class="article-img-container">
+          <a href="https://attngrace.com/blogs/the-edit/normalize-this-pelvic-floor-physical-therapy">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/blog-pelvic-floor-physical-therapy.png?v=1721244423"
+              alt="plevic-floor-physical-therapy-article"
+            >
+          </a>
+        </div>
+        <a href="https://attngrace.com/blogs/the-edit/normalize-this-pelvic-floor-physical-therapy">
+          <p class="article-item-body">Normalize This: Pelvic Floor Physical Therapy</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="read-more-btn-container">
+    <a href="https://attngrace.com/blogs/the-edit" class="read-more-btn">READ MORE </a>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "3 Column Blog",
+    "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Select blog",
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured Blog Posts"
+    }
+  ],
+    "presets": [
+  {
+    "name": "3 Column Blog"
+  }
+]
+
+  }
+{% endschema %}

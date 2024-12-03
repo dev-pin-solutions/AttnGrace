@@ -1,0 +1,88 @@
+<section class="comparsion">
+  <div class='center-wrapper'>
+      <div class="comparsion__row">
+          <div class="comparsion__col">
+              <div class="comparsion-item">
+                  <div class="comparsion-item__image">
+                      {{section.settings.image1 | img_url : 'master' | img_tag }}
+                      <span>{{section.settings.heading1}}</span>
+                  </div>
+                  <div class="comparsion-item__desc">{{section.settings.text1}}</div>
+              </div>
+          </div>
+          <div class="comparsion__vs">VS.</div>
+          <div class="comparsion__col">
+              <div class="comparsion-item">
+                  <div class="comparsion-item__image">                        
+                      {{section.settings.image2 | img_url : 'master' | img_tag }}
+                      <span>{{section.settings.heading2}}</span>
+                  </div>
+                  <div class="comparsion-item__desc">{{section.settings.text2}}</div>
+              </div>
+          </div>
+      </div>
+      <div class="get-discount">
+          <a href="{{section.settings.btn-link}}" class="get-discount__btn btn">{{section.settings.btn-label}}</a>
+          <div class="get-discount__note">{{section.settings.subtext}}</div>
+      </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Final3 Vs",
+    "settings" : [
+      {
+        "type" : "image_picker",
+        "id" : "image1",
+        "label" : "Image 1"
+      },
+      {
+        "type" : "text",
+        "id" : "heading1",
+        "label" : "Heading1",
+        "default" : "Petroleum"
+      }, 
+      {
+        "type" : "richtext",
+        "id" : "text1",
+        "label" : "Text 1",
+        "default" : "<p>Not so fun fact: It takes roughly <strong>1 cup of crude oil</strong> to make a single conventional disposable adult incontinence pad or brief.</p>"
+      }, 
+      {
+        "type" : "image_picker",
+        "id" : "image2",
+        "label" : "Image 2"
+      },
+      {
+        "type" : "text",
+        "id" : "heading2",
+        "label" : "Heading 2",
+        "default" : "Plant"
+      }, 
+      {
+        "type" : "richtext",
+        "id" : "text2",
+        "label" : "Text 2",
+        "default" : "<p>We replace petroleum-based plastics with skin-safe, plant-based materials to bring you game-changing comfort and confidence.</p>"
+      }, 
+     
+      {
+        "type" : "text",
+        "id" : "btn-label",
+        "label" : "Button Label",
+        "default"   : "GET 30% OFF YOUR FIRST ORDER*"
+    },
+    {
+        "type" : "url",
+        "id" : "btn-link",
+        "label" : "Button Link"
+    },
+    {
+      "type" : "text",
+      "id" : "subtext",
+      "label" : "SubText",
+      "default" : "*Discount automatically applied at checkout"
+    }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,115 @@
+<div class="slideupsell">
+    <div class="overlay"></div>
+    <div class="upsell-ctr">
+        {% assign currProd = product.handle %}
+        {% for tag in product.tags %}
+            {% assign singleTag = tag %}
+        {% endfor %}
+        {% for product in collection.products limit:10 %}
+            {% if product.tags contains singleTag %}
+                {% unless product.handle == currProd %}
+                    {% assign tempProduct = all_products[product.handle] %}
+                {% endunless %}
+            {% endif %}
+        {% endfor %}
+        {% unless tempProduct %}
+            {% assign tempProduct = all_products['wipes'] %}
+        {% endunless %}
+        <header>
+            <h3>{{ tempProduct.title }}</h3>
+            <button aria-label="close cart" class="close"><svg width="10" viewBox="0 0 10 10"><path d="M9.677 8.118a1.102 1.102 0 11-1.559 1.56L5 6.558 1.882 9.677a1.102 1.102 0 11-1.56-1.559L3.442 5 .323 1.882A1.102 1.102 0 111.882.322L5 3.442 8.118.323a1.102 1.102 0 111.56 1.559L6.558 5l3.118 3.118z" fill="#A1A1A1" fill-rule="nonzero"></path></svg></button>
+        </header>
+        {% assign discount = tempProduct.price | money_without_currency | minus: tempProduct.variants.first.metafields.subscriptions.discount_variant_price }} %}
+        <div class="item">
+            <h4>Save ${{ discount }} when you auto renew</h4>
+            <img loading="lazy" src="{{ tempProduct.featured_image | img_url: '600x600' }}" alt="{{tempProduct.featured_image.alt}}" />
+            <div>
+                <ul><li>Cruelty Free</li><li>Handcrafted in USA</li></ul>
+            </div>
+            <form class="atcUpsellSlide product-subscription-option">
+                {% if tempProduct.metafields.subscriptions.shipping_interval_frequency %}
+                    {% assign frequencies = tempProduct.metafields.subscriptions.shipping_interval_frequency | split: "," %}
+                    <div class="subscription">
+                        <select name="frequency" id="frequency" class="rc_select rc_select__frequency styled replaced">
+                            <option value="onetime">One-Time - <span class="onetime">{{ tempProduct.price | money }}</span></option>
+                            {% for frequency in frequencies %}
+                                {% assign unit = "" %}
+                                {% if tempProduct.metafields.subscriptions.shipping_interval_unit_type contains 'eek' %}
+                                    {% assign unit = "Weeks" %}
+                                {% else if tempProduct.metafields.subscriptions.shipping_interval_unit_type contains 'onth' %}
+                                    {% assign unit = "Month" %}
+                                {% else %}
+                                    {% assign unit = tempProduct.metafields.subscriptions.shipping_interval_unit_type %}
+                                {% endif %}
+                                {% if frequency == "4" %}
+                                    <option value="{{ frequency }}" class="recPrice" selected>Every {{ frequency }} {{ unit }} - {{ tempProduct.variants.first.metafields.subscriptions.discount_variant_price }}</option>
+                                {% else %}
+                                    <option value="{{ frequency }}" class="recPrice">Every {{ frequency }} {{ unit }} - {{ tempProduct.variants.first.metafields.subscriptions.discount_variant_price }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <input type="hidden" id="unit_type" name="unit_type" value="{{ unit }}"/>
+                        <input type="hidden" id="variant_id" name="variant_id" value="{{ tempProduct.variants.first.metafields.subscriptions.discount_variant_id }}"/>
+                        <input type="hidden" id="product_id" name="product_id" value="{{ tempProduct.variants.first.id }}"/>
+                    </div>
+                {% else %}
+                    <input type="hidden" id="frequency" name="frequency" value="onetime"/>
+		            <input type="hidden" id="product_id" name="product_id" value="{{ tempProduct.variants.first.id }}"/>
+                {% endif %}
+                <div class="subscription-qty">
+                    <label for="quantity-{{ tempProduct.id }}">Quantity</label>
+                    <div class="subscription-qty-input">
+                    <span class="list-minus-qty icon-qty">{% include 'icon-minus' %}</span>
+                    <input id="quantity" type="number" value="1" />
+                    <span class="list-plus-qty icon-qty">{% include 'icon-plus' %}</span>
+                    </div>
+                </div>
+                <div class="subscription-button">
+                    <input
+                        type="submit"
+                        class="button product-add-available"
+                        value="{% if tempProduct.variants.first.inventory_quantity <= 0 %}Pre-Order{% elsif tempProduct.tags contains "preorder" %}Pre-Order{% elsif tempProduct.tags contains "backorder" %}Backorder{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}"/>
+                    <input
+                        type="submit"
+                        class="button product-add-soldout"
+                        disabled
+                        value="{{ 'products.product.sold_out' | t }}"/>
+
+                    <input
+                        type="button"
+                        class="button product-add-unavailable"
+                        disabled
+                        value="{{ 'products.product.unavailable' | t }}"/>
+                </div>
+            </form>
+            <button type="submit" name="checkout" value="Checkout" class="button checkout" onclick="reChargeProcessCart();"><span>Continue to Checkout</span>
+            </button>
+           
+        </div>
+    </div>
+</div>
+
+<!-- <script>
+$('.product-add').bind( "click", function(e) {
+  e.preventDefault();
+  $('.slideupsell').toggleClass('open');
+  window.SLIDECART_CLOSE();
+});
+</script>-->
+
+<script>
+
+  function reChargeProcessCart() {
+	function get_cookie(name){ return( document.cookie.match('(^|; )'+name+'=([^;]*)')||0 )[2] }
+	do {
+      		token=get_cookie('cart');
+	}
+	while(token == undefined);
+
+	var myshopify_domain='{{ shop.permanent_domain }}'
+	try { var ga_linker = ga.getAll()[0].get('linkerParam') } catch(err) { var ga_linker ='' }
+	var customer_param = '{% if customer %}customer_id={{customer.id}}&customer_email={{customer.email}}{% endif %}'
+	window.location.href = "https://checkout.rechargeapps.com/r/checkout?myshopify_domain="+myshopify_domain+"&cart_token="+token+"&"+ga_linker+"&"+customer_param;
+}
+  
+</script>

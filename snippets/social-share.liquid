@@ -1,0 +1,30 @@
+<div class="social-share">
+	<p class="close-social-share">
+		<span class="hide-skip">Close</span>
+		{% include 'icon-close' %}
+	</p>
+	<div class="facebook-share">
+		<a target="_blank" rel="noreferrer, noopener" href="https://www.facebook.com/sharer.php?u={{ request.host }}{{ request.path }}">
+        <svg role="img" class="social-link-icon" aria-label="{{ 'general.social.like' | t }}">
+          <use xlink:href="#icon-social-facebook"></use>
+        </svg>
+        <span class="d-none">Facebook</span>
+      </a>
+	</div>
+	<div class="twitter-share">
+		<a target="_blank" rel="noreferrer, noopener" href="https://twitter.com/share?url={{ request.host }}{{ request.path }}">
+        <svg role="img" class="social-link-icon" aria-label="{{ 'general.social.tweet' | t }}">
+          <use xlink:href="#icon-social-twitter"></use>
+        </svg>
+        <span class="d-none">Twitter</span>
+      </a>
+	</div>
+	<div class="pinterest-share">
+		<a target="_blank" rel="noreferrer, noopener" href="https://pinterest.com/pin/create/button/?url={{ request.host }}{{ request.path }}&amp;media={{ social_image }}&amp;description={{ social_title }}">
+        <svg role="img" class="social-link-icon" aria-label="{{ 'general.social.pin_it' | t }}">
+          <use xlink:href="#icon-social-pinterest"></use>
+        </svg>
+        <span class="d-none">Pinterest</span>
+      </a>
+	</div>
+  </div>

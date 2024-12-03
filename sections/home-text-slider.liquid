@@ -1,0 +1,56 @@
+{{ 'home-text-slider.css' | asset_url | stylesheet_tag: preload: true }}
+
+<section
+  class="moving-text-section"
+  style="background-color: {{ section.settings.background }}; color:{{ section.settings.text_color }};"
+>
+  <marquee direction="left">
+    {% for block in section.blocks %}
+      <span>{{ block.settings.text }}</span>
+    {% endfor %}
+
+    {% for block in section.blocks %}
+      <span>{{ block.settings.text }}</span>
+    {% endfor %}
+  </marquee>
+</section>
+{% schema %}
+{
+  "name": "Moving Text",
+  "class": "home-moving-text-wraper",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+	    "name": "Text",
+	    "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+	    ]
+	  }
+  ],
+  "presets": [
+    {
+      "category": "Custom Blocks",
+      "name": "Moving Text"
+    }
+  ]
+}
+{% endschema %}
