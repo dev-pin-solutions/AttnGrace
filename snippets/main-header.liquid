@@ -44,7 +44,7 @@ If true, hide the `Menu` and `Cart` links
             </span>
             {% include 'icon-user' %}</a>
         </li>
-        <li class="main-sidebar-tool-item main-sidebar-tool-item-cart cart{% if cart.item_count >= 1 %}-full{% endif %}">
+        <li style="display: none;" class="main-sidebar-tool-item main-sidebar-tool-item-cart cart{% if cart.item_count >= 1 %}-full{% endif %}">
           <a href="/cart">{% include 'icon-cart' %}<span class="cart-count">{{ cart.item_count }}</span>
           </a>
         </li>
