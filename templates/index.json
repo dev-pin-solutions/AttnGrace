@@ -1,8 +1,74 @@
 {
   "sections": {
-
+    "1585643178555": {
+      "type": "home-hero",
+      "blocks": {
+        "1585643178555-0": {
+          "type": "slide",
+          "settings": {
+            "background_color": "#ebe2d8",
+            "background_image": "shopify:\/\/shop_images\/AG_HERO_1600x610_MAY10.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/AG_HERO_MOBILE_MAY10.png",
+            "good_housekeeping": "shopify:\/\/shop_images\/good_housekeeping_seal.png",
+            "heading": "Skin-Safe Protection for Bladder Leaks",
+            "subheading": "",
+            "short_description": "Tough on leaks. Gentle on skin.",
+            "button_link": "shopify:\/\/collections\/shop-all-test",
+            "button_label": "Shop All",
+            "button_link2": "shopify:\/\/pages\/qr-code",
+            "button_label2": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "1585643178555-0"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "home-text-slider": {
+      "type": "home-text-slider",
+      "blocks": {
+        "80ebf890-c1f8-4a8e-b336-97c7f0811f96": {
+          "type": "text",
+          "settings": {
+            "text": "NO CHLORINE"
+          }
+        },
+        "807743fe-bffc-444c-a37e-d639b89be6ac": {
+          "type": "text",
+          "settings": {
+            "text": "NO DYES"
+          }
+        },
+        "141cef09-f2f6-455b-9c50-1638703a4619": {
+          "type": "text",
+          "settings": {
+            "text": "NO FRAGRANCES"
+          }
+        },
+        "7764a5cb-894e-408f-a1d0-e91b8840d9fa": {
+          "type": "text",
+          "settings": {
+            "text": "NO LATEX"
+          }
+        }
+      },
+      "block_order": [
+        "80ebf890-c1f8-4a8e-b336-97c7f0811f96",
+        "807743fe-bffc-444c-a37e-d639b89be6ac",
+        "141cef09-f2f6-455b-9c50-1638703a4619",
+        "7764a5cb-894e-408f-a1d0-e91b8840d9fa"
+      ],
+      "settings": {
+        "background": "#dedc00",
+        "text_color": "#000000"
+      }
+    }
   },
   "order": [
+    "1585643178555",
+    "home-text-slider",
 
   ]
 }
