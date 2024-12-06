@@ -1,0 +1,207 @@
+{% comment %} added styles for new homepage quote {% endcomment %}
+
+<div class="home-slider">
+    <div class="item-slide">
+        {% assign carouselDesktopImage = section.settings.background_image | image_url: width: 1600, format: 'pjpg' %}
+        {% assign carouselMobileImage = section.settings.mobile_background_image| image_url: width: 650, height: 1050, crop: 'center' %}
+        <article class="slideshow-slide slideshow-slide-{{ section.id }}">
+            <picture>
+                <source
+                        width="650"
+                        height="1050"
+                        srcset="{{ carouselMobileImage }}"
+                        media="(max-width:767px)"
+                >
+                {{ carouselDesktopImage | image_url: width: 2000 | image_tag: preload: true, alt: "Hero Image", class: "slideshow-slide__image", rel: "preload" }}
+            </picture>
+            <div class="slide-content">
+                {% if section.settings.heading != blank %}
+                    <h1 class="heading" id="quote-text">
+                        {{ section.settings.heading }}<span class="quote-name"> {{ section.settings.heading_author }}</span>
+                    </h1>
+                {% endif %}
+                {% if section.settings.subheading != blank %}
+                    <p class="subheading">{{ section.settings.subheading }}</p>
+                {% endif %}
+                {% if section.settings.short_description != blank %}
+                    <p class="short-description">{{ section.settings.short_description }}</p>
+                {% endif %}
+                <div class="btn-wrapper">
+                    {% if section.settings.button_link != blank and section.settings.button_label != blank %}
+                        <a class="button small-button first-btn" href="{{ section.settings.button_link }}">
+                            {{- section.settings.button_label -}}
+                        </a>
+                    {% endif %}
+                    {% if section.settings.button_link2 != blank and section.settings.button_label2 != blank %}
+                        <a aria-label="Learn About QR Code" class="button small-button second-btn" href="{{ section.settings.button_link2 }}">
+                            {{- section.settings.button_label2 -}}
+                            <span style="font-size: 0;">Learn About QR Code</span>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% if section.settings.good_housekeeping != blank %}
+                <div class="housekeeping-container">
+                    <img
+                            {% if section.settings.show_logo == false %}
+                            style="display: none;"
+                            {% endif %}
+                            src="{{ section.settings.good_housekeeping | img_url: 'master' }}"
+                            alt="good housekeeping"
+                            loading="lazy"
+                    >
+                </div>
+            {% endif %}
+        </article>
+    </div>
+</div>
+<style>
+    #quote-text {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    .quote-name {
+        display: block;
+        font-size: 22px;
+        font-family: Acre;
+        text-wrap: nowrap;
+    }
+    /* mobile  */
+    @media screen and (max-width: 900px){
+        .slideshow-slide .slide-content {
+            top: 1rem;
+        }
+
+        .slide-content > .heading, #quote-text {
+            font-size: 28px;
+            line-height: 30px;
+        }
+
+        .quote-name {
+            font-size: 18px;
+        }
+
+    }
+    @media screen and (min-width: 1500px){
+        #quote-text {
+            font-size: 4rem;
+            line-height: 4rem;
+        }
+
+        .heading {
+            width: 43% !important;
+        }
+    }
+
+</style>
+<style>
+    .housekeeping-container {
+        position: absolute;
+        right: 80px;
+        bottom: 60px;
+    }
+    .housekeeping-container img {
+        max-width: 220px;
+    }
+
+    @media(max-width:768px){
+        .housekeeping-container {
+            right: 20px;
+            bottom: 20px;
+        }
+        .housekeeping-container img {
+            max-width: 140px;
+        }
+    }
+    .slideshow-slide-{{ section.id }} {
+        background-color: {{ section.settings.background_color }};
+    }
+</style>
+
+{% schema %}
+{
+  "name": "NewHeroSection",
+  "class": "home-hero",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#EBE2D8"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Desktop Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "good_housekeeping",
+      "label": "Good Housekeeping Seal Logo: "
+    },
+    {
+      "type": "checkbox",
+      "id": "show_logo",
+      "label": "Show logo",
+      "default": false
+    },
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "“The best pad ever - and I’ve tried them all!”"
+    },
+    {
+      "id": "heading_author",
+      "type": "text",
+      "label": "Heading author",
+      "default": "- Shannon R."
+    },
+    {
+      "id": "subheading",
+      "type": "text",
+      "label": "Subheading"
+    },
+    {
+      "id": "short_description",
+      "type": "text",
+      "label": "Short Description"
+    },
+    {
+      "id": "button_link",
+      "type": "url",
+      "label": "Button link"
+    },
+    {
+      "id": "button_label",
+      "type": "text",
+      "label": "Button label",
+      "default": "Slide link"
+    },
+    {
+      "id": "button_link2",
+      "type": "url",
+      "label": "Button 2 link"
+    },
+    {
+      "id": "button_label2",
+      "type": "text",
+      "label": "Button 2 label",
+      "default": "Slide link"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "NewHeroSection"
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,30 +1,22 @@
 {
   "sections": {
     "1585643178555": {
-      "type": "home-hero",
-      "blocks": {
-        "1585643178555-0": {
-          "type": "slide",
+      "type": "new-home-hero",
           "settings": {
             "background_color": "#ebe2d8",
             "background_image": "shopify:\/\/shop_images\/AG_HERO_1600x610_MAY10.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/AG_HERO_MOBILE_MAY10.png",
             "good_housekeeping": "shopify:\/\/shop_images\/good_housekeeping_seal.png",
-            "heading": "Skin-Safe Protection for Bladder Leaks",
+            "heading": "“The best pad ever - and I’ve tried them all!”",
+            "heading_author": "- Shannon R.",
             "subheading": "",
             "short_description": "Tough on leaks. Gentle on skin.",
             "button_link": "shopify:\/\/collections\/shop-all-test",
             "button_label": "Shop All",
             "button_link2": "shopify:\/\/pages\/qr-code",
             "button_label2": "Learn More"
-          }
-        }
-      },
-      "block_order": [
-        "1585643178555-0"
-      ],
-      "custom_css": [],
-      "settings": {}
+          },
+      "custom_css": []
     },
     "home-text-slider": {
       "type": "home-text-slider",
@@ -64,11 +56,86 @@
         "background": "#dedc00",
         "text_color": "#000000"
       }
+    },
+    "5e9e7c91-3a07-4387-b1ae-0a289a8425eb": {
+      "type": "featured-product",
+      "blocks": {
+        "bd72d4e3-5131-4042-812c-b4f5ee6cd511": {
+          "type": "product",
+          "settings": {
+            "product-name": "Liners",
+            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_LINERS.jpg",
+            "product-link": "shopify:\/\/products\/light-liner",
+            "overlay-text": "A soft, simple, barely there liner ideal for the lightest of bladder leakage. Immediately wicks away any drips or spurts of pee."
+          }
+        },
+        "3cab465f-acd0-4c6d-8183-0492cd1ef9dd": {
+          "type": "product",
+          "settings": {
+            "product-name": "Pads",
+            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_PADS.jpg",
+            "product-link": "shopify:\/\/products\/moderate-pads",
+            "overlay-text": "These pads offer lightning quick absorbency for a range of support—from bursts to streams, in two different lengths—we got you covered."
+          }
+        },
+        "a800cf01-fa6c-409c-9faf-9a2e99c65398": {
+          "type": "product",
+          "settings": {
+            "product-name": "Briefs",
+            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_BRIEFS.jpg",
+            "product-link": "shopify:\/\/products\/briefs",
+            "overlay-text": "Ultra-thin but seriously powerful, our bladder leakage underwear is able to lock away streams and gushes of pee."
+          }
+        }
+      },
+      "block_order": [
+        "bd72d4e3-5131-4042-812c-b4f5ee6cd511",
+        "3cab465f-acd0-4c6d-8183-0492cd1ef9dd",
+        "a800cf01-fa6c-409c-9faf-9a2e99c65398"
+      ],
+      "settings": {}
+    },
+    "16212466606abe1e73": {
+      "type": "home-featured-collection",
+      "blocks": {
+        "4dc5dc65-1530-45be-9416-4f2bd59c459c": {
+          "type": "product",
+          "settings": {
+            "product": "ultimate-pad-for-bladder-leaks"
+          }
+        },
+        "1db5ef08-0068-43d6-ab07-7f5d9fc5bbd6": {
+          "type": "product",
+          "settings": {
+            "product": "light-liner"
+          }
+        },
+        "6671029e-78ae-497c-a438-a5cfe09a17f5": {
+          "type": "product",
+          "settings": {
+            "product": "heavy-pads"
+          }
+        }
+      },
+      "block_order": [
+        "4dc5dc65-1530-45be-9416-4f2bd59c459c",
+        "1db5ef08-0068-43d6-ab07-7f5d9fc5bbd6",
+        "6671029e-78ae-497c-a438-a5cfe09a17f5"
+      ],
+      "settings": {
+        "collection": "",
+        "section_heading": "Shop our Best Sellers",
+        "section_subheading": "Get what you need, on your schedule. Free shipping over $50+.",
+        "product_grid_image_style": "natural",
+        "product_grid_image_crop": false,
+        "manual_products": true
+      }
     }
   },
   "order": [
     "1585643178555",
     "home-text-slider",
-
+    "5e9e7c91-3a07-4387-b1ae-0a289a8425eb",
+    "16212466606abe1e73"
   ]
 }
