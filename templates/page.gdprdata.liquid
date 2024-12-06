@@ -6,7 +6,8 @@ This template is required for the application to function properly.
 | PLEASE DO NOT MODIFY OR DELETE THIS TEMPLATE FOR AS LONG AS THIS APPLICATION IS INSTALLED IN YOUR STORE. |
 ------------------------------------------------------------------------------------------------------------
 {% endcomment %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/yui/3.18.0/cssreset-context/cssreset-context-min.css" type="text/css"/>
+
+{% comment %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/yui/3.18.0/cssreset-context/cssreset-context-min.css" type="text/css"/>
 <style>
 
   p.pd-guest-warning {font-weight:600;} /* new */
@@ -481,3 +482,4 @@ This template is required for the application to function properly.
   <input type="hidden" value="{{ hash_id | hmac_sha256: "FDK__D9382943FF__D_" }}" id="gdpr_hmac" />
   <input type="hidden" id="accounts_enabled" value="{{ shop.customer_accounts_enabled }}" />
 </div>
+{% endcomment %}

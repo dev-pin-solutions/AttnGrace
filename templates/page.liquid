@@ -1,4 +1,4 @@
-{% render 'shogun-products', content: page %}
+{% comment %}{% render 'shogun-products', content: page %}
 {% unless page.metafields.specialist.address != blank %}
 <div class="page-content page-full-width">
   <h1 class="page-title">{{ page.title }}</h1>
@@ -315,3 +315,4 @@
 {% endcomment %}
 <!--End - Add a condition for the different page metafield an default page -->
 {{ page.metafields.shogun.optimizer }}
+{% endcomment %}
