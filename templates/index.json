@@ -130,12 +130,78 @@
         "product_grid_image_crop": false,
         "manual_products": true
       }
+    },
+    "1621318087439e59e8": {
+      "type": "testimonials",
+      "blocks": {
+        "c8aa4b23-5a39-407b-8095-7aa5cbc9c25b": {
+          "type": "text",
+          "settings": {
+            "testimonial": "I love, love, love these pads. No bleach in their products means no irritation. Thank you for making such great products!",
+            "author-name": "Elizabeth",
+            "rating_star": "5"
+          }
+        },
+        "e1bc3970-27db-4847-a4fe-9172abf18a36": {
+          "type": "text",
+          "settings": {
+            "testimonial": "I don't like them, I love them. Believe me I tried a lot of different kind and lots did not absorb the way Attn: Grace’s do.",
+            "author-name": "Benira",
+            "rating_star": "5"
+          }
+        },
+        "5b7bdb17-3b53-42cc-b96b-b3cf27170009": {
+          "type": "text",
+          "settings": {
+            "testimonial": "Less odor than those other brands. And I feel like I'm helping the environment, even in a small way.",
+            "author-name": "Carol",
+            "rating_star": "5"
+          }
+        },
+        "a2d01d0d-971e-47a5-91ee-23cdfbc8aafa": {
+          "type": "text",
+          "settings": {
+            "testimonial": "Won't wear anything else. They are the ultimate best. Pricing and ease of receiving and changing orders is easy. Love this product.",
+            "author-name": "Janet",
+            "rating_star": "5"
+          }
+        },
+        "7892f65a-2ee5-4a0f-acd0-de260de3c2b9": {
+          "type": "text",
+          "settings": {
+            "testimonial": "Amazing how much these hold, and they don't have the itching or the burning of the other pads.",
+            "author-name": "Brenda",
+            "rating_star": "5"
+          }
+        },
+        "8e797a02-a033-4a9c-8a38-f62b793c8d56": {
+          "type": "text",
+          "settings": {
+            "testimonial": "Total luxury! I have been looking for such a dreamy wipe. And they can be flushed.",
+            "author-name": "Shannon",
+            "rating_star": "5"
+          }
+        }
+      },
+      "block_order": [
+        "c8aa4b23-5a39-407b-8095-7aa5cbc9c25b",
+        "e1bc3970-27db-4847-a4fe-9172abf18a36",
+        "5b7bdb17-3b53-42cc-b96b-b3cf27170009",
+        "a2d01d0d-971e-47a5-91ee-23cdfbc8aafa",
+        "7892f65a-2ee5-4a0f-acd0-de260de3c2b9",
+        "8e797a02-a033-4a9c-8a38-f62b793c8d56"
+      ],
+      "settings": {
+        "heading": "",
+        "sbg-color": "#ffffff"
+      }
     }
   },
   "order": [
     "1585643178555",
     "home-text-slider",
     "5e9e7c91-3a07-4387-b1ae-0a289a8425eb",
-    "16212466606abe1e73"
+    "16212466606abe1e73",
+    "1621318087439e59e8"
   ]
 }
