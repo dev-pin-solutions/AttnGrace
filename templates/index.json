@@ -246,39 +246,46 @@
         "bg_color": "#f5ebe9"
       }
     },
-    "as-seen-in": {
-      "type": "as-seen-in",
+    "quiz-as-seen-in": {
+      "type": "quiz-as-seen-in",
       "blocks": {
-        "452fc903-5c1c-47b2-bb9c-3f1d93f7c423": {
-          "type": "image",
+        "fa3af939-50cd-47d6-b3ba-baee16c59f6e": {
+          "type": "slider_items",
           "settings": {
-            "promo_logo_1": "shopify:\/\/shop_images\/InTheGroove.png",
-            "promo_logo_2": "shopify:\/\/shop_images\/WellAndGood.png"
+            "seen_item_title": "“The first collection of its kind in the bladder leakage space... creating a higher standard.”",
+            "seen_item_image": "shopify:\/\/shop_images\/forbes-logo-black-transparent_1.png"
           }
         },
-        "b245fd94-d2e4-42fc-96aa-28e0887d7f26": {
-          "type": "image",
+        "47f1053f-ca2b-48a7-964f-aa047a9c8465": {
+          "type": "slider_items",
           "settings": {
-            "promo_logo_1": "shopify:\/\/shop_images\/TC.png",
-            "promo_logo_2": "shopify:\/\/shop_images\/Romper.png"
+            "seen_item_title": "“I prefer to buy personal-care products from companies that take sustainability and clean ingredients seriously. Attn: Grace is a great example.”",
+            "seen_item_image": "shopify:\/\/shop_images\/1200px-Gooponlinelogo_1.png"
           }
         },
-        "b2742803-2fef-4f67-9852-cd69b5cab96a": {
-          "type": "image",
+        "1045065d-7410-4909-9458-9c43daa6dd9f": {
+          "type": "slider_items",
           "settings": {
-            "promo_logo_1": "shopify:\/\/shop_images\/Forbes.png",
-            "promo_logo_2": "shopify:\/\/shop_images\/WomensHealth.png"
+            "seen_item_title": "“Attn: Grace is a personal care brand disrupting the incontinence segment with stylish, sustainable and subscription-based products for women.”",
+            "seen_item_image": "shopify:\/\/shop_images\/bi_logotype.png"
+          }
+        },
+        "a1d5d0b1-545d-4b47-8e78-c7465801925d": {
+          "type": "slider_items",
+          "settings": {
+            "seen_item_title": "\"A sustainable, high-quality brand that addresses concerns about our changing bodies in a graceful and intelligent way? That’s my kind of company.”",
+            "seen_item_image": "shopify:\/\/shop_images\/InTheGroove_2.png"
           }
         }
       },
       "block_order": [
-        "452fc903-5c1c-47b2-bb9c-3f1d93f7c423",
-        "b245fd94-d2e4-42fc-96aa-28e0887d7f26",
-        "b2742803-2fef-4f67-9852-cd69b5cab96a"
+        "fa3af939-50cd-47d6-b3ba-baee16c59f6e",
+        "47f1053f-ca2b-48a7-964f-aa047a9c8465",
+        "1045065d-7410-4909-9458-9c43daa6dd9f",
+        "a1d5d0b1-545d-4b47-8e78-c7465801925d"
       ],
       "settings": {
-        "heading": "As Seen In",
-        "bg_color": "rgba(0,0,0,0)"
+        "heading": "As Seen In"
       }
     }
   },
@@ -290,6 +297,6 @@
     "1621318087439e59e8",
     "1621255812209f27aa",
     "16214060024f1fda7e",
-    "as-seen-in"
+    "quiz-as-seen-in"
   ]
 }
