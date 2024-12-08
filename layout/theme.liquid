@@ -359,7 +359,7 @@ Creation date: 08/14/2024
       {{ content_for_layout }}
 	<noscript class="endOfLayoutContentX" type="text/mark"></noscript>{% render 'treedify_script' %}
 
-      {% comment %}{% section 'footer' %}{% endcomment %}
+      {% section 'footer' %}
     </div>
 
     <div class="content-overlay"></div>
@@ -415,11 +415,6 @@ Creation date: 08/14/2024
   .rb-input.tw3.ttc.tmb0 {
       border: none !important; /* Removes border */
   }
-
-
-
-    
-
 </style>
   {% render 'data-layer-events' %}
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
@@ -435,13 +430,6 @@ Creation date: 08/14/2024
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-
-
-
-
-
-
-
 </body>
 <!-- Back in Stock helper snippet -->
 {% render 'back-in-stock-helper' %}
