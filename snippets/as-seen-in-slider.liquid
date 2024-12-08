@@ -3,10 +3,10 @@
     {% assign image = block.settings.seen_item_image %}
     <div class="as-seen-image">
       {%
-         include 'rimg-home'
+         render 'rimg-home'
          img: image,
          size: '2048x2048',
-         lazy: true, %}
+         lazy: true %}
     </div>
   {% endfor %}
 </div>
