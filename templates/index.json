@@ -195,6 +195,91 @@
         "heading": "",
         "sbg-color": "#ffffff"
       }
+    },
+    "1621255812209f27aa": {
+      "type": "home-text-with-icon",
+      "blocks": {
+        "7e1c7636-3833-470d-ac8c-a596f3688f17": {
+          "type": "column",
+          "settings": {
+            "title": "Leak-Free",
+            "content": "Signature CLN Design™ technology for superior moisture-wicking and lightening-fast absorption.",
+            "column_image": "shopify:\/\/shop_images\/noun-no-water-1661151.svg"
+          }
+        },
+        "cd1a193d-3ac9-4d91-ae9f-cdf37add0387": {
+          "type": "column",
+          "settings": {
+            "title": "Skin-Safe",
+            "content": "Breathable, natural materials with no harsh dyes, bleaches, fragrances, or petro-chemicals to irritate your most sensitive skin.",
+            "column_image": "shopify:\/\/shop_images\/noun-care-2928731.svg"
+          }
+        },
+        "404d690f-b934-4cfc-8b17-c42d2c991f22": {
+          "type": "column",
+          "settings": {
+            "title": "Eco-Conscious",
+            "content": "Friendlier disposables made in CO2 neutral factories with plant-based materials, FSC Certified sustainably forested filler and kraft paper or GreenPE packaging.",
+            "column_image": "shopify:\/\/shop_images\/noun-eco-friendly-4297133.png"
+          }
+        }
+      },
+      "block_order": [
+        "7e1c7636-3833-470d-ac8c-a596f3688f17",
+        "cd1a193d-3ac9-4d91-ae9f-cdf37add0387",
+        "404d690f-b934-4cfc-8b17-c42d2c991f22"
+      ],
+      "settings": {
+        "heading": "Why Attn: Grace?",
+        "sbg-color": "#dedc00"
+      }
+    },
+    "16214060024f1fda7e": {
+      "type": "our-mission",
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/AG_OUR_MISSION_MAY10.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/AG_OUR_MISSION_MOBILE_MAY10.jpg",
+        "heading": "Our Mission",
+        "content": "To lead incontinence care forward—innovating to protect women’s quality of life and the health of our planet.",
+        "button_text": "Our Story",
+        "button_url": "shopify:\/\/pages\/our-story",
+        "bg_color": "#f5ebe9"
+      }
+    },
+    "as-seen-in": {
+      "type": "as-seen-in",
+      "blocks": {
+        "452fc903-5c1c-47b2-bb9c-3f1d93f7c423": {
+          "type": "image",
+          "settings": {
+            "promo_logo_1": "shopify:\/\/shop_images\/InTheGroove.png",
+            "promo_logo_2": "shopify:\/\/shop_images\/WellAndGood.png"
+          }
+        },
+        "b245fd94-d2e4-42fc-96aa-28e0887d7f26": {
+          "type": "image",
+          "settings": {
+            "promo_logo_1": "shopify:\/\/shop_images\/TC.png",
+            "promo_logo_2": "shopify:\/\/shop_images\/Romper.png"
+          }
+        },
+        "b2742803-2fef-4f67-9852-cd69b5cab96a": {
+          "type": "image",
+          "settings": {
+            "promo_logo_1": "shopify:\/\/shop_images\/Forbes.png",
+            "promo_logo_2": "shopify:\/\/shop_images\/WomensHealth.png"
+          }
+        }
+      },
+      "block_order": [
+        "452fc903-5c1c-47b2-bb9c-3f1d93f7c423",
+        "b245fd94-d2e4-42fc-96aa-28e0887d7f26",
+        "b2742803-2fef-4f67-9852-cd69b5cab96a"
+      ],
+      "settings": {
+        "heading": "As Seen In",
+        "bg_color": "rgba(0,0,0,0)"
+      }
     }
   },
   "order": [
@@ -202,6 +287,9 @@
     "home-text-slider",
     "5e9e7c91-3a07-4387-b1ae-0a289a8425eb",
     "16212466606abe1e73",
-    "1621318087439e59e8"
+    "1621318087439e59e8",
+    "1621255812209f27aa",
+    "16214060024f1fda7e",
+    "as-seen-in"
   ]
 }
