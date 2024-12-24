@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main-account": {
+      "type": "page-store-locator",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "page-store-locator"
+  ]
+}
+
+
+
