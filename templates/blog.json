@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "page-blog": {
+      "type": "page-blog",
+      "settings": {
+        "pagination": 24,
+        "blog_heading": "What's Got Our Attn:",
+        "blog_description": "THE EDIT",
+        "view_post_images": true,
+        "show_excerpt": true
+      }
+    }
+  },
+  "order": [
+    "page-blog"
+  ]
+}
+

@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "page": {
+      "type": "page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "page"
+  ]
+}
+
+
+
