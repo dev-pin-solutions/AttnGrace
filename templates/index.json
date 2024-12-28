@@ -1,22 +1,32 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "1585643178555": {
       "type": "new-home-hero",
-          "settings": {
-            "background_color": "#ebe2d8",
-            "background_image": "shopify:\/\/shop_images\/AG_HERO_1600x610_MAY10.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/AG_HERO_MOBILE_MAY10.png",
-            "good_housekeeping": "shopify:\/\/shop_images\/good_housekeeping_seal.png",
-            "heading": "“The best pad ever - and I’ve tried them all!”",
-            "heading_author": "- Shannon R.",
-            "subheading": "",
-            "short_description": "Tough on leaks. Gentle on skin.",
-            "button_link": "shopify:\/\/collections\/shop-all-test",
-            "button_label": "Shop All",
-            "button_link2": "shopify:\/\/pages\/qr-code",
-            "button_label2": "Learn More"
-          },
-      "custom_css": []
+      "custom_css": [],
+      "settings": {
+        "background_color": "#ebe2d8",
+        "background_image": "shopify://shop_images/AG_HERO_1600x610_MAY10.jpg",
+        "mobile_background_image": "shopify://shop_images/AG_HERO_MOBILE_MAY10.png",
+        "good_housekeeping": "shopify://shop_images/good_housekeeping_seal.png",
+        "show_logo": false,
+        "heading": "“The best pad ever - and I’ve tried them all!”",
+        "heading_author": "- Shannon R.",
+        "subheading": "",
+        "short_description": "Tough on leaks. Gentle on skin.",
+        "button_link": "shopify://collections/shop-all-test",
+        "button_label": "Shop All",
+        "button_link2": "shopify://pages/qr-code",
+        "button_label2": "Learn More"
+      }
     },
     "home-text-slider": {
       "type": "home-text-slider",
@@ -24,22 +34,46 @@
         "80ebf890-c1f8-4a8e-b336-97c7f0811f96": {
           "type": "text",
           "settings": {
-            "text": "NO CHLORINE"
+            "text": "NO DYES"
+          }
+        },
+        "text_nfDLaf": {
+          "type": "text",
+          "settings": {
+            "text": "NO PARABENS"
           }
         },
         "807743fe-bffc-444c-a37e-d639b89be6ac": {
           "type": "text",
           "settings": {
-            "text": "NO DYES"
+            "text": "NO BLEACH"
           }
         },
         "141cef09-f2f6-455b-9c50-1638703a4619": {
           "type": "text",
           "settings": {
-            "text": "NO FRAGRANCES"
+            "text": "NO SULFATES"
           }
         },
         "7764a5cb-894e-408f-a1d0-e91b8840d9fa": {
+          "type": "text",
+          "settings": {
+            "text": "NO ALCOHOL"
+          }
+        },
+        "text_XjrDGD": {
+          "type": "text",
+          "settings": {
+            "text": "NO SYNTHETIC FRAGRANCES"
+          }
+        },
+        "text_BkH4zy": {
+          "type": "text",
+          "settings": {
+            "text": "NO LOTION"
+          }
+        },
+        "text_Eic9f3": {
           "type": "text",
           "settings": {
             "text": "NO LATEX"
@@ -48,9 +82,13 @@
       },
       "block_order": [
         "80ebf890-c1f8-4a8e-b336-97c7f0811f96",
+        "text_nfDLaf",
         "807743fe-bffc-444c-a37e-d639b89be6ac",
         "141cef09-f2f6-455b-9c50-1638703a4619",
-        "7764a5cb-894e-408f-a1d0-e91b8840d9fa"
+        "7764a5cb-894e-408f-a1d0-e91b8840d9fa",
+        "text_XjrDGD",
+        "text_BkH4zy",
+        "text_Eic9f3"
       ],
       "settings": {
         "background": "#dedc00",
@@ -64,8 +102,8 @@
           "type": "product",
           "settings": {
             "product-name": "Liners",
-            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_LINERS.jpg",
-            "product-link": "shopify:\/\/products\/light-liner",
+            "product-image": "shopify://shop_images/AG_HP_PRODUCTS_LINERS.jpg",
+            "product-link": "shopify://products/light-liner",
             "overlay-text": "A soft, simple, barely there liner ideal for the lightest of bladder leakage. Immediately wicks away any drips or spurts of pee."
           }
         },
@@ -73,8 +111,8 @@
           "type": "product",
           "settings": {
             "product-name": "Pads",
-            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_PADS.jpg",
-            "product-link": "shopify:\/\/products\/moderate-pads",
+            "product-image": "shopify://shop_images/AG_HP_PRODUCTS_PADS.jpg",
+            "product-link": "shopify://products/moderate-pads",
             "overlay-text": "These pads offer lightning quick absorbency for a range of support—from bursts to streams, in two different lengths—we got you covered."
           }
         },
@@ -82,8 +120,8 @@
           "type": "product",
           "settings": {
             "product-name": "Briefs",
-            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_BRIEFS.jpg",
-            "product-link": "shopify:\/\/products\/briefs",
+            "product-image": "shopify://shop_images/AG_HP_PRODUCTS_BRIEFS.jpg",
+            "product-link": "shopify://products/briefs",
             "overlay-text": "Ultra-thin but seriously powerful, our bladder leakage underwear is able to lock away streams and gushes of pee."
           }
         }
@@ -204,7 +242,7 @@
           "settings": {
             "title": "Leak-Free",
             "content": "Signature CLN Design™ technology for superior moisture-wicking and lightening-fast absorption.",
-            "column_image": "shopify:\/\/shop_images\/noun-no-water-1661151.svg"
+            "column_image": "shopify://shop_images/noun-no-water-1661151.svg"
           }
         },
         "cd1a193d-3ac9-4d91-ae9f-cdf37add0387": {
@@ -212,7 +250,7 @@
           "settings": {
             "title": "Skin-Safe",
             "content": "Breathable, natural materials with no harsh dyes, bleaches, fragrances, or petro-chemicals to irritate your most sensitive skin.",
-            "column_image": "shopify:\/\/shop_images\/noun-care-2928731.svg"
+            "column_image": "shopify://shop_images/noun-care-2928731.svg"
           }
         },
         "404d690f-b934-4cfc-8b17-c42d2c991f22": {
@@ -220,7 +258,7 @@
           "settings": {
             "title": "Eco-Conscious",
             "content": "Friendlier disposables made in CO2 neutral factories with plant-based materials, FSC Certified sustainably forested filler and kraft paper or GreenPE packaging.",
-            "column_image": "shopify:\/\/shop_images\/noun-eco-friendly-4297133.png"
+            "column_image": "shopify://shop_images/noun-eco-friendly-4297133.png"
           }
         }
       },
@@ -237,12 +275,12 @@
     "16214060024f1fda7e": {
       "type": "our-mission",
       "settings": {
-        "desktop_image": "shopify:\/\/shop_images\/AG_OUR_MISSION_MAY10.jpg",
-        "mobile_image": "shopify:\/\/shop_images\/AG_OUR_MISSION_MOBILE_MAY10.jpg",
+        "desktop_image": "shopify://shop_images/AG_OUR_MISSION_MAY10.jpg",
+        "mobile_image": "shopify://shop_images/AG_OUR_MISSION_MOBILE_MAY10.jpg",
         "heading": "Our Mission",
         "content": "To lead incontinence care forward—innovating to protect women’s quality of life and the health of our planet.",
         "button_text": "Our Story",
-        "button_url": "shopify:\/\/pages\/our-story",
+        "button_url": "shopify://pages/our-story",
         "bg_color": "#f5ebe9"
       }
     },
@@ -253,28 +291,28 @@
           "type": "slider_items",
           "settings": {
             "seen_item_title": "“The first collection of its kind in the bladder leakage space... creating a higher standard.”",
-            "seen_item_image": "shopify:\/\/shop_images\/forbes-logo-black-transparent_1.png"
+            "seen_item_image": "shopify://shop_images/forbes-logo-black-transparent_1.png"
           }
         },
         "47f1053f-ca2b-48a7-964f-aa047a9c8465": {
           "type": "slider_items",
           "settings": {
             "seen_item_title": "“I prefer to buy personal-care products from companies that take sustainability and clean ingredients seriously. Attn: Grace is a great example.”",
-            "seen_item_image": "shopify:\/\/shop_images\/1200px-Gooponlinelogo_1.png"
+            "seen_item_image": "shopify://shop_images/1200px-Gooponlinelogo_1.png"
           }
         },
         "1045065d-7410-4909-9458-9c43daa6dd9f": {
           "type": "slider_items",
           "settings": {
             "seen_item_title": "“Attn: Grace is a personal care brand disrupting the incontinence segment with stylish, sustainable and subscription-based products for women.”",
-            "seen_item_image": "shopify:\/\/shop_images\/bi_logotype.png"
+            "seen_item_image": "shopify://shop_images/bi_logotype.png"
           }
         },
         "a1d5d0b1-545d-4b47-8e78-c7465801925d": {
           "type": "slider_items",
           "settings": {
             "seen_item_title": "\"A sustainable, high-quality brand that addresses concerns about our changing bodies in a graceful and intelligent way? That’s my kind of company.”",
-            "seen_item_image": "shopify:\/\/shop_images\/InTheGroove_2.png"
+            "seen_item_image": "shopify://shop_images/InTheGroove_2.png"
           }
         }
       },
