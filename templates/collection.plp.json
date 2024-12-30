@@ -1,0 +1,21 @@
+{
+  "order": [
+    "page-collection-pads"
+  ],
+  "sections": {
+    "page-collection-pads": {
+      "type": "page-collection-pads",
+      "settings": {
+        "image_layout": "two_column",
+        "show_description": true,
+        "enable_tag_filtering": false,
+        "pagination": 12,
+        "product_grid_image_style": "natural",
+        "product_grid_image_crop": false,
+        "heading": "Recommended Reads",
+        "blog": "blog",
+        "post_number": 2
+      }
+    }
+  }
+}

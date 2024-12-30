@@ -1,0 +1,31 @@
+{
+  "order": [
+    "collection-banner",
+    "page-collection"
+  ],
+  "sections": {
+    "collection-banner": {
+      "type": "collection-banner",
+      "settings": {
+        "heading": "Skin-safe incontinence care, designed by women.",
+        "subheading": "Tough on Leaks. Safe on Skin. Gentler on the Planet.",
+        "banner_color": "#dedc00"
+      }
+    },
+    "page-collection": {
+      "type": "page-collection",
+      "settings": {
+        "image_layout": "two_column",
+        "show_description": true,
+        "enable_tag_filtering": false,
+        "pagination": 12,
+        "product_grid_image_style": "large",
+        "product_grid_image_crop": false,
+        "heading": "Recommended Reads",
+        "blog": "the-edit",
+        "post_number": 2
+      }
+    }
+  }
+}
+
