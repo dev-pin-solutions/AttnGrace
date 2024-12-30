@@ -1,0 +1,12 @@
+{
+  "order": [
+    "Lookbook-pages",
+  ],
+  "sections": {
+    "Lookbook-pages": {
+      "type": "page-lookbook",
+      "settings": {
+      }
+    },
+  }
+}
