@@ -1,0 +1,63 @@
+{
+  "order": [
+    "page-collections"
+  ],
+  "sections": {
+    "page-collections": {
+      "type": "page-collections",
+      "settings": {
+        "heroimage_desktop": "shopify://shop_images/clp-banner_5ad3d9c5-e2db-4951-980e-fb384b9fc01e.jpg",
+        "leak_heading": "How much support do you need?",
+        "drop1_heading": "Light Support",
+        "drop1_subheading": "For leaks during exercising, laughing, coughing, and sneezing",
+        "drop1_yellow_button_link": "shopify://collections/liners",
+        "drop1_yellow_button_label": "Shop Liners",
+        "drop1_blue_button_link": "",
+        "drop1_blue_button_label": "",
+        "drop2_heading": "Moderate Support",
+        "drop2_subheading": "Best for active, mobile people with bladder leaks.",
+        "drop2_yellow_button_link": "shopify://collections/pads",
+        "drop2_yellow_button_label": "Shop Pads",
+        "drop2_blue_button_link": "",
+        "drop2_blue_button_label": "",
+        "drop3_heading": "Heavy Support",
+        "drop3_subheading": "For consistent daytime and/or nighttime bladder leaks.",
+        "drop3_yellow_button_link": "shopify://collections/briefs",
+        "drop3_yellow_button_label": "Shop Briefs",
+        "drop3_blue_button_link": "",
+        "drop3_blue_button_label": "",
+        "cta_block1_display": false,
+        "cta_block1_color": "#ffffff",
+        "cta_bgimage_1": "shopify://shop_images/clp-cta-1.jpg",
+        "cta_heading_1": "<p>19M Women and you</p>",
+        "cta_desc_1": "<p>Our medical team takes us through some of the basics on bladder leaks.</p>",
+        "cta_label_1": "Read More",
+        "cta_url_1": "shopify://blogs/blog/p-b-bladder-leakage-101-b-p-p-p",
+        "cta_block2_display": false,
+        "cta_block2_color": "#000000",
+        "cta_bgimage_2": "shopify://shop_images/clp-cta-v2.jpg",
+        "cta_heading_2": "<p>Feeling <br>non-committal?</p>",
+        "should_logo": true,
+        "cta_desc_2": "<p>Order a complementary starter kit of our most popular products, catered for your needs.</p>",
+        "cta_label_2": "Shop Starter Kits",
+        "cta_url_2": "shopify://collections/starter-kits",
+        "heading": "Recommended Reads",
+        "blog": "blog",
+        "post_number": 2,
+        "section_height": "medium",
+        "image": "shopify://shop_images/Like-minded-Partners.jpg",
+        "mobile_image": "shopify://shop_images/clp-overlay-mobile.jpg",
+        "text_justification": "left",
+        "text_content_position": "left",
+        "h2_heading": "",
+        "text": "<p>Made from plants, with Mother Nature and your comfort top of mind.</p>",
+        "text_color": "rgba(0,0,0,0)",
+        "button_link": "shopify://pages/ingredients",
+        "button_label": "Learn More",
+        "show_overlay": false,
+        "style": "accent",
+        "opacity": 50
+      }
+    }
+  }
+}

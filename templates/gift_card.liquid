@@ -1,4 +1,4 @@
-{% comment %}{% assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros: gift_card.currency %}
+{% assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros: gift_card.currency %}
 {% assign formatted_initial_value_stripped = formatted_initial_value | strip_html %}
 
 {% assign page_title = 'gift_cards.issued.title' | t: value: formatted_initial_value_stripped, shop: shop.name %}
@@ -93,4 +93,4 @@
     </footer>
   {% endif %}
 </div>
-{% endcomment %}
+

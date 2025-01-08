@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "glossary": {
+      "type": "glossary",
+      "settings": {
+        "page_title": "The Incontinence Glossary",
+        "page_description": "Explore the following terms to gain a deeper understanding of incontinence and treatment options that may be available. *",
+        "page_subtitle": "At Attn: Grace, we believe that knowledge is empowering.",
+        "page_subdescription": "Whether you're seeking information for yourself or a loved one, we're here to support you on your journey towards greater confidence and comfort. If you have any questions or need further assistance, our team is here to help.",
+        "footer_subtitle": "Disclaimer",
+        "footer_subdescription": "* This glossary is for informational purposes only, whether or not it features the advice of physicians and/or medical practitioners. This glossary is not, nor is it intended to be, a substitute for professional medical advice, diagnosis, or treatment and should never be relied upon for specific medical advice. Any views expressed in this article are the views of the experts cited herein and do not necessarily represent the views of Attn: Grace.",
+        "social_title": "Have more questions? Reach out to us by email, phone or text.",
+        "social_icon_1": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"></rect>\n<path d=\"M12.7497 13.1299H29.2497C29.7559 13.1299 30.1663 13.5403 30.1663 14.0465V28.7132C30.1663 29.2195 29.7559 29.6299 29.2497 29.6299H12.7497C12.2434 29.6299 11.833 29.2195 11.833 28.7132V14.0465C11.833 13.5403 12.2434 13.1299 12.7497 13.1299ZM28.333 17.0146L21.0655 23.5231L13.6663 16.9945V27.7965H28.333V17.0146ZM14.1352 14.9632L21.0564 21.07L27.8756 14.9632H14.1352Z\" fill=\"black\"></path>\n</svg>",
+        "social_text_1": "hello@attngrace.com",
+        "social_link_1": "",
+        "social_icon_2": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"></rect>\n<path d=\"M18.5851 20.1718C19.4435 21.6813 20.6986 22.9364 22.2081 23.7948L23.0189 22.6596C23.2885 22.2823 23.7973 22.1657 24.2043 22.388C25.4939 23.0925 26.919 23.5206 28.4057 23.6383C28.8824 23.676 29.25 24.0739 29.25 24.5521V28.643C29.25 29.113 28.8945 29.5068 28.427 29.5548C27.9413 29.6048 27.4512 29.6299 26.9583 29.6299C19.1113 29.6299 12.75 23.2686 12.75 15.4215C12.75 14.9286 12.7751 14.4386 12.8251 13.9528C12.8731 13.4853 13.2669 13.1299 13.7369 13.1299H17.8278C18.306 13.1299 18.7039 13.4975 18.7416 13.9742C18.8593 15.4609 19.2874 16.8861 19.9918 18.1756C20.2141 18.5826 20.0975 19.0915 19.7202 19.361L18.5851 20.1718ZM16.2739 19.5696L18.0155 18.3256C17.5217 17.2596 17.1833 16.1291 17.01 14.9632H14.5916C14.5861 15.1157 14.5833 15.2685 14.5833 15.4215C14.5833 22.256 20.1239 27.7965 26.9583 27.7965C27.1114 27.7965 27.2642 27.7938 27.4167 27.7882V25.3699C26.2509 25.1966 25.1203 24.8582 24.0542 24.3644L22.8102 26.106C22.307 25.9105 21.821 25.6804 21.3551 25.4188L21.3019 25.3885C19.5056 24.367 18.0129 22.8743 16.9914 21.078L16.9611 21.0248C16.6994 20.5589 16.4694 20.0729 16.2739 19.5696Z\" fill=\"black\"></path>\n</svg>",
+        "social_text_2": "+833 713 92 12",
+        "social_link_2": "",
+        "social_icon_3": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"></rect>\n<path d=\"M25.5833 12.2134V14.0467H28.3394C28.8423 14.0467 29.25 14.4546 29.25 14.9573V29.6361C29.25 30.139 28.8422 30.5467 28.3394 30.5467H13.6606C13.1577 30.5467 12.75 30.1389 12.75 29.6361V14.9573C12.75 14.4544 13.1579 14.0467 13.6606 14.0467H16.4167V12.2134H25.5833ZM16.4167 15.88H14.5833V28.7134H27.4167V15.88H25.5833V17.7134H16.4167V15.88ZM18.25 25.0467V26.88H16.4167V25.0467H18.25ZM18.25 22.2967V24.13H16.4167V22.2967H18.25ZM18.25 19.5467V21.38H16.4167V19.5467H18.25ZM23.75 14.0467H18.25V15.88H23.75V14.0467Z\" fill=\"black\"></path>\n</svg>",
+        "social_text_3": "Submit a request",
+        "social_link_3": "shopify://pages/contact-us"
+      }
+    }
+  },
+  "order": [
+    "glossary"
+  ]
+}

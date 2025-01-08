@@ -1,0 +1,65 @@
+{
+  "sections": {
+    "home-hero": {
+      "type": "home-hero",
+      "blocks": {
+        "02b9bc18-56da-47d8-9324-1a065a9d2a2a": {
+          "type": "slide",
+          "settings": {
+            "background_color": "#ebe2d8",
+            "background_image": "shopify://shop_images/our-story-hero-banner-desktop.jpg",
+            "mobile_background_image": "shopify://shop_images/our-story-hero-mobile_44798c5b-ae99-47cc-aba7-5913d412edd0.jpg",
+            "heading": "Our Story",
+            "subheading": "",
+            "short_description": "We’re leading incontinence care forward—innovating to protect women’s quality of life and the health of our planet.",
+            "button_link": "",
+            "button_label": "Slide link",
+            "button_link2": "",
+            "button_label2": "Slide link"
+          }
+        }
+      },
+      "block_order": [
+        "02b9bc18-56da-47d8-9324-1a065a9d2a2a"
+      ],
+      "settings": {}
+    },
+    "richtext": {
+      "type": "richtext",
+      "settings": {
+        "bg_color": "#dedc00",
+        "text": "<p>Attn: Grace is proudly a female-founded company, designing high-performing, skin-safe incontinence products that women can trust. As a Certified B Corp.™, we meet the highest verified standards of social and environmental performance, transparency and accountability.</p>"
+      }
+    },
+    "our-story-content": {
+      "type": "our-story-content",
+      "blocks": {
+        "ff82df76-3f9c-43b6-bfd8-c4b10b50bd3c": {
+          "type": "quote",
+          "settings": {
+            "quote": "“I knew my mom, and women everywhere, deserved better.”",
+            "paragraph": "<p>The idea behind Attn: Grace was born from a deeply personal place. </p><p>Mia, one of our Founders, had seen her mother, Eileen, struggling to find incontinence products that didn’t cause more problems than they solved. Eileen had tried dozens of brands, only to find that they were all bulky and uncomfortable and frequently caused painful skin irritation.</p><p>Mia knew there had to be a better way, and together with her Co-Founder and wife, Alex, set out to design the first-ever collection of skin-safe, sustainably designed incontinence products.</p><p>Attn: Grace uses powerful, plant-based materials to deliver unparalleled protection against bladder leaks without the painful skin irritation caused by the bleaches, dyes, fragrances and other chemicals typically used in conventional products. Our products are sustainably sourced, designed and packaged, featuring cutting-edge innovation, and are proudly manufactured in 100% Carbon Neutral Certified facilities.</p>"
+          }
+        },
+        "761600df-e5cd-4e52-b93e-85c17bbca8dc": {
+          "type": "quote",
+          "settings": {
+            "quote": "“When we solve for bladder leaks, what we’re talking about is a woman’s quality of life.”",
+            "paragraph": "<p>We’re setting a new standard of care for a health condition that impacts over 19M women in the U.S. alone. Since we launched in 2020, we’ve witnessed the profound impact switching to our products can have on a woman’s quality of life. Women consistently report that skin irritation has disappeared, they’re getting fewer, if any, UTIs, and that our products enable them to get back to doing the things they love. </p><p>Because of bladder leaks, 56% of women are avoiding social events, 27% of us are getting less sleep, and a heartbreaking 50% of women are worried about laughing in public. Not to mention that 68% of women have never mentioned their leaks to their doctor.</p><p>These numbers matter because we matter. This is not an uncommon experience, but for ages, this condition has been shrouded in shame, silence and stigma.</p><p>We believe that radical empathy is crucial to finally putting women’s wellness first and innovating for women’s specific incontinence needs. We’re proud to be leading the category forward in this way.</p><p>Attn: Grace is deeply committed to meeting you wherever you are on your wellness journey.</p><p>Visit our <a href=\"/pages/resource-library\" title=\"Resource Library\"><strong>Resource Library</strong></a> to learn more about incontinence, what treatments exist, and to find a specialist near you.</p><p>Visit our <a href=\"/collections/shop-all\" title=\"Shop All\"><strong>Shop All</strong></a> page to discover our game-changing incontinence products, or visit our <a href=\"/pages/store-locator\" title=\"Store Locator\"><strong>Store Locator</strong></a> page to find a retail location nearest you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ff82df76-3f9c-43b6-bfd8-c4b10b50bd3c",
+        "761600df-e5cd-4e52-b93e-85c17bbca8dc"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "home-hero",
+    "richtext",
+    "our-story-content"
+  ]
+}
+

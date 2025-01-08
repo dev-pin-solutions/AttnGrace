@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "page-find-specialist": {
+      "type": "page-find-specialist",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "page-find-specialist"
+  ]
+}
+

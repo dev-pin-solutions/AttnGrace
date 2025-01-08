@@ -1,4 +1,4 @@
-{% comment %}{% render 'shogun-products', content: product %}
+{% render 'shogun-products', content: product %}
 {% if product.tags contains "starter kit" or product.tags contains "sample-pack" %}
 <script>
 window.location.href = "/collections/starter-kits";
@@ -64,4 +64,4 @@ setting. That element is given the property "data-product-recommendations-contai
 	});
 </script>
 {{ product.metafields.shogun.optimizer }}
-{% endcomment %}
+

@@ -1,0 +1,458 @@
+{
+  "sections": {
+      "qr-code-video": {
+        "type": "qr-code-video",
+        "settings": {
+          "video_url": "https://youtu.be/2cO94Q8x8IA",
+          "text-position": "bottom",
+          "title": "Attn: Grace outperforms other brands in all the ways that matter most."
+        }
+      },
+      "testimonials": {
+        "type": "testimonials",
+        "blocks": {
+          "1f80f231-31f5-44ee-8060-9d2ea1cf043d": {
+            "type": "text",
+            "settings": {
+              "testimonial": "Loved the moderate pads, no more discomfort like other brands",
+              "author-name": "Linda R.",
+              "rating_star": "5"
+            }
+          },
+          "aa91f968-4b21-4e82-b691-f3167ade9878": {
+            "type": "text",
+            "settings": {
+              "testimonial": "So much more comfortable and absorbent than any other products I’ve tried. I have been telling my friends about them.",
+              "author-name": "Ann P.",
+              "rating_star": "5"
+            }
+          },
+          "6efcd36a-3901-4514-b390-9a7d344b1ef8": {
+            "type": "text",
+            "settings": {
+              "testimonial": "I was blown away. I found them comfortable, absorbent and NOT itchy. Love them.",
+              "author-name": "Katherine V.",
+              "rating_star": "5"
+            }
+          },
+          "60e63ab9-8b48-46c9-911d-a9fccb2b67e9": {
+            "type": "text",
+            "settings": {
+              "testimonial": "I love them! Soft and comfortable but do the job! Ladies, trust me...I am 70 years old and these pads and wipes are FAABUULOUS!!!!",
+              "author-name": "Julanye",
+              "rating_star": "5"
+            }
+          }
+        },
+        "block_order": [
+          "1f80f231-31f5-44ee-8060-9d2ea1cf043d",
+          "aa91f968-4b21-4e82-b691-f3167ade9878",
+          "6efcd36a-3901-4514-b390-9a7d344b1ef8",
+          "60e63ab9-8b48-46c9-911d-a9fccb2b67e9"
+        ],
+        "settings": {
+          "heading": "What our customers are saying:",
+          "sbg-color": "#f2ebe7"
+        }
+      },
+      "home-text-slider": {
+        "type": "home-text-slider",
+        "blocks": {
+          "80ebf890-c1f8-4a8e-b336-97c7f0811f96": {
+            "type": "text",
+            "settings": {
+              "text": "NO CHLORINE"
+            }
+          },
+          "807743fe-bffc-444c-a37e-d639b89be6ac": {
+            "type": "text",
+            "settings": {
+              "text": "NO DYES"
+            }
+          },
+          "141cef09-f2f6-455b-9c50-1638703a4619": {
+            "type": "text",
+            "settings": {
+              "text": "NO FRAGRANCES"
+            }
+          },
+          "7764a5cb-894e-408f-a1d0-e91b8840d9fa": {
+            "type": "text",
+            "settings": {
+              "text": "NO LATEX"
+            }
+          }
+        },
+        "block_order": [
+          "80ebf890-c1f8-4a8e-b336-97c7f0811f96",
+          "807743fe-bffc-444c-a37e-d639b89be6ac",
+          "141cef09-f2f6-455b-9c50-1638703a4619",
+          "7764a5cb-894e-408f-a1d0-e91b8840d9fa"
+        ],
+        "settings": {
+          "background": "#dedc00",
+          "text_color": "#000000"
+        }
+      },
+      "skin-safe-promise": {
+        "type": "skin-safe-promise",
+        "blocks": {
+          "fe994f5f-ab9e-4576-a169-bfc7049fa411": {
+            "type": "image-text-column",
+            "settings": {
+              "image": "shopify://shop_images/230301_Attn_Grace_Darlene_2527.jpg",
+              "text": "We’ll never expose your skin to toxic chemicals."
+            }
+          },
+          "2af64100-c023-4cee-8cf5-e88c2827854e": {
+            "type": "image-text-column",
+            "settings": {
+              "image": "shopify://shop_images/230301_Attn_Grace_GROUP_Studio_2117.jpg",
+              "text": "We’ll always be transparent about our ingredients, sourcing and manufacturing."
+            }
+          },
+          "1fe3fe8b-23c7-46a6-9880-a3d8643d5ba2": {
+            "type": "image-text-column",
+            "settings": {
+              "image": "shopify://shop_images/230301_Attn_Grace_Heavy_Pads_0818.jpg",
+              "text": "We’ll always choose plant-based, renewable ingredients that are naturally better."
+            }
+          },
+          "3a1c0884-cbfb-4d83-bae0-019d28385ec6": {
+            "type": "image-with-text",
+            "settings": {
+              "title": "CROSS SECTION OF OUR SIGNATURE TOP SHEET FIBER",
+              "image": "shopify://shop_images/CrossSectionAllTogether.png",
+              "mobile_image": "shopify://shop_images/CrossSectionAllTogether_NoLines.png",
+              "text": "<p>100% SUGARCANE-BASED GREEN PE FOR GAME-CHANGING COMFORT</p><p>POLYPROPYLENE CORE FOR<br/>POWERFUL ABSORPTION</p><p>FREE OF CHLORINE, DYES,<br/>FRAGRANCES, LOTIONS AND LATEX</p>"
+            }
+          }
+        },
+        "block_order": [
+          "fe994f5f-ab9e-4576-a169-bfc7049fa411",
+          "2af64100-c023-4cee-8cf5-e88c2827854e",
+          "1fe3fe8b-23c7-46a6-9880-a3d8643d5ba2",
+          "3a1c0884-cbfb-4d83-bae0-019d28385ec6"
+        ],
+        "settings": {
+          "title": "The only incontinence brand backed by a <strong>Skin-Safe Promise™.</strong>",
+          "text": "<p>Our products incorporate the cleanest, most sustainable materials possible without <span style=\"text-decoration:underline\">ever</span> compromising on performance.</p>",
+          "itc-title": "WHAT THAT MEANS FOR YOU"
+        }
+      },
+      "attn-grace-difference": {
+        "type": "attn-grace-difference",
+        "blocks": {
+          "3ffaaefb-755d-47ba-a3a8-2d45b8c6a5aa": {
+            "type": "grace-difference-header",
+            "settings": {
+              "grace_title": "Attn : Grace",
+              "grace_image": "shopify://shop_images/AG_WhiteIcon.png",
+              "other_title": "Other Brands"
+            }
+          },
+          "ecf2324f-10ef-4642-9352-66d379924a1d": {
+            "type": "grace-difference-content",
+            "settings": {
+              "question": "SUPER ABSORBENT CORE",
+              "attn_answer": "yes",
+              "other_answer": "yes"
+            }
+          },
+          "053ad81c-76fd-4da6-86c4-eb116f45e477": {
+            "type": "grace-difference-content",
+            "settings": {
+              "question": "SKIN-SAFE, PLANT-BASED TOP SHEET ENGINEERED FOR OPTIMUM PERFORMANCE",
+              "attn_answer": "yes",
+              "other_answer": "no"
+            }
+          },
+          "5b2dff4c-c38a-44f7-a5c4-b0927fb4a425": {
+            "type": "grace-difference-content",
+            "settings": {
+              "question": "DERMATEST® APPROVED",
+              "attn_answer": "yes",
+              "other_answer": "no"
+            }
+          },
+          "49e83d71-45bd-4e93-b57f-f904b2abd8c1": {
+            "type": "grace-difference-content",
+            "settings": {
+              "question": "SUSTAINABLY SOURCED, DESIGNED, & PACKAGED",
+              "attn_answer": "yes",
+              "other_answer": "no"
+            }
+          },
+          "db47f342-2ef2-4a2b-925c-ebef2fd99b35": {
+            "type": "grace-difference-content",
+            "settings": {
+              "question": "MANUFACTURED IN 100% CARBON NEUTRAL FACTORIES",
+              "attn_answer": "yes",
+              "other_answer": "no"
+            }
+          },
+          "63adb403-6055-43e1-892c-2b8ad7f612a9": {
+            "type": "grace-difference-content",
+            "settings": {
+              "question": "MADE FOR WOMEN, BY WOMEN",
+              "attn_answer": "yes",
+              "other_answer": "no"
+            }
+          },
+          "cb49b8ba-047f-4fd0-9ea0-bc96c4fa7557": {
+            "type": "grace-difference-content",
+            "settings": {
+              "question": "",
+              "question_image": "shopify://shop_images/CertifiedBCorp.png",
+              "attn_answer": "yes",
+              "other_answer": "no"
+            }
+          }
+        },
+        "block_order": [
+          "3ffaaefb-755d-47ba-a3a8-2d45b8c6a5aa",
+          "ecf2324f-10ef-4642-9352-66d379924a1d",
+          "053ad81c-76fd-4da6-86c4-eb116f45e477",
+          "5b2dff4c-c38a-44f7-a5c4-b0927fb4a425",
+          "49e83d71-45bd-4e93-b57f-f904b2abd8c1",
+          "db47f342-2ef2-4a2b-925c-ebef2fd99b35",
+          "63adb403-6055-43e1-892c-2b8ad7f612a9",
+          "cb49b8ba-047f-4fd0-9ea0-bc96c4fa7557"
+        ],
+        "settings": {
+          "title": "The Attn: Grace Difference",
+          "subtext": "<p>We’re proud to be defining <strong>the gold standard</strong> in incontinence care.</p>"
+        }
+      },
+      "qr-as-seen-in": {
+        "type": "qr-as-seen-in",
+        "blocks": {
+          "61b8f82a-6b33-4b38-9aa1-8349aa20f050": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify://shop_images/Unknown.png"
+            }
+          },
+          "95afcb8f-e417-4ee1-b891-7b2da8e057a1": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify://shop_images/Parents-Logo.png"
+            }
+          },
+          "edd00d29-0798-4175-95e4-52dc64cf74a7": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify://shop_images/Glamourlogo.svg"
+            }
+          },
+          "59f85757-a8b9-4ee0-a78c-96ec819b3f4e": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify://shop_images/Gooponlinelogo.png"
+            }
+          },
+          "ea27e9bc-797e-4616-8875-97ae21c221e3": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify://shop_images/Forbes-logo_a52b9ccb-6046-4249-83aa-55e2ddb93398.png"
+            }
+          },
+          "781f7872-8886-4e74-8414-994affc33b0a": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify://shop_images/buzzfeed-logo-black-and-white.png"
+            }
+          }
+        },
+        "block_order": [
+          "61b8f82a-6b33-4b38-9aa1-8349aa20f050",
+          "95afcb8f-e417-4ee1-b891-7b2da8e057a1",
+          "edd00d29-0798-4175-95e4-52dc64cf74a7",
+          "59f85757-a8b9-4ee0-a78c-96ec819b3f4e",
+          "ea27e9bc-797e-4616-8875-97ae21c221e3",
+          "781f7872-8886-4e74-8414-994affc33b0a"
+        ],
+        "settings": {
+          "title": "AS SEEN IN"
+        }
+      },
+      "icon-gallery": {
+        "type": "icon-gallery",
+        "blocks": {
+          "57635243-ca1e-4410-ac4c-c94cc6d4720f": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify://shop_images/Women_Graphic-01.png"
+            }
+          },
+          "9f430749-2fde-4ded-8ad8-c201a74be960": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify://shop_images/Women_Graphic-02.png"
+            }
+          },
+          "f03971a2-ef79-44bc-b693-da57500dd6c7": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify://shop_images/Women_Graphic-03.png"
+            }
+          },
+          "e4388670-ddc8-4ea6-9c00-03a1c83e6daa": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify://shop_images/Women_Graphic-04.png"
+            }
+          },
+          "b097204d-6c31-4fdd-b58f-076cb2cba5b6": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify://shop_images/Women_Graphic-05.png"
+            }
+          },
+          "6b880fa0-be3f-4b39-97bd-e8313783157b": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify://shop_images/Women_Graphic-06.png"
+            }
+          },
+          "4376cf75-586e-4604-ab1d-157e962d1752": {
+            "type": "percentage-chart",
+            "settings": {
+              "text": "FEMALE ATHELETES",
+              "select_percentage": 45
+            }
+          },
+          "5fbd472d-fcd5-483a-b5a7-2de8e50f6736": {
+            "type": "percentage-chart",
+            "settings": {
+              "text": "WOMEN WITH DIABETES",
+              "select_percentage": 40
+            }
+          },
+          "6285b912-678a-46b5-bc70-46b786f5b7be": {
+            "type": "percentage-chart",
+            "settings": {
+              "text": "WOMEN IN MENOPAUSE",
+              "select_percentage": 43
+            }
+          },
+          "6bc6513b-71cf-4df3-9d21-8ea3083eb850": {
+            "type": "percentage-chart",
+            "settings": {
+              "text": "PREGNANT WOMEN",
+              "select_percentage": 51
+            }
+          },
+          "3fd7bf51-f7b6-475e-b0d0-20a98b939ccb": {
+            "type": "percentage-chart",
+            "settings": {
+              "text": "WOMEN WHO UNDERGO GYNECOLOGIC CANCER TREATMENT",
+              "select_percentage": 52
+            }
+          },
+          "f855b771-d480-4ab7-8623-8bde1382f7fa": {
+            "type": "percentage-chart",
+            "settings": {
+              "text": "WOMEN OVER 65",
+              "select_percentage": 75
+            }
+          },
+          "7e24baf8-69e4-4a95-a355-b8b72bfdffac": {
+            "type": "percentage-chart",
+            "settings": {
+              "text": "WOMEN WITH MULTIPLE SCLEROSIS",
+              "select_percentage": 80
+            }
+          }
+        },
+        "block_order": [
+          "57635243-ca1e-4410-ac4c-c94cc6d4720f",
+          "9f430749-2fde-4ded-8ad8-c201a74be960",
+          "f03971a2-ef79-44bc-b693-da57500dd6c7",
+          "e4388670-ddc8-4ea6-9c00-03a1c83e6daa",
+          "b097204d-6c31-4fdd-b58f-076cb2cba5b6",
+          "6b880fa0-be3f-4b39-97bd-e8313783157b",
+          "4376cf75-586e-4604-ab1d-157e962d1752",
+          "5fbd472d-fcd5-483a-b5a7-2de8e50f6736",
+          "6285b912-678a-46b5-bc70-46b786f5b7be",
+          "6bc6513b-71cf-4df3-9d21-8ea3083eb850",
+          "3fd7bf51-f7b6-475e-b0d0-20a98b939ccb",
+          "f855b771-d480-4ab7-8623-8bde1382f7fa",
+          "7e24baf8-69e4-4a95-a355-b8b72bfdffac"
+        ],
+        "settings": {
+          "title": "<strong>What if we told you that you weren’t alone? </strong><br>50% of adult women leak a little pee (and sometimes a lot).",
+          "subtext": "…Approximately 19 million others, that is.",
+          "per_title": "and So. Many. Others."
+        }
+      },
+      "these-numbers-matter": {
+        "type": "these-numbers-matter",
+        "blocks": {
+          "16b40cfb-5250-4974-99c6-730b4d47ada2": {
+            "type": "text-column",
+            "settings": {
+              "percent_text": "56%",
+              "text1": "<p>OF US AVOIDING SOCIAL EVENTS BECAUSE OF BLADDER LEAKS</p>",
+              "text2": "<p>WE WANT YOU TO RSVP “YES” AND GET OUT THERE.</p>"
+            }
+          },
+          "800c9ff7-a2a6-490c-ac11-f87266e3866e": {
+            "type": "text-column",
+            "settings": {
+              "percent_text": "50%",
+              "text1": "<p>OF US WORRIED ABOUT LAUGHING IN PUBLIC</p>",
+              "text2": "<p>WE WANT YOU TO BE UNAPOLOGETICALLY LAUGHING OUT LOUD.</p>"
+            }
+          },
+          "becbdc49-fb93-4131-9cdc-6343b6cb795c": {
+            "type": "text-column",
+            "settings": {
+              "percent_text": "27%",
+              "text1": "<p>OF US GETTING LESS SLEEP</p>",
+              "text2": "<p>WE WANT YOU TO WAKE UP REFRESHED AND IN DRY SHEETS.</p>"
+            }
+          },
+          "4abc892d-e8d6-4adc-9c76-1776eb41a1b8": {
+            "type": "text-column",
+            "settings": {
+              "percent_text": "68%",
+              "text1": "<p>THAT HAVE NEVER MENTIONED YOUR LEAKS TO YOUR DOCTOR</p>",
+              "text2": "<p>WE WANT YOU TO FEEL EMBOLDENED TO ASK ABOUT WHAT TREATMENT MIGHT BE BEST FOR YOU.</p>"
+            }
+          }
+        },
+        "block_order": [
+          "16b40cfb-5250-4974-99c6-730b4d47ada2",
+          "800c9ff7-a2a6-490c-ac11-f87266e3866e",
+          "becbdc49-fb93-4131-9cdc-6343b6cb795c",
+          "4abc892d-e8d6-4adc-9c76-1776eb41a1b8"
+        ],
+        "settings": {
+          "title": "These numbers matter because you matter.",
+          "cimage": "shopify://shop_images/MiaAlex_transparent_3c9e1a4c-c770-4d55-a56d-d892a18b2727.png",
+          "btext": "“You have our attention, and always will.”",
+          "simage": "shopify://shop_images/Unknown-1.png"
+        }
+      },
+      "qr-richtext": {
+        "type": "qr-richtext",
+        "settings": {
+          "title": "DID YOU KNOW THAT<br> <strong>URINARY INCONTINENCE IS TREATABLE?</strong>",
+          "subtext": "<p>We want you to live life fully. Check out our <a href='/pages/resource-library'>Resource Library</a> where you can explore potential treatment options and find providers in your area who may be able to help.</p>"
+        }
+      }
+  },
+  "order": [
+    "qr-code-video",
+    "testimonials",
+    "home-text-slider",
+    "skin-safe-promise",
+    "attn-grace-difference",
+    "qr-as-seen-in",
+    "icon-gallery",
+    "these-numbers-matter",
+    "qr-richtext"
+  ]
+}
+

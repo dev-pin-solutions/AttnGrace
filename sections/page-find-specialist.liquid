@@ -1,8 +1,7 @@
-{% comment %}{% render 'shogun-products', content: page %}
+{% render 'shogun-products', content: page %}
 <div class="page-content page-full-width page-find-specialist">
-  <h1 class="page-title">{{ page.title }}</h1>
-  <div id="storepoint-container" data-map-id="160118b70bb8b7"></div>
+    <h1 class="page-title">{{ page.title }}</h1>
+    <div id="storepoint-container" data-map-id="160118b70bb8b7"></div>
 </div>
 <script>(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://cdn.storepoint.co/api/v1/js/160118b70bb8b7.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);}());</script>
 {{ page.metafields.shogun.optimizer }}
-{% endcomment %}
