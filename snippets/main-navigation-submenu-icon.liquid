@@ -1,0 +1,102 @@
+{% comment %}
+@param menu LinkedList
+@param depth Number
+@param is_submenu Boolean
+
+@param aria_expanded Bool
+a11y helper
+
+@param sub_menu_title String
+Menu title must be passed if is submenu
+{% endcomment %}
+
+{% assign menu_title = false %}
+{% if is_submenu %}
+  {% assign menu_title = sub_menu_title %}
+{% else %}
+  {% assign menu_title = linklists[menu].title %}
+{% endif %}
+
+{% if linklists[menu] %}
+    <div class="custom_menu_with_bundle">
+        <ul class="navigation-menu navigation-primary-list parentmenu_{{ menu_title | handleize }}" {% if menu_title %}aria-label="{{ menu_title }}"{% endif %}>
+            {% for link in linklists[menu].links %}
+                {%- assign outerLoopIndex = forloop.index -%}
+                {% assign submenu = link.title | handle %}
+                {% assign d = depth | minus: 1 %}
+                {% if d > 0 and link and link.links.size > 0 %}
+                    <li class="navigation-primary-item navigation-parent-item menuitem_{{ forloop.index }}">
+                        {% if forloop.index == 1 %}
+                            <a
+                                    class="navigation-parent-link"
+                                    href="{{ link.url }}"
+                            {% if aria_expanded %}
+                                aria-expanded="true"
+                            {% else %}
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                    {% endif %}>{{ link.title }}</a>
+
+                            {%
+                                    include 'main-navigation-shop-submenu',
+                                    menu: submenu,
+                                    depth: d,
+                                    sub_menu_title: link.title,
+                                    aria_expanded: aria_expanded %}
+                        {% else %}
+                            <a
+                                    class="navigation-parent-link"
+                                    href="{{ link.url }}"
+                            {% if aria_expanded %}
+                                aria-expanded="true"
+                            {% else %}
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                    {% endif %}>{{ link.title }}</a>
+                            {%
+                                    include 'main-navigation-submenu',
+                                    menu: submenu,
+                                    depth: d,
+                                    sub_menu_title: link.title,
+                                    aria_expanded: aria_expanded %}
+                        {% endif %}
+                    </li>
+                {% else %}
+                    {% unless link.title == 'Deodorant' %}
+                        <li class="navigation-primary-item menuitem_{{ forloop.index }}">
+                            <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113.png?v=1736891343" alt="">
+                            <a href="{{ link.url }}" class="{% if link.title contains 'Find Your Fit' %}find-your-fit-link {% endif %}">{{ link.title }}</a>
+                        </li>
+                    {% endunless %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <div class="bundles-wrap">
+            <h2>Popular Bundles</h2>
+            <div class="bundles-container">
+
+                <div class="bundle-card" data-bundle="bundle1">
+                    <div class="bundle-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Untitled_design_-_2024-11-29T000353.382_1.png?v=1736919258" alt="Bundle 1">
+                    </div>
+                    <div class="bundle-title">Ultimate 24/7 Care</div>
+                    <div class="bundle-description">Ultimate Pads, All Natural Barrier Cream, Daily Renew Body Oil</div>
+                    <div class="bundle-price">$56.00</div>
+                    <button class="bundle-button" data-products="product1,product2,product3">ADD BUNDLE TO CART</button>
+                </div>
+
+                <div class="bundle-card" data-bundle="bundle2">
+                    <div class="bundle-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Untitled_design_-_2024-11-29T000651.534_1.png?v=1736919287" alt="Bundle 2">
+                    </div>
+                    <div class="bundle-title">Night’n’Day Hassle Free</div>
+                    <div class="bundle-description">Ultimate Pads, All Natural Barrier Cream, Heavy Plus Pads</div>
+                    <div class="bundle-price">$46.50</div>
+                    <button class="bundle-button" data-products="product4,product5,product6">ADD BUNDLE TO CART</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endif %}
+

@@ -124,3 +124,355 @@ image_layout: section.settings.image_layout,
     ]
   }
 {% endschema %}
+<style>
+    .product-image-carousel {
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+
+    .product-image-carousel img {
+        width: 300px;
+        height: auto;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        background: transparent;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        border-radius: 50%;
+    }
+
+    .carousel-prev {
+        left: 10px;
+    }
+
+    .carousel-next {
+        right: 10px;
+    }
+
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+
+    .carousel-dots .dot {
+        width: 10px;
+        height: 10px;
+        padding: 3px;
+        border: 1px solid #4F4F4F;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .carousel-dots .dot.active {
+        background-color: #4F4F4F;
+    }
+
+    .carousel-hidden {
+        display: none;
+    }
+    @media (max-width: 500px) {
+        .product-image-carousel img {
+            width: 150px;
+            height: auto;
+        }
+        .carousel-dots {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+    }
+    /*.recommended-product-desc {*/
+    /*    justify-content: flex-start;*/
+    /*}*/
+    .accordion_heading {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        padding: 30px;
+        align-items: center;
+    }
+    .popup-title {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 25px;
+        font-family: BentonMod, serif;
+        margin-bottom: 0;
+    }
+    .widget_wrapper_fit {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .open-popup {
+        background: none;
+        border: none;
+        text-decoration: none;
+        text-transform: none;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .open-popup svg {
+        margin-top: 5px;
+    }
+    .open-popup span {
+        margin-top: 5px;
+    }
+    .popup-modal {
+        position: fixed;
+        top: 0;
+        right: -440px;
+        width: 440px;
+        height: 100%;
+        background: white;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .popup-modal.visible {
+        right: 0;
+    }
+
+    .popup-content {
+        padding: 20px;
+    }
+    .popup-content h2 {
+        font-size: 22px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-top: 20px !important;
+    }
+
+    .close-popup {
+        background: lightgray;
+        border: none;
+        color: gray;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+    }
+    .accordion {
+        border-top: 1px solid #ccc;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .accordion-item {
+        border-bottom: 1px solid #ccc;
+        padding-left: 0;
+    }
+    .accordion-content > img {
+        width: 90px;
+        position: relative;
+    }
+
+    .accordion-item button {
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: left;
+        padding: 10px 10px 10px 0;
+        font-size: 22px;
+        font-weight: 400;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .accordion-item button:after {
+        content: '+';
+        float: right;
+        font-size: 48px !important;
+        font-weight: 300 !important;
+    }
+
+    .accordion-item button.active:after {
+        content: '-';
+        font-size: 48px !important;
+        font-weight: 300 !important;
+    }
+
+    .accordion-content {
+        display: none;
+        padding: 0 10px 10px 0;
+        font-size: 14px;
+        margin-top: -30px
+    }
+    .accordion-content a {
+        width: 300px;
+        height: 45px;
+        background: black;
+        color: white;
+        font-size: 22px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        align-items: center;
+        border-radius: 25px;
+        cursor: pointer;
+        margin: 0 auto;
+    }
+    .popup_last_btn {
+        width: 300px;
+        height: 45px;
+        background: black;
+        color: white;
+        font-size: 22px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        align-items: center;
+        border-radius: 25px;
+        cursor: pointer;
+        margin: 0 auto;
+    }
+
+    .accordion-content.visible {
+        display: block;
+    }
+    .accordion_with_img_block {
+        display: flex;
+        gap: 20px;
+        height: 55px;
+        align-items: center;
+    }
+    .accordion_with_img_block img {
+        width: 40px;
+        height: 40px;
+
+    }
+    .accordion_with_img_block p {
+        width: 220px;
+        padding-right: 30px;
+    }
+
+    @media (max-width: 450px) {
+        .popup-modal {
+            right: -390px;
+            width: 390px;
+        }
+        .widget_wrapper_fit {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .open-popup {
+            padding-left: 0;
+        }
+
+    }
+
+</style>
+
+<script>
+    document.querySelectorAll('.product-list-item-thumbnail').forEach((carouselWrapper) => {
+        const carouselImage = carouselWrapper.querySelector('.product-image-carousel img'); // Главное изображение
+        const media = Array.from(carouselWrapper.querySelectorAll('.carousel-slide img')); // Все изображения
+        const dots = carouselWrapper.querySelectorAll('.carousel-dots .dot');
+        const prevButton = carouselWrapper.querySelector('.carousel-prev');
+        const nextButton = carouselWrapper.querySelector('.carousel-next');
+        let currentIndex = 0;
+
+        const updateCarousel = () => {
+            carouselImage.src = media[currentIndex].src;
+            carouselImage.alt = media[currentIndex].alt;
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        };
+
+        updateCarousel();
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : media.length - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < media.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+        });
+    });
+
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const popupModals = document.querySelectorAll('.popup-modal');
+
+        document.querySelectorAll('.open-popup').forEach((button) => {
+            console.log(document.querySelector('.header-mobile'));
+
+            button.addEventListener('click', () => {
+                document.querySelector('.header-mobile').style.display = 'none';
+                const popupId = button.getAttribute('data-popup');
+                popupModals.forEach((popup) => {
+                    popup.classList.remove('visible');
+                });
+                const targetPopup = document.querySelector(`#${popupId}`);
+                if (targetPopup) {
+                    targetPopup.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.close-popup').forEach((closeButton) => {
+            closeButton.addEventListener('click', () => {
+                document.querySelector('.header-mobile').style.display = 'block';
+                closeButton.closest('.popup-modal').classList.remove('visible');
+            });
+        });
+
+        document.querySelectorAll('.accordion-item button').forEach((accordionButton) => {
+            accordionButton.addEventListener('click', () => {
+                const content = accordionButton.nextElementSibling;
+                const isVisible = content.classList.contains('visible');
+
+                const accordion = accordionButton.closest('.accordion');
+                accordion.querySelectorAll('.accordion-content').forEach((item) => {
+                    item.classList.remove('visible');
+                });
+                accordion.querySelectorAll('button').forEach((button) => {
+                    button.classList.remove('active');
+                });
+
+                if (!isVisible) {
+                    content.classList.add('visible');
+                    accordionButton.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+
+</script>
