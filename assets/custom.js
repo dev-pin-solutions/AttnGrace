@@ -678,8 +678,73 @@ document.addEventListener('DOMContentLoaded', function() {
 // });
 
 
+// document.querySelector('.cart-full').addEventListener('click', async () => {
+//
+//   const cartData = await getCartData();
+//   console.log('sdfsdfsdfsdfsdfsdfdsfd', cartData);
+//   // Находим блок upsells
+//   const upsells = document.querySelector('.upsells');
+//   if (!upsells) {
+//     console.error('Блок .upsells не найден!');
+//     return;
+//   }
+//
+//   // Очищаем предыдущие кастомные блоки
+//   upsells.querySelectorAll('.custom-red-block').forEach(block => block.remove());
+//
+//   // Проверяем каждый продукт в корзине
+//   cartData.items.forEach(product => {
+//     // Проверяем наличие метафилда
+//     if (product.metafields?.custom?.slider_products) {
+//       const sliderProducts = product.metafields.custom.slider_products;
+//
+//       // Если метафилд не пустой, берем первый объект
+//       if (Array.isArray(sliderProducts) && sliderProducts.length > 0) {
+//         const sliderProduct = sliderProducts[0];
+//
+//         // Создаем новый кастомный блок
+//         const customBlock = document.createElement('div');
+//         customBlock.classList.add('custom-red-block');
+//         customBlock.style.backgroundColor = 'red';
+//         customBlock.style.color = 'white';
+//         customBlock.style.padding = '15px';
+//         customBlock.style.marginBottom = '10px';
+//         customBlock.style.textAlign = 'center';
+//         customBlock.style.borderRadius = '5px';
+//
+//         // Наполняем блок данными из метафилда
+//         customBlock.innerHTML = `
+//                     <h3>${sliderProduct.title || 'Unknown Product'}</h3>
+//                     <p>${sliderProduct.description || 'No description available'}</p>
+//                     <img src="${sliderProduct.image || ''}" alt="${sliderProduct.title || 'Image'}" style="width: 100%; max-width: 200px; height: auto;">
+//                 `;
+//
+//         // Добавляем блок в начало upsells
+//         upsells.insertBefore(customBlock, upsells.firstChild);
+//       }
+//     }
+//   });
+// });
 
 
 
 
-
+async function getCartData() {
+  try {
+    const response = await fetch('/cart.js', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (response.ok) {
+      return await response.json();
+    } else {
+      console.error('Ошибка получения данных корзины');
+      return { items: [] };
+    }
+  } catch (error) {
+    console.error('Ошибка:', error);
+    return { items: [] };
+  }
+}

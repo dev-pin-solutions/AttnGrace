@@ -66,32 +66,50 @@ Menu title must be passed if is submenu
         button.addEventListener('click', () => {
             const products = button.getAttribute('data-products').split(',');
 
-            products.forEach((productId) => {
-                fetch('/cart/add.js', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        id: productId,
-                        quantity: 1
-                    })
+            const cartItems = products.map((productId) => ({
+                id: productId,
+                quantity: 1
+            }));
+
+            fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    items: cartItems,
+                }),
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Failed to add products to cart');
+                    }
+                    return response.json();
                 })
-                    .then((response) => {
-                        if (!response.ok) {
-                            throw new Error('Failed to add product to cart');
-                        }
-                        return response.json();
-                    })
-                    .then((data) => {
-                        console.log('Product added:', data);
-                    })
-                    .catch((error) => {
-                        console.error('Error adding product to cart:', error);
-                    });
-            });
+                .then(() => {
+                    console.log('Products added to cart');
+                    // Добавляем параметр в URL
+                    window.location.href = window.location.href.split('?')[0] + '?open_cart=true';
+                })
+                .catch((error) => {
+                    console.error('Error adding products to cart:', error);
+                });
         });
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('open_cart') === 'true') {
+            setTimeout(() => {
+               document.querySelector('.main-sidebar-tool-item-cart.cart-full a').click();
+            }, 1000);
+
+            const newUrl = window.location.href.split('?')[0];
+            window.history.replaceState(null, '', newUrl);
+        }
+    });
+
+
 </script>
 <style>
     .custom_menu_with_bundle {

@@ -2,16 +2,16 @@
 {%- layout none -%}
 {
 	"items": [
-		
-      
 
 
-      
-      
 
 
-      
-      
+
+
+
+
+
+
 {% # comment - Start Recharge bundle %}
 {%- assign rc_displayed_bundles = '' -%}
 {%- assign rc_bundles = '' -%}
@@ -26,8 +26,8 @@
 {% # comment - End Recharge bundle %}
 
       {%- for item in cart.items -%}
-      
-{% # comment - Start Recharge bundle %}          
+
+{% # comment - Start Recharge bundle %}
 {%- if rc_bundles contains item.properties._rc_bundle -%}
   {% render 'cart-recharge-bundle-product' with { item: item, rc_displayed_bundles: rc_displayed_bundles, template: 'default' } %}
   {%- assign rc_displayed_bundles = rc_displayed_bundles | append: ',' | append: item.properties._rc_bundle -%}
@@ -35,15 +35,15 @@
 {%- endif -%}
 {% # comment - End Recharge bundle %}
 
-    
-      
 
 
-    
-      
 
 
-    
+
+
+
+
+
 		{
 		"id": {{ item.id | json }},
 		"collectionIds": [
