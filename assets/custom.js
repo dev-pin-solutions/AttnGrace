@@ -678,53 +678,79 @@ document.addEventListener('DOMContentLoaded', function() {
 // });
 
 
-// document.querySelector('.cart-full').addEventListener('click', async () => {
-//
-//   const cartData = await getCartData();
-//   console.log('sdfsdfsdfsdfsdfsdfdsfd', cartData);
-//   // Находим блок upsells
-//   const upsells = document.querySelector('.upsells');
-//   if (!upsells) {
-//     console.error('Блок .upsells не найден!');
-//     return;
-//   }
-//
-//   // Очищаем предыдущие кастомные блоки
-//   upsells.querySelectorAll('.custom-red-block').forEach(block => block.remove());
-//
-//   // Проверяем каждый продукт в корзине
-//   cartData.items.forEach(product => {
-//     // Проверяем наличие метафилда
-//     if (product.metafields?.custom?.slider_products) {
-//       const sliderProducts = product.metafields.custom.slider_products;
-//
-//       // Если метафилд не пустой, берем первый объект
-//       if (Array.isArray(sliderProducts) && sliderProducts.length > 0) {
-//         const sliderProduct = sliderProducts[0];
-//
-//         // Создаем новый кастомный блок
-//         const customBlock = document.createElement('div');
-//         customBlock.classList.add('custom-red-block');
-//         customBlock.style.backgroundColor = 'red';
-//         customBlock.style.color = 'white';
-//         customBlock.style.padding = '15px';
-//         customBlock.style.marginBottom = '10px';
-//         customBlock.style.textAlign = 'center';
-//         customBlock.style.borderRadius = '5px';
-//
-//         // Наполняем блок данными из метафилда
-//         customBlock.innerHTML = `
-//                     <h3>${sliderProduct.title || 'Unknown Product'}</h3>
-//                     <p>${sliderProduct.description || 'No description available'}</p>
-//                     <img src="${sliderProduct.image || ''}" alt="${sliderProduct.title || 'Image'}" style="width: 100%; max-width: 200px; height: auto;">
-//                 `;
-//
-//         // Добавляем блок в начало upsells
-//         upsells.insertBefore(customBlock, upsells.firstChild);
-//       }
-//     }
-//   });
-// });
+document.querySelector('.cart-full').addEventListener('click', () => {
+
+  if(!document.querySelector('.custom-product-block')) {
+  const customBlock = document.createElement('div');
+  customBlock.classList.add('custom-product-block');
+
+  customBlock.innerHTML = `
+        <h3 class="title">Nourish Your Skin, Naturally</h3>
+        <p class="subtitle">Delivers deep hydration with a lightweight, fast-absorbing formula, leaving your skin silky smooth and radiant—every day.</p>
+        <div class="custom_product_container">
+            <div class="cmb_custom-product">
+                <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/BODYOILPDP_NOTYPO.001_1.png?v=1737039536" alt="Daily Renew Body Oil">
+            
+            </div>
+            <div class="cmd_info_review">
+               <div class="cmb_product-info">
+                  <div class="cmb_product_info_price_btn">
+                    <h4>Daily Renew Body Oil</h4>
+                    <span>$25.00</span>
+                  </div>
+                  <button class="add-to-cart-button">ADD TO CART</button>
+              </div>
+              <div class="cmb_review">
+                  <div class="cmb_verified_buyer"> <span class="verified-buyer"><span class="buyer_name" style="color: black; margin-right: 5px">Joan F.</span>Verified Buyer
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 14C6.03385 14 5.12695 13.8177 4.2793 13.4531C3.42253 13.0885 2.67741 12.5895 2.04395 11.9561C1.41048 11.3226 0.911458 10.5775 0.546875 9.7207C0.182292 8.87305 0 7.96615 0 7C0 6.03385 0.182292 5.12695 0.546875 4.2793C0.911458 3.42253 1.41048 2.67741 2.04395 2.04395C2.67741 1.41048 3.42253 0.911458 4.2793 0.546875C5.12695 0.182292 6.03385 0 7 0C7.96615 0 8.87305 0.182292 9.7207 0.546875C10.5775 0.911458 11.3226 1.41048 11.9561 2.04395C12.5895 2.67741 13.0885 3.42253 13.4531 4.2793C13.8177 5.12695 14 6.03385 14 7C14 7.96615 13.8177 8.87305 13.4531 9.7207C13.0885 10.5775 12.5895 11.3226 11.9561 11.9561C11.3226 12.5895 10.5775 13.0885 9.7207 13.4531C8.87305 13.8177 7.96615 14 7 14ZM10.0215 3.86914L5.87891 7.99805L3.91016 6.04297L2.625 7.32812L5.87891 10.5684L11.3066 5.1543L10.0215 3.86914Z" fill="#0075FF"/>
+                    </svg></span>
+                    </div>
+                  <p>⭐⭐⭐⭐⭐</p>
+                  <p><span class="subtitle">Another Reason To Love My Body Oil</span></p>
+                  <p class="last_review_p">I found many of my friends were being bitten by mosquitoes while we were having lunch out in the garden except me.</p>
+              </div>
+            </div>
+           
+        </div>
+        
+    `;
+
+  const upsells = document.querySelector('.upsells');
+  console.log(upsells);
+  if (upsells) {
+    upsells.insertBefore(customBlock, upsells.firstChild);
+  }
+
+  const addToCartButton = customBlock.querySelector('.add-to-cart-button');
+  addToCartButton.addEventListener('click', () => {
+    const productId = '42258447925502'; // ID продукта
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        id: productId,
+        quantity: 1
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to add product to cart');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Product added:', data);
+        window.location.href = window.location.href.split('?')[0] + '?open_cart=true';
+      })
+      .catch((error) => {
+        console.error('Error adding product to cart:', error);
+      });
+  });
+  }
+});
 
 
 
