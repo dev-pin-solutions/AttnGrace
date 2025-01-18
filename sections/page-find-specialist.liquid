@@ -3,5 +3,60 @@
     <h1 class="page-title">{{ page.title }}</h1>
     <div id="storepoint-container" data-map-id="160118b70bb8b7"></div>
 </div>
-<script>(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://cdn.storepoint.co/api/v1/js/160118b70bb8b7.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);}());</script>
+<script>
+    (function () {
+        var a = document.createElement("script");
+        a.type = "text/javascript";
+        a.async = !0;
+        a.src = "https://cdn.storepoint.co/api/v1/js/160118b70bb8b7.js";
+        var b = document.getElementsByTagName("script")[0];
+        b.parentNode.insertBefore(a, b);
+
+        const observer = new MutationObserver(() => {
+            const notifyButton = document.getElementById('storepoint-get-notified-btn');
+            const emailInput = document.getElementById('storepoint-get-notified-email');
+
+            if (notifyButton && emailInput) {
+                console.log('Button and input found!');
+
+                notifyButton.classList.add('disabled');
+
+                notifyButton.addEventListener('click', (e) => {
+                    if (notifyButton.classList.contains('disabled')) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Button is disabled');
+                    }
+                });
+
+                emailInput.addEventListener('input', () => {
+                    const emailValue = emailInput.value.trim();
+                    if (validateEmail(emailValue)) {
+                        notifyButton.classList.remove('disabled');
+                    } else {
+                        notifyButton.classList.add('disabled');
+                    }
+                });
+
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    }());
+</script>
+<style>
+    #storepoint-get-notified-btn.disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 0.6;
+    }
+</style>
 {{ page.metafields.shogun.optimizer }}
+

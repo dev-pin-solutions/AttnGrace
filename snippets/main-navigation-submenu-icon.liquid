@@ -64,7 +64,30 @@ Menu title must be passed if is submenu
                 {% else %}
                     {% unless link.title == 'Deodorant' %}
                         <li class="navigation-primary-item menuitem_{{ forloop.index }}">
-                            <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113.png?v=1736891343" alt="">
+                            {% if link.title == 'Shop All' %}
+                                <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113.png?v=1736891343" alt="">
+                            {% endif %}
+                            {% if link.title == 'Liners' %}
+                                <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113_3.png?v=1737214805" alt="">
+                            {% endif %}
+                            {% if link.title == 'Pads' %}
+                                <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113_1.png?v=1737214547" alt="">
+                            {% endif %}
+                            {% if link.title == 'Briefs' %}
+                                <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113_2.png?v=1737214600" alt="">
+                            {% endif %}
+                            {% if link.title == 'Wipes' %}
+                                <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113_4.png?v=1737214859" alt="">
+                            {% endif %}
+                            {% if link.title == 'Barrier Cream' %}
+                                <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113_5.png?v=1737214901" alt="">
+                            {% endif %}
+                            {% if link.title == 'Body Oil' %}
+                                <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113_6.png?v=1737214936" alt="">
+                            {% endif %}
+                            {% if link.title == 'Bags' %}
+                                <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113_7.png?v=1737214973" alt="">
+                            {% endif %}
                             <a href="{{ link.url }}" class="{% if link.title contains 'Find Your Fit' %}find-your-fit-link {% endif %}">{{ link.title }}</a>
                         </li>
                     {% endunless %}
