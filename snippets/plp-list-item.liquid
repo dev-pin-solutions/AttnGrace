@@ -174,55 +174,52 @@
             <h2>{{ product.title }}</h2>
 
             <div class="accordion">
+                {% for value in product.metafields.custom.collection_popup_object.value %}
                 <div class="accordion-item">
-                    <button class="active">{{ object_popup.first_acordeon_title }}</button>
-                    <div class="accordion-content visible">
-                        <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_156.png?v=1736885374" alt="">
+                    <button {% if value.product_title_for_open_accordion == product.title %} class="active" {% endif %}>{{ value.accordion_title }}</button>
+                    <div class="accordion-content {% if value.product_title_for_open_accordion == product.title %} visible {% endif %}">
+
+                        {% assign number_of_drops = value.number_of_drops | default: 0 %} <!-- Берем число из переменной -->
+                        {% assign max_drops = 7 %} <!-- Максимальное количество капель -->
+
+                        <div class="drops-container">
+                            {% for i in (1..max_drops) %}
+                                {% if i <= number_of_drops %}
+                                    <!-- SVG закрашенной капли -->
+                                    <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.61553 9.63576C9.61553 12.3219 7.53373 14.4709 5.00015 14.4709C2.46657 14.4709 0.384766 12.3219 0.384766 9.63576C0.384766 9.00376 0.66549 8.12076 1.13063 7.11264C1.5897 6.11765 2.2052 5.04882 2.82577 4.06159C3.44553 3.07564 4.06596 2.17802 4.53177 1.52651C4.71527 1.26987 4.87457 1.05169 5.00015 0.881653C5.12573 1.05169 5.28504 1.26987 5.46853 1.52651C5.93434 2.17802 6.55477 3.07564 7.17453 4.06159C7.79507 5.04882 8.41061 6.11765 8.86969 7.11264C9.33484 8.12076 9.61553 9.00376 9.61553 9.63576Z" fill="black" stroke="black" stroke-width="0.769231"/>
+                                    </svg>
+                                {% else %}
+                                    <!-- SVG незакрашенной капли -->
+                                    <svg width="11" height="15" viewBox="0 0 11 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.2308 9.45943C10.2308 12.1456 8.14897 14.2946 5.61538 14.2946C3.0818 14.2946 1 12.1456 1 9.45943C1 8.82743 1.28072 7.94443 1.74587 6.93631C2.20494 5.94132 2.82043 4.87249 3.44101 3.88525C4.06077 2.89931 4.68119 2.00169 5.14701 1.35018C5.3305 1.09354 5.48981 0.875362 5.61538 0.705322C5.74096 0.875362 5.90027 1.09354 6.08376 1.35018C6.54958 2.00169 7.17 2.89931 7.78976 3.88525C8.41031 4.87249 9.02585 5.94132 9.48492 6.93631C9.95008 7.94443 10.2308 8.82743 10.2308 9.45943Z" stroke="black" stroke-width="0.769231"/>
+                                    </svg>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                         <div class="accordion_with_img_block">
-                            <img src="{{ object_popup.first_icon | img_url: 'master' }}" alt="">
+                            <img src="{{ value.icon_first | img_url: 'master' }}" alt="">
                             <span>
-                                {{ object_popup.first_text |  metafield_tag }}
+                                {{ value.text_first |  metafield_tag }}
                             </span>
                         </div>
                         <div class="accordion_with_img_block">
-                            <img src="{{ object_popup.second_icon | img_url: 'master' }}" alt="">
+                            <img src="{{ value.icon_second | img_url: 'master' }}" alt="">
                             <span>
-                                {{ object_popup.second_text |  metafield_tag }}
+                                {{ value.text_second |  metafield_tag }}
                             </span>
                         </div>
                         <div class="accordion_with_img_block">
-                            <img src="{{ object_popup.third_icon | img_url: 'master' }}" alt="">
+                            <img src="{{ value.icon_third | img_url: 'master' }}" alt="">
                             <span>
-                                {{ object_popup.third_text |  metafield_tag }}
+                                {{ value.text_third |  metafield_tag }}
                             </span>
                         </div>
-                        <a href="{{ product.url }}">SHOP ULTIMATE</a>
+                        <a href="{{ product.url }}">{{ value.button_text }}</a>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <button>{{ object_popup.second_acordeon_title }}</button>
-                    <div class="accordion-content">
-                        <p>{{ object_popup.second_acordeon_text | metafield_tag }}</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button>{{ object_popup.third_acordeon_title }}</button>
-                    <div class="accordion-content">
-                        <p>{{ object_popup.third_acordeon_text | metafield_tag }}</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button>{{ object_popup.four_acordeon_title }}</button>
-                    <div class="accordion-content">
-                        <p>{{ object_popup.four_acordeon_text | metafield_tag }}</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button>{{ object_popup.five_acordeon_title }}</button>
-                    <div class="accordion-content">
-                        <p>{{ object_popup.five_acordeon_text | metafield_tag }}</p>
-                    </div>
-                </div>
+                {% endfor %}
+
             </div>
 
             <a class="popup_last_btn" href="#quiz-29HrVVj">FIND YOUR FIT</a>

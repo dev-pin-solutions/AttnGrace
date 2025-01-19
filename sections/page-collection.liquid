@@ -244,8 +244,13 @@ image_layout: section.settings.image_layout,
 
     .popup-modal.visible {
         right: 0;
+        max-height: 100vh;
+        overflow-y: auto;
+        scrollbar-width: none;
     }
-
+    .popup-modal.visible::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
     .popup-content {
         padding: 20px;
     }
