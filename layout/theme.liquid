@@ -430,6 +430,39 @@ Creation date: 08/14/2024
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const productData = {
+          {% assign collection_for_card = collections['collection-for-card'] %}
+          {% for product in collection_for_card.products %}
+          {% if product.metafields.custom.slider_products != blank %}
+          {{ product.id }}:
+          {
+              {% for value in product.metafields.custom.slider_products.value %}
+              {% if forloop.first %}
+
+                  slide_product_id: '{{ value.product_for_slide.value.first_available_variant.id }}',
+                  slide_product_title: '{{ value.product_for_slide.value.title }}',
+                  slide_product_price: '{{ value.product_for_slide.value.price | money }}',
+                  slide_image: '{{ value.image_for_product | img_url }}',
+                  cart_title: '{{ value.cart_title }}',
+                  cart_subtitle: '{{ value.cart_subtitle }}',
+                  review_author: '{{ value.review_autor }}',
+                  review_rating: '{{ value.review_rating }}',
+                  review_title: '{{ value.review_title }}',
+              review_text: '{{ value.review_text_short |  }}'
+
+              {% endif %}
+              {% endfor %}
+          }
+          {% unless forloop.last %},{% endunless %}
+          {% endif %}
+          {% endfor %}
+      };
+          console.log(productData)
+          window.productData = productData;
+      });
+  </script>
 </body>
 <!-- Back in Stock helper snippet -->
 {% render 'back-in-stock-helper' %}
@@ -483,3 +516,6 @@ Creation date: 08/14/2024
         }
     </style>
 {% endif %}
+
+
+
