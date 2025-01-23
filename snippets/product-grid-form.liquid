@@ -29,7 +29,7 @@
       {% assign selected = 'selected="selected"' %}
       {% assign default_selling_plan = '' %}
 
-      <option value="" class="onetime" {{ selected }}>One-Time - ${{ product.price | money_without_currency }}</option>
+      <option value="" class="onetime" >One-Time - ${{ product.price | money_without_currency }}</option>
       {% assign recharge_selling_plan_groups = product.selling_plan_groups | where: 'app_id', '294517' %}
       {% for plan_groups in recharge_selling_plan_groups %}
         {% for selling_plan in plan_groups.selling_plans %}
@@ -44,6 +44,10 @@
           <option
             class="recPrice"
             value="{{ selling_plan.id }}"
+            {% if label_delivery_frequency == '4 Week'  or label_delivery_frequency == '4 week'%}
+                {% assign default_selling_plan = selling_plan.id %}
+              {{ selected }}
+            {% endif %}
           >
             {{ label_delivery_frequency }} - {{ label_variant_price | money }}
           </option>
