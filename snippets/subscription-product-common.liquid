@@ -63,7 +63,7 @@
         {% endif%}
       {% endfor %}
       <div class="subscribe-item subscribe-one-time">
-        <input type="radio" id="purchase_type_one_time" name="purchase_type" value="" val="onetime" class="rc_radio rc_radio_one_time radio" checked>
+        <input type="radio" id="purchase_type_one_time" name="purchase_type" value="" val="onetime" class="rc_radio rc_radio_one_time radio" >
         <label for="purchase_type_one_time" class="label label__onetime">
           <span class="label-main-section">
             <span class="title-price-per-pack">
@@ -99,6 +99,7 @@
       </p>
       {% assign recharge_selling_plan_groups = product.selling_plan_groups | where: 'app_id', '294517' %}
       {% assign count = 0 %}
+        {% assign checked_plan = '' %}
       {% for plan_groups in recharge_selling_plan_groups %}
         {% for selling_plan in plan_groups.selling_plans %}
           {% assign price_adjustment = selling_plan.price_adjustments.first %}
@@ -110,7 +111,13 @@
           {% assign label_delivery_frequency = selling_plan.name | remove: 'Delivery every ' | remove: '- 10% off' %}
 
           <div class="subscribe-item subscribe-pm rc_block rc_block__type rc_block__type__autodeliver" >
-            <input type="radio" name="purchase_type" id="rc_purchase_type_autodeliver{{count}}" val="autodeliver" value="{{ selling_plan.id }}" class="rc_radio rc_radio__autodeliver radio">
+              {% if label_delivery_frequency == '4 weeks' or label_delivery_frequency == '4 Weeks' %}
+                  {% assign checked_plan = selling_plan.id %}
+                <input type="radio" name="purchase_type" id="rc_purchase_type_autodeliver{{count}}" val="autodeliver" value="{{ selling_plan.id }}" class="rc_radio rc_radio__autodeliver radio" checked>
+              {% else %}
+                  <input type="radio" name="purchase_type" id="rc_purchase_type_autodeliver{{count}}" val="autodeliver" value="{{ selling_plan.id }}" class="rc_radio rc_radio__autodeliver radio">
+
+              {% endif %}
             <label for="rc_purchase_type_autodeliver{{count}}" class="label rc_label rc_label__autodeliver">
               <span class="label-main-section">
                 <span class="title-price-per-pack">
@@ -139,8 +146,8 @@
         {% endfor %}
       {% endfor %}
       
-      <input type="hidden" name="purchase_type" id="purchase_type" value="">
-      <input type="hidden" name="selling_plan" id="selling_plan" value="">
+      <input type="hidden" name="purchase_type" id="purchase_type" value="{{ if checked_plan != blank }}autodeliver{% endif %}">
+      <input type="hidden" name="selling_plan" id="selling_plan" value="{{ checked_plan }}">
       <input type="hidden" name="id" value="{{ variant.id }}">
     </div>
   </div>
