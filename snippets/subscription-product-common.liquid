@@ -146,7 +146,7 @@
         {% endfor %}
       {% endfor %}
       
-      <input type="hidden" name="purchase_type" id="purchase_type" value="{{ if checked_plan != blank }}autodeliver{% endif %}">
+      <input type="hidden" name="purchase_type" id="purchase_type" value="{% if checked_plan != blank %}autodeliver{% endif %}">
       <input type="hidden" name="selling_plan" id="selling_plan" value="{{ checked_plan }}">
       <input type="hidden" name="id" value="{{ variant.id }}">
     </div>
