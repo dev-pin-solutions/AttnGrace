@@ -45,10 +45,11 @@
               <div class="recommended-product-desc">
                 <h3 class="recommended-product-title">{{ product.title }}</h3>
                 {% render 'okendo-reviews-product-rating-summary', product: product %}
-                <span class="price"> from <span data-money="">{{ product.price_min | money  }}</span></span>
+                {% comment %}<span class="price"> from <span data-money="">{{ product.price_min | money  }}</span></span>{% endcomment %}
               </div>
-              <p style=" text-align:center">
-                <input type="button" onclick="window.location.href = '/cart/add?id={{ product.first_available_variant.id }}'" style="width:80%; " class="button product-add-available" value="Add to cart" style="visibility: visible;"></p>
+
+                {% comment %} <p style=" text-align:center"><input type="button" onclick="window.location.href = '/cart/add?id={{ product.first_available_variant.id }}'" style="width:80%; " class="button product-add-available" value="Add to cart" style="visibility: visible;"></p>{% endcomment %}
+                {% include 'product-grid-form' %}
             </div>
           {% endunless %}
         {% endfor %}
@@ -67,6 +68,51 @@
     itemStock: {{ 'cart.general.item_stock' | t: quantity: '** quantity **', title: '** title **' | json }}
   };
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const customElements = document.querySelectorAll(".cart_rerender");
+
+        if (customElements.length) {
+            customElements.forEach(customElement => {
+                customElement.addEventListener("click", () => {
+                    setTimeout(() => {
+                        fetch("/cart?view=ajax")
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error("Ошибка загрузки корзины");
+                                }
+                                return response.text();
+                            })
+                            .then(html => {
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(html, "text/html");
+                                const newCartItemsTable = doc.querySelector(".cart-items-table");
+                                const currentCartItemsTable = document.querySelector(".cart-items-table");
+
+                                if (newCartItemsTable && currentCartItemsTable) {
+                                    currentCartItemsTable.innerHTML = newCartItemsTable.innerHTML;
+                                    console.log("Корзина успешно обновлена.");
+                                } else {
+                                    console.error("Не удалось найти .cart-items-table в ответе сервера.");
+                                }
+                            })
+                            .catch(error => {
+                                console.error("Ошибка:", error);
+                            });
+                    }, 1000);
+                });
+            });
+        } else {
+            console.error("Кнопки с классом .cart_rerender не найдены.");
+        }
+    });
+
+</script>
+<style>
+    .recommended-products-single-container .product-subscription-option {
+        padding: 20px !important;
+    }
+</style>
 
 {% schema %}
   {
