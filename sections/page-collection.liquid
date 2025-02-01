@@ -433,26 +433,35 @@ image_layout: section.settings.image_layout,
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const popupModals = document.querySelectorAll('.popup-modal');
+        const headerMobile = document.querySelector('.main-header');
 
         document.querySelectorAll('.open-popup').forEach((button) => {
             button.addEventListener('click', () => {
                 const popupId = button.getAttribute('data-popup');
                 const targetPopup = document.querySelector(`#${popupId}`);
-                const headerMobile = document.querySelector('.header-mobile');
 
                 if (targetPopup) {
                     if (targetPopup.classList.contains('visible')) {
-                        // Если попап уже открыт, закрываем его
+                        // Если попап уже открыт, закрываем его и сбрасываем аккордеоны
                         targetPopup.classList.remove('visible');
-                        headerMobile.style.display = 'block';
+                        if (window.innerWidth < 990) {
+                            headerMobile.style.display = 'block';
+                        }
+
+                        resetAccordions(targetPopup); // Закрываем все аккордеоны и открываем first_acc
                     } else {
                         // Закрываем все попапы перед открытием нового
                         popupModals.forEach((popup) => {
                             popup.classList.remove('visible');
                         });
+
                         // Открываем нужный попап
                         targetPopup.classList.add('visible');
-                        headerMobile.style.display = 'none';
+                        if (window.innerWidth < 990) {
+                            headerMobile.style.display = 'none';
+                        }
+
+                        resetAccordions(targetPopup); // Сбрасываем аккордеоны
                     }
                 }
             });
@@ -460,8 +469,14 @@ image_layout: section.settings.image_layout,
 
         document.querySelectorAll('.close-popup').forEach((closeButton) => {
             closeButton.addEventListener('click', () => {
-                document.querySelector('.header-mobile').style.display = 'block';
-                closeButton.closest('.popup-modal').classList.remove('visible');
+                const popup = closeButton.closest('.popup-modal');
+                popup.classList.remove('visible');
+
+                if (window.innerWidth < 990) {
+                    headerMobile.style.display = 'block';
+                }
+
+                resetAccordions(popup); // Закрываем все аккордеоны и открываем first_acc
             });
         });
 
@@ -484,7 +499,30 @@ image_layout: section.settings.image_layout,
                 }
             });
         });
+
+        /**
+         * Функция сбрасывает все аккордеоны и открывает `first_acc`
+         */
+        function resetAccordions(popup) {
+            const allAccordionContents = popup.querySelectorAll('.accordion-content');
+            const allAccordionButtons = popup.querySelectorAll('.accordion-item button');
+
+            allAccordionContents.forEach((content) => content.classList.remove('visible'));
+            allAccordionButtons.forEach((button) => button.classList.remove('active'));
+
+            // Открываем только first_acc
+            const firstAccordion = popup.querySelector('.accordion-content.first_acc');
+            if (firstAccordion) {
+                firstAccordion.classList.add('visible');
+                const firstAccordionButton = firstAccordion.previousElementSibling;
+                if (firstAccordionButton) {
+                    firstAccordionButton.classList.add('active');
+                }
+            }
+        }
     });
+
+
 
 </script>
 

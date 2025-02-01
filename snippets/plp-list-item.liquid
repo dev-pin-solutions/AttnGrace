@@ -176,8 +176,8 @@
             <div class="accordion">
                 {% for value in product.metafields.custom.collection_popup_object.value %}
                 <div class="accordion-item">
-                    <button {% if value.product_title_for_open_accordion == product.title %} class="active" {% endif %}>{{ value.accordion_title }}</button>
-                    <div class="accordion-content {% if value.product_title_for_open_accordion == product.title %} visible {% endif %}">
+                    <button  {% if value.product_title_for_open_accordion == product.title %} class="active" {% endif %}>{{ value.accordion_title }}</button>
+                    <div class="accordion-content {% if value.product_title_for_open_accordion == product.title %} visible first_acc {% endif %}">
 
                         {% assign number_of_drops = value.number_of_drops | default: 0 %} <!-- Берем число из переменной -->
                         {% assign max_drops = 7 %} <!-- Максимальное количество капель -->
