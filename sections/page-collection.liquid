@@ -435,17 +435,25 @@ image_layout: section.settings.image_layout,
         const popupModals = document.querySelectorAll('.popup-modal');
 
         document.querySelectorAll('.open-popup').forEach((button) => {
-            console.log(document.querySelector('.header-mobile'));
-
             button.addEventListener('click', () => {
-                document.querySelector('.header-mobile').style.display = 'none';
                 const popupId = button.getAttribute('data-popup');
-                popupModals.forEach((popup) => {
-                    popup.classList.remove('visible');
-                });
                 const targetPopup = document.querySelector(`#${popupId}`);
+                const headerMobile = document.querySelector('.header-mobile');
+
                 if (targetPopup) {
-                    targetPopup.classList.add('visible');
+                    if (targetPopup.classList.contains('visible')) {
+                        // Если попап уже открыт, закрываем его
+                        targetPopup.classList.remove('visible');
+                        headerMobile.style.display = 'block';
+                    } else {
+                        // Закрываем все попапы перед открытием нового
+                        popupModals.forEach((popup) => {
+                            popup.classList.remove('visible');
+                        });
+                        // Открываем нужный попап
+                        targetPopup.classList.add('visible');
+                        headerMobile.style.display = 'none';
+                    }
                 }
             });
         });
@@ -477,6 +485,7 @@ image_layout: section.settings.image_layout,
             });
         });
     });
+
 </script>
 
 </script>

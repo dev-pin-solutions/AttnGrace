@@ -689,6 +689,17 @@ document.addEventListener('click', async (event) => {
     await handleCartFullClick();
     return;
   }
+  if (event.target.closest('.rb-btn.tnowrap')) {
+    console.log('Клик по .cart-full');
+    await handleCartFullClick();
+    return;
+  }
+  if (event.target.closest('.rb-btn.tnowrap')) {
+    console.log('Клик по .cart-full');
+    await handleCartFullClick();
+    return;
+  }
+
 
   // Проверяем, был ли клик по .product-add-available
   if (event.target.closest('.product-add-available')) {
