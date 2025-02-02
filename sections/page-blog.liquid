@@ -23,42 +23,98 @@
 
   {% paginate blog.articles by section.settings.pagination %}
 
-    <div class="blog-posts" id="blog-posts">
-      <div class="article-item-grid-sizer"></div>
-      <div class="article-item-gutter-sizer"></div>
-      {% for article in blog.articles %}
-        {% include 'article-list-item' %}
-      {% else %}
-        <p class="empty">
-          {{ 'blogs.blog.empty' | t }}
-        </p>
-      {% endfor %}
-    </div>
+      <div class="blog-wrapper">
+          <div class="blog-column left-column">
+              {% for article in blog.articles %}
+                  {% assign index_mod = forloop.index0 | modulo: 2 %}
+                  {% if index_mod == 0 %}
+                      <div class="blog-card">
+                          {% include 'article-list-item' %}
+                      </div>
+                  {% endif %}
+              {% endfor %}
+          </div>
 
-    {% if paginate.previous or paginate.next %}
+          <div class="blog-column right-column">
+              {% for article in blog.articles %}
+                  {% assign index_mod = forloop.index0 | modulo: 2 %}
+                  {% if index_mod != 0 %}
+                      <div class="blog-card">
+                          {% include 'article-list-item' %}
+                      </div>
+                  {% endif %}
+              {% endfor %}
+          </div>
+      </div>
+
+
+      {% if paginate.previous or paginate.next %}
       {% include 'pagination' %}
     {% endif %}
 
   {% endpaginate %}
 </div>
+<style>
+    .Blog_Wrapper {
+        background: #f9e3d7;
+    }
+    .blog-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 40px; /* Расстояние между столбцами */
+    }
 
+    .blog-column {
+        display: flex;
+        flex-direction: column;
+        gap: 40px; /* Отступы между постами */
+        width: 50%; /* Два равных столбца */
+    }
+
+    .blog-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-card .article-item {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
+    }
+
+    /* Адаптивность: одна колонка на мобильных */
+    @media (max-width: 768px) {
+        .blog-wrapper {
+            flex-direction: column;
+            gap: 20px; /* Меньше расстояние на мобильных */
+        }
+
+        .blog-column {
+            width: 100%; /* Одна колонка */
+        }
+    }
+
+
+
+</style>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+{% comment %}<script src="//unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>{% endcomment %}
 <script>
-$(window).load(function(){
-  var container = document.querySelector('#blog-posts');
-  var msnry = new Masonry( container, {
-    itemSelector: '.article-item',
-    columnWidth: '.article-item-grid-sizer',
-    gutter: '.article-item-gutter-sizer',
-    percentPosition: true
-  })
-});
+// $(window).load(function(){
+//   var container = document.querySelector('#blog-posts');
+//   var msnry = new Masonry( container, {
+//     itemSelector: '.article-item',
+//     columnWidth: '.article-item-grid-sizer',
+//     gutter: '.article-item-gutter-sizer',
+//     percentPosition: true
+//   })
+// });
 </script>
 
 {% schema %}
 {
   "name": "Blog page",
+  "class": "Blog_Wrapper",
   "settings": [
     {
       "type": "range",

@@ -442,26 +442,25 @@ image_layout: section.settings.image_layout,
 
                 if (targetPopup) {
                     if (targetPopup.classList.contains('visible')) {
-                        // Если попап уже открыт, закрываем его и сбрасываем аккордеоны
+
                         targetPopup.classList.remove('visible');
                         if (window.innerWidth < 990) {
                             headerMobile.style.display = 'block';
                         }
 
-                        resetAccordions(targetPopup); // Закрываем все аккордеоны и открываем first_acc
+                        resetAccordions(targetPopup);
                     } else {
-                        // Закрываем все попапы перед открытием нового
+
                         popupModals.forEach((popup) => {
                             popup.classList.remove('visible');
                         });
 
-                        // Открываем нужный попап
                         targetPopup.classList.add('visible');
                         if (window.innerWidth < 990) {
                             headerMobile.style.display = 'none';
                         }
 
-                        resetAccordions(targetPopup); // Сбрасываем аккордеоны
+                        resetAccordions(targetPopup);
                     }
                 }
             });
@@ -476,7 +475,7 @@ image_layout: section.settings.image_layout,
                     headerMobile.style.display = 'block';
                 }
 
-                resetAccordions(popup); // Закрываем все аккордеоны и открываем first_acc
+                resetAccordions(popup);
             });
         });
 
@@ -500,9 +499,6 @@ image_layout: section.settings.image_layout,
             });
         });
 
-        /**
-         * Функция сбрасывает все аккордеоны и открывает `first_acc`
-         */
         function resetAccordions(popup) {
             const allAccordionContents = popup.querySelectorAll('.accordion-content');
             const allAccordionButtons = popup.querySelectorAll('.accordion-item button');
@@ -510,7 +506,6 @@ image_layout: section.settings.image_layout,
             allAccordionContents.forEach((content) => content.classList.remove('visible'));
             allAccordionButtons.forEach((button) => button.classList.remove('active'));
 
-            // Открываем только first_acc
             const firstAccordion = popup.querySelector('.accordion-content.first_acc');
             if (firstAccordion) {
                 firstAccordion.classList.add('visible');
