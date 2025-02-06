@@ -1,13 +1,13 @@
 {
   "sections": {
     "main-account": {
-      "type": "page-store-locator",
+      "type": "main-account",
       "settings": {
       }
     }
   },
   "order": [
-    "page-store-locator"
+    "main-account"
   ]
 }
 

@@ -43,8 +43,8 @@
 
 @media only screen and (min-width: 756px) {
     .dynamic_buttons_center {
-        position: relative;
-        right: calc(50% - 230px);
+        /*position: relative;*/
+        /*right: calc(50% - 230px);*/
         margin-top: 15px;
     }
 }
