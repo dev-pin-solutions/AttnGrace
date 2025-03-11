@@ -62,7 +62,6 @@ Menu title must be passed if is submenu
                         {% endif %}
                     </li>
                 {% else %}
-                    {% unless link.title == 'Deodorant' %}
                         <li class="navigation-primary-item menuitem_{{ forloop.index }}">
                             {% if link.title == 'Shop All' %}
                                 <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113.png?v=1736891343" alt="">
@@ -88,9 +87,11 @@ Menu title must be passed if is submenu
                             {% if link.title == 'Bags' %}
                                 <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113_7.png?v=1737214973" alt="">
                             {% endif %}
+                            {% if link.title == 'Deodorant' %}
+                                <img src="https://cdn.shopify.com/s/files/1/0350/7706/2795/files/Frame_113_8.png?v=1740739704" alt="">
+                            {% endif %}
                             <a href="{{ link.url }}" class="{% if link.title contains 'Find Your Fit' %}find-your-fit-link {% endif %}">{{ link.title }}</a>
                         </li>
-                    {% endunless %}
                 {% endif %}
             {% endfor %}
         </ul>

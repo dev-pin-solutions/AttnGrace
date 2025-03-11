@@ -2,14 +2,10 @@
   "sections": {
     "addresses": {
       "type": "addresses",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
     "addresses"
   ]
 }
-
-
-

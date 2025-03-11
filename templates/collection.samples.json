@@ -6,11 +6,11 @@
     "page-sample-collection": {
       "type": "page-sample-collection",
       "settings": {
-        "image1": "shopify://shop_images/wipes.png",
+        "image1": "shopify:\/\/shop_images\/wipes.png",
         "text1": "All packs include 2 ﬂushable wipes.",
-        "image2": "shopify://shop_images/truck.png",
-        "text2": "We’ll remind you via text/email before we ship you.",
-        "image3": "shopify://shop_images/calender.png",
+        "image2": "shopify:\/\/shop_images\/truck.png",
+        "text2": "We’ll remind you via text\/email before we ship you.",
+        "image3": "shopify:\/\/shop_images\/calender.png",
         "text3": "Modify, pause or cancel anytime.",
         "image_layout": "two_column",
         "show_description": true,

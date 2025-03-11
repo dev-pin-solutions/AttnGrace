@@ -2,14 +2,10 @@
   "sections": {
     "register": {
       "type": "register",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
     "register"
   ]
 }
-
-
-

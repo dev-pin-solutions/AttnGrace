@@ -5,7 +5,7 @@ Custom Testimonials section created for UVT Landing Page and other site-wide pag
 <div class="testimonials-section" {% if section.settings.sbg-color != blank %}style="background-color:{{ section.settings.sbg-color }};"{% endif %}}>
   <div class="page-width">
     {% if section.settings.heading != blank %}
-      <h1 class="testimonials-heading heading">{{ section.settings.heading }}</h1>
+      <h2 class="testimonials-heading heading">{{ section.settings.heading }}</h2>
     {% endif %}
     <div class="testimonials-container">
       {% for block in section.blocks %}
@@ -47,6 +47,11 @@ Custom Testimonials section created for UVT Landing Page and other site-wide pag
     </div>
   </div>
 </div>
+<style>
+    .testimonials-heading {
+        font-size: 28px;
+    }
+</style>
 {% schema %}
   {
     "name": "Testimonials",

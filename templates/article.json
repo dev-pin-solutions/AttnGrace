@@ -2,14 +2,10 @@
   "sections": {
     "page-article": {
       "type": "page-article",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
     "page-article"
   ]
 }
-
-
-

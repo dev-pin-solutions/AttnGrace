@@ -2,12 +2,20 @@
   "sections": {
     "page-find-specialist": {
       "type": "page-find-specialist",
-      "settings": {
-      }
+      "settings": {}
+    },
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "settings": {}
+    },
+    "shogun-optimizer": {
+      "type": "shogun-optimizer",
+      "settings": {}
     }
   },
   "order": [
-    "page-find-specialist"
+    "shogun-helper",
+    "page-find-specialist",
+    "shogun-optimizer"
   ]
 }
-

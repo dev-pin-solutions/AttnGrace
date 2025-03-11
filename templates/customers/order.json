@@ -2,14 +2,10 @@
   "sections": {
     "order": {
       "type": "order",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
     "order"
   ]
 }
-
-
-

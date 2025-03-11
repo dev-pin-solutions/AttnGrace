@@ -2,14 +2,10 @@
   "sections": {
     "main-account": {
       "type": "main-account",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
     "main-account"
   ]
 }
-
-
-

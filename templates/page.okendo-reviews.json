@@ -2,9 +2,7 @@
   "sections": {
     "page-okendo-reviews": {
       "type": "page-okendo-reviews",
-      "settings": {
-        "hero_image": "shopify://shop_images/Slice_1.jpg"
-      }
+      "settings": {}
     }
   },
   "order": [

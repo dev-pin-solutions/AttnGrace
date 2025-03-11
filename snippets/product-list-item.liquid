@@ -87,7 +87,7 @@ The product title to use. Only used if no `item` is passed.
     </div>
   {% else %}
     <div class="product-list-item-details {% if item.price %}has-price{% endif %}">
-      <h1 class="product-list-item-title">
+      <h2 class="product-list-item-title">
         {% if item %}
           {{ item.title }}
         {% else %}
@@ -102,7 +102,7 @@ The product title to use. Only used if no `item` is passed.
             <span data-money>{{ item.price_min | money }}</span>
           </span>
         {% endif %}
-      </h1>
+      </h2>
     </div>
     <div class="shop-btn">
       <a href="{{ item.url | within: collection | default: '#' }}">Shop Now</a>

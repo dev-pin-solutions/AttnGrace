@@ -2,13 +2,10 @@
   "sections": {
     "contact-us": {
       "type": "contact-us",
-      "settings": {
-        "hero_image": "shopify://shop_images/Slice_1.jpg"
-      }
+      "settings": {}
     }
   },
   "order": [
     "contact-us"
   ]
 }
-

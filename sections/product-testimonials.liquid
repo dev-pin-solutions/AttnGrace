@@ -5,7 +5,7 @@ Custom Testimonials section created for UVT Landing Page and other site-wide pag
     <div class="testimonials-section product_testimonials_slider">
       <div class="page-width">
         {% if section.settings.heading != blank %}
-            <h1 class="testimonials-heading heading">{{ section.settings.heading }}</h1>
+            <h2 class="testimonials-heading heading">{{ section.settings.heading }}</h2>
         {% endif %}
         <div class="meta-testimonials-container">
         {% for value in product.metafields.custom.slider_products.value %}
@@ -169,6 +169,7 @@ Custom Testimonials section created for UVT Landing Page and other site-wide pag
             .product_testimonials_slider .testimonials-heading {
                 font-size: 64px;
                 margin-bottom: 40px;
+                font-weight: 400;
             }
             .meta_slider.custom-dropdown {
                 position: relative;
