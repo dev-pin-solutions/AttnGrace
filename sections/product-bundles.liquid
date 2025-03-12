@@ -1,0 +1,96 @@
+{% if product.metafields.custom.bundles != blank %}
+    <div class="bundles-wrap">
+        <h2>{{ section.settings.bundles_heading }}</h2>
+        <div class="bundles-container">
+            {% if product.metafields.custom.product_bundles.value %}
+                <div class="bundles-cards">
+                    {% for bundle in product.metafields.custom.product_bundles.value %}
+                        <div class="bundle-card" data-bundle="bundle-{{ forloop.index }}">
+                            {% if bundle.image %}
+                                <div class="bundle-image">
+                                    <img src="{{ bundle.image | image_url }}" alt="{{ bundle.title }}">
+                                </div>
+                            {% endif %}
+
+                            {% if bundle.title %}
+                                <div class="bundle-title">
+                                    {{ bundle.title }}
+                                </div>
+                            {% endif %}
+
+                            {% assign bundle_titles = "" %}
+                            {% assign bundle_total_price = 0 %}
+                            {% assign product_ids = "" %}
+
+                            {% assign bundle_object = bundle %}
+                            {% if bundle_object and bundle_object.product.value %}
+                                {% for bundle_product in bundle_object.product.value %}
+                                    {% assign bundle_titles = bundle_titles | append: bundle_product.title %}
+                                    {% assign bundle_total_price = bundle_total_price | plus: bundle_product.price %}
+                                    {% assign variant_id = bundle_product.variants.first.id %}
+                                    {% assign product_ids = product_ids | append: variant_id %}
+
+                                    {% unless forloop.last %}
+                                        {% assign bundle_titles = bundle_titles | append: ", " %}
+                                        {% assign product_ids = product_ids | append: "," %}
+                                    {% endunless %}
+                                {% endfor %}
+                            {% endif %}
+
+                            <div class="bundle-description">{{ bundle_titles }}</div>
+                            <div class="bundle-price">{{ bundle_total_price | money }}</div>
+
+                            <button class="bundle-button" data-products="{{ product_ids }}" onclick="addBundleToCart(this)">ADD BUNDLE TO CART</button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function addBundleToCart(button) {
+            const products = button.getAttribute('data-products').split(',');
+            console.log("Bundle product IDs:", products);
+
+            const cartItems = products.map((variantId) => ({
+                id: parseInt(variantId, 10),
+                quantity: 1
+            }));
+            console.log("Cart items:", cartItems);
+
+            fetch('/cart/add.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ items: cartItems }),
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        return response.text().then(text => { throw new Error(text) });
+                    }
+                    return response.json();
+                })
+                .then(() => {
+                    console.log('Products added to cart');
+                    window.location.href = window.location.href.split('?')[0] + '?open_cart=true';
+                })
+                .catch((error) => {
+                    console.error('Error adding products to cart:', error);
+                });
+        }
+    </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product Bundles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "bundles_heading",
+      "label": "Section Heading",
+      "default": "Popular Bundles"
+    }
+  ]
+}
+{% endschema %}

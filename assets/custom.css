@@ -304,3 +304,78 @@
   }
 }
 
+#shopify-section-product-bundles .bundle-description {
+  margin-top: 5px;
+}
+
+#shopify-section-product-bundles .bundles-wrap {
+  margin: 50px auto 80px;
+  padding: 0 30px;
+  width: 100%;
+  max-width: 1260px;
+}
+
+#shopify-section-product-bundles .bundles-container {
+  width: fit-content;
+}
+
+#shopify-section-product-bundles .bundles-wrap h2 {
+  font-family: 'Acre', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+#shopify-section-product-bundles .bundle-title {
+  font-family: 'Acre', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -2%;
+}
+
+#shopify-section-product-bundles .bundles-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+#shopify-section-product-bundles .bundle-image img {
+  border-radius: 30px;
+}
+
+#shopify-section-product-bundles .bundle-card {
+  min-width: 225px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#shopify-section-product-bundles .bundle-button {
+  margin-top: auto;
+}
+
+@media (max-width: 1023px) {
+  #shopify-section-product-bundles .bundles-wrap {
+    display: block;
+    padding: 16px;
+  }
+  #shopify-section-product-bundles .product-bundles {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  #shopify-section-product-bundles .bundle-card {
+    width: calc(50% - 5px);
+  }
+  #shopify-section-product-bundles .bundle-image img {
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  #shopify-section-product-bundles .bundle-card {
+    min-width: auto;
+  }
+}
