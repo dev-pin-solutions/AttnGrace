@@ -359,7 +359,7 @@
     display: block;
     padding: 16px;
   }
-  #shopify-section-product-bundles .product-bundles {
+  #shopify-section-product-bundles .bundles-cards {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -368,6 +368,7 @@
   }
   #shopify-section-product-bundles .bundle-card {
     width: calc(50% - 5px);
+    height: auto;
   }
   #shopify-section-product-bundles .bundle-image img {
     border-radius: 15px;
