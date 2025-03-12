@@ -112,8 +112,30 @@
     </header>
 	
 	<div class="product-description-details">
-		 <div class="product-pack">{% for tag in product.tags %}{% if tag contains "pack" %}{{ tag | remove: 'pack:' }}{% endif %}{% endfor %}</div>
-		{% if product.description != blank %}
+        <div class="product-pack">
+            {% assign pack_text = "" %}
+            {% for tag in product.tags %}
+                {% if tag contains "pack" %}
+                    {% assign pack_text = tag | remove: 'pack:' %}
+                {% endif %}
+            {% endfor %}
+
+            {% assign in_pads_collection = false %}
+            {% for collection in product.collections %}
+                {% if collection.handle == "pads" %}
+                    {% assign in_pads_collection = true %}
+                {% endif %}
+            {% endfor %}
+
+            {% if pack_text != "" %}
+                {% if in_pads_collection %}
+                    {{ pack_text | replace: "Pack", "Pads" }}
+                {% else %}
+                    {{ pack_text }}
+                {% endif %}
+            {% endif %}
+        </div>
+        {% if product.description != blank %}
 			<div class="product-description product-description-excerpt">
 				{%- include 'truncate-words', truncate_text: product.description, truncate_length: 38 -%}
 				<a href="#" class="product-description-readmore" data-product-extended-open>{{ 'products.product.read_more' | t }}</a>
