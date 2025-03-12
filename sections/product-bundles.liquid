@@ -72,12 +72,24 @@
                 })
                 .then(() => {
                     console.log('Products added to cart');
-                    window.location.href = window.location.href.split('?')[0] + '?open_cart=true';
+
+                    localStorage.setItem('open_cart_drawer', 'true');
+
+                    location.reload();
                 })
                 .catch((error) => {
                     console.error('Error adding products to cart:', error);
                 });
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('open_cart_drawer') === 'true') {
+                setTimeout(() => {
+                    document.querySelector('.main-sidebar-tool-item a')?.click();
+                    localStorage.removeItem('open_cart_drawer');
+                }, 500);
+            }
+        });
     </script>
 {% endif %}
 
