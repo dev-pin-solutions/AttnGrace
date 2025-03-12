@@ -1,10 +1,16 @@
-{% if product.metafields.custom.bundles != blank %}
-    <div class="bundles-wrap">
-        <h2>{{ section.settings.bundles_heading }}</h2>
-        <div class="bundles-container">
-            {% if product.metafields.custom.product_bundles.value %}
+{% assign bundles = section.settings.selected_bundles %}
+
+{% if bundles == blank and product.metafields.custom.product_bundles.value != blank %}
+    {% assign bundles = product.metafields.custom.product_bundles.value %}
+{% endif %}
+
+{% if bundles != blank %}
+    <div id="shopify-section-product-bundles">
+        <div class="bundles-wrap">
+            <h2>{{ section.settings.bundles_heading }}</h2>
+            <div class="bundles-container">
                 <div class="bundles-cards">
-                    {% for bundle in product.metafields.custom.product_bundles.value %}
+                    {% for bundle in bundles %}
                         <div class="bundle-card" data-bundle="bundle-{{ forloop.index }}">
                             {% if bundle.image %}
                                 <div class="bundle-image">
@@ -22,9 +28,8 @@
                             {% assign bundle_total_price = 0 %}
                             {% assign product_ids = "" %}
 
-                            {% assign bundle_object = bundle %}
-                            {% if bundle_object and bundle_object.product.value %}
-                                {% for bundle_product in bundle_object.product.value %}
+                            {% if bundle.product.value %}
+                                {% for bundle_product in bundle.product.value %}
                                     {% assign bundle_titles = bundle_titles | append: bundle_product.title %}
                                     {% assign bundle_total_price = bundle_total_price | plus: bundle_product.price %}
                                     {% assign variant_id = bundle_product.variants.first.id %}
@@ -40,58 +45,61 @@
                             <div class="bundle-description">{{ bundle_titles }}</div>
                             <div class="bundle-price">{{ bundle_total_price | money }}</div>
 
-                            <button class="bundle-button" data-products="{{ product_ids }}" onclick="addBundleToCart(this)">ADD BUNDLE TO CART</button>
+                            <button class="bundle-button" data-products="{{ product_ids }}" onclick="addBundleToCart(this)">
+                                ADD BUNDLE TO CART
+                            </button>
                         </div>
                     {% endfor %}
                 </div>
-            {% endif %}
+            </div>
         </div>
     </div>
-
-    <script>
-        function addBundleToCart(button) {
-            const products = button.getAttribute('data-products').split(',');
-            console.log("Bundle product IDs:", products);
-
-            const cartItems = products.map((variantId) => ({
-                id: parseInt(variantId, 10),
-                quantity: 1
-            }));
-            console.log("Cart items:", cartItems);
-
-            fetch('/cart/add.js', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ items: cartItems }),
-            })
-                .then((response) => {
-                    if (!response.ok) {
-                        return response.text().then(text => { throw new Error(text) });
-                    }
-                    return response.json();
-                })
-                .then(() => {
-                    console.log('Products added to cart');
-
-                    localStorage.setItem('open_cart_drawer', 'true');
-
-                    location.reload();
-                })
-                .catch((error) => {
-                    console.error('Error adding products to cart:', error);
-                });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('open_cart_drawer') === 'true') {
-                setTimeout(() => {
-                    document.querySelector('.main-sidebar-tool-item a')?.click();
-                    localStorage.removeItem('open_cart_drawer');
-                }, 500);
-            }
-        });
-    </script>
 {% endif %}
+
+
+<script>
+    function addBundleToCart(button) {
+        const products = button.getAttribute('data-products').split(',');
+        console.log("Bundle product IDs:", products);
+
+        const cartItems = products.map((variantId) => ({
+            id: parseInt(variantId, 10),
+            quantity: 1
+        }));
+        console.log("Cart items:", cartItems);
+
+        fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items: cartItems }),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text) });
+                }
+                return response.json();
+            })
+            .then(() => {
+                console.log('Products added to cart');
+
+                localStorage.setItem('open_cart_drawer', 'true');
+
+                location.reload();
+            })
+            .catch((error) => {
+                console.error('Error adding products to cart:', error);
+            });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        if (localStorage.getItem('open_cart_drawer') === 'true') {
+            setTimeout(() => {
+                document.querySelector('.main-sidebar-tool-item a')?.click();
+                localStorage.removeItem('open_cart_drawer');
+            }, 500);
+        }
+    });
+</script>
 
 {% schema %}
 {
@@ -102,6 +110,18 @@
       "id": "bundles_heading",
       "label": "Section Heading",
       "default": "Popular Bundles"
+    },
+    {
+      "type": "metaobject_list",
+      "id": "selected_bundles",
+      "label": "Select Bundles",
+      "limit": 4,
+      "metaobject_type": "bundles"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundles Section"
     }
   ]
 }
