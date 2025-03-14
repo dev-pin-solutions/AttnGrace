@@ -1,0 +1,67 @@
+{% render 'shogun-products', content: product %}
+{% if product.tags contains "starter kit" or product.tags contains "sample-pack" %}
+<script>
+window.location.href = "/collections/starter-kits";
+</script>
+{% endif %}
+
+{{product.metafields.shogun.above}}
+{% section 'page-product' %}
+{%- comment -%}
+This product-recommendations section is first drawn here, but then once loaded, the javascript
+places it within the container that it belongs in, depending on the Enable single product view
+setting. That element is given the property "data-product-recommendations-container".
+{%- endcomment -%}
+{% section 'product-recommendations' %}
+
+
+{{product.metafields.shogun.below}}
+
+{% render 'product_infox' %}
+
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+  </script>
+  <script> 
+    window.liQ = window.liQ || []; 
+    window.liQ.push 
+        ({ 
+          event: "viewContent", 
+          email: "{{ customer.email }}", 
+          contentType: "Product", 
+          name: "{{ product.title | strip_html | strip_newlines | strip | escape }}", 
+          contentId: "{{ product.selected_or_first_available_variant.sku }}" 
+        }); 
+  </script>
+{{product.metafields.shogun.below}}
+<script type="text/javascript">
+	var _learnq = _learnq || [];
+	document.getElementById("AddtoCartBtn").addEventListener('click',function (){
+ 		_learnq.push(['track', 'Added to Cart', item]);
+	});
+</script>
+{{ product.metafields.shogun.optimizer }}
+
