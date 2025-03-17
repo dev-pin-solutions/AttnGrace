@@ -52,7 +52,7 @@
       {% if product.metafields.custom.ingredients_sustainability != blank %}
         <div class="tab-title"><span>Ingredients & Sustainability</span></div>
         <div class="tab-content">
-          {% if template.suffix == 'ultimate' %}
+            {% if template.suffix == 'ultimate' or template.suffix == 'bundle-product' %}
             {{ product.metafields.custom.ingredients_sustainability | metafield_tag }}
           {% else %}
             <ul class="ingredients">
@@ -211,7 +211,7 @@
       <div class="tab-title"><span>Sizing & Specs</span></div>
       <div class="tab-content tab-content_sizing_specs">{{ sizing }}</div>
     </li>
-    {% if template.suffix == 'ultimate' %}
+      {% if template.suffix == 'ultimate' or template.suffix == 'bundle-product' %}
       <li>
         <div class="tab-title"><span>Attn:Grace vs. Other Brands</span></div>
         <div class="tab-content">

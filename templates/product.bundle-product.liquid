@@ -1,0 +1,234 @@
+{% render 'shogun-products', content: product %}
+{% if product.tags contains "starter kit" or product.tags contains "sample-pack" %}
+  <script>
+    window.location.href = "/collections/starter-kits";
+  </script>
+{% endif %}
+
+{{product.metafields.shogun.above}}
+{% section 'page-product' %}
+{%- comment -%}
+This product-recommendations section is first drawn here, but then once loaded, the javascript
+places it within the container that it belongs in, depending on the Enable single product view
+setting. That element is given the property "data-product-recommendations-container".
+{%- endcomment -%}
+{% section 'product-bundles' %}
+{% section 'product-testimonials' %}
+<div id="okendo-reviews-widget-wrapper">
+  {% render 'okendo-reviews-widget', product: product %}
+</div>
+{% section 'product-recommendations' %}
+
+
+{{product.metafields.shogun.below}}
+
+{% render 'product_infox' %}
+
+<script>
+  function getSelectedSubscriptionPlanId() {
+    const selectedRadio = document.querySelector('input[name="purchase_type"]:checked');
+    return selectedRadio ? selectedRadio.value : null;
+  }
+
+  function extractNumberFromText(text) {
+    const match = text.match(/\d+/);
+    return match ? parseInt(match[0]) : null;
+  }
+
+  function findMatchingSellingPlanId(product, selectedNumber) {
+    if (!selectedNumber || !product.selling_plan_groups) return null;
+
+    for (const group of product.selling_plan_groups) {
+      for (const plan of group.selling_plans) {
+        if (extractNumberFromText(plan.name) === selectedNumber) {
+          return plan.id;
+        }
+      }
+    }
+    return null;
+  }
+
+  function addBundleToCart(event) {
+    event.preventDefault();
+
+    const selectedPlanId = getSelectedSubscriptionPlanId();
+    console.log("Selected Subscription Plan ID:", selectedPlanId);
+
+    const selectedPlanNumber = selectedPlanId
+            ? extractNumberFromText(document.querySelector(`label[for="${document.querySelector('input[name="purchase_type"]:checked').id}"] .label-title`).innerText)
+            : null;
+    console.log("Selected Subscription Number:", selectedPlanNumber);
+
+    const quantityInput = document.getElementById('hiddenqty');
+    const quantity = quantityInput ? parseInt(quantityInput.value, 10) || 1 : 1;
+
+    const products = [
+      {% for product in product.metafields.custom.bundle_components.value %}
+      (function() {
+        const sellingPlanId = findMatchingSellingPlanId({{ product | json }}, selectedPlanNumber);
+        return {
+          id: {{ product.variants.first.id }},
+          quantity: sellingPlanId ? 1 : quantity,
+          selling_plan: sellingPlanId || null
+        };
+      })(){% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ].filter(item => item.id);
+
+    console.log("Products to add:", products);
+
+    if (products.length === 0) {
+      console.error("No products found in the bundle metafield.");
+      return;
+    }
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: products }),
+    })
+            .then(response => {
+              if (!response.ok) {
+                return response.text().then(text => { throw new Error(text) });
+              }
+              return response.json();
+            })
+            .then(() => {
+              console.log('Products added to cart');
+
+              localStorage.setItem('open_cart_drawer', 'true');
+              location.reload();
+            })
+            .catch(error => {
+              console.error('Error adding products to cart:', error);
+            });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.AddtoCartbtn').forEach(button => {
+      button.addEventListener('click', addBundleToCart);
+    });
+
+    if (localStorage.getItem('open_cart_drawer') === 'true') {
+      setTimeout(() => {
+        document.querySelector('.main-sidebar-tool-item a')?.click();
+        localStorage.removeItem('open_cart_drawer');
+      }, 500);
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>
+<script>
+  window.liQ = window.liQ || [];
+  window.liQ.push
+  ({
+    event: "viewContent",
+    email: "{{ customer.email }}",
+    contentType: "Product",
+    name: "{{ product.title | strip_html | strip_newlines | strip | escape }}",
+    contentId: "{{ product.selected_or_first_available_variant.sku }}"
+  });
+</script>
+{{product.metafields.shogun.below}}
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+  document.getElementById("AddtoCartBtn").addEventListener('click',function (){
+    _learnq.push(['track', 'Added to Cart', item]);
+  });
+</script>
+
+{% comment %} STICKI GALLERY
+<style>
+    @media (min-width: 1280px) {
+        .product-body {
+            display: flex;
+            margin: 0 auto;
+        }
+
+
+        .product-details {
+
+            padding-left: 20px;
+        }
+
+        .page-product__gallery {
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+
+        .page-product__gallery::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1280px) {
+        .page-product__gallery {
+            overflow-y: hidden;
+        }
+    }
+</style>
+<script>
+    if (window.innerWidth >= 1281) {
+        document.querySelectorAll('.tab-title').forEach(tab => {
+            tab.addEventListener('click', function () {
+                const gallery = document.querySelector('.page-product__gallery');
+                const productBody = document.querySelector('.product-body');
+
+                // Проверяем, есть ли у открытых табов класс active
+                const activeTabs = document.querySelectorAll('.tab-content.active');
+
+                if (activeTabs.length === 0) {
+                    gallery.style.transform = 'translateY(0px)';
+                } else {
+                }
+            });
+        });
+
+
+        document.addEventListener("scroll", function () {
+            const productBody = document.querySelector('.product-body');
+            const gallery = document.querySelector('.page-product__gallery');
+            const productBodyRect = productBody.getBoundingClientRect();
+            const galleryHeight = gallery.offsetHeight;
+            const maxOffset = productBodyRect.height - galleryHeight;
+
+            if (productBodyRect.top <= 0 && Math.abs(productBodyRect.top) <= maxOffset) {
+                gallery.style.transform = `translateY(${Math.abs(productBodyRect.top)}px)`;
+            } else if (Math.abs(productBodyRect.top) > maxOffset) {
+                gallery.style.transform = `translateY(${maxOffset}px)`;
+            } else {
+                gallery.style.transform = 'translateY(0px)';
+            }
+        });
+    }
+
+
+</script>
+{% endcomment %}

@@ -10,8 +10,8 @@
 {% assign product-id = product.id %}
 <div class="page-product__gallery">
   <div class="product-gallery-slider">
-      {% if template.suffix == 'ultimate' %}
-      {% for media in product.media %}
+      {% if template.suffix == 'ultimate' or template.suffix == 'bundle-product' %}
+          {% for media in product.media %}
           <div class="product-gallery-slider__slide">
               <div class="product-gallery-slider__item">
                   {% if media.media_type == 'image' %}
@@ -40,7 +40,7 @@
     {% endif %}
   </div>
   <div  class="product-gallery-thumbs">
-      {% if template.suffix == 'ultimate' %}
+      {% if template.suffix == 'ultimate' or template.suffix == 'bundle-product' %}
       {% for media in product.media %}
           <div class="product-gallery-thumbs__slide">
               <div class="product-gallery-thumbs__item">
@@ -67,7 +67,7 @@
       {% endfor %}
     {% endif %}
   </div>
-  {% if template.suffix == 'ultimate' %}
+    {% if template.suffix == 'ultimate' or template.suffix == 'bundle-product' %}
       <div class="portable-product-gallery">
           <div class="portable-product-gallery__flex">
               {% for media in media_without_first %}
@@ -102,7 +102,7 @@
 
   {% endif %}
 </div>
-    {% if template.suffix == 'ultimate' %}
+{% if template.suffix == 'ultimate' or template.suffix == 'bundle-product' %}
     <style>
         .portable-image-popup {
             display: none;

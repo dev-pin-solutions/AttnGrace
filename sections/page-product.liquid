@@ -35,7 +35,7 @@
 {% if section.settings.enable_single == true %}
   <div
     class="recommended-products-single-container"
-    {% if template.suffix == 'ultimate' %}
+          {% if template.suffix == 'ultimate' or template.suffix == 'bundle-product' %}
       style="display: none;"
     {% endif %}
     data-product-recommendations-container

@@ -132,7 +132,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Theme CSS -->
   {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
 
-  {% if template == "product" or template == "page.find.specialist" or template == "product.ultimate" %} 
+  {% if template == "product" or template == "page.find.specialist" or template == "product.ultimate" or template == "product.bundle-product" %}
     {{ 'jquery.min.js' | asset_url | script_tag }}
   {% endif %}
   <!-- Theme object -->

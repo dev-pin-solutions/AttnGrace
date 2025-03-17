@@ -148,7 +148,11 @@
         {% endif %}
 	</div>
 
-  {% include 'product-options', variant: variant %}
+      {% if template contains 'bundle-product' %}
+          {% include 'bundle-product-options', variant: variant %}
+      {% else %}
+          {% include 'product-options', variant: variant %}
+      {% endif %}
   {% unless product.handle contains 'drawcord-bags' %}
 	{% include 'product-bottom' %}
   {% endunless %}
