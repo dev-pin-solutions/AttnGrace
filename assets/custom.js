@@ -709,114 +709,6 @@ document.addEventListener('click', async (event) => {
   }
 });
 
-// Обработчик для клика по .cart-full
-let retryCount = 0;
-const maxRetries = 1;
-async function handleCartFullClick() {
-  const upsells = document.querySelector('.upsells');
-  if (!upsells) {
-    if (retryCount < maxRetries) {
-      retryCount++;
-      console.warn(`Блок upsells не найден, повторяем проверку через 2 секунды... (${retryCount}/${maxRetries})`);
-      setTimeout(() => handleCartFullClick(), 1000); // Повторная проверка через 2 секунды
-    } else {
-      console.error('Превышено количество попыток проверки блока upsells.');
-    }
-    return;
-  }
-
-  retryCount = 0;
-  document.querySelectorAll('.custom-product-block').forEach((block) => block.remove());
-  // Получение данных корзины
-  setTimeout(async () => {
-    try {
-      const cartData = await getCartData();
-      const addedSlideProductIds = new Set();
-
-      cartData.items.forEach((item) => {
-        const productId = item.product_id.toString();
-
-        if (window.productData[productId]) {
-          const productInfo = window.productData[productId];
-
-          if (addedSlideProductIds.has(productInfo.slide_product_id)) return;
-          addedSlideProductIds.add(productInfo.slide_product_id);
-
-          const customBlock = createCustomBlock(productInfo);
-          upsells.insertBefore(customBlock, upsells.firstChild);
-        }
-      });
-    } catch (error) {
-      console.error('Ошибка получения данных корзины:', error);
-    }
-  }, 500);
-
-
-}
-
-
-// Обработчик для клика по .add-to-cart-list
-function handleAddToCartListClick(target) {
-  console.log('Обрабатываем клик на .add-to-cart-list:', target);
-
-  // Получение ID продукта из атрибута
-  const productId = target.getAttribute('data-product-id');
-  if (productId) {
-    console.log('Добавляем продукт в корзину:', productId);
-    addProductToCart(productId);
-  }
-}
-
-// Обработчик для клика по .product-add-available
-function handleProductAddAvailableClick(target) {
-  console.log('Обрабатываем клик на .product-add-available:', target);
-
-  // Получение ID продукта из атрибута
-  const productId = target.getAttribute('data-product-id');
-  if (productId) {
-    console.log('Добавляем продукт в корзину:', productId);
-    addProductToCart(productId);
-  }
-}
-
-// Функция для создания кастомного блока
-function createCustomBlock(productInfo) {
-  const customBlock = document.createElement('div');
-  customBlock.classList.add('custom-product-block');
-  customBlock.innerHTML = `
-    <h3 class="title">${productInfo.cart_title}</h3>
-    <p class="subtitle">${productInfo.cart_subtitle}</p>
-    <div class="custom_product_container">
-      <div class="cmb_custom-product">
-        <img src="${productInfo.slide_image}" alt="${productInfo.slide_product_title}">
-      </div>
-      <div class="cmd_info_review">
-        <div class="cmb_product-info">
-          <div class="cmb_product_info_price_btn">
-            <h4>${productInfo.slide_product_title}</h4>
-            <span>${productInfo.slide_product_price}</span>
-          </div>
-          <button class="add-to-cart-button" onclick="addProductToCart('${productInfo.slide_product_id}');" data-product-id="${productInfo.slide_product_id}">ADD TO CART</button>
-        </div>
-        <div class="cmb_review">
-          <div class="cmb_verified_buyer">
-            <span class="verified-buyer">
-              <span class="buyer_name" style="color: black; margin-right: 5px">${productInfo.review_author}</span>
-              Verified Buyer
-            </span>
-          </div>
-          <p>⭐⭐⭐⭐⭐</p>
-          <p><span class="subtitle">${productInfo.review_title}</span></p>
-          <p class="last_review_p">${productInfo.review_text}</p>
-        </div>
-      </div>
-    </div>
-  `;
-  return customBlock;
-}
-
-
-
 // Функция для добавления продукта в корзину
 async function addProductToCart(productId) {
   console.log(productId);
@@ -864,3 +756,93 @@ async function getCartData() {
     return { items: [] };
   }
 }
+
+function moveUpsells() {
+    const upsells = document.querySelector('.upsells-slider-container');
+    const upsellsTarget = document.querySelector('#slidecarthq .upsells');
+
+    if (!upsells || !upsellsTarget) {
+        setTimeout(moveUpsells, 50);
+        return;
+    }
+
+    if (upsellsTarget.contains(upsells)) {
+        return;
+    }
+
+    upsells.style.opacity = "0";
+    upsellsTarget.appendChild(upsells);
+    upsells.style.display = "block";
+
+    if (window.Okendo?.widgets?.refresh) {
+        Okendo.widgets.refresh();
+    }
+
+    const slider = $(upsells).find('.upsells-slider');
+
+    setTimeout(() => {
+        slider.find('.slick-slide').css({
+            'display': 'flex',
+            'align-items': 'center',
+            'justify-content': 'center'
+        });
+
+        if (slider.hasClass('slick-initialized')) {
+            slider.slick('unslick');
+        }
+
+        slider.slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true,
+            arrows: true,
+            adaptiveHeight: true,
+            responsive: [
+                { breakpoint: 1024, settings: { slidesToShow: 2 } },
+                { breakpoint: 768, settings: { slidesToShow: 1 } }
+            ]
+        });
+
+
+        upsells.style.opacity = "1";
+    }, 5);
+}
+
+moveUpsells();
+
+
+
+$(document).ready(function(){
+    $('.upsells-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+});
+
+document.body.addEventListener("click", (event) => {
+    const target = event.target.closest('.add-to-cart-list, .product-add-available');
+    if (target) {
+        const productId = target.getAttribute('data-product-id');
+        if (productId) {
+            addProductToCart(productId);
+        }
+    }
+});

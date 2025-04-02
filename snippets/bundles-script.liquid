@@ -1,0 +1,80 @@
+<script>
+    function addBundleToCart(event) {
+        event.preventDefault();
+
+        const quantityInput = document.getElementById('hiddenqty');
+        const quantity = quantityInput ? parseInt(quantityInput.value, 10) || 1 : 1;
+
+        const productIds = event.target.getAttribute('data-products');
+        if (!productIds) {
+            console.error("No product IDs found for bundle.");
+            return;
+        }
+
+        const productArray = productIds.split(',');
+
+        const products = productArray.map(id => ({
+            id: id,
+            quantity: 1
+        }));
+
+        console.log("Products to add:", products);
+
+        if (products.length === 0) {
+            console.error("No products found in the bundle metafield.");
+            return;
+        }
+
+        fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items: products }),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text) });
+                }
+                return response.json();
+            })
+            .then(() => {
+                console.log('Products added to cart');
+
+                localStorage.setItem('open_cart_drawer', 'true');
+                location.reload();
+            })
+            .catch(error => {
+                console.error('Error adding products to cart:', error);
+            });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.bundle-button').forEach(button => {
+            button.addEventListener('click', addBundleToCart);
+        });
+
+        if (localStorage.getItem('open_cart_drawer') === 'true') {
+            setTimeout(() => {
+                document.querySelector('.main-sidebar-tool-item a')?.click();
+                localStorage.removeItem('open_cart_drawer');
+            }, 500);
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('AddtoCartBtn')?.addEventListener('click', () => {
+            localStorage.setItem('open_cart_drawer', 'true');
+
+            setTimeout(() => {
+                location.reload();
+            }, 500);
+        });
+
+        if (localStorage.getItem('open_cart_drawer') === 'true') {
+            setTimeout(() => {
+                document.querySelector('.cart-full')?.click();
+                localStorage.removeItem('open_cart_drawer');
+            }, 500);
+        }
+    });
+
+</script>

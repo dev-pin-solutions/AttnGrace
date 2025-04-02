@@ -418,39 +418,90 @@ Creation date: 08/14/2024
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-  <script>
-      document.addEventListener('DOMContentLoaded', function () {
-          const productData = {
-          {% assign collection_for_card = collections['collection-for-card'] %}
-          {% for product in collection_for_card.products %}
-          {% if product.metafields.custom.slider_products != blank %}
-          {{ product.id }}:
-          {
-              {% for value in product.metafields.custom.slider_products.value %}
-              {% if forloop.first %}
+  {% render 'bundles-script' %}
+  <div class="upsells-slider-container" style="display: none">
+      <div class="upsells-slider">
+          {% for item in cart.items %}
+              {% assign upsell_entries = item.product.metafields.custom.upsell_products.value %}
+              {% if upsell_entries %}
+                  {% for entry in upsell_entries %}
+                      {% assign upsell_product = entry.product.value %}
 
-                  slide_product_id: '{{ value.product_for_slide.value.first_available_variant.id }}',
-                  slide_product_title: '{{ value.product_for_slide.value.title }}',
-                  slide_product_price: '{{ value.product_for_slide.value.price | money }}',
-                  slide_image: '{{ value.image_for_product | img_url }}',
-                  cart_title: '{{ value.cart_title }}',
-                  cart_subtitle: '{{ value.cart_subtitle }}',
-                  review_author: '{{ value.review_autor }}',
-                  review_rating: '{{ value.review_rating }}',
-                  review_title: '{{ value.review_title }}',
-              review_text: '{{ value.review_text_short |  }}'
+                      {% if upsell_product %}
+                          {% assign bundle_components = upsell_product.metafields.custom.bundle_components.value %}
 
+                          <div class="upsell-card" data-cart-item="{{ item.key }}">
+                              <div class="upsell-card__description">
+                                  <span>{{ entry.title }}</span>
+                                  <p>{{ entry.paragraph }}</p>
+                              </div>
+                              <div class="upsell-card__inner">
+                                  <div class="upsell-card__image">
+                                      <a href="{{ upsell_product.url }}">
+                                          <img src="{{ upsell_product.featured_image | img_url: '300x300' }}"
+                                               alt="{{ upsell_product.title | escape }}"
+                                               loading="lazy">
+                                      </a>
+                                  </div>
+
+                                  <div class="upsell-card__info">
+                                      <div class="upsell-card__rating">
+                                          {% render 'okendo-reviews-product-rating-summary', product: upsell_product %}
+                                      </div>
+
+                                      <h3 class="upsell-card__title">
+                                          <a href="{{ upsell_product.url }}">
+                                              {{ upsell_product.title }}
+                                          </a>
+                                      </h3>
+
+                                      <div class="upsell-card__price">
+                                        <span class="price-current">
+                                            {{ upsell_product.price | money }}
+                                        </span>
+                                          {% if upsell_product.compare_at_price > upsell_product.price %}
+                                              <span class="price-compare">
+                                                {{ upsell_product.compare_at_price | money }}
+                                            </span>
+                                          {% endif %}
+                                      </div>
+
+                                      <p class="upsell_product__description">
+                                          {{ upsell_product.description | strip_html | truncate: 110 }}
+                                      </p>
+
+                                      {% if bundle_components %}
+                                          {% assign product_ids = "" %}
+                                          {% for component in bundle_components %}
+                                              {% assign product_ids = product_ids | append: component.variants.first.id %}
+                                              {% unless forloop.last %}
+                                                  {% assign product_ids = product_ids | append: "," %}
+                                              {% endunless %}
+                                          {% endfor %}
+
+                                          <button type="button"
+                                                  class="upsell-card__button bundle-button"
+                                                  data-products="{{ product_ids }}"
+                                                  onclick="addBundleToCart(this)">
+                                              Add bundle to cart
+                                          </button>
+                                      {% else %}
+                                          <form method="post" action="/cart/add">
+                                              <input type="hidden" name="id" value="{{ upsell_product.variants.first.id }}">
+                                              <button type="submit" class="upsell-card__button">
+                                                  Add to Cart
+                                              </button>
+                                          </form>
+                                      {% endif %}
+                                  </div>
+                              </div>
+                          </div>
+                      {% endif %}
+                  {% endfor %}
               {% endif %}
-              {% endfor %}
-          }
-          {% unless forloop.last %},{% endunless %}
-          {% endif %}
           {% endfor %}
-      };
-          console.log(productData)
-          window.productData = productData;
-      });
-  </script>
+      </div>
+  </div>
 </body>
 <!-- Back in Stock helper snippet -->
 {% render 'back-in-stock-helper' %}
