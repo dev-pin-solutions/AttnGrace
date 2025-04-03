@@ -348,6 +348,18 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  text-decoration: none;
+}
+
+#shopify-section-product-bundles #frequency {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 100px;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
 }
 
 #shopify-section-product-bundles .bundle-button {
