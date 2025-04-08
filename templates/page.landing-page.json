@@ -29,10 +29,13 @@
     "updated_image_with_text_4bAMcC": {
       "type": "updated-image-with-text",
       "settings": {
+        "section_class": "",
         "section_height": "small",
+        "section_background_color": "",
         "background_color": "white",
         "image": "shopify://shop_images/Group_73.png",
         "image_position": "center-center",
+        "subheading": "",
         "heading": "“Attn: Ladies! The allure of travel and adventure is getting out of our comfort zones.”",
         "text": "<p>So let’s get uncomfortable and talk about what goes on in our lovely nether regions.</p><p>I have always had an overactive bladder and it’s only gotten worse in my 50’s. </p><p>I recently discovered pads by @attngrace products that fit my overactive lifestyle whether I am traveling, biking, hiking or skiing. Their sustainable pads are not only good for Mother Earth but gentle on the private parts and bring confidence that I won’t have any leaky moments. 50 percent of women experience it, so I know I am not alone.</p><p><br/></p><p>Kimberly Jensen,<br/>Instagram: <a href=\"https://www.instagram.com/earthmommatravels/\" target=\"_blank\" title=\"https://www.instagram.com/earthmommatravels/\">@earthmommatravels</a></p>",
         "text_justification": "left",
@@ -45,10 +48,13 @@
     "updated_image_with_text_69kXRc": {
       "type": "updated-image-with-text",
       "settings": {
+        "section_class": "",
         "section_height": "small",
+        "section_background_color": "",
         "background_color": "white",
         "image": "shopify://shop_images/Group_76.png",
         "image_position": "center-center",
+        "subheading": "",
         "heading": "“I have gotten to the age where...despite exercises, I have to wear some protection every day.”",
         "text": "<p>Wearing other pads caused me to have terrible irritation. </p><p>But Attn: Grace pads are absorbent, soft and effective without causing the irritation. Attn: Grace is now my go-to!</p><p>Kathleen S. Carrion</p>",
         "text_justification": "left",
@@ -58,12 +64,64 @@
         "desktop": "right",
         "mobile": "above"
       }
+    },
+    "updated_rich_text_D6VTT3": {
+      "type": "updated-rich-text",
+      "settings": {
+        "section_height": "small",
+        "background_color": "contrast",
+        "heading": "Find the best product for your exact needs.",
+        "content": "",
+        "link_text": "FIND YOUR FIT",
+        "link_url": "#quiz-29HrVVj"
+      }
+    },
+    "updated_image_with_text_FhWndw": {
+      "type": "updated-image-with-text",
+      "settings": {
+        "section_class": "image-with-text-colored",
+        "section_height": "small",
+        "section_background_color": "#f2ebe7",
+        "background_color": "none",
+        "image": "shopify://shop_images/Screenshot_2025-01-21_at_14.39.47_1.png",
+        "image_position": "center-center",
+        "subheading": "Myth-buster",
+        "heading": "Most women think that strong muscles = strong pelvic floor",
+        "text": "<p>This is only the case if you're doing a lot of pelvic floor work. </p><p>In fact, exercise like cross fit or high impact exercise can cause increased pressure on the pelvic floor and therefore increase your risk of urinary incontinence. </p>",
+        "text_justification": "left",
+        "button_link": "",
+        "button_label": "Shop the dress",
+        "desktop": "left",
+        "mobile": "above"
+      }
+    },
+    "updated_image_with_text_Pdaq6a": {
+      "type": "updated-image-with-text",
+      "settings": {
+        "section_class": "image-with-text-advisor",
+        "section_height": "small",
+        "section_background_color": "#f2ebe7",
+        "background_color": "none",
+        "image": "shopify://shop_images/Untitled_design_-_2025-03-10T185551.830_1.png",
+        "image_position": "center-center",
+        "subheading": "",
+        "heading": "“But that doesn't mean you should stop exercising!”",
+        "text": "<p>It just means that you should be aware that this can happen -- as we have children, as we age and as our bodies evolve. Even the impact of intense exercise, like running or jumping can weaken the pelvic floor over time.  That doesn't mean you stop working out, but it is critical to include pelvic floor exercises or formal pelvic floor therapy to best support your bladder over time.<br/><br/>Dr. Barbara Frank, OB-GYN & Attn: Grace Medical Advisor</p>",
+        "text_justification": "left",
+        "button_link": "",
+        "button_label": "Shop the dress",
+        "desktop": "left",
+        "mobile": "above"
+      }
     }
   },
   "order": [
     "page",
     "banner",
     "updated_image_with_text_4bAMcC",
-    "updated_image_with_text_69kXRc"
+    "updated_image_with_text_69kXRc",
+    "updated_rich_text_D6VTT3",
+    "updated_image_with_text_FhWndw",
+    "updated_image_with_text_Pdaq6a"
   ]
 }

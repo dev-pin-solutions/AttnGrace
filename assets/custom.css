@@ -306,6 +306,10 @@
 
 /* Landing Page */
 /* Banner */
+.home-our-mission .our-mission {
+  z-index: 0;
+}
+
 .banner-our-mission .text-wrapper {
   flex: 0 1 53%;
   min-width: unset;
@@ -407,7 +411,7 @@
 .updated-image-text-section .home-image-image-block {
   background-position: top;
   max-width: 495px;
-  margin: 40px auto 0;
+  margin: 40px 0 0;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -417,9 +421,14 @@
   margin-top: 10px;
 }
 
+.updated-image-text-section .home-image-text-block {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 @media all and (max-width: 768px) {
   .updated-image-text-section .home-image-image-block {
-    padding: 50px 30px 30px!important;
+    padding: 50px 30px 0!important;
   }
 
   .updated-image-text-section .home-image-text-block {
@@ -441,3 +450,102 @@
   }
 }
 /* Image with Text END */
+
+.custom-container {
+  max-width: 1203px;
+  margin: 0 auto;
+}
+
+.custom-btn {
+  display: block;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding: 11px 40px;
+  color: white;
+  background: black;
+  border-radius: 100px;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.custom-btn:hover {
+  background-color: #f49958;
+  color: #000;
+}
+
+@media all and (max-width: 768px) {
+  .custom-btn {
+    font-size: 20px;
+    max-width: unset;
+    width: 100%;
+    padding: 7px 40px;
+  }
+}
+
+/* Rich Text */
+.updated-rich-text-section .home-section-rte-title {
+    font-size: 56px;
+    line-height: 64px;
+    font-family: BentonMod;
+    font-weight: 300;
+}
+
+@media all and (max-width: 768px) {
+  .updated-rich-text-section .home-section-rte-title {
+    font-size: 40px;
+    line-height: 45px;
+  }
+}
+/* Rich Text END */
+
+/* Image with Text Colored */
+.image-with-text-colored span {
+  margin-bottom: 40px;
+}
+
+.home-image-text-subheading {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+  font-size: 28px;
+  line-height: 1;
+}
+
+@media all and (min-width: 768px) {
+  .image-with-text-colored .home-image-text-block {
+    width: calc(52% - 5px) !important;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .home-image-text-subheading {
+    font-size: 20px;
+  }
+}
+/* Image with Text Colored END */
+
+/* Image with Text Advisor */
+.image-with-text-advisor .home-image-text-container {
+  align-items: center;
+}
+
+.image-with-text-advisor .home-image-image-block {
+  max-width: 220px;
+  margin: 0 auto!important;
+}
+
+@media all and (min-width: 768px) {
+  .image-with-text-advisor .home-image-image-block {
+    width: calc(30% - 5px);
+    padding: 80px;
+    max-width: unset;
+    margin: 0!important;
+  }
+
+  .image-with-text-advisor .home-image-text-block {
+    width: calc(70% - 5px);
+  }
+}
+/* Image with Text Advisor END */

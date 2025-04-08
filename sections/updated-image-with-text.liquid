@@ -12,8 +12,15 @@
 
 {% assign image_crop = section.settings.image_position | split: '-' | last %}
 
+<style>
+  {% if section.settings.background_color != blank %}
+    #shopify-section-{{ section.id }} {
+      background-color: {{ section.settings.section_background_color }};
+    }
+  {% endif %}
+</style>
 <section
-  class="home-image-text-section updated-image-text-section"
+  class="home-image-text-section updated-image-text-section custom-container {{ section.settings.section_class }}"
   data-section-id="{{ section.id }}"
   data-section-type="home-image-text"
   data-home-section
@@ -63,6 +70,12 @@
         "
       >
         <article class="home-image-text-block-content">
+          {% if section.settings.subheading != blank %}
+            <div class="home-image-text-subheading">
+              {{ section.settings.subheading }}
+            </div>
+          {% endif %}
+
           {% if section.settings.heading != blank %}
             <div class="home-image-text-content rte">
               <span>{{ section.settings.heading | escape }}</span> {{ section.settings.text }}
@@ -91,8 +104,13 @@
 {% schema %}
 {
   "name": "Updated Image with Text",
-  "class": "home-image-text",
+  "class": "updated-image-text",
   "settings": [
+    {
+      "type": "text",
+      "id": "section_class",
+      "label": "Section Custom Class"
+    },
     {
       "type": "select",
       "id": "section_height",
@@ -112,6 +130,11 @@
         }
       ],
       "default": "medium"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section Background Color"
     },
     {
       "type": "select",
@@ -185,6 +208,12 @@
     {
       "type": "header",
       "content": "Text"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Myth-buster"
     },
     {
       "type": "text",
