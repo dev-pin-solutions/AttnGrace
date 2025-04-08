@@ -339,7 +339,9 @@ Creation date: 08/14/2024
               </div>
             </div>
           {% else %}
-            {% render 'breadcrumbs' %}
+              {% unless template.suffix == "landing-page" %}
+                {% render 'breadcrumbs' %}
+              {% endunless %}
           {% endif %}
         {% endif %}
       {% endif %}

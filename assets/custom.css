@@ -304,3 +304,140 @@
   }
 }
 
+/* Landing Page */
+/* Banner */
+.banner-our-mission .text-wrapper {
+  flex: 0 1 53%;
+  min-width: unset;
+  text-align: center;
+}
+
+.banner-our-mission .image-wrapper {
+  -webkit-flex: 0 1 47%;
+  -moz-flex: 0 1 47%;
+  -ms-flex: 0 1 47%;
+  flex: 0 1 47%;
+  min-width: unset;
+}
+
+.banner-our-mission .text-inner .heading {
+  font-size: 56px;
+  line-height: 64px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.banner-our-mission .text-inner .text {
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 400;
+  font-family: 'Acre';
+  margin: 0 auto 50px;
+  max-width: 483px;
+}
+
+.banner-our-mission .text-inner .heading strong:nth-child(1) {
+  font-weight: 300;
+  background: #F58C35;
+}
+
+.banner-our-mission .text-inner .heading strong:nth-child(2) {
+  font-weight: 300;
+  background: #E2E200;
+}
+
+.banner-our-mission .text-inner .heading strong:nth-child(3) {
+  font-weight: 300;
+  background: #93A5D8;
+}
+
+@media all and (max-width: 768px) {
+  .home-our-mission .banner-our-mission {
+    padding-top: 0;
+  }
+
+  .banner-our-mission .text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+  }
+
+  .banner-our-mission .text-wrapper,
+  .banner-our-mission .text-inner {
+    text-align: right;
+  }
+
+  .banner-our-mission .text-inner .heading {
+    font-size: 40px;
+    line-height: 45px;
+    text-align: center;
+  }
+
+  .banner-our-mission .text-inner .text {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 224px;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+/* Banner END */
+
+/* Image with Text */
+.updated-image-text-section {
+  padding: 40px 0;
+}
+
+.updated-image-text-section span {
+  display: block;
+  font-size: 56px;
+  line-height: 64px;
+  border: 0;
+}
+
+.updated-image-text-section p {
+  font-family: 'Acre';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+}
+
+.updated-image-text-section .home-image-image-block {
+  background-position: top;
+  max-width: 495px;
+  margin: 40px auto 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.home-image-text-icon {
+  max-width: 312px;
+  margin-top: 10px;
+}
+
+@media all and (max-width: 768px) {
+  .updated-image-text-section .home-image-image-block {
+    padding: 50px 30px 30px!important;
+  }
+
+  .updated-image-text-section .home-image-text-block {
+    position: relative!important;
+  }
+
+  .updated-image-text-section .home-image-text-content {
+    color: black;
+  }
+
+  .updated-image-text-section span {
+    font-size: 40px;
+    line-height: 45px;
+  }
+
+  .updated-image-text-section p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+/* Image with Text END */
