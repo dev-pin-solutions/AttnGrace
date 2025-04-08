@@ -113,6 +113,124 @@
         "desktop": "left",
         "mobile": "above"
       }
+    },
+    "5e9e7c91-3a07-4387-b1ae-0a289a8425eb": {
+      "type": "featured-product",
+      "blocks": {
+        "bd72d4e3-5131-4042-812c-b4f5ee6cd511": {
+          "type": "product",
+          "settings": {
+            "product-name": "Liners",
+            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_LINERS.jpg",
+            "product-link": "shopify:\/\/products\/light-liner",
+            "overlay-text": "A simple, barely there liner ideal for the lighest of bladder leaks. Immediately wicks away any drips or spurts of pee."
+          }
+        },
+        "3cab465f-acd0-4c6d-8183-0492cd1ef9dd": {
+          "type": "product",
+          "settings": {
+            "product-name": "Pads",
+            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_PADS.jpg",
+            "product-link": "shopify:\/\/products\/moderate-pads",
+            "overlay-text": "These pads offer lightning quick absorbency for a range of support - from bursts to streams, in four different levels of absorbency, we've got you covered."
+          }
+        },
+        "a800cf01-fa6c-409c-9faf-9a2e99c65398": {
+          "type": "product",
+          "settings": {
+            "product-name": "Briefs",
+            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_BRIEFS.jpg",
+            "product-link": "shopify:\/\/products\/briefs",
+            "overlay-text": "Ultra-thin but seriously powerful, our disposable underwear lock in the heaviest bladder leaks (think gushes and streams)."
+          }
+        }
+      },
+      "block_order": [
+        "bd72d4e3-5131-4042-812c-b4f5ee6cd511",
+        "3cab465f-acd0-4c6d-8183-0492cd1ef9dd",
+        "a800cf01-fa6c-409c-9faf-9a2e99c65398"
+      ],
+      "settings": {}
+    },
+    "1621255812209f27aa": {
+      "type": "home-text-with-icon",
+      "blocks": {
+        "7e1c7636-3833-470d-ac8c-a596f3688f17": {
+          "type": "column",
+          "settings": {
+            "title": "Leak-Free",
+            "content": "Signature CLN Design™ technology for superior moisture-wicking and lightening-fast absorption.",
+            "column_image": "shopify:\/\/shop_images\/noun-no-water-1661151.svg"
+          }
+        },
+        "cd1a193d-3ac9-4d91-ae9f-cdf37add0387": {
+          "type": "column",
+          "settings": {
+            "title": "Skin-Safe",
+            "content": "Breathable, natural materials with no harsh dyes, bleaches, fragrances, or petro-chemicals to irritate your most sensitive skin.",
+            "column_image": "shopify:\/\/shop_images\/noun-care-2928731.svg"
+          }
+        },
+        "404d690f-b934-4cfc-8b17-c42d2c991f22": {
+          "type": "column",
+          "settings": {
+            "title": "Eco-Conscious",
+            "content": "Friendlier disposables made in CO2 neutral factories with plant-based materials, FSC Certified sustainably forested filler and kraft paper or GreenPE packaging.",
+            "column_image": "shopify:\/\/shop_images\/noun-eco-friendly-4297133.png"
+          }
+        }
+      },
+      "block_order": [
+        "7e1c7636-3833-470d-ac8c-a596f3688f17",
+        "cd1a193d-3ac9-4d91-ae9f-cdf37add0387",
+        "404d690f-b934-4cfc-8b17-c42d2c991f22"
+      ],
+      "settings": {
+        "heading": "Why Attn: Grace?",
+        "sbg-color": "#dedc00"
+      }
+    },
+    "quiz-as-seen-in": {
+      "type": "quiz-as-seen-in",
+      "blocks": {
+        "fa3af939-50cd-47d6-b3ba-baee16c59f6e": {
+          "type": "slider_items",
+          "settings": {
+            "seen_item_title": "“The first collection of its kind in the bladder leakage space... creating a higher standard.”",
+            "seen_item_image": "shopify:\/\/shop_images\/forbes-logo-black-transparent_1.png"
+          }
+        },
+        "47f1053f-ca2b-48a7-964f-aa047a9c8465": {
+          "type": "slider_items",
+          "settings": {
+            "seen_item_title": "“I prefer to buy personal-care products from companies that take sustainability and clean ingredients seriously. Attn: Grace is a great example.”",
+            "seen_item_image": "shopify:\/\/shop_images\/1200px-Gooponlinelogo_1.png"
+          }
+        },
+        "1045065d-7410-4909-9458-9c43daa6dd9f": {
+          "type": "slider_items",
+          "settings": {
+            "seen_item_title": "“Attn: Grace is a personal care brand disrupting the incontinence segment with stylish, sustainable and subscription-based products for women.”",
+            "seen_item_image": "shopify:\/\/shop_images\/bi_logotype.png"
+          }
+        },
+        "a1d5d0b1-545d-4b47-8e78-c7465801925d": {
+          "type": "slider_items",
+          "settings": {
+            "seen_item_title": "\"A sustainable, high-quality brand that addresses concerns about our changing bodies in a graceful and intelligent way? That’s my kind of company.”",
+            "seen_item_image": "shopify:\/\/shop_images\/InTheGroove_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "fa3af939-50cd-47d6-b3ba-baee16c59f6e",
+        "47f1053f-ca2b-48a7-964f-aa047a9c8465",
+        "1045065d-7410-4909-9458-9c43daa6dd9f",
+        "a1d5d0b1-545d-4b47-8e78-c7465801925d"
+      ],
+      "settings": {
+        "heading": "As Seen In"
+      }
     }
   },
   "order": [
@@ -122,6 +240,9 @@
     "updated_image_with_text_69kXRc",
     "updated_rich_text_D6VTT3",
     "updated_image_with_text_FhWndw",
-    "updated_image_with_text_Pdaq6a"
+    "updated_image_with_text_Pdaq6a",
+    "5e9e7c91-3a07-4387-b1ae-0a289a8425eb",
+    "1621255812209f27aa",
+    "quiz-as-seen-in"
   ]
 }
