@@ -209,6 +209,38 @@
       ],
       "settings": {}
     },
+    "sustainability_ECm6AK": {
+      "type": "sustainability",
+      "blocks": {
+        "column_YPiFr4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-01-21_at_14.24.54_2.png",
+            "text": "<p>Honored to receive Good Housekeeping’s Most Sustainable Innovation Award for 2024!  Attn: Grace is redefining incontinence care with sustainability at its core.</p>"
+          }
+        },
+        "column_BUg9fJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Frame_104.png",
+            "text": "<p>Proudly B Corp. Certified, because better care starts with better standards. Attn: Grace is committed to sustainability, transparency, and ethical responsibility, raising the bar for incontinence care with products that are kind to you and the planet.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_YPiFr4",
+        "column_BUg9fJ"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50,
+        "heading": "Sustainability is in our DNA",
+        "link_text": "Explore our absolutely Not's",
+        "link_url": "shopify://pages/abby-de-angelis"
+      }
+    },
     "1621255812209f27aa": {
       "type": "home-text-with-icon",
       "blocks": {
@@ -302,6 +334,7 @@
     "banner_image_with_text_DQAgAh",
     "updated_rich_text_Xq8jzt",
     "5e9e7c91-3a07-4387-b1ae-0a289a8425eb",
+    "sustainability_ECm6AK",
     "1621255812209f27aa",
     "quiz-as-seen-in"
   ]

@@ -502,7 +502,7 @@
   color: white;
   background: black;
   border-radius: 100px;
-  max-width: 240px;
+  width: max-content;
   margin: 0 auto;
   text-transform: uppercase;
   text-align: center;
@@ -666,3 +666,67 @@
     line-height: 26px;
   }
 }
+
+
+/* Sustainability */
+.sustainability .sustainability-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sustainability-blocks {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.sustainability-block {
+  width: 50%;
+}
+
+.sustainability-block__image img {
+  aspect-ratio: 1;
+}
+
+.sustainability-block__text p {
+  font-family: 'Acre';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+}
+
+.sustainability .global-btn {
+  margin-top: 20px;
+}
+
+@media all and (max-width: 768px) {
+  .sustainability .sustainability-title {
+    margin-bottom: 25px;
+  }
+
+  .sustainability-blocks {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .sustainability-block {
+    width: 100%;
+  }
+
+  .sustainability-block__text p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1350px) {
+  .sustainability-blocks {
+    gap: 50px;
+  }
+
+  .sustainability-block__text p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+/* Sustainability END */
