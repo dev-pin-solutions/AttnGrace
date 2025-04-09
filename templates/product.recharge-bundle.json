@@ -26,14 +26,40 @@
     },
     "product_bundles_YDDPd9": {
       "type": "product-bundles",
+      "blocks": {
+        "bundle_N98NGD": {
+          "type": "bundle",
+          "settings": {
+            "bundle": "ultimate-24-7"
+          }
+        },
+        "bundle_iKj8bT": {
+          "type": "bundle",
+          "settings": {
+            "bundle": "ultimate-24-7"
+          }
+        },
+        "bundle_nwiRGr": {
+          "type": "bundle",
+          "settings": {
+            "bundle": "ultimate-24-7"
+          }
+        },
+        "bundle_UGPBpc": {
+          "type": "bundle",
+          "settings": {
+            "bundle": "ultimate-24-7"
+          }
+        }
+      },
+      "block_order": [
+        "bundle_N98NGD",
+        "bundle_iKj8bT",
+        "bundle_nwiRGr",
+        "bundle_UGPBpc"
+      ],
       "settings": {
-        "bundles_heading": "Popular Bundles",
-        "selected_bundles": [
-          "ultimate-24-7",
-          "nightn-day-hassle-free",
-          "nightn-day-hassle-free-2",
-          "ultimate-24-7-care-2"
-        ]
+        "bundles_heading": "Popular Bundles"
       }
     },
     "custom_four_jypckM": {
