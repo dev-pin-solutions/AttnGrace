@@ -29,6 +29,10 @@
     "updated_image_with_text_4bAMcC": {
       "type": "updated-image-with-text",
       "settings": {
+        "padding_top": 55,
+        "padding_bottom": 70,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
         "section_class": "",
         "section_height": "small",
         "section_background_color": "",
@@ -48,6 +52,10 @@
     "updated_image_with_text_69kXRc": {
       "type": "updated-image-with-text",
       "settings": {
+        "padding_top": 0,
+        "padding_bottom": 75,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
         "section_class": "",
         "section_height": "small",
         "section_background_color": "",
@@ -69,6 +77,7 @@
       "type": "updated-rich-text",
       "settings": {
         "section_height": "small",
+        "section_class": "",
         "background_color": "contrast",
         "heading": "Find the best product for your exact needs.",
         "content": "",
@@ -79,6 +88,10 @@
     "updated_image_with_text_FhWndw": {
       "type": "updated-image-with-text",
       "settings": {
+        "padding_top": 70,
+        "padding_bottom": 60,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
         "section_class": "image-with-text-colored",
         "section_height": "small",
         "section_background_color": "#f2ebe7",
@@ -98,6 +111,10 @@
     "updated_image_with_text_Pdaq6a": {
       "type": "updated-image-with-text",
       "settings": {
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
         "section_class": "image-with-text-advisor",
         "section_height": "small",
         "section_background_color": "#f2ebe7",
@@ -114,6 +131,46 @@
         "mobile": "above"
       }
     },
+    "banner_image_with_text_yAbp4X": {
+      "type": "banner-image-with-text",
+      "settings": {
+        "padding_top": 75,
+        "padding_bottom": 71,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 25,
+        "heading": "10 Pelvic Floor Stretches for Better Pelvic Health",
+        "content": "<p>One of the most recommended ways to strengthen and improve the function of the pelvic floor muscles is through pelvic floor stretches and exercises, including the well-known Kegel exercises. In this blog post, we will explore 10 effective pelvic floor stretches that can be easily incorporated into your daily routine to promote pelvic health and wellness.</p>",
+        "image": "shopify://shop_images/New-Project-1-1.jpg_1.png",
+        "link_text": "Read More",
+        "link_url": "shopify://blogs/pelvic-floor-therapy"
+      }
+    },
+    "banner_image_with_text_DQAgAh": {
+      "type": "banner-image-with-text",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 75,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 50,
+        "heading": "Going for Gold and Going (Just a Little)",
+        "content": "<p>When we think about the fact that stress incontinence leaks are among the challenges that many athletes face on their road to Olympic greatness, we have even more resolve to normalize conversations about this common experience and question assumptions that leaks are a “normal” consequence of high-intensity training. </p><p>After all, an estimated 95.5% of athletes never discuss their leaks with a professional. It’s time this narrative made its way to prime-time coverage so more female athletes can be aware of what’s likely causing their stress incontinence leaks and how they might be able to mitigate them.  </p>",
+        "image": "shopify://shop_images/image_7.png",
+        "link_text": "Read More",
+        "link_url": "shopify://blogs/barrier-cream"
+      }
+    },
+    "updated_rich_text_Xq8jzt": {
+      "type": "updated-rich-text",
+      "settings": {
+        "section_height": "small",
+        "section_class": "rich-text-container",
+        "background_color": "contrast",
+        "heading": "High-Performance Bladder Leak Protection, Designed by Women",
+        "content": "<p>No Leaks. No Odor. No Irritation.</p>",
+        "link_text": "",
+        "link_url": ""
+      }
+    },
     "5e9e7c91-3a07-4387-b1ae-0a289a8425eb": {
       "type": "featured-product",
       "blocks": {
@@ -121,8 +178,8 @@
           "type": "product",
           "settings": {
             "product-name": "Liners",
-            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_LINERS.jpg",
-            "product-link": "shopify:\/\/products\/light-liner",
+            "product-image": "shopify://shop_images/AG_HP_PRODUCTS_LINERS.jpg",
+            "product-link": "shopify://products/light-liner",
             "overlay-text": "A simple, barely there liner ideal for the lighest of bladder leaks. Immediately wicks away any drips or spurts of pee."
           }
         },
@@ -130,8 +187,8 @@
           "type": "product",
           "settings": {
             "product-name": "Pads",
-            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_PADS.jpg",
-            "product-link": "shopify:\/\/products\/moderate-pads",
+            "product-image": "shopify://shop_images/AG_HP_PRODUCTS_PADS.jpg",
+            "product-link": "shopify://products/moderate-pads",
             "overlay-text": "These pads offer lightning quick absorbency for a range of support - from bursts to streams, in four different levels of absorbency, we've got you covered."
           }
         },
@@ -139,8 +196,8 @@
           "type": "product",
           "settings": {
             "product-name": "Briefs",
-            "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_BRIEFS.jpg",
-            "product-link": "shopify:\/\/products\/briefs",
+            "product-image": "shopify://shop_images/AG_HP_PRODUCTS_BRIEFS.jpg",
+            "product-link": "shopify://products/briefs",
             "overlay-text": "Ultra-thin but seriously powerful, our disposable underwear lock in the heaviest bladder leaks (think gushes and streams)."
           }
         }
@@ -160,7 +217,7 @@
           "settings": {
             "title": "Leak-Free",
             "content": "Signature CLN Design™ technology for superior moisture-wicking and lightening-fast absorption.",
-            "column_image": "shopify:\/\/shop_images\/noun-no-water-1661151.svg"
+            "column_image": "shopify://shop_images/noun-no-water-1661151.svg"
           }
         },
         "cd1a193d-3ac9-4d91-ae9f-cdf37add0387": {
@@ -168,7 +225,7 @@
           "settings": {
             "title": "Skin-Safe",
             "content": "Breathable, natural materials with no harsh dyes, bleaches, fragrances, or petro-chemicals to irritate your most sensitive skin.",
-            "column_image": "shopify:\/\/shop_images\/noun-care-2928731.svg"
+            "column_image": "shopify://shop_images/noun-care-2928731.svg"
           }
         },
         "404d690f-b934-4cfc-8b17-c42d2c991f22": {
@@ -176,7 +233,7 @@
           "settings": {
             "title": "Eco-Conscious",
             "content": "Friendlier disposables made in CO2 neutral factories with plant-based materials, FSC Certified sustainably forested filler and kraft paper or GreenPE packaging.",
-            "column_image": "shopify:\/\/shop_images\/noun-eco-friendly-4297133.png"
+            "column_image": "shopify://shop_images/noun-eco-friendly-4297133.png"
           }
         }
       },
@@ -197,28 +254,28 @@
           "type": "slider_items",
           "settings": {
             "seen_item_title": "“The first collection of its kind in the bladder leakage space... creating a higher standard.”",
-            "seen_item_image": "shopify:\/\/shop_images\/forbes-logo-black-transparent_1.png"
+            "seen_item_image": "shopify://shop_images/forbes-logo-black-transparent_1.png"
           }
         },
         "47f1053f-ca2b-48a7-964f-aa047a9c8465": {
           "type": "slider_items",
           "settings": {
             "seen_item_title": "“I prefer to buy personal-care products from companies that take sustainability and clean ingredients seriously. Attn: Grace is a great example.”",
-            "seen_item_image": "shopify:\/\/shop_images\/1200px-Gooponlinelogo_1.png"
+            "seen_item_image": "shopify://shop_images/1200px-Gooponlinelogo_1.png"
           }
         },
         "1045065d-7410-4909-9458-9c43daa6dd9f": {
           "type": "slider_items",
           "settings": {
             "seen_item_title": "“Attn: Grace is a personal care brand disrupting the incontinence segment with stylish, sustainable and subscription-based products for women.”",
-            "seen_item_image": "shopify:\/\/shop_images\/bi_logotype.png"
+            "seen_item_image": "shopify://shop_images/bi_logotype.png"
           }
         },
         "a1d5d0b1-545d-4b47-8e78-c7465801925d": {
           "type": "slider_items",
           "settings": {
             "seen_item_title": "\"A sustainable, high-quality brand that addresses concerns about our changing bodies in a graceful and intelligent way? That’s my kind of company.”",
-            "seen_item_image": "shopify:\/\/shop_images\/InTheGroove_2.png"
+            "seen_item_image": "shopify://shop_images/InTheGroove_2.png"
           }
         }
       },
@@ -241,6 +298,9 @@
     "updated_rich_text_D6VTT3",
     "updated_image_with_text_FhWndw",
     "updated_image_with_text_Pdaq6a",
+    "banner_image_with_text_yAbp4X",
+    "banner_image_with_text_DQAgAh",
+    "updated_rich_text_Xq8jzt",
     "5e9e7c91-3a07-4387-b1ae-0a289a8425eb",
     "1621255812209f27aa",
     "quiz-as-seen-in"

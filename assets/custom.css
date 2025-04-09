@@ -146,7 +146,7 @@
   .productrecharge-bundle .main-title {
     margin-top: 0;
   }
-  
+
   .status-bar-sign-up {
     margin-bottom: 12%;
   }
@@ -298,7 +298,7 @@
   .producteric-bundletest .main-title {
     margin-top: 0;
   }
-  
+
   .status-bar-sign-up {
     margin-bottom: 12%;
   }
@@ -387,6 +387,17 @@
     text-align: center;
   }
 }
+
+@media all and (min-width: 768px) and (max-width: 1350px) {
+  .banner-our-mission .text-inner .heading {
+    font-size: 40px;
+    line-height: 45px;
+  }
+  .banner-our-mission .text-inner .text {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
 /* Banner END */
 
 /* Image with Text */
@@ -394,11 +405,22 @@
   padding: 40px 0;
 }
 
-.updated-image-text-section span {
+.updated-image-text-section .home-image-text-container {
+  gap: 30px;
+}
+
+.updated-image-text-section .home-image-text-block.home-image-text-block {
+  padding: 30px 0;
+}
+
+.global-heading {
   display: block;
   font-size: 56px;
   line-height: 64px;
-  border: 0;
+  border-bottom: 0 !important;
+  font-family: BentonMod;
+  color: #000;
+  font-weight: 300;
 }
 
 .updated-image-text-section p {
@@ -439,7 +461,7 @@
     color: black;
   }
 
-  .updated-image-text-section span {
+  .global-heading {
     font-size: 40px;
     line-height: 45px;
   }
@@ -449,14 +471,28 @@
     line-height: 24px;
   }
 }
+
+@media all and (min-width: 768px) and (max-width: 1350px) {
+  .global-heading {
+    font-size: 40px;
+    line-height: 45px;
+  }
+
+  .updated-image-text-section p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
 /* Image with Text END */
 
 .custom-container {
-  max-width: 1203px;
+  max-width: 1263px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
-.custom-btn {
+.global-btn {
   display: block;
   font-size: 22px;
   font-weight: 500;
@@ -468,15 +504,21 @@
   border-radius: 100px;
   max-width: 240px;
   margin: 0 auto;
+  text-transform: uppercase;
+  text-align: center;
 }
 
-.custom-btn:hover {
+.global-btn:hover {
   background-color: #f49958;
   color: #000;
 }
 
 @media all and (max-width: 768px) {
-  .custom-btn {
+  .custom-container {
+    padding: 0 20px;
+  }
+
+  .global-btn {
     font-size: 20px;
     max-width: unset;
     width: 100%;
@@ -524,6 +566,12 @@
     font-size: 20px;
   }
 }
+
+@media all and (min-width: 768px) and (max-width: 1350px) {
+  .home-image-text-subheading {
+    font-size: 20px;
+  }
+}
 /* Image with Text Colored END */
 
 /* Image with Text Advisor */
@@ -534,6 +582,11 @@
 .image-with-text-advisor .home-image-image-block {
   max-width: 220px;
   margin: 0 auto!important;
+}
+
+.updated-image-text-section.image-with-text-advisor p {
+  font-size: 20px;
+  line-height: 28px;
 }
 
 @media all and (min-width: 768px) {
@@ -549,3 +602,67 @@
   }
 }
 /* Image with Text Advisor END */
+
+/* Banner Image with Text */
+.banner-image-with-text-title {
+  margin-top: 20px;
+}
+
+.banner-image-with-text p {
+  font-family: 'Acre';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+  margin-bottom: 34px!important;
+}
+
+@media all and (max-width: 768px) {
+  .banner-image-with-text p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1350px) {
+  .banner-image-with-text p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+/* Image with Text Advisor END */
+
+.pagelanding-page .featured-product-wrap {
+  background: white;
+}
+
+.rich-text-container .home-section-rte-wrapper {
+  padding: 0 30px;
+}
+
+.rich-text-container {
+  margin: 0 20px;
+  border-radius: 15px;
+}
+
+.rich-text-container .home-section-rte-title {
+  font-size: 42px;
+  line-height: 44px;
+  margin-bottom: 10px;
+}
+
+.rich-text-container .rte {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+@media all and (max-width: 768px) {
+  .rich-text-container .home-section-rte-title {
+    font-size: 30px;
+    line-height: 33px;
+  }
+
+  .rich-text-container .rte {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}

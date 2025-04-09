@@ -1,3 +1,17 @@
+<style>
+  #shopify-section-{{section.id}} .updated-image-text-section {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media only screen and (min-width: 990px) {
+    #shopify-section-{{section.id}} .updated-image-text-section {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+</style>
+
 {% assign has_content = false %}
 {% assign image_size = '2048x' %}
 {%
@@ -78,7 +92,8 @@
 
           {% if section.settings.heading != blank %}
             <div class="home-image-text-content rte">
-              <span>{{ section.settings.heading | escape }}</span> {{ section.settings.text }}
+              <span class="global-heading">{{ section.settings.heading | escape }}</span>
+              <p class="global-text">{{ section.settings.text }}</p>
             </div>
             {% if section.settings.icon != blank %}
               <div class="home-image-text-icon">
@@ -106,6 +121,42 @@
   "name": "Updated Image with Text",
   "class": "updated-image-text",
   "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
     {
       "type": "text",
       "id": "section_class",
