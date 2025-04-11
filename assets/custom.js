@@ -876,7 +876,7 @@ async function handleCartFullClick() {
 
                         const dots = slider.querySelectorAll('.slider-dot');
 
-// Track visible slide using IntersectionObserver
+                        // Track visible slide using IntersectionObserver
                         const observer = new IntersectionObserver((entries) => {
                             entries.forEach(entry => {
                                 if (entry.isIntersecting) {
@@ -890,7 +890,7 @@ async function handleCartFullClick() {
                             threshold: 0.6, // slide must be 60% in view to count
                         });
 
-// Observe all slides
+                        // Observe all slides
                         slides.forEach(slide => observer.observe(slide));
 
                         // Arrow visibility logic using precise scroll values
