@@ -1,16 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "store-locator": {
       "type": "store-locator",
       "settings": {
         "bg_color": "#f6ebe8",
-        "logo": "shopify:\/\/shop_images\/Walmart_logo_transparent_png-700x184.png",
-        "slogo": "shopify:\/\/shop_images\/Amazon_logo_svg.webp",
-        "tlogo": "shopify:\/\/shop_images\/Untitled_design_-_2025-01-30T170001.061.png",
-        "flogo": "shopify:\/\/shop_images\/refresh2go-retailer-store-logo-store-target.png",
-        "fflogo": "shopify:\/\/shop_images\/Logo__6_-removebg-preview.webp",
+        "logo": "shopify://shop_images/image-20250410-211031.png",
+        "slogo": "shopify://shop_images/Amazon_logo_svg.webp",
+        "tlogo": "shopify://shop_images/Untitled_design_-_2025-01-30T170001.061.png",
+        "flogo": "shopify://shop_images/refresh2go-retailer-store-logo-store-target.png",
+        "fflogo": "shopify://shop_images/Logo__6_-removebg-preview.webp",
         "title": "You asked for it, and we made it happen.",
-        "subtext": "<p>Attn: Grace can now be found on Walmart.com, and in 1,500+ Supercenters across the country. Enter your city or zipcode below to find your nearest retail location.<\/p>"
+        "subtext": "<p>Attn: Grace can now be found on Walmart.com, and in 1,500+ Supercenters across the country. Enter your city or zipcode below to find your nearest retail location.</p>"
       }
     }
   },

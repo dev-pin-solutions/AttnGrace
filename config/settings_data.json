@@ -45,54 +45,54 @@
     "collection_12_color": "#faeae4",
     "ing_name1": "ing:friendly",
     "ing_description1": "Soft, simple, body-and-earth-friendly design that performs to the highest standards",
-    "ing_image1": "shopify:\/\/shop_images\/Soft_Green.png",
+    "ing_image1": "shopify://shop_images/Soft_Green.png",
     "ing_name2": "ing:derma",
     "ing_description2": "Dermatologist tested + approved",
-    "ing_image2": "shopify:\/\/shop_images\/Dermatologist_Tested_Green.png",
+    "ing_image2": "shopify://shop_images/Dermatologist_Tested_Green.png",
     "ing_name3": "ing:free",
     "ing_description3": "Free from chlorine, synthetic fragrances, lotions and latex",
-    "ing_image3": "shopify:\/\/shop_images\/Free_From_Green.png",
+    "ing_image3": "shopify://shop_images/Free_From_Green.png",
     "ing_name4": "ing:plant",
     "ing_description4": "Plant-based back sheets + 100% breathable design",
-    "ing_image4": "shopify:\/\/shop_images\/Biodegradable_Green.png",
+    "ing_image4": "shopify://shop_images/Biodegradable_Green.png",
     "ing_name5": "ing:breathable",
     "ing_description5": "100% plant-based top sheets protect sensitive skin and wick moisture 10x better than organic cotton top sheets",
-    "ing_image5": "shopify:\/\/shop_images\/Hypoallergenic_Green.png",
+    "ing_image5": "shopify://shop_images/Hypoallergenic_Green.png",
     "ing_name6": "ing:patented",
     "ing_description6": "Patented design",
-    "ing_image6": "shopify:\/\/shop_images\/Patented_Green.png",
+    "ing_image6": "shopify://shop_images/Patented_Green.png",
     "ing_name7": "ing:aloeWipes",
     "ing_description7": "Aloe Vera",
-    "ing_image7": "shopify:\/\/shop_images\/Aloe_Vera_Green.png",
+    "ing_image7": "shopify://shop_images/Aloe_Vera_Green.png",
     "ing_name8": "ing:99Wipes",
     "ing_description8": "Over 99% Water",
-    "ing_image8": "shopify:\/\/shop_images\/99_Water_Green.png",
+    "ing_image8": "shopify://shop_images/99_Water_Green.png",
     "ing_name9": "ing:cocoWipes",
     "ing_description9": "Coconut Oil",
-    "ing_image9": "shopify:\/\/shop_images\/Coconut_Oil_Green.png",
+    "ing_image9": "shopify://shop_images/Coconut_Oil_Green.png",
     "ing_name10": "ing:flushWipes",
     "ing_description10": "Flushable",
-    "ing_image10": "shopify:\/\/shop_images\/Flushable_Green.png",
+    "ing_image10": "shopify://shop_images/Flushable_Green.png",
     "ing_name11": "ing:lavWipes",
     "ing_description11": "Lavender",
-    "ing_image11": "shopify:\/\/shop_images\/Lavender_Green.png",
+    "ing_image11": "shopify://shop_images/Lavender_Green.png",
     "ing_name12": "ing:bioWipes",
     "ing_description12": "Biodegradable",
-    "ing_image12": "shopify:\/\/shop_images\/Biodegradable_Green.png",
+    "ing_image12": "shopify://shop_images/Biodegradable_Green.png",
     "ing_name13": "ing:dermaWipes",
     "ing_description13": "Dermatologist Tested & Approved",
-    "ing_image13": "shopify:\/\/shop_images\/Dermatologist_Tested_Green.png",
+    "ing_image13": "shopify://shop_images/Dermatologist_Tested_Green.png",
     "ing_name14": "ing:hypoWipes",
     "ing_description14": "Hypoallergenic",
-    "ing_image14": "shopify:\/\/shop_images\/Hypoallergenic_Green.png",
+    "ing_image14": "shopify://shop_images/Hypoallergenic_Green.png",
     "ing_name15": "ing:water",
     "ing_description15": "Over 99% Water",
-    "ing_image15": "shopify:\/\/shop_images\/99_Water_Green.png",
+    "ing_image15": "shopify://shop_images/99_Water_Green.png",
     "ing_name16": "ing:coconut",
     "ing_description16": "Coconut Oil, Shea Butter, Beeswax, Zinc Oxide, Kaolin Clay",
     "ing_image16": "",
     "ing_name17": "ing:oilType",
-    "ing_description17": "Sunflower Seed Oil, Hazelnut Oil, Hemp Seed Oil, Caprylic\/Capric Triglyceride, Jojoba Seed Oil, Blue Tansy Flower Oil",
+    "ing_description17": "Sunflower Seed Oil, Hazelnut Oil, Hemp Seed Oil, Caprylic/Capric Triglyceride, Jojoba Seed Oil, Blue Tansy Flower Oil",
     "ing_image17": "",
     "ing_name18": "ing:skinSafe",
     "ing_description18": "Skin-Safe: No petroleum, fragrance, preservatives, dyes, parabens, talc, or phthalates",
@@ -111,15 +111,15 @@
     "currency_switcher_format": "money_with_currency_format",
     "currency_switcher_supported_currencies": "INR GBP CAD USD AUD EUR JPY",
     "currency_switcher_default": "USD",
-    "favicon": "shopify:\/\/shop_images\/PlantIcon_2.png",
+    "favicon": "shopify://shop_images/PlantIcon_2.png",
     "social_default_image": "",
-    "social_facebook_url": "https:\/\/www.facebook.com\/attngrace\/",
+    "social_facebook_url": "https://www.facebook.com/attngrace/",
     "social_twitter_url": "",
-    "social_pinterest_url": "https:\/\/www.pinterest.com\/attngrace\/",
-    "social_instagram_url": "https:\/\/www.instagram.com\/attngrace\/",
+    "social_pinterest_url": "https://www.pinterest.com/attngrace/",
+    "social_instagram_url": "https://www.instagram.com/attngrace/",
     "social_vimeo_url": "",
     "social_youtube_url": "",
-    "social_tiktok_url": "https:\/\/www.tiktok.com\/@attngrace",
+    "social_tiktok_url": "https://www.tiktok.com/@attngrace",
     "social_email_address": "",
     "access_token": "",
     "section_title": "Attngrace",
@@ -127,7 +127,7 @@
     "number_of_slides": 3,
     "rotation_speed": 8,
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
+    "checkout_logo_image": "shopify://shop_images/logo.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "large",
     "checkout_body_background_image": "",
@@ -171,15 +171,15 @@
           "menu-heading": "Shop by Fit",
           "menublock1title": "Light Support",
           "menublock1text": "Wick away drips and spurts.",
-          "menublock1link": "shopify:\/\/pages\/light-leaks",
+          "menublock1link": "shopify://pages/light-leaks",
           "imagecount1": "1",
           "menublock2title": "Moderate  Support",
           "menublock2text": "Lightning quick absorbency for bursts and surges.",
-          "menublock2link": "shopify:\/\/pages\/moderate-leaks",
+          "menublock2link": "shopify://pages/moderate-leaks",
           "imagecount2": "2",
           "menublock3title": "Heavy Support",
           "menublock3text": "Lock away surges and streams, day or night.",
-          "menublock3link": "shopify:\/\/pages\/heavy-landing",
+          "menublock3link": "shopify://pages/heavy-landing",
           "imagecount3": "3"
         }
       },
@@ -261,15 +261,15 @@
             "type": "slide",
             "settings": {
               "background_color": "#ebe2d8",
-              "background_image": "shopify:\/\/shop_images\/AG_HERO_1600x610_MAY10.jpg",
-              "mobile_background_image": "shopify:\/\/shop_images\/AG_HERO_MOBILE_MAY10.png",
-              "good_housekeeping": "shopify:\/\/shop_images\/good_housekeeping_seal.png",
+              "background_image": "shopify://shop_images/AG_HERO_1600x610_MAY10.jpg",
+              "mobile_background_image": "shopify://shop_images/AG_HERO_MOBILE_MAY10.png",
+              "good_housekeeping": "shopify://shop_images/good_housekeeping_seal.png",
               "heading": "Skin-Safe Protection for Bladder Leaks",
               "subheading": "",
               "short_description": "Tough on leaks. Gentle on skin.",
-              "button_link": "shopify:\/\/collections\/shop-all-test",
+              "button_link": "shopify://collections/shop-all-test",
               "button_label": "Shop All",
-              "button_link2": "shopify:\/\/pages\/qr-code",
+              "button_link2": "shopify://pages/qr-code",
               "button_label2": "Learn More"
             }
           }
@@ -283,11 +283,11 @@
       "page-sample-collection": {
         "type": "page-sample-collection",
         "settings": {
-          "image1": "shopify:\/\/shop_images\/wipes.png",
+          "image1": "shopify://shop_images/wipes.png",
           "text1": "All packs include 2 ﬂushable wipes.",
-          "image2": "shopify:\/\/shop_images\/truck.png",
-          "text2": "We’ll remind you via text\/email before we ship you.",
-          "image3": "shopify:\/\/shop_images\/calender.png",
+          "image2": "shopify://shop_images/truck.png",
+          "text2": "We’ll remind you via text/email before we ship you.",
+          "image3": "shopify://shop_images/calender.png",
           "text3": "Modify, pause or cancel anytime.",
           "image_layout": "two_column",
           "show_description": true,
@@ -310,28 +310,28 @@
       "image-bg-with-text": {
         "type": "image-bg-with-text",
         "settings": {
-          "bg_image": "shopify:\/\/shop_images\/How-It-Works-Bg.png",
+          "bg_image": "shopify://shop_images/How-It-Works-Bg.png",
           "bg_color": "#caa58a",
           "text_color": "",
           "image_title": "How It Works",
-          "image_description": "<p>Get our high performance, body-and-earth-friendly incontinence products delivered to your door, as often as you need them.<\/p>"
+          "image_description": "<p>Get our high performance, body-and-earth-friendly incontinence products delivered to your door, as often as you need them.</p>"
         }
       },
       "steps-section": {
         "type": "steps-section",
         "settings": {
-          "step1_image": "shopify:\/\/shop_images\/Select.png",
+          "step1_image": "shopify://shop_images/Select.png",
           "step1_position": "left",
           "step1_title": "Step 01:  CURATE YOUR BAG",
-          "step1_description": "<p>We are proud to offer a selection of soft, simple liners, pads, and briefs to help you elegantly tackle bladder leaks. Pick the products that suit your needs, and decide how often you want to have them delivered. <\/p>",
-          "step2_image": "shopify:\/\/shop_images\/Delivery.png",
+          "step1_description": "<p>We are proud to offer a selection of soft, simple liners, pads, and briefs to help you elegantly tackle bladder leaks. Pick the products that suit your needs, and decide how often you want to have them delivered. </p>",
+          "step2_image": "shopify://shop_images/Delivery.png",
           "step2_position": "right",
           "step2_title": "Step 02: THOUGHTFUL DELIVERY",
-          "step2_description": "<p>We considered every detail when it comes to delivery - from our discreet, renewably sourced and designed packaging, to our easy-to-carry handles on our boxes. We take your comfort, convenience, and eco-values seriously.<\/p>",
-          "step3_image": "shopify:\/\/shop_images\/Customize.png",
+          "step2_description": "<p>We considered every detail when it comes to delivery - from our discreet, renewably sourced and designed packaging, to our easy-to-carry handles on our boxes. We take your comfort, convenience, and eco-values seriously.</p>",
+          "step3_image": "shopify://shop_images/Customize.png",
           "step3_position": "left",
           "step3_title": "Step 03: ADJUST AND REORDER",
-          "step3_description": "<p>We value flexibility. Need to adjust the frequency of your delivery, stock up with a one-time purchase, pause your orders, or even cancel? No problem. Managing your account is designed for ease.<\/p>"
+          "step3_description": "<p>We value flexibility. Need to adjust the frequency of your delivery, stock up with a one-time purchase, pause your orders, or even cancel? No problem. Managing your account is designed for ease.</p>"
         }
       },
       "cost-saving": {
@@ -339,27 +339,27 @@
         "settings": {
           "bg_color": "#a2e7d8",
           "cost_saving_title": "Cost Savings",
-          "cost_bundle": "$45.00\/Bundle",
+          "cost_bundle": "$45.00/Bundle",
           "cost_value": "($50.00 Value)",
           "shipping_title": "Free Shipping",
-          "shipping_description": "<p>When you spend <strong>$45 or more<\/strong>.<br\/>Shipped directly to your <br\/>door within the<br\/>USA.<\/p>",
+          "shipping_description": "<p>When you spend <strong>$45 or more</strong>.<br/>Shipped directly to your <br/>door within the<br/>USA.</p>",
           "returns_title": "Greener Returns",
-          "returns_description": "<p>Smarter returns for a greener planet.  <br\/><br\/>This reduces shipping and processing waste. With our green returns policy, we’ll give you a refund on the unused products and rather than have you ship it back to us we ask that you pass it along to someone in need. <\/p>",
+          "returns_description": "<p>Smarter returns for a greener planet.  <br/><br/>This reduces shipping and processing waste. With our green returns policy, we’ll give you a refund on the unused products and rather than have you ship it back to us we ask that you pass it along to someone in need. </p>",
           "hidden_fees_title": "No Hidden Fees",
-          "hidden_fees_description": "<p>Don’t worry, there are no <br\/>membership or <br\/>cancellation fees – ever!<\/p>"
+          "hidden_fees_description": "<p>Don’t worry, there are no <br/>membership or <br/>cancellation fees – ever!</p>"
         }
       },
       "home-image-overlay": {
         "type": "home-image-overlay",
         "settings": {
           "section_height": "medium",
-          "image": "shopify:\/\/shop_images\/bottom_banner.jpg",
+          "image": "shopify://shop_images/bottom_banner.jpg",
           "mobile_image": "",
           "text_justification": "left",
           "text_content_position": "center",
           "heading_size": "medium",
           "heading": "",
-          "text": "<p>Shopping for a friend,&nbsp;<br>or a loved one? Gift&nbsp;<br>them a sample of our most popular products to get them started.<\/p>",
+          "text": "<p>Shopping for a friend,&nbsp;<br>or a loved one? Gift&nbsp;<br>them a sample of our most popular products to get them started.</p>",
           "text_color": "",
           "button_link": "",
           "button_label": "Order a complimentary starter kit",
@@ -378,59 +378,59 @@
       "faq": {
         "type": "faq",
         "settings": {
-          "faq_short_code": "<div id=\"ef-faqs-plus-app-content\"><\/div>"
+          "faq_short_code": "<div id=\"ef-faqs-plus-app-content\"></div>"
         }
       },
       "page-collections": {
         "type": "page-collections",
         "settings": {
-          "heroimage_desktop": "shopify:\/\/shop_images\/clp-banner_5ad3d9c5-e2db-4951-980e-fb384b9fc01e.jpg",
+          "heroimage_desktop": "shopify://shop_images/clp-banner_5ad3d9c5-e2db-4951-980e-fb384b9fc01e.jpg",
           "leak_heading": "How much support do you need?",
           "drop1_heading": "Light Support",
           "drop1_subheading": "For leaks during exercising, laughing, coughing, and sneezing",
-          "drop1_yellow_button_link": "shopify:\/\/collections\/liners",
+          "drop1_yellow_button_link": "shopify://collections/liners",
           "drop1_yellow_button_label": "Shop Liners",
           "drop1_blue_button_link": "",
           "drop1_blue_button_label": "",
           "drop2_heading": "Moderate Support",
           "drop2_subheading": "Best for active, mobile people with bladder leaks.",
-          "drop2_yellow_button_link": "shopify:\/\/collections\/pads",
+          "drop2_yellow_button_link": "shopify://collections/pads",
           "drop2_yellow_button_label": "Shop Pads",
           "drop2_blue_button_link": "",
           "drop2_blue_button_label": "",
           "drop3_heading": "Heavy Support",
-          "drop3_subheading": "For consistent daytime and\/or nighttime bladder leaks.",
-          "drop3_yellow_button_link": "shopify:\/\/collections\/briefs",
+          "drop3_subheading": "For consistent daytime and/or nighttime bladder leaks.",
+          "drop3_yellow_button_link": "shopify://collections/briefs",
           "drop3_yellow_button_label": "Shop Briefs",
           "drop3_blue_button_link": "",
           "drop3_blue_button_label": "",
           "cta_block1_display": false,
           "cta_block1_color": "#ffffff",
-          "cta_bgimage_1": "shopify:\/\/shop_images\/clp-cta-1.jpg",
-          "cta_heading_1": "<p>19M Women and you<\/p>",
-          "cta_desc_1": "<p>Our medical team takes us through some of the basics on bladder leaks.<\/p>",
+          "cta_bgimage_1": "shopify://shop_images/clp-cta-1.jpg",
+          "cta_heading_1": "<p>19M Women and you</p>",
+          "cta_desc_1": "<p>Our medical team takes us through some of the basics on bladder leaks.</p>",
           "cta_label_1": "Read More",
-          "cta_url_1": "shopify:\/\/blogs\/blog\/p-b-bladder-leakage-101-b-p-p-p",
+          "cta_url_1": "shopify://blogs/blog/p-b-bladder-leakage-101-b-p-p-p",
           "cta_block2_display": false,
           "cta_block2_color": "#000000",
-          "cta_bgimage_2": "shopify:\/\/shop_images\/clp-cta-v2.jpg",
-          "cta_heading_2": "<p>Feeling <br>non-committal?<\/p>",
+          "cta_bgimage_2": "shopify://shop_images/clp-cta-v2.jpg",
+          "cta_heading_2": "<p>Feeling <br>non-committal?</p>",
           "should_logo": true,
-          "cta_desc_2": "<p>Order a complementary starter kit of our most popular products, catered for your needs.<\/p>",
+          "cta_desc_2": "<p>Order a complementary starter kit of our most popular products, catered for your needs.</p>",
           "cta_label_2": "Shop Starter Kits",
-          "cta_url_2": "shopify:\/\/collections\/starter-kits",
+          "cta_url_2": "shopify://collections/starter-kits",
           "heading": "Recommended Reads",
           "blog": "blog",
           "post_number": 2,
           "section_height": "medium",
-          "image": "shopify:\/\/shop_images\/Like-minded-Partners.jpg",
-          "mobile_image": "shopify:\/\/shop_images\/clp-overlay-mobile.jpg",
+          "image": "shopify://shop_images/Like-minded-Partners.jpg",
+          "mobile_image": "shopify://shop_images/clp-overlay-mobile.jpg",
           "text_justification": "left",
           "text_content_position": "left",
           "h2_heading": "",
-          "text": "<p>Made from plants, with Mother Nature and your comfort top of mind.<\/p>",
+          "text": "<p>Made from plants, with Mother Nature and your comfort top of mind.</p>",
           "text_color": "rgba(0,0,0,0)",
-          "button_link": "shopify:\/\/pages\/ingredients",
+          "button_link": "shopify://pages/ingredients",
           "button_label": "Learn More",
           "show_overlay": false,
           "style": "accent",
@@ -455,15 +455,15 @@
         "type": "hiw-image-overlay",
         "settings": {
           "section_height": "medium",
-          "image": "shopify:\/\/shop_images\/SFW_1483x480_Samplekit_Large_Grey_e9e8e8.jpg",
-          "mobile_image": "shopify:\/\/shop_images\/Ingredients_Banner.jpg",
+          "image": "shopify://shop_images/SFW_1483x480_Samplekit_Large_Grey_e9e8e8.jpg",
+          "mobile_image": "shopify://shop_images/Ingredients_Banner.jpg",
           "text_justification": "left",
           "text_content_position": "left",
           "heading_size": "medium",
           "heading": "",
-          "text": "<p>Send someone you love a sample of our most popular products to get them started.<\/p>",
+          "text": "<p>Send someone you love a sample of our most popular products to get them started.</p>",
           "text_color": "",
-          "button_link": "shopify:\/\/collections\/starter-kits",
+          "button_link": "shopify://collections/starter-kits",
           "button_label": "Shop now",
           "show_overlay": false,
           "style": "accent",
@@ -484,32 +484,32 @@
       "ingredients-banner": {
         "type": "ingredients-banner",
         "settings": {
-          "bg_image": "shopify:\/\/shop_images\/Ingredients_Banner.jpg",
+          "bg_image": "shopify://shop_images/Ingredients_Banner.jpg",
           "bg_color": "",
           "text_color": "",
           "image_title": "Ingredients",
-          "image_description": "<p>We are proud to be the ﬁrst sustainable wellness brand for women as we age. Let’s break down what that means for you and for our Mother Earth.<\/p>"
+          "image_description": "<p>We are proud to be the ﬁrst sustainable wellness brand for women as we age. Let’s break down what that means for you and for our Mother Earth.</p>"
         }
       },
       "ingredients-collection": {
         "type": "ingredients-collection",
         "settings": {
           "bg_color": "#dad800",
-          "image1": "shopify:\/\/shop_images\/Consciously_Crafted.png",
-          "text1": "<p>Consciously Crafted<br\/>Materials<\/p>",
-          "image2": "shopify:\/\/shop_images\/Like-Minded.png",
-          "text2": "<p>Like-Minded <br\/>Partners<\/p>",
-          "image3": "shopify:\/\/shop_images\/wipes.png",
-          "text3": "<p>Sustainable <br\/>Packaging<\/p>"
+          "image1": "shopify://shop_images/Consciously_Crafted.png",
+          "text1": "<p>Consciously Crafted<br/>Materials</p>",
+          "image2": "shopify://shop_images/Like-Minded.png",
+          "text2": "<p>Like-Minded <br/>Partners</p>",
+          "image3": "shopify://shop_images/wipes.png",
+          "text3": "<p>Sustainable <br/>Packaging</p>"
         }
       },
       "ingredients-features": {
         "type": "ingredients-features",
         "settings": {
           "inside_bg_color": "#a0e5d6",
-          "add_features_3": "<p>100% Sustainably forested, totally chlorine free wood pulp, FSC &amp; TCF certiﬁed (absorbent core)<\/p><p>Super absorbent polymer (absorbent core)<\/p><p>100% biobased, renewably sourced polyethylene top sheet<\/p><p>100% biobased, renewably sourced polyethylene leakproof backsheet<\/p><p>Non-toxic inks and adhesives<\/p>",
+          "add_features_3": "<p>100% Sustainably forested, totally chlorine free wood pulp, FSC &amp; TCF certiﬁed (absorbent core)</p><p>Super absorbent polymer (absorbent core)</p><p>100% biobased, renewably sourced polyethylene top sheet</p><p>100% biobased, renewably sourced polyethylene leakproof backsheet</p><p>Non-toxic inks and adhesives</p>",
           "not_bg_color": "#e7e6e6",
-          "add_features_4": "<p>Dyes<br\/>Parabens<br\/>Chlorine Bleach<br\/>Sulfates<br\/>Alcohol<br\/>Synthetic Fragrances<br\/>Lotions<br\/>Latex<br\/>Heavy metals<br\/>Unnecessary ﬁllers or harsh chemicals<\/p>"
+          "add_features_4": "<p>Dyes<br/>Parabens<br/>Chlorine Bleach<br/>Sulfates<br/>Alcohol<br/>Synthetic Fragrances<br/>Lotions<br/>Latex<br/>Heavy metals<br/>Unnecessary ﬁllers or harsh chemicals</p>"
         }
       },
       "ingredients-info": {
@@ -519,8 +519,8 @@
             "type": "block",
             "settings": {
               "heading": "Like-minded Partners",
-              "ingredients_desc": "<p>At every step in our supply chain, we’ve sought out best-in-class partners who are just as committed as we are to reducing our global footprint and minimizing waste.  We’ve joined forces with industry and thought-leaders who are constantly innovating to create cleaner, greener solutions that enable us to care for ourselves while also caring for our planet. Because the two things shouldn’t be mutually exclusive.  <\/p>",
-              "ingredients_image": "shopify:\/\/shop_images\/Like-minded-Partners.jpg",
+              "ingredients_desc": "<p>At every step in our supply chain, we’ve sought out best-in-class partners who are just as committed as we are to reducing our global footprint and minimizing waste.  We’ve joined forces with industry and thought-leaders who are constantly innovating to create cleaner, greener solutions that enable us to care for ourselves while also caring for our planet. Because the two things shouldn’t be mutually exclusive.  </p>",
+              "ingredients_image": "shopify://shop_images/Like-minded-Partners.jpg",
               "image_position": "right"
             }
           },
@@ -528,8 +528,8 @@
             "type": "block",
             "settings": {
               "heading": "Sustainable Packaging",
-              "ingredients_desc": "<p>They say it’s what’s on the inside that counts, but when it comes to caring for our planet, the truth is, it all counts.<\/p><p><\/p><p>Here’s a quick look at some of the things that make our packaging pride-worthy:<\/p><p><\/p><p>100% recycled mailers, made from 97% post consumer waste, fully recyclable &amp; naturally biodegradable<\/p><p><\/p><p>100% FSC certiﬁed and 100% recyclable boxes<\/p><p><\/p><p>Bags that look and feel like traditional petroleum-derived plastic, but that are actually made from &gt;70% biobased, 100% renewable, green polyethylene<\/p>",
-              "ingredients_image": "shopify:\/\/shop_images\/Sustainable-Packaging.png",
+              "ingredients_desc": "<p>They say it’s what’s on the inside that counts, but when it comes to caring for our planet, the truth is, it all counts.</p><p></p><p>Here’s a quick look at some of the things that make our packaging pride-worthy:</p><p></p><p>100% recycled mailers, made from 97% post consumer waste, fully recyclable &amp; naturally biodegradable</p><p></p><p>100% FSC certiﬁed and 100% recyclable boxes</p><p></p><p>Bags that look and feel like traditional petroleum-derived plastic, but that are actually made from &gt;70% biobased, 100% renewable, green polyethylene</p>",
+              "ingredients_image": "shopify://shop_images/Sustainable-Packaging.png",
               "image_position": "left"
             }
           }
@@ -545,15 +545,15 @@
         "settings": {
           "show_sample_content_section": false,
           "section_height": "medium",
-          "image": "shopify:\/\/shop_images\/SFW_1483x480_Samplekit_Large_Grey_e9e8e8.jpg",
-          "mobile_image": "shopify:\/\/shop_images\/SFW_1483x480_Samplekit_Large_Grey_e9e8e8.jpg",
+          "image": "shopify://shop_images/SFW_1483x480_Samplekit_Large_Grey_e9e8e8.jpg",
+          "mobile_image": "shopify://shop_images/SFW_1483x480_Samplekit_Large_Grey_e9e8e8.jpg",
           "text_justification": "left",
           "text_content_position": "left",
           "heading_size": "medium",
           "heading": "",
-          "text": "<p>Try our Starter Kits—everything you need to manage your bladder leaks with confidence.<\/p>",
+          "text": "<p>Try our Starter Kits—everything you need to manage your bladder leaks with confidence.</p>",
           "text_color": "#000000",
-          "button_link": "shopify:\/\/collections\/starter-kits",
+          "button_link": "shopify://collections/starter-kits",
           "button_label": "TRY A STARTER KIT",
           "show_overlay": false,
           "style": "accent",
@@ -566,37 +566,37 @@
           "1602658157478": {
             "type": "products",
             "settings": {
-              "select_product": "shopify:\/\/products\/heavy-pads"
+              "select_product": "shopify://products/heavy-pads"
             }
           },
           "1602658164848": {
             "type": "products",
             "settings": {
-              "select_product": "shopify:\/\/products\/light-hybrid-pads"
+              "select_product": "shopify://products/light-hybrid-pads"
             }
           },
           "1602658170274": {
             "type": "products",
             "settings": {
-              "select_product": "shopify:\/\/products\/moderate-pads"
+              "select_product": "shopify://products/moderate-pads"
             }
           },
           "1602658178006": {
             "type": "products",
             "settings": {
-              "select_product": "shopify:\/\/products\/briefs-large"
+              "select_product": "shopify://products/briefs-large"
             }
           },
           "1602658186550": {
             "type": "products",
             "settings": {
-              "select_product": "shopify:\/\/products\/briefs"
+              "select_product": "shopify://products/briefs"
             }
           },
           "1602658192885": {
             "type": "products",
             "settings": {
-              "select_product": "shopify:\/\/products\/light-liner"
+              "select_product": "shopify://products/light-liner"
             }
           }
         },
@@ -613,13 +613,13 @@
       "image-bg-with-text-and-button": {
         "type": "image-bg-with-text-and-button",
         "settings": {
-          "bg_image": "shopify:\/\/shop_images\/Group_13.png",
+          "bg_image": "shopify://shop_images/Group_13.png",
           "bg_color": "rgba(0,0,0,0)",
           "heading_color": "#3a3a41",
           "content_color": "#3a3a41",
           "heading": "Attn: Grace is <br>naturally better",
-          "content": "<p>This female-founded brand is disrupting a tired category that’s gotten away with misunderstanding our needs for far too long. Let’s talk about how we’re providing so many women with a better way.<\/p>",
-          "button_link": "shopify:\/\/collections\/all",
+          "content": "<p>This female-founded brand is disrupting a tired category that’s gotten away with misunderstanding our needs for far too long. Let’s talk about how we’re providing so many women with a better way.</p>",
+          "button_link": "shopify://collections/all",
           "button_label": "Shop all products"
         }
       },
@@ -629,10 +629,10 @@
           "c36bfafb-d5fb-469a-8a60-50b87ac75351": {
             "type": "text",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/pad.png",
+              "bg_image": "shopify://shop_images/pad.png",
               "bg_color": "#cabad4",
               "text_color": "#000000",
-              "flower_icon": "shopify:\/\/shop_images\/PurpleLeaf.png",
+              "flower_icon": "shopify://shop_images/PurpleLeaf.png",
               "heading": "Superior Top Sheet",
               "content_us": "100% plant-based, made from soft woven sugar cane fibers that are far superior at wicking away moisture without irritation.",
               "content_them": "Petroleum-based synthetic that irritates your most sensitive skin."
@@ -641,10 +641,10 @@
           "831f3649-0124-41ba-9460-a74b55413efd": {
             "type": "text",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/CottonBolls.png",
+              "bg_image": "shopify://shop_images/CottonBolls.png",
               "bg_color": "#ffe9d2",
               "text_color": "#000000",
-              "flower_icon": "shopify:\/\/shop_images\/OrangeLeaf.png",
+              "flower_icon": "shopify://shop_images/OrangeLeaf.png",
               "heading": "Non-Toxic Ingredients",
               "content_us": "No dyes, parabens, chlorine bleach, sulfates, alcohol, synthetic fragrances, lotions, latex, heavy metals, unnecessary fillers or harsh chemicals.",
               "content_them": "Chock full of chemicals, dyes, and synthetics that have sadly become the norm."
@@ -653,10 +653,10 @@
           "76f429b3-5123-4c9d-879f-990e5d07a3e7": {
             "type": "text",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/ParcelDelivery.png",
+              "bg_image": "shopify://shop_images/ParcelDelivery.png",
               "bg_color": "#77a99d",
               "text_color": "#ffffff",
-              "flower_icon": "shopify:\/\/shop_images\/TealEnvelope.png",
+              "flower_icon": "shopify://shop_images/TealEnvelope.png",
               "heading": "Discreet, Customizable Delivery",
               "content_us": "Get the products you need, as often as you need them. From our subscribe and save model to our discreet delivery with easy-to-carry handles on our boxes, we take your comfort and convenience seriously.",
               "content_them": "Stocking up on bulky essentials from big box stores."
@@ -665,10 +665,10 @@
           "35c2c5b0-b61e-49d4-8839-3672de790eb5": {
             "type": "text",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/Packaging.png",
+              "bg_image": "shopify://shop_images/Packaging.png",
               "bg_color": "#fcedee",
               "text_color": "#000000",
-              "flower_icon": "shopify:\/\/shop_images\/PurpleEarth.png",
+              "flower_icon": "shopify://shop_images/PurpleEarth.png",
               "heading": "Sustainable Packaging",
               "content_us": "They say it’s what’s on the inside that counts, but when it comes to caring for our planet, the truth is, it all counts. All of our packaging is renewably sourced and designed.",
               "content_them": "Traditional petroleum-derived plastics."
@@ -677,10 +677,10 @@
           "83546539-63c1-4ed1-a2bf-43c06fd24209": {
             "type": "text",
             "settings": {
-              "bg_image": "shopify:\/\/shop_images\/DispensingPads.png",
+              "bg_image": "shopify://shop_images/DispensingPads.png",
               "bg_color": "#eab681",
               "text_color": "#ffffff",
-              "flower_icon": "shopify:\/\/shop_images\/WhiteLotus.png",
+              "flower_icon": "shopify://shop_images/WhiteLotus.png",
               "heading": "Beautiful Design",
               "content_us": "We’re taking the stigma out of personal care, and that starts with gorgeous design that aims for wellness, making the whole experience feel more rewarding.",
               "content_them": "Uninspired design that panders to category stereotypes."
@@ -702,7 +702,7 @@
           "bg_color": "#333333",
           "text_color": "#ffffff",
           "heading": "Finally, bladder leakage liner, pads and briefs that are naturally better.",
-          "button_link": "shopify:\/\/collections\/all",
+          "button_link": "shopify://collections/all",
           "button_label": "Shop All Products"
         }
       },
@@ -759,22 +759,22 @@
           "452fc903-5c1c-47b2-bb9c-3f1d93f7c423": {
             "type": "image",
             "settings": {
-              "promo_logo_1": "shopify:\/\/shop_images\/InTheGroove.png",
-              "promo_logo_2": "shopify:\/\/shop_images\/WellAndGood.png"
+              "promo_logo_1": "shopify://shop_images/InTheGroove.png",
+              "promo_logo_2": "shopify://shop_images/WellAndGood.png"
             }
           },
           "b245fd94-d2e4-42fc-96aa-28e0887d7f26": {
             "type": "image",
             "settings": {
-              "promo_logo_1": "shopify:\/\/shop_images\/TC.png",
-              "promo_logo_2": "shopify:\/\/shop_images\/Romper.png"
+              "promo_logo_1": "shopify://shop_images/TC.png",
+              "promo_logo_2": "shopify://shop_images/Romper.png"
             }
           },
           "b2742803-2fef-4f67-9852-cd69b5cab96a": {
             "type": "image",
             "settings": {
-              "promo_logo_1": "shopify:\/\/shop_images\/Forbes.png",
-              "promo_logo_2": "shopify:\/\/shop_images\/WomensHealth.png"
+              "promo_logo_1": "shopify://shop_images/Forbes.png",
+              "promo_logo_2": "shopify://shop_images/WomensHealth.png"
             }
           }
         },
@@ -791,11 +791,11 @@
       "two-column-collapsible-img-and-content": {
         "type": "two-column-collapsible-img-and-content",
         "settings": {
-          "bg_image": "shopify:\/\/shop_images\/SFW_770x650_Samplekit_Heavy_Grey-e9e8e8_MG_8175_770x650_c70646b6-c6ee-4f3b-a275-980883375eb7.png",
+          "bg_image": "shopify://shop_images/SFW_770x650_Samplekit_Heavy_Grey-e9e8e8_MG_8175_770x650_c70646b6-c6ee-4f3b-a275-980883375eb7.png",
           "text_color": "#000000",
           "heading": "FEELING NON-COMMITTAL?",
           "content": "We’ve curated a sampling of our most popular products in well-appointed starter kits to support your needs.",
-          "button_link": "shopify:\/\/collections\/starter-kits",
+          "button_link": "shopify://collections/starter-kits",
           "button_label": "Try a Starter Kit"
         }
       },
@@ -805,19 +805,19 @@
           "ad5fa60e-7a39-4d9b-a9ee-83b1e01a6aa7": {
             "type": "image",
             "settings": {
-              "pg_product_image": "shopify:\/\/shop_images\/SFW_1200x1200_Hybrid_Grey-e9e8e8_MG_7587_1200x1200_1c629e0c-2395-49f9-afa9-a580006db6fe.png"
+              "pg_product_image": "shopify://shop_images/SFW_1200x1200_Hybrid_Grey-e9e8e8_MG_7587_1200x1200_1c629e0c-2395-49f9-afa9-a580006db6fe.png"
             }
           },
           "fb8106e9-559b-4a9c-881c-b52dc58a6143": {
             "type": "image",
             "settings": {
-              "pg_product_image": "shopify:\/\/shop_images\/SFW_1200x1200_Liners_Grey-e9e8e8_MG_7654_1200x1200_eaf0d210-1484-496e-8875-a9689cf0f880.png"
+              "pg_product_image": "shopify://shop_images/SFW_1200x1200_Liners_Grey-e9e8e8_MG_7654_1200x1200_eaf0d210-1484-496e-8875-a9689cf0f880.png"
             }
           },
           "0face96b-b5ed-470d-a534-c938e3907d3c": {
             "type": "image",
             "settings": {
-              "pg_product_image": "shopify:\/\/shop_images\/SFW_1200x1200_Pads_Moderate_Grey-e9e8e8_MG_7536_1200x1200_24c9dedd-4f94-45bb-9223-68f47b044ae3.png"
+              "pg_product_image": "shopify://shop_images/SFW_1200x1200_Pads_Moderate_Grey-e9e8e8_MG_7536_1200x1200_24c9dedd-4f94-45bb-9223-68f47b044ae3.png"
             }
           }
         },
@@ -828,7 +828,7 @@
         ],
         "settings": {
           "heading": "Find which products are right for you.",
-          "button_link": "shopify:\/\/pages\/product-guide",
+          "button_link": "shopify://pages/product-guide",
           "button_label": "Product Guide"
         }
       },
@@ -839,28 +839,28 @@
             "type": "slider_items",
             "settings": {
               "seen_item_title": "“The first collection of its kind in the bladder leakage space... creating a higher standard.”",
-              "seen_item_image": "shopify:\/\/shop_images\/Forbes-logo_a52b9ccb-6046-4249-83aa-55e2ddb93398.png"
+              "seen_item_image": "shopify://shop_images/Forbes-logo_a52b9ccb-6046-4249-83aa-55e2ddb93398.png"
             }
           },
           "9795c6ac-c927-4215-8d56-d185e33ddaae": {
             "type": "slider_items",
             "settings": {
               "seen_item_title": "“I prefer to buy personal-care products from companies that take sustainability and clean ingredients seriously. Attn: Grace is a great example.”",
-              "seen_item_image": "shopify:\/\/shop_images\/Gooponlinelogo.png"
+              "seen_item_image": "shopify://shop_images/Gooponlinelogo.png"
             }
           },
           "391855c1-464c-4188-a85b-4c996a99f7f7": {
             "type": "slider_items",
             "settings": {
               "seen_item_title": "“Attn: Grace is a personal care brand disrupting the incontinence segment with stylish, sustainable and subscription-based products for women.”",
-              "seen_item_image": "shopify:\/\/shop_images\/bi-logotype-full.png"
+              "seen_item_image": "shopify://shop_images/bi-logotype-full.png"
             }
           },
           "1a6a1b69-0d2f-478e-8f8b-4d0e0338ad2d": {
             "type": "slider_items",
             "settings": {
               "seen_item_title": "\"A sustainable, high-quality brand that addresses concerns about our changing bodies in a graceful and intelligent way? That’s my kind of company.”",
-              "seen_item_image": "shopify:\/\/shop_images\/in-the-groove-logo.png"
+              "seen_item_image": "shopify://shop_images/in-the-groove-logo.png"
             }
           }
         },
@@ -918,7 +918,7 @@
             "settings": {
               "title": "Leak-Free",
               "content": "Signature CLN Design™ technology for superior moisture-wicking and lightening-fast absorption.",
-              "column_image": "shopify:\/\/shop_images\/noun-no-water-1661151.svg"
+              "column_image": "shopify://shop_images/noun-no-water-1661151.svg"
             }
           },
           "cd1a193d-3ac9-4d91-ae9f-cdf37add0387": {
@@ -926,7 +926,7 @@
             "settings": {
               "title": "Skin-Safe",
               "content": "Breathable, natural materials with no harsh dyes, bleaches, fragrances, or petro-chemicals to irritate your most sensitive skin.",
-              "column_image": "shopify:\/\/shop_images\/noun-care-2928731.svg"
+              "column_image": "shopify://shop_images/noun-care-2928731.svg"
             }
           },
           "404d690f-b934-4cfc-8b17-c42d2c991f22": {
@@ -934,7 +934,7 @@
             "settings": {
               "title": "Eco-Conscious",
               "content": "Friendlier disposables made in CO2 neutral factories with plant-based materials, FSC Certified sustainably forested filler and kraft paper or GreenPE packaging.",
-              "column_image": "shopify:\/\/shop_images\/noun-eco-friendly-4297133.png"
+              "column_image": "shopify://shop_images/noun-eco-friendly-4297133.png"
             }
           }
         },
@@ -1083,12 +1083,12 @@
       "16214060024f1fda7e": {
         "type": "our-mission",
         "settings": {
-          "desktop_image": "shopify:\/\/shop_images\/AG_OUR_MISSION_MAY10.jpg",
-          "mobile_image": "shopify:\/\/shop_images\/AG_OUR_MISSION_MOBILE_MAY10.jpg",
+          "desktop_image": "shopify://shop_images/AG_OUR_MISSION_MAY10.jpg",
+          "mobile_image": "shopify://shop_images/AG_OUR_MISSION_MOBILE_MAY10.jpg",
           "heading": "Our Mission",
           "content": "To lead incontinence care forward—innovating to protect women’s quality of life and the health of our planet.",
           "button_text": "Our Story",
-          "button_url": "shopify:\/\/pages\/our-story",
+          "button_url": "shopify://pages/our-story",
           "bg_color": "#f5ebe9"
         }
       },
@@ -1098,31 +1098,31 @@
           "ef2c9864-0391-4913-a476-fabab45d4f50": {
             "type": "column",
             "settings": {
-              "column_image": "shopify:\/\/shop_images\/search-icon.png",
+              "column_image": "shopify://shop_images/search-icon.png",
               "title": "Product Guide",
               "content": "A simple, straight-shooting guide to our products, so you can decide what's right for you.",
               "button_text": "Find your Fit",
-              "button_url": "shopify:\/\/pages\/product-guide"
+              "button_url": "shopify://pages/product-guide"
             }
           },
           "b759d131-6237-4087-be1e-4cbc32dd8fa6": {
             "type": "column",
             "settings": {
-              "column_image": "shopify:\/\/shop_images\/Resource_Library.png",
+              "column_image": "shopify://shop_images/Resource_Library.png",
               "title": "Resource Library",
               "content": "Urinary incontinence is a treatable condition! Learn more and search our directory of specialists to explore what treatment might be right for you.",
               "button_text": "Explore",
-              "button_url": "shopify:\/\/pages\/resource-library"
+              "button_url": "shopify://pages/resource-library"
             }
           },
           "e93dfdf1-5341-42f6-94d7-64e6610d74c8": {
             "type": "column",
             "settings": {
-              "column_image": "shopify:\/\/shop_images\/Blog.png",
+              "column_image": "shopify://shop_images/Blog.png",
               "title": "Blog",
               "content": "You’re not alone. Featuring honest conversations about our wellness, a place to learn from one another and our growing community of experts.",
               "button_text": "Learn More",
-              "button_url": "shopify:\/\/blogs\/the-edit"
+              "button_url": "shopify://blogs/the-edit"
             }
           }
         },
@@ -1144,7 +1144,7 @@
             "settings": {
               "answer": "Yes",
               "answer_subtext": "This is a new experience for me.",
-              "answer_image": "shopify:\/\/shop_images\/yes.png"
+              "answer_image": "shopify://shop_images/yes.png"
             }
           },
           "07eeb0b2-9001-48c5-85be-b6443a94485e": {
@@ -1152,7 +1152,7 @@
             "settings": {
               "answer": "No",
               "answer_subtext": "I've been dealing with this for a while now.",
-              "answer_image": "shopify:\/\/shop_images\/No.png"
+              "answer_image": "shopify://shop_images/No.png"
             }
           }
         },
@@ -1172,7 +1172,7 @@
             "settings": {
               "answer": "Light",
               "answer_subtext": "Drips and spurts",
-              "answer_image": "shopify:\/\/shop_images\/light-icon.png"
+              "answer_image": "shopify://shop_images/light-icon.png"
             }
           },
           "1446e6ff-a583-4890-ba7f-741481511c6d": {
@@ -1180,7 +1180,7 @@
             "settings": {
               "answer": "Medium",
               "answer_subtext": "Quick bursts and surges",
-              "answer_image": "shopify:\/\/shop_images\/medium-leak.png"
+              "answer_image": "shopify://shop_images/medium-leak.png"
             }
           },
           "e75101b5-5a9b-439b-bd73-357f4448d577": {
@@ -1188,7 +1188,7 @@
             "settings": {
               "answer": "Heavy",
               "answer_subtext": "Surges and streams",
-              "answer_image": "shopify:\/\/shop_images\/heavy-leak.png"
+              "answer_image": "shopify://shop_images/heavy-leak.png"
             }
           }
         },
@@ -1209,7 +1209,7 @@
             "settings": {
               "answer": "All the time",
               "answer_subtext": "",
-              "answer_image": "shopify:\/\/shop_images\/time.png"
+              "answer_image": "shopify://shop_images/time.png"
             }
           },
           "41daf712-e600-4637-b7a1-656db7a86ae8": {
@@ -1217,7 +1217,7 @@
             "settings": {
               "answer": "Here and there",
               "answer_subtext": "",
-              "answer_image": "shopify:\/\/shop_images\/here-and-there.png"
+              "answer_image": "shopify://shop_images/here-and-there.png"
             }
           },
           "5ef093ef-fc3d-4388-951a-a57b5efd0056": {
@@ -1225,7 +1225,7 @@
             "settings": {
               "answer": "When I sleep",
               "answer_subtext": "",
-              "answer_image": "shopify:\/\/shop_images\/moon-icon.png"
+              "answer_image": "shopify://shop_images/moon-icon.png"
             }
           }
         },
@@ -1246,7 +1246,7 @@
             "settings": {
               "answer": "Pregnant",
               "answer_subtext": "",
-              "answer_image": "shopify:\/\/shop_images\/pregnant-icon.png"
+              "answer_image": "shopify://shop_images/pregnant-icon.png"
             }
           },
           "c2843b49-7625-4825-ad9b-5b9a365ddf7a": {
@@ -1254,7 +1254,7 @@
             "settings": {
               "answer": "Postpartum",
               "answer_subtext": "",
-              "answer_image": "shopify:\/\/shop_images\/post-partum.png"
+              "answer_image": "shopify://shop_images/post-partum.png"
             }
           },
           "eb2b0bc5-b3da-4db9-ad97-224d8cc74812": {
@@ -1262,7 +1262,7 @@
             "settings": {
               "answer": "Perimenopause",
               "answer_subtext": "",
-              "answer_image": "shopify:\/\/shop_images\/premeno.png"
+              "answer_image": "shopify://shop_images/premeno.png"
             }
           },
           "dd4a6a8b-08d9-4f46-ab2a-b5b2e8071417": {
@@ -1270,7 +1270,7 @@
             "settings": {
               "answer": "Mid-Menopause",
               "answer_subtext": "",
-              "answer_image": "shopify:\/\/shop_images\/mid-menopause.png"
+              "answer_image": "shopify://shop_images/mid-menopause.png"
             }
           },
           "80c9cd7a-68d2-4902-baf0-b1477ab25664": {
@@ -1278,7 +1278,7 @@
             "settings": {
               "answer": "Post-Menopause",
               "answer_subtext": "",
-              "answer_image": "shopify:\/\/shop_images\/post-menopause_011ac2b5-6c6e-44f0-bdf2-8a035b03eb7c.png"
+              "answer_image": "shopify://shop_images/post-menopause_011ac2b5-6c6e-44f0-bdf2-8a035b03eb7c.png"
             }
           }
         },
@@ -1445,28 +1445,28 @@
             "type": "slider_items",
             "settings": {
               "seen_item_title": "“The first collection of its kind in the bladder leakage space... creating a higher standard.”",
-              "seen_item_image": "shopify:\/\/shop_images\/forbes-logo-black-transparent_1.png"
+              "seen_item_image": "shopify://shop_images/forbes-logo-black-transparent_1.png"
             }
           },
           "47f1053f-ca2b-48a7-964f-aa047a9c8465": {
             "type": "slider_items",
             "settings": {
               "seen_item_title": "“I prefer to buy personal-care products from companies that take sustainability and clean ingredients seriously. Attn: Grace is a great example.”",
-              "seen_item_image": "shopify:\/\/shop_images\/1200px-Gooponlinelogo_1.png"
+              "seen_item_image": "shopify://shop_images/1200px-Gooponlinelogo_1.png"
             }
           },
           "1045065d-7410-4909-9458-9c43daa6dd9f": {
             "type": "slider_items",
             "settings": {
               "seen_item_title": "“Attn: Grace is a personal care brand disrupting the incontinence segment with stylish, sustainable and subscription-based products for women.”",
-              "seen_item_image": "shopify:\/\/shop_images\/bi_logotype.png"
+              "seen_item_image": "shopify://shop_images/bi_logotype.png"
             }
           },
           "a1d5d0b1-545d-4b47-8e78-c7465801925d": {
             "type": "slider_items",
             "settings": {
               "seen_item_title": "\"A sustainable, high-quality brand that addresses concerns about our changing bodies in a graceful and intelligent way? That’s my kind of company.”",
-              "seen_item_image": "shopify:\/\/shop_images\/InTheGroove_2.png"
+              "seen_item_image": "shopify://shop_images/InTheGroove_2.png"
             }
           }
         },
@@ -1530,7 +1530,7 @@
             "settings": {
               "banner_class": "compare-banner-1",
               "compare_banner_text": "",
-              "compare_banner_image": "shopify:\/\/shop_images\/product-comparison-superior-softness.jpg",
+              "compare_banner_image": "shopify://shop_images/product-comparison-superior-softness.jpg",
               "text_position": "top-left"
             }
           }
@@ -1606,8 +1606,8 @@
             "settings": {
               "title": "Our Products",
               "bg_color": "#faf9f9",
-              "text": "<ul>\n<li>Breathable design + exclusive plant-based top sheets<\/li>\n<li>Soft, simple, body-and-earth friendly liners that perform to the highest standards<\/li>\n<li>Free from chlorine, synthetic fragrances, lotions and latex<\/li>\n<li>Less irritation<\/li>\n<\/ul>",
-              "column_image": "shopify:\/\/shop_images\/AARP_Illos_Moderate.png"
+              "text": "<ul>\n<li>Breathable design + exclusive plant-based top sheets</li>\n<li>Soft, simple, body-and-earth friendly liners that perform to the highest standards</li>\n<li>Free from chlorine, synthetic fragrances, lotions and latex</li>\n<li>Less irritation</li>\n</ul>",
+              "column_image": "shopify://shop_images/AARP_Illos_Moderate.png"
             }
           },
           "677fcb4a-f165-4ed8-9843-b66d03abd75f": {
@@ -1615,8 +1615,8 @@
             "settings": {
               "title": "Those \"Others\"",
               "bg_color": "#f5f3f3",
-              "text": "<ul>\n    <li>Polyethylene film printed with colorants<\/li>\n    <li>Polypropylene and Polyethylene fibers<\/li>\n    <li>Printed Polyethylene Film on Silicone-coated paper<\/li>\n    <li>Irritated yet?<\/li>\n<\/ul>",
-              "column_image": "shopify:\/\/shop_images\/Component_9_1.png"
+              "text": "<ul>\n    <li>Polyethylene film printed with colorants</li>\n    <li>Polypropylene and Polyethylene fibers</li>\n    <li>Printed Polyethylene Film on Silicone-coated paper</li>\n    <li>Irritated yet?</li>\n</ul>",
+              "column_image": "shopify://shop_images/Component_9_1.png"
             }
           }
         },
@@ -1633,28 +1633,28 @@
             "type": "slider_items",
             "settings": {
               "seen_item_title": "",
-              "seen_item_image": "shopify:\/\/shop_images\/forbes-logo-black-transparent_1.png"
+              "seen_item_image": "shopify://shop_images/forbes-logo-black-transparent_1.png"
             }
           },
           "8c070248-d74b-49eb-9c50-9a8bb098e661": {
             "type": "slider_items",
             "settings": {
               "seen_item_title": "",
-              "seen_item_image": "shopify:\/\/shop_images\/1200px-Gooponlinelogo_1.png"
+              "seen_item_image": "shopify://shop_images/1200px-Gooponlinelogo_1.png"
             }
           },
           "ec09127e-38f7-4910-8663-eba12aa6f093": {
             "type": "slider_items",
             "settings": {
               "seen_item_title": "",
-              "seen_item_image": "shopify:\/\/shop_images\/bi_logotype.png"
+              "seen_item_image": "shopify://shop_images/bi_logotype.png"
             }
           },
           "5fbd1a94-f210-4af6-aa6a-a0f253bdb5b4": {
             "type": "slider_items",
             "settings": {
               "seen_item_title": "",
-              "seen_item_image": "shopify:\/\/shop_images\/InTheGroove_2.png"
+              "seen_item_image": "shopify://shop_images/InTheGroove_2.png"
             }
           }
         },
@@ -1672,7 +1672,7 @@
         "type": "product-comparison-text-button",
         "settings": {
           "heading": "Explore our entire skin-safe collection.",
-          "button_link": "shopify:\/\/collections\/shop-all",
+          "button_link": "shopify://collections/shop-all",
           "button_label": "Shop now"
         }
       },
@@ -1683,8 +1683,8 @@
             "type": "product",
             "settings": {
               "product-name": "Liners",
-              "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_LINERS.jpg",
-              "product-link": "shopify:\/\/products\/light-liner",
+              "product-image": "shopify://shop_images/AG_HP_PRODUCTS_LINERS.jpg",
+              "product-link": "shopify://products/light-liner",
               "overlay-text": "A soft, simple, barely there liner ideal for the lightest of bladder leakage. Immediately wicks away any drips or spurts of pee."
             }
           },
@@ -1692,8 +1692,8 @@
             "type": "product",
             "settings": {
               "product-name": "Pads",
-              "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_PADS.jpg",
-              "product-link": "shopify:\/\/products\/moderate-pads",
+              "product-image": "shopify://shop_images/AG_HP_PRODUCTS_PADS.jpg",
+              "product-link": "shopify://products/moderate-pads",
               "overlay-text": "These pads offer lightning quick absorbency for a range of support—from bursts to streams, in two different lengths—we got you covered."
             }
           },
@@ -1701,8 +1701,8 @@
             "type": "product",
             "settings": {
               "product-name": "Briefs",
-              "product-image": "shopify:\/\/shop_images\/AG_HP_PRODUCTS_BRIEFS.jpg",
-              "product-link": "shopify:\/\/products\/briefs",
+              "product-image": "shopify://shop_images/AG_HP_PRODUCTS_BRIEFS.jpg",
+              "product-link": "shopify://products/briefs",
               "overlay-text": "Ultra-thin but seriously powerful, our bladder leakage underwear is able to lock away streams and gushes of pee."
             }
           }
@@ -1717,7 +1717,7 @@
       "qr-code-video": {
         "type": "qr-code-video",
         "settings": {
-          "video_url": "https:\/\/youtu.be\/2cO94Q8x8IA",
+          "video_url": "https://youtu.be/2cO94Q8x8IA",
           "text-position": "bottom",
           "title": "Attn: Grace outperforms other brands in all the ways that matter most."
         }
@@ -1767,21 +1767,21 @@
           "fe994f5f-ab9e-4576-a169-bfc7049fa411": {
             "type": "image-text-column",
             "settings": {
-              "image": "shopify:\/\/shop_images\/230301_Attn_Grace_Darlene_2527.jpg",
+              "image": "shopify://shop_images/230301_Attn_Grace_Darlene_2527.jpg",
               "text": "We’ll never expose your skin to toxic chemicals."
             }
           },
           "2af64100-c023-4cee-8cf5-e88c2827854e": {
             "type": "image-text-column",
             "settings": {
-              "image": "shopify:\/\/shop_images\/230301_Attn_Grace_GROUP_Studio_2117.jpg",
+              "image": "shopify://shop_images/230301_Attn_Grace_GROUP_Studio_2117.jpg",
               "text": "We’ll always be transparent about our ingredients, sourcing and manufacturing."
             }
           },
           "1fe3fe8b-23c7-46a6-9880-a3d8643d5ba2": {
             "type": "image-text-column",
             "settings": {
-              "image": "shopify:\/\/shop_images\/230301_Attn_Grace_Heavy_Pads_0818.jpg",
+              "image": "shopify://shop_images/230301_Attn_Grace_Heavy_Pads_0818.jpg",
               "text": "We’ll always choose plant-based, renewable ingredients that are naturally better."
             }
           },
@@ -1789,9 +1789,9 @@
             "type": "image-with-text",
             "settings": {
               "title": "CROSS SECTION OF OUR SIGNATURE TOP SHEET FIBER",
-              "image": "shopify:\/\/shop_images\/CrossSectionAllTogether.png",
-              "mobile_image": "shopify:\/\/shop_images\/CrossSectionAllTogether_NoLines.png",
-              "text": "<p>100% SUGARCANE-BASED GREEN PE FOR GAME-CHANGING COMFORT<\/p><p>POLYPROPYLENE CORE FOR<br\/>POWERFUL ABSORPTION<\/p><p>FREE OF CHLORINE, DYES,<br\/>FRAGRANCES, LOTIONS AND LATEX<\/p>"
+              "image": "shopify://shop_images/CrossSectionAllTogether.png",
+              "mobile_image": "shopify://shop_images/CrossSectionAllTogether_NoLines.png",
+              "text": "<p>100% SUGARCANE-BASED GREEN PE FOR GAME-CHANGING COMFORT</p><p>POLYPROPYLENE CORE FOR<br/>POWERFUL ABSORPTION</p><p>FREE OF CHLORINE, DYES,<br/>FRAGRANCES, LOTIONS AND LATEX</p>"
             }
           }
         },
@@ -1802,8 +1802,8 @@
           "3a1c0884-cbfb-4d83-bae0-019d28385ec6"
         ],
         "settings": {
-          "title": "The only incontinence brand backed by a <strong>Skin-Safe Promise™.<\/strong>",
-          "text": "<p>Our products incorporate the cleanest, most sustainable materials possible without <span style=\"text-decoration:underline\">ever<\/span> compromising on performance.<\/p>",
+          "title": "The only incontinence brand backed by a <strong>Skin-Safe Promise™.</strong>",
+          "text": "<p>Our products incorporate the cleanest, most sustainable materials possible without <span style=\"text-decoration:underline\">ever</span> compromising on performance.</p>",
           "itc-title": "WHAT THAT MEANS FOR YOU"
         }
       },
@@ -1814,7 +1814,7 @@
             "type": "grace-difference-header",
             "settings": {
               "grace_title": "Attn : Grace",
-              "grace_image": "shopify:\/\/shop_images\/AG_WhiteIcon.png",
+              "grace_image": "shopify://shop_images/AG_WhiteIcon.png",
               "other_title": "Other Brands"
             }
           },
@@ -1870,7 +1870,7 @@
             "type": "grace-difference-content",
             "settings": {
               "question": "",
-              "question_image": "shopify:\/\/shop_images\/CertifiedBCorp.png",
+              "question_image": "shopify://shop_images/CertifiedBCorp.png",
               "attn_answer": "yes",
               "other_answer": "no"
             }
@@ -1888,7 +1888,7 @@
         ],
         "settings": {
           "title": "The Attn: Grace Difference",
-          "subtext": "<p>We’re proud to be defining <strong>the gold standard<\/strong> in incontinence care.<\/p>"
+          "subtext": "<p>We’re proud to be defining <strong>the gold standard</strong> in incontinence care.</p>"
         }
       },
       "qr-as-seen-in": {
@@ -1897,37 +1897,37 @@
           "61b8f82a-6b33-4b38-9aa1-8349aa20f050": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/Unknown.png"
+              "logo": "shopify://shop_images/Unknown.png"
             }
           },
           "95afcb8f-e417-4ee1-b891-7b2da8e057a1": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/Parents-Logo.png"
+              "logo": "shopify://shop_images/Parents-Logo.png"
             }
           },
           "edd00d29-0798-4175-95e4-52dc64cf74a7": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/Glamourlogo.svg"
+              "logo": "shopify://shop_images/Glamourlogo.svg"
             }
           },
           "59f85757-a8b9-4ee0-a78c-96ec819b3f4e": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/Gooponlinelogo.png"
+              "logo": "shopify://shop_images/Gooponlinelogo.png"
             }
           },
           "ea27e9bc-797e-4616-8875-97ae21c221e3": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/Forbes-logo_a52b9ccb-6046-4249-83aa-55e2ddb93398.png"
+              "logo": "shopify://shop_images/Forbes-logo_a52b9ccb-6046-4249-83aa-55e2ddb93398.png"
             }
           },
           "781f7872-8886-4e74-8414-994affc33b0a": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/buzzfeed-logo-black-and-white.png"
+              "logo": "shopify://shop_images/buzzfeed-logo-black-and-white.png"
             }
           }
         },
@@ -1949,37 +1949,37 @@
           "57635243-ca1e-4410-ac4c-c94cc6d4720f": {
             "type": "icon",
             "settings": {
-              "icon": "shopify:\/\/shop_images\/Women_Graphic-01.png"
+              "icon": "shopify://shop_images/Women_Graphic-01.png"
             }
           },
           "9f430749-2fde-4ded-8ad8-c201a74be960": {
             "type": "icon",
             "settings": {
-              "icon": "shopify:\/\/shop_images\/Women_Graphic-02.png"
+              "icon": "shopify://shop_images/Women_Graphic-02.png"
             }
           },
           "f03971a2-ef79-44bc-b693-da57500dd6c7": {
             "type": "icon",
             "settings": {
-              "icon": "shopify:\/\/shop_images\/Women_Graphic-03.png"
+              "icon": "shopify://shop_images/Women_Graphic-03.png"
             }
           },
           "e4388670-ddc8-4ea6-9c00-03a1c83e6daa": {
             "type": "icon",
             "settings": {
-              "icon": "shopify:\/\/shop_images\/Women_Graphic-04.png"
+              "icon": "shopify://shop_images/Women_Graphic-04.png"
             }
           },
           "b097204d-6c31-4fdd-b58f-076cb2cba5b6": {
             "type": "icon",
             "settings": {
-              "icon": "shopify:\/\/shop_images\/Women_Graphic-05.png"
+              "icon": "shopify://shop_images/Women_Graphic-05.png"
             }
           },
           "6b880fa0-be3f-4b39-97bd-e8313783157b": {
             "type": "icon",
             "settings": {
-              "icon": "shopify:\/\/shop_images\/Women_Graphic-06.png"
+              "icon": "shopify://shop_images/Women_Graphic-06.png"
             }
           },
           "4376cf75-586e-4604-ab1d-157e962d1752": {
@@ -2048,7 +2048,7 @@
           "7e24baf8-69e4-4a95-a355-b8b72bfdffac"
         ],
         "settings": {
-          "title": "<strong>What if we told you that you weren’t alone? <\/strong><br>50% of adult women leak a little pee (and sometimes a lot).",
+          "title": "<strong>What if we told you that you weren’t alone? </strong><br>50% of adult women leak a little pee (and sometimes a lot).",
           "subtext": "…Approximately 19 million others, that is.",
           "per_title": "and So. Many. Others."
         }
@@ -2060,32 +2060,32 @@
             "type": "text-column",
             "settings": {
               "percent_text": "56%",
-              "text1": "<p>OF US AVOIDING SOCIAL EVENTS BECAUSE OF BLADDER LEAKS<\/p>",
-              "text2": "<p>WE WANT YOU TO RSVP “YES” AND GET OUT THERE.<\/p>"
+              "text1": "<p>OF US AVOIDING SOCIAL EVENTS BECAUSE OF BLADDER LEAKS</p>",
+              "text2": "<p>WE WANT YOU TO RSVP “YES” AND GET OUT THERE.</p>"
             }
           },
           "800c9ff7-a2a6-490c-ac11-f87266e3866e": {
             "type": "text-column",
             "settings": {
               "percent_text": "50%",
-              "text1": "<p>OF US WORRIED ABOUT LAUGHING IN PUBLIC<\/p>",
-              "text2": "<p>WE WANT YOU TO BE UNAPOLOGETICALLY LAUGHING OUT LOUD.<\/p>"
+              "text1": "<p>OF US WORRIED ABOUT LAUGHING IN PUBLIC</p>",
+              "text2": "<p>WE WANT YOU TO BE UNAPOLOGETICALLY LAUGHING OUT LOUD.</p>"
             }
           },
           "becbdc49-fb93-4131-9cdc-6343b6cb795c": {
             "type": "text-column",
             "settings": {
               "percent_text": "27%",
-              "text1": "<p>OF US GETTING LESS SLEEP<\/p>",
-              "text2": "<p>WE WANT YOU TO WAKE UP REFRESHED AND IN DRY SHEETS.<\/p>"
+              "text1": "<p>OF US GETTING LESS SLEEP</p>",
+              "text2": "<p>WE WANT YOU TO WAKE UP REFRESHED AND IN DRY SHEETS.</p>"
             }
           },
           "4abc892d-e8d6-4adc-9c76-1776eb41a1b8": {
             "type": "text-column",
             "settings": {
               "percent_text": "68%",
-              "text1": "<p>THAT HAVE NEVER MENTIONED YOUR LEAKS TO YOUR DOCTOR<\/p>",
-              "text2": "<p>WE WANT YOU TO FEEL EMBOLDENED TO ASK ABOUT WHAT TREATMENT MIGHT BE BEST FOR YOU.<\/p>"
+              "text1": "<p>THAT HAVE NEVER MENTIONED YOUR LEAKS TO YOUR DOCTOR</p>",
+              "text2": "<p>WE WANT YOU TO FEEL EMBOLDENED TO ASK ABOUT WHAT TREATMENT MIGHT BE BEST FOR YOU.</p>"
             }
           }
         },
@@ -2097,16 +2097,16 @@
         ],
         "settings": {
           "title": "These numbers matter because you matter.",
-          "cimage": "shopify:\/\/shop_images\/MiaAlex_transparent_3c9e1a4c-c770-4d55-a56d-d892a18b2727.png",
+          "cimage": "shopify://shop_images/MiaAlex_transparent_3c9e1a4c-c770-4d55-a56d-d892a18b2727.png",
           "btext": "“You have our attention, and always will.”",
-          "simage": "shopify:\/\/shop_images\/Unknown-1.png"
+          "simage": "shopify://shop_images/Unknown-1.png"
         }
       },
       "qr-richtext": {
         "type": "qr-richtext",
         "settings": {
-          "title": "DID YOU KNOW THAT<br> <strong>URINARY INCONTINENCE IS TREATABLE?<\/strong>",
-          "subtext": "<p>We want you to live life fully. Check out our <a href='\/pages\/resource-library'>Resource Library<\/a> where you can explore potential treatment options and find providers in your area who may be able to help.<\/p>"
+          "title": "DID YOU KNOW THAT<br> <strong>URINARY INCONTINENCE IS TREATABLE?</strong>",
+          "subtext": "<p>We want you to live life fully. Check out our <a href='/pages/resource-library'>Resource Library</a> where you can explore potential treatment options and find providers in your area who may be able to help.</p>"
         }
       },
       "top-banner": {
@@ -2114,7 +2114,7 @@
         "settings": {
           "show_banner": false,
           "banner_text": "ATTN: GRACE IS NOW AVAILABLE AT 1500+ WALMART'S NATIONWIDE AND ON WALMART.COM",
-          "banner_link": "shopify:\/\/pages\/store-locator",
+          "banner_link": "shopify://pages/store-locator",
           "background_color": "#fb9650",
           "text_color": "#ffffff"
         }
@@ -2123,13 +2123,13 @@
         "type": "store-locator",
         "settings": {
           "bg_color": "#f6ebe8",
-          "logo": "shopify:\/\/shop_images\/Walmart_logo_transparent_png-700x184.png",
-          "slogo": "shopify:\/\/shop_images\/Amazon_logo_svg.webp",
-          "tlogo": "shopify:\/\/shop_images\/IMG_7308-removebg-preview.png",
-          "flogo": "shopify:\/\/shop_images\/refresh2go-retailer-store-logo-store-target.png",
-          "fflogo": "shopify:\/\/shop_images\/Logo__6_-removebg-preview.webp",
+          "logo": "shopify://shop_images/Walmart_logo_transparent_png-700x184.png",
+          "slogo": "shopify://shop_images/Amazon_logo_svg.webp",
+          "tlogo": "shopify://shop_images/IMG_7308-removebg-preview.png",
+          "flogo": "shopify://shop_images/refresh2go-retailer-store-logo-store-target.png",
+          "fflogo": "shopify://shop_images/Logo__6_-removebg-preview.webp",
           "title": "You asked for it, and we made it happen.",
-          "subtext": "<p>Attn: Grace can now be found on Walmart.com, 1,500+ Walmart Supercenters across the country, Woodman’s Markets, on Target.com, and on Amazon.com. Enter your city or zip code below to find your nearest retail location.<\/p>"
+          "subtext": "<p>Attn: Grace can now be found on Walmart.com, 1,500+ Walmart Supercenters across the country, Woodman’s Markets, on Target.com, and on Amazon.com. Enter your city or zip code below to find your nearest retail location.</p>"
         }
       },
       "home-hero": {
@@ -2139,8 +2139,8 @@
             "type": "slide",
             "settings": {
               "background_color": "#ebe2d8",
-              "background_image": "shopify:\/\/shop_images\/our-story-hero-banner-desktop.jpg",
-              "mobile_background_image": "shopify:\/\/shop_images\/our-story-hero-mobile_44798c5b-ae99-47cc-aba7-5913d412edd0.jpg",
+              "background_image": "shopify://shop_images/our-story-hero-banner-desktop.jpg",
+              "mobile_background_image": "shopify://shop_images/our-story-hero-mobile_44798c5b-ae99-47cc-aba7-5913d412edd0.jpg",
               "heading": "Our Story",
               "subheading": "",
               "short_description": "We’re leading incontinence care forward—innovating to protect women’s quality of life and the health of our planet.",
@@ -2160,7 +2160,7 @@
         "type": "richtext",
         "settings": {
           "bg_color": "#dedc00",
-          "text": "<p>Attn: Grace is proudly a female-founded company, designing high-performing, skin-safe incontinence products that women can trust. As a Certified B Corp.™, we meet the highest verified standards of social and environmental performance, transparency and accountability.<\/p>"
+          "text": "<p>Attn: Grace is proudly a female-founded company, designing high-performing, skin-safe incontinence products that women can trust. As a Certified B Corp.™, we meet the highest verified standards of social and environmental performance, transparency and accountability.</p>"
         }
       },
       "our-story-content": {
@@ -2170,14 +2170,14 @@
             "type": "quote",
             "settings": {
               "quote": "“I knew my mom, and women everywhere, deserved better.”",
-              "paragraph": "<p>The idea behind Attn: Grace was born from a deeply personal place. <\/p><p>Mia, one of our Founders, had seen her mother, Eileen, struggling to find incontinence products that didn’t cause more problems than they solved. Eileen had tried dozens of brands, only to find that they were all bulky and uncomfortable and frequently caused painful skin irritation.<\/p><p>Mia knew there had to be a better way, and together with her Co-Founder and wife, Alex, set out to design the first-ever collection of skin-safe, sustainably designed incontinence products.<\/p><p>Attn: Grace uses powerful, plant-based materials to deliver unparalleled protection against bladder leaks without the painful skin irritation caused by the bleaches, dyes, fragrances and other chemicals typically used in conventional products. Our products are sustainably sourced, designed and packaged, featuring cutting-edge innovation, and are proudly manufactured in 100% Carbon Neutral Certified facilities.<\/p>"
+              "paragraph": "<p>The idea behind Attn: Grace was born from a deeply personal place. </p><p>Mia, one of our Founders, had seen her mother, Eileen, struggling to find incontinence products that didn’t cause more problems than they solved. Eileen had tried dozens of brands, only to find that they were all bulky and uncomfortable and frequently caused painful skin irritation.</p><p>Mia knew there had to be a better way, and together with her Co-Founder and wife, Alex, set out to design the first-ever collection of skin-safe, sustainably designed incontinence products.</p><p>Attn: Grace uses powerful, plant-based materials to deliver unparalleled protection against bladder leaks without the painful skin irritation caused by the bleaches, dyes, fragrances and other chemicals typically used in conventional products. Our products are sustainably sourced, designed and packaged, featuring cutting-edge innovation, and are proudly manufactured in 100% Carbon Neutral Certified facilities.</p>"
             }
           },
           "761600df-e5cd-4e52-b93e-85c17bbca8dc": {
             "type": "quote",
             "settings": {
               "quote": "“When we solve for bladder leaks, what we’re talking about is a woman’s quality of life.”",
-              "paragraph": "<p>We’re setting a new standard of care for a health condition that impacts over 19M women in the U.S. alone. Since we launched in 2020, we’ve witnessed the profound impact switching to our products can have on a woman’s quality of life. Women consistently report that skin irritation has disappeared, they’re getting fewer, if any, UTIs, and that our products enable them to get back to doing the things they love. <\/p><p>Because of bladder leaks, 56% of women are avoiding social events, 27% of us are getting less sleep, and a heartbreaking 50% of women are worried about laughing in public. Not to mention that 68% of women have never mentioned their leaks to their doctor.<\/p><p>These numbers matter because we matter. This is not an uncommon experience, but for ages, this condition has been shrouded in shame, silence and stigma.<\/p><p>We believe that radical empathy is crucial to finally putting women’s wellness first and innovating for women’s specific incontinence needs. We’re proud to be leading the category forward in this way.<\/p><p>Attn: Grace is deeply committed to meeting you wherever you are on your wellness journey.<\/p><p>Visit our <a href=\"\/pages\/resource-library\" title=\"Resource Library\"><strong>Resource Library<\/strong><\/a> to learn more about incontinence, what treatments exist, and to find a specialist near you.<\/p><p>Visit our <a href=\"\/collections\/shop-all\" title=\"Shop All\"><strong>Shop All<\/strong><\/a> page to discover our game-changing incontinence products, or visit our <a href=\"\/pages\/store-locator\" title=\"Store Locator\"><strong>Store Locator<\/strong><\/a> page to find a retail location nearest you.<\/p>"
+              "paragraph": "<p>We’re setting a new standard of care for a health condition that impacts over 19M women in the U.S. alone. Since we launched in 2020, we’ve witnessed the profound impact switching to our products can have on a woman’s quality of life. Women consistently report that skin irritation has disappeared, they’re getting fewer, if any, UTIs, and that our products enable them to get back to doing the things they love. </p><p>Because of bladder leaks, 56% of women are avoiding social events, 27% of us are getting less sleep, and a heartbreaking 50% of women are worried about laughing in public. Not to mention that 68% of women have never mentioned their leaks to their doctor.</p><p>These numbers matter because we matter. This is not an uncommon experience, but for ages, this condition has been shrouded in shame, silence and stigma.</p><p>We believe that radical empathy is crucial to finally putting women’s wellness first and innovating for women’s specific incontinence needs. We’re proud to be leading the category forward in this way.</p><p>Attn: Grace is deeply committed to meeting you wherever you are on your wellness journey.</p><p>Visit our <a href=\"/pages/resource-library\" title=\"Resource Library\"><strong>Resource Library</strong></a> to learn more about incontinence, what treatments exist, and to find a specialist near you.</p><p>Visit our <a href=\"/collections/shop-all\" title=\"Shop All\"><strong>Shop All</strong></a> page to discover our game-changing incontinence products, or visit our <a href=\"/pages/store-locator\" title=\"Store Locator\"><strong>Store Locator</strong></a> page to find a retail location nearest you.</p>"
             }
           }
         },
@@ -2217,35 +2217,35 @@
           "d839711e-d818-4dfe-b8c7-9139ae442ce9": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-pads-features1.svg",
+              "image": "shopify://shop_images/icon-pads-features1.svg",
               "heading": "Discreet fit and barely-there feel"
             }
           },
           "725cff67-9c3e-4d34-aec1-3d2752975aac": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-pads-features2.svg",
+              "image": "shopify://shop_images/icon-pads-features2.svg",
               "heading": "Skin-Safe, DermaTest® Approved"
             }
           },
           "489d6ba2-6da6-4d9a-adc7-7cd08d7b024c": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-pads-features3.svg",
+              "image": "shopify://shop_images/icon-pads-features3.svg",
               "heading": "Stay drier, longer"
             }
           },
           "12f79016-af8d-43a0-bfef-df700714dbc5": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-pads-features4.svg",
+              "image": "shopify://shop_images/icon-pads-features4.svg",
               "heading": "Luxuriously soft"
             }
           },
           "edbfe8d7-6590-4aa9-8a75-0a2b36440f97": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-pads-features5.svg",
+              "image": "shopify://shop_images/icon-pads-features5.svg",
               "heading": "Eco-conscious design"
             }
           }
@@ -2262,11 +2262,11 @@
       "new-product-videos": {
         "type": "new-product-videos",
         "settings": {
-          "heading": "Our pads keep you <span>drier, longer.<\/span>",
-          "videourl": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/245b1b3b2d41492790fef70d14922772.mp4",
-          "videourl2": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cab10436da334aaea19c7be06ba3ff9e.mp4",
-          "image1": "shopify:\/\/shop_images\/keep-image1.jpg",
-          "image2": "shopify:\/\/shop_images\/keep-image2.jpg",
+          "heading": "Our pads keep you <span>drier, longer.</span>",
+          "videourl": "https://cdn.shopify.com/videos/c/o/v/245b1b3b2d41492790fef70d14922772.mp4",
+          "videourl2": "https://cdn.shopify.com/videos/c/o/v/cab10436da334aaea19c7be06ba3ff9e.mp4",
+          "image1": "shopify://shop_images/keep-image1.jpg",
+          "image2": "shopify://shop_images/keep-image2.jpg",
           "description": "Pads don't just have to absorb leaks, they have to retain them. Our pads absorb leaks quickly AND then keep them locked away — so you stay dry, even when the pad is soaked to capacity.",
           "notes": "*Testing performed by an independent, third party lab measuring Attn: Grace pads vs. leading drugstore brands."
         }
@@ -2274,14 +2274,14 @@
       "new-product-scinsafe": {
         "type": "new-product-scinsafe",
         "settings": {
-          "bg": "shopify:\/\/shop_images\/skinsafe-bg.jpg",
-          "heading": "The only incontinence pad backed by a <span>Skin-Safe Promise™<\/span>",
+          "bg": "shopify://shop_images/skinsafe-bg.jpg",
+          "heading": "The only incontinence pad backed by a <span>Skin-Safe Promise™</span>",
           "description": "With Attn: Grace you never have to choose between skin-safety and high-performance. Our pads are designed so that only soft, gentle, plant-based fibers touch your skin. Our sophisticated top sheet proudly boasts moisture-wicking capabilities that outperform premium, big-box brands, as well as brands using cotton top sheets. Tough on leaks, and safe on skin — no trade-offs.",
-          "image_left": "shopify:\/\/shop_images\/skinsafe-other-image.png",
+          "image_left": "shopify://shop_images/skinsafe-other-image.png",
           "heading_left": "other brands",
-          "imagei_left": "shopify:\/\/shop_images\/icon-skinsafe-other.svg",
-          "desc_left": "<strong>Petroleum-based <span>top sheets<\/span><\/strong>",
-          "image_right": "shopify:\/\/shop_images\/icon-skinsafe-info.svg",
+          "imagei_left": "shopify://shop_images/icon-skinsafe-other.svg",
+          "desc_left": "<strong>Petroleum-based <span>top sheets</span></strong>",
+          "image_right": "shopify://shop_images/icon-skinsafe-info.svg",
           "heading_right": "Skin-Safe Promise™",
           "caption_right": "PLANT-based top sheets",
           "text_right": "no bleaches, no dyes, no fragrance"
@@ -2307,7 +2307,7 @@
           "6dc422a6-3e98-4b4a-9d8f-001905c47c9e": {
             "type": "text",
             "settings": {
-              "text": "This product is amazing! It feels like silk \u2028and is more comfortable, thinner, and \u2028more effective than any other brand.",
+              "text": "This product is amazing! It feels like silk  and is more comfortable, thinner, and  more effective than any other brand.",
               "autor": "Tara S."
             }
           },
@@ -2321,7 +2321,7 @@
           "14b7230a-824a-4872-acf3-0db0be5bc93d": {
             "type": "text",
             "settings": {
-              "text": "They don’t fall apart, leak, make crinkly noises when you walk, or bunch up like \u2028a lot of other brands. And no rash!",
+              "text": "They don’t fall apart, leak, make crinkly noises when you walk, or bunch up like  a lot of other brands. And no rash!",
               "autor": "Carmen R."
             }
           },
@@ -2358,7 +2358,7 @@
           "d1521d99-2e9c-44e9-86e3-02f42420efc2"
         ],
         "settings": {
-          "heading": "9-out-of-10 customers noticed a<br> difference almost immediately after<br> switching to <span>Attn: Grace.<\/span>",
+          "heading": "9-out-of-10 customers noticed a<br> difference almost immediately after<br> switching to <span>Attn: Grace.</span>",
           "subheading": "A better way is waiting for you. Don’t miss out."
         }
       },
@@ -2368,42 +2368,42 @@
           "50d1357a-ac6b-42f3-8314-d99ae8ca67fb": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-love1.svg",
+              "image": "shopify://shop_images/icon-love1.svg",
               "heading": "Super absorbent core"
             }
           },
           "0254783a-a6ed-4374-a605-6a0d391ec877": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-love2.svg",
+              "image": "shopify://shop_images/icon-love2.svg",
               "heading": "Powerful, plant-based top and back sheets"
             }
           },
           "a1890113-98dc-4f79-a2a8-48da6372a29f": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-love3.svg",
+              "image": "shopify://shop_images/icon-love3.svg",
               "heading": "No dyes, fragrance, chlorine, lotions or latex"
             }
           },
           "9ac0310b-4b15-4a32-a0ad-ec912fd725d6": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-love4.svg",
+              "image": "shopify://shop_images/icon-love4.svg",
               "heading": "Dermatologist tested and approved"
             }
           },
           "9dfc52bb-40f3-4200-8277-ef9b23523e2b": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-love5.svg",
+              "image": "shopify://shop_images/icon-love5.svg",
               "heading": "Sustainably sourced, designed and packaged"
             }
           },
           "79b4d808-e4bf-4d6a-9071-c4a96e436dda": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-love6.svg",
+              "image": "shopify://shop_images/icon-love6.svg",
               "heading": "Sustainably forested, FSC Certified Wood Pulp"
             }
           }
@@ -2426,28 +2426,28 @@
           "5f9b63d0-20cf-4d3d-a81f-0c74577972e5": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-structure1.svg",
+              "image": "shopify://shop_images/icon-structure1.svg",
               "text": "100% Breathable design supports skin health (and according to many of you, even helps prevent UTIs!)"
             }
           },
           "121ef634-1401-44ca-8bf5-3bee799de6cd": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-structure2.svg",
+              "image": "shopify://shop_images/icon-structure2.svg",
               "text": "Ultra-soft, plant-based top sheet quickly wicks away moisture and won’t irritate even your most sensitive skin."
             }
           },
           "a159a36b-c2be-492d-ab43-55eb3ed15a0a": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-structure3.svg",
-              "text": "Sustainably-forested <span class=\"rights-wrap\">FSC<span class=\"rights\">®<\/span><\/span> \n Certified Wood Pulp and super-absorbent core lock in leaks."
+              "image": "shopify://shop_images/icon-structure3.svg",
+              "text": "Sustainably-forested <span class=\"rights-wrap\">FSC<span class=\"rights\">®</span></span> \n Certified Wood Pulp and super-absorbent core lock in leaks."
             }
           },
           "74ecab17-7d28-43be-94b6-3dcbecee5afb": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/icon-structure4.svg",
+              "image": "shopify://shop_images/icon-structure4.svg",
               "text": "Powerful plant-based back sheets trap leaks where they belong."
             }
           }
@@ -2463,12 +2463,12 @@
           ".rights-wrap {position: relative;}"
         ],
         "settings": {
-          "bg": "shopify:\/\/shop_images\/structure-image.jpg",
-          "bg-mobile": "shopify:\/\/shop_images\/structure-image-mobile.png",
-          "heading": "<span>Attn: Grace pads<\/span> are better for your<br> body and better for our planet.",
-          "cert_image": "shopify:\/\/shop_images\/image_12.png",
+          "bg": "shopify://shop_images/structure-image.jpg",
+          "bg-mobile": "shopify://shop_images/structure-image-mobile.png",
+          "heading": "<span>Attn: Grace pads</span> are better for your<br> body and better for our planet.",
+          "cert_image": "shopify://shop_images/image_12.png",
           "cert_text": "Attn: Grace is proudly a Certified B Corporation™, meeting the highest verified standards of social and environmental performance, transparency and accountability.",
-          "structure-info_image": "shopify:\/\/shop_images\/structure-info-image.png",
+          "structure-info_image": "shopify://shop_images/structure-info-image.png",
           "structure-info_heading": "Plants > Petroleum",
           "structure-info_text": "Not so fun fact: It takes roughly 1 cup of crude oil to make a single conventional disposable adult incontinence pad or brief. That’s why we replace petroleum-based plastics with skin-safe, high-performing, plant-based materials to bring you game-changing comfort and confidence."
         }
@@ -2476,9 +2476,9 @@
       "n-product-message": {
         "type": "n-product-message",
         "settings": {
-          "bg": "shopify:\/\/shop_images\/message-bg.jpg",
-          "image": "shopify:\/\/shop_images\/message-photo.jpg",
-          "text": "<p>There are so many women who suffer from itchy or painful skin irritation because of the bleach, dyes, and fragrances found in their ncontinence pads.<\/p><p>Are there colorful designs on your pads? Avoid them!<\/p><p>Instead, look for skin-safe incontinence pads with no harsh chemicals against your skin. You want breathable, natural materials that won’t irritate you down there.<\/p>",
+          "bg": "shopify://shop_images/message-bg.jpg",
+          "image": "shopify://shop_images/message-photo.jpg",
+          "text": "<p>There are so many women who suffer from itchy or painful skin irritation because of the bleach, dyes, and fragrances found in their ncontinence pads.</p><p>Are there colorful designs on your pads? Avoid them!</p><p>Instead, look for skin-safe incontinence pads with no harsh chemicals against your skin. You want breathable, natural materials that won’t irritate you down there.</p>",
           "name": "Dr. Barbara Frank",
           "desc": "Harvrd-affiliated OBGYN,<br> Attn: Grace Medical Advisor"
         }
@@ -2486,7 +2486,7 @@
       "n-product-try": {
         "type": "n-product-try",
         "settings": {
-          "image": "shopify:\/\/shop_images\/try-image.jpg",
+          "image": "shopify://shop_images/try-image.jpg",
           "heading": "Try us, risk free.",
           "subheading": "If you're not satisfied with your first order, we’ll help you find the right product for your needs, or issue you a complete refund. Whichever you prefer.",
           "btn-label": "Shop now",
@@ -2532,7 +2532,7 @@
           "b8238290-0fe7-4e61-b4ea-ad70d7d6f1cf"
         ],
         "settings": {
-          "image": "shopify:\/\/shop_images\/faq-image.jpg",
+          "image": "shopify://shop_images/faq-image.jpg",
           "heading": "All your questions answered",
           "subheading": "And if they’re not, take a look at our FAQs."
         }
@@ -2545,17 +2545,17 @@
           "page_subtitle": "At Attn: Grace, we believe that knowledge is empowering.",
           "page_subdescription": "Whether you're seeking information for yourself or a loved one, we're here to support you on your journey towards greater confidence and comfort. If you have any questions or need further assistance, our team is here to help.",
           "footer_subtitle": "Disclaimer",
-          "footer_subdescription": "* This glossary is for informational purposes only, whether or not it features the advice of physicians and\/or medical practitioners. This glossary is not, nor is it intended to be, a substitute for professional medical advice, diagnosis, or treatment and should never be relied upon for specific medical advice. Any views expressed in this article are the views of the experts cited herein and do not necessarily represent the views of Attn: Grace.",
+          "footer_subdescription": "* This glossary is for informational purposes only, whether or not it features the advice of physicians and/or medical practitioners. This glossary is not, nor is it intended to be, a substitute for professional medical advice, diagnosis, or treatment and should never be relied upon for specific medical advice. Any views expressed in this article are the views of the experts cited herein and do not necessarily represent the views of Attn: Grace.",
           "social_title": "Have more questions? Reach out to us by email, phone or text.",
-          "social_icon_1": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"><\/rect>\n<path d=\"M12.7497 13.1299H29.2497C29.7559 13.1299 30.1663 13.5403 30.1663 14.0465V28.7132C30.1663 29.2195 29.7559 29.6299 29.2497 29.6299H12.7497C12.2434 29.6299 11.833 29.2195 11.833 28.7132V14.0465C11.833 13.5403 12.2434 13.1299 12.7497 13.1299ZM28.333 17.0146L21.0655 23.5231L13.6663 16.9945V27.7965H28.333V17.0146ZM14.1352 14.9632L21.0564 21.07L27.8756 14.9632H14.1352Z\" fill=\"black\"><\/path>\n<\/svg>",
+          "social_icon_1": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"></rect>\n<path d=\"M12.7497 13.1299H29.2497C29.7559 13.1299 30.1663 13.5403 30.1663 14.0465V28.7132C30.1663 29.2195 29.7559 29.6299 29.2497 29.6299H12.7497C12.2434 29.6299 11.833 29.2195 11.833 28.7132V14.0465C11.833 13.5403 12.2434 13.1299 12.7497 13.1299ZM28.333 17.0146L21.0655 23.5231L13.6663 16.9945V27.7965H28.333V17.0146ZM14.1352 14.9632L21.0564 21.07L27.8756 14.9632H14.1352Z\" fill=\"black\"></path>\n</svg>",
           "social_text_1": "hello@attngrace.com",
           "social_link_1": "",
-          "social_icon_2": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"><\/rect>\n<path d=\"M18.5851 20.1718C19.4435 21.6813 20.6986 22.9364 22.2081 23.7948L23.0189 22.6596C23.2885 22.2823 23.7973 22.1657 24.2043 22.388C25.4939 23.0925 26.919 23.5206 28.4057 23.6383C28.8824 23.676 29.25 24.0739 29.25 24.5521V28.643C29.25 29.113 28.8945 29.5068 28.427 29.5548C27.9413 29.6048 27.4512 29.6299 26.9583 29.6299C19.1113 29.6299 12.75 23.2686 12.75 15.4215C12.75 14.9286 12.7751 14.4386 12.8251 13.9528C12.8731 13.4853 13.2669 13.1299 13.7369 13.1299H17.8278C18.306 13.1299 18.7039 13.4975 18.7416 13.9742C18.8593 15.4609 19.2874 16.8861 19.9918 18.1756C20.2141 18.5826 20.0975 19.0915 19.7202 19.361L18.5851 20.1718ZM16.2739 19.5696L18.0155 18.3256C17.5217 17.2596 17.1833 16.1291 17.01 14.9632H14.5916C14.5861 15.1157 14.5833 15.2685 14.5833 15.4215C14.5833 22.256 20.1239 27.7965 26.9583 27.7965C27.1114 27.7965 27.2642 27.7938 27.4167 27.7882V25.3699C26.2509 25.1966 25.1203 24.8582 24.0542 24.3644L22.8102 26.106C22.307 25.9105 21.821 25.6804 21.3551 25.4188L21.3019 25.3885C19.5056 24.367 18.0129 22.8743 16.9914 21.078L16.9611 21.0248C16.6994 20.5589 16.4694 20.0729 16.2739 19.5696Z\" fill=\"black\"><\/path>\n<\/svg>",
+          "social_icon_2": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"></rect>\n<path d=\"M18.5851 20.1718C19.4435 21.6813 20.6986 22.9364 22.2081 23.7948L23.0189 22.6596C23.2885 22.2823 23.7973 22.1657 24.2043 22.388C25.4939 23.0925 26.919 23.5206 28.4057 23.6383C28.8824 23.676 29.25 24.0739 29.25 24.5521V28.643C29.25 29.113 28.8945 29.5068 28.427 29.5548C27.9413 29.6048 27.4512 29.6299 26.9583 29.6299C19.1113 29.6299 12.75 23.2686 12.75 15.4215C12.75 14.9286 12.7751 14.4386 12.8251 13.9528C12.8731 13.4853 13.2669 13.1299 13.7369 13.1299H17.8278C18.306 13.1299 18.7039 13.4975 18.7416 13.9742C18.8593 15.4609 19.2874 16.8861 19.9918 18.1756C20.2141 18.5826 20.0975 19.0915 19.7202 19.361L18.5851 20.1718ZM16.2739 19.5696L18.0155 18.3256C17.5217 17.2596 17.1833 16.1291 17.01 14.9632H14.5916C14.5861 15.1157 14.5833 15.2685 14.5833 15.4215C14.5833 22.256 20.1239 27.7965 26.9583 27.7965C27.1114 27.7965 27.2642 27.7938 27.4167 27.7882V25.3699C26.2509 25.1966 25.1203 24.8582 24.0542 24.3644L22.8102 26.106C22.307 25.9105 21.821 25.6804 21.3551 25.4188L21.3019 25.3885C19.5056 24.367 18.0129 22.8743 16.9914 21.078L16.9611 21.0248C16.6994 20.5589 16.4694 20.0729 16.2739 19.5696Z\" fill=\"black\"></path>\n</svg>",
           "social_text_2": "+833 713 92 12",
           "social_link_2": "",
-          "social_icon_3": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"><\/rect>\n<path d=\"M25.5833 12.2134V14.0467H28.3394C28.8423 14.0467 29.25 14.4546 29.25 14.9573V29.6361C29.25 30.139 28.8422 30.5467 28.3394 30.5467H13.6606C13.1577 30.5467 12.75 30.1389 12.75 29.6361V14.9573C12.75 14.4544 13.1579 14.0467 13.6606 14.0467H16.4167V12.2134H25.5833ZM16.4167 15.88H14.5833V28.7134H27.4167V15.88H25.5833V17.7134H16.4167V15.88ZM18.25 25.0467V26.88H16.4167V25.0467H18.25ZM18.25 22.2967V24.13H16.4167V22.2967H18.25ZM18.25 19.5467V21.38H16.4167V19.5467H18.25ZM23.75 14.0467H18.25V15.88H23.75V14.0467Z\" fill=\"black\"><\/path>\n<\/svg>",
+          "social_icon_3": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"></rect>\n<path d=\"M25.5833 12.2134V14.0467H28.3394C28.8423 14.0467 29.25 14.4546 29.25 14.9573V29.6361C29.25 30.139 28.8422 30.5467 28.3394 30.5467H13.6606C13.1577 30.5467 12.75 30.1389 12.75 29.6361V14.9573C12.75 14.4544 13.1579 14.0467 13.6606 14.0467H16.4167V12.2134H25.5833ZM16.4167 15.88H14.5833V28.7134H27.4167V15.88H25.5833V17.7134H16.4167V15.88ZM18.25 25.0467V26.88H16.4167V25.0467H18.25ZM18.25 22.2967V24.13H16.4167V22.2967H18.25ZM18.25 19.5467V21.38H16.4167V19.5467H18.25ZM23.75 14.0467H18.25V15.88H23.75V14.0467Z\" fill=\"black\"></path>\n</svg>",
           "social_text_3": "Submit a request",
-          "social_link_3": "shopify:\/\/pages\/contact-us"
+          "social_link_3": "shopify://pages/contact-us"
         }
       },
       "never-ever-list": {
@@ -2711,7 +2711,7 @@
           "never_ever_list_rWJYgU": {
             "type": "never-ever-list",
             "settings": {
-              "list_title": "C9-C14 Linear and\/or Branched Perfluorocarboxylic Acids",
+              "list_title": "C9-C14 Linear and/or Branched Perfluorocarboxylic Acids",
               "list_description": "These are a group of chemical compounds belonging to the class of perfluorocarboxylic acids (PFCAs). They have been used in surface coatings (textiles, carpets, paper), firefighting foams, as chemical intermediates, electronics manufacturing, and in metal plating. These acids have raised environmental and health concerns due to their persistence, bioaccumlative potential, and toxicity. Long-term exposure may pose risks to human health, including potential effects on the liver, kidneys, immune system, and reproductive system."
             }
           },
@@ -3062,7 +3062,7 @@
             "type": "never-ever-list",
             "settings": {
               "list_title": "Soap Bark Powder",
-              "list_description": "Soap bark powder, also known as soap bark extract or quillaja extract, is derived from the bark of the Quillaja saponaria tree, native to South America. Due to its chemical makeup, it has been used as an alternative to synthetic surfactants commonly found in commercial cleaning and personal care products. It is used in a variety of products including shampoos and conditioners, body washes and shower gels, facial cleansers, and hand soaps. It can also be found in cleaning products and some pharmaceutical\/nutraceutical products. Soap bark is generally considered safe when used in cosmetic and cleaning products at appropriate concentrations. However, some individuals may be sensitive or allergic to it, leading to skin irritation or allergic reactions upon contact."
+              "list_description": "Soap bark powder, also known as soap bark extract or quillaja extract, is derived from the bark of the Quillaja saponaria tree, native to South America. Due to its chemical makeup, it has been used as an alternative to synthetic surfactants commonly found in commercial cleaning and personal care products. It is used in a variety of products including shampoos and conditioners, body washes and shower gels, facial cleansers, and hand soaps. It can also be found in cleaning products and some pharmaceutical/nutraceutical products. Soap bark is generally considered safe when used in cosmetic and cleaning products at appropriate concentrations. However, some individuals may be sensitive or allergic to it, leading to skin irritation or allergic reactions upon contact."
             }
           },
           "never_ever_list_Xp9G7p": {
@@ -3076,7 +3076,7 @@
             "type": "never-ever-list",
             "settings": {
               "list_title": "Substances Classified as Carcinogen Category 1A or 1B",
-              "list_description": "Substances classified as carcinogen category 1A or 1B are known human carcinogens or presumed to be human carcinogens, respectively. Examples of such substances include asbestos, formaldehyde, benzene, arsenic compounds, polychlorinated biphenyls (PCBs) and n-nitrosodimethylamine (NDMA). Consumer products that may contain these substances vary depending on regional regulations, manufacturing processes, and product formations. However, they may be found in personal care products (hair dyes, nail polish, cosmetics), cleaning products (solvents, degreasers, air fresheners), and textiles & apparel (dyes, finishes, flame retardants). Carcinogenic substances have the potential to cause cancer, irritate respiratory tract, cause skin irritation\/allergic reactions\/dermatitis, neurological impairment, reproductive and developmental defects, endocrine disruption, and immune system dysfunction."
+              "list_description": "Substances classified as carcinogen category 1A or 1B are known human carcinogens or presumed to be human carcinogens, respectively. Examples of such substances include asbestos, formaldehyde, benzene, arsenic compounds, polychlorinated biphenyls (PCBs) and n-nitrosodimethylamine (NDMA). Consumer products that may contain these substances vary depending on regional regulations, manufacturing processes, and product formations. However, they may be found in personal care products (hair dyes, nail polish, cosmetics), cleaning products (solvents, degreasers, air fresheners), and textiles & apparel (dyes, finishes, flame retardants). Carcinogenic substances have the potential to cause cancer, irritate respiratory tract, cause skin irritation/allergic reactions/dermatitis, neurological impairment, reproductive and developmental defects, endocrine disruption, and immune system dysfunction."
             }
           },
           "never_ever_list_deXPUg": {
@@ -3209,7 +3209,7 @@
             "type": "never-ever-list",
             "settings": {
               "list_title": "Disclaimer:",
-              "list_description": "This glossary is for informational purposes only, whether or not it features the advice of physicians and\/or medical practitioners. This glossary is not, nor is it intended to be, a substitute for professional medical advice, diagnosis, or treatment and should never be relied upon for specific medical advice. The views expressed in this article are the views of the experts cited herein and do not necessarily represent the views of Attn: Grace."
+              "list_description": "This glossary is for informational purposes only, whether or not it features the advice of physicians and/or medical practitioners. This glossary is not, nor is it intended to be, a substitute for professional medical advice, diagnosis, or treatment and should never be relied upon for specific medical advice. The views expressed in this article are the views of the experts cited herein and do not necessarily represent the views of Attn: Grace."
             }
           }
         },
@@ -3316,15 +3316,15 @@
           "footer_subtitle": "Attn Grace Will Never Test Our Finished Products On Animals, Nor Do We Ask Others To.",
           "footer_subdescription": "Sources: National Institutes of Environmental Health Sciences, CosIng, Health Canada, The Endocrine Disruption Exchange, EWG Skin Deep Cosmetics Database.",
           "social_title": "Have more questions? Reach out to us by email, phone or text.",
-          "social_icon_1": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"><\/rect>\n<path d=\"M12.7497 13.1299H29.2497C29.7559 13.1299 30.1663 13.5403 30.1663 14.0465V28.7132C30.1663 29.2195 29.7559 29.6299 29.2497 29.6299H12.7497C12.2434 29.6299 11.833 29.2195 11.833 28.7132V14.0465C11.833 13.5403 12.2434 13.1299 12.7497 13.1299ZM28.333 17.0146L21.0655 23.5231L13.6663 16.9945V27.7965H28.333V17.0146ZM14.1352 14.9632L21.0564 21.07L27.8756 14.9632H14.1352Z\" fill=\"black\"><\/path>\n<\/svg>",
+          "social_icon_1": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"></rect>\n<path d=\"M12.7497 13.1299H29.2497C29.7559 13.1299 30.1663 13.5403 30.1663 14.0465V28.7132C30.1663 29.2195 29.7559 29.6299 29.2497 29.6299H12.7497C12.2434 29.6299 11.833 29.2195 11.833 28.7132V14.0465C11.833 13.5403 12.2434 13.1299 12.7497 13.1299ZM28.333 17.0146L21.0655 23.5231L13.6663 16.9945V27.7965H28.333V17.0146ZM14.1352 14.9632L21.0564 21.07L27.8756 14.9632H14.1352Z\" fill=\"black\"></path>\n</svg>",
           "social_text_1": "hello@attngrace.com",
           "social_link_1": "",
-          "social_icon_2": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"><\/rect>\n<path d=\"M18.5851 20.1718C19.4435 21.6813 20.6986 22.9364 22.2081 23.7948L23.0189 22.6596C23.2885 22.2823 23.7973 22.1657 24.2043 22.388C25.4939 23.0925 26.919 23.5206 28.4057 23.6383C28.8824 23.676 29.25 24.0739 29.25 24.5521V28.643C29.25 29.113 28.8945 29.5068 28.427 29.5548C27.9413 29.6048 27.4512 29.6299 26.9583 29.6299C19.1113 29.6299 12.75 23.2686 12.75 15.4215C12.75 14.9286 12.7751 14.4386 12.8251 13.9528C12.8731 13.4853 13.2669 13.1299 13.7369 13.1299H17.8278C18.306 13.1299 18.7039 13.4975 18.7416 13.9742C18.8593 15.4609 19.2874 16.8861 19.9918 18.1756C20.2141 18.5826 20.0975 19.0915 19.7202 19.361L18.5851 20.1718ZM16.2739 19.5696L18.0155 18.3256C17.5217 17.2596 17.1833 16.1291 17.01 14.9632H14.5916C14.5861 15.1157 14.5833 15.2685 14.5833 15.4215C14.5833 22.256 20.1239 27.7965 26.9583 27.7965C27.1114 27.7965 27.2642 27.7938 27.4167 27.7882V25.3699C26.2509 25.1966 25.1203 24.8582 24.0542 24.3644L22.8102 26.106C22.307 25.9105 21.821 25.6804 21.3551 25.4188L21.3019 25.3885C19.5056 24.367 18.0129 22.8743 16.9914 21.078L16.9611 21.0248C16.6994 20.5589 16.4694 20.0729 16.2739 19.5696Z\" fill=\"black\"><\/path>\n<\/svg>",
+          "social_icon_2": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"></rect>\n<path d=\"M18.5851 20.1718C19.4435 21.6813 20.6986 22.9364 22.2081 23.7948L23.0189 22.6596C23.2885 22.2823 23.7973 22.1657 24.2043 22.388C25.4939 23.0925 26.919 23.5206 28.4057 23.6383C28.8824 23.676 29.25 24.0739 29.25 24.5521V28.643C29.25 29.113 28.8945 29.5068 28.427 29.5548C27.9413 29.6048 27.4512 29.6299 26.9583 29.6299C19.1113 29.6299 12.75 23.2686 12.75 15.4215C12.75 14.9286 12.7751 14.4386 12.8251 13.9528C12.8731 13.4853 13.2669 13.1299 13.7369 13.1299H17.8278C18.306 13.1299 18.7039 13.4975 18.7416 13.9742C18.8593 15.4609 19.2874 16.8861 19.9918 18.1756C20.2141 18.5826 20.0975 19.0915 19.7202 19.361L18.5851 20.1718ZM16.2739 19.5696L18.0155 18.3256C17.5217 17.2596 17.1833 16.1291 17.01 14.9632H14.5916C14.5861 15.1157 14.5833 15.2685 14.5833 15.4215C14.5833 22.256 20.1239 27.7965 26.9583 27.7965C27.1114 27.7965 27.2642 27.7938 27.4167 27.7882V25.3699C26.2509 25.1966 25.1203 24.8582 24.0542 24.3644L22.8102 26.106C22.307 25.9105 21.821 25.6804 21.3551 25.4188L21.3019 25.3885C19.5056 24.367 18.0129 22.8743 16.9914 21.078L16.9611 21.0248C16.6994 20.5589 16.4694 20.0729 16.2739 19.5696Z\" fill=\"black\"></path>\n</svg>",
           "social_text_2": "+833 713 92 12",
           "social_link_2": "",
-          "social_icon_3": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"><\/rect>\n<path d=\"M25.5833 12.2134V14.0467H28.3394C28.8423 14.0467 29.25 14.4546 29.25 14.9573V29.6361C29.25 30.139 28.8422 30.5467 28.3394 30.5467H13.6606C13.1577 30.5467 12.75 30.1389 12.75 29.6361V14.9573C12.75 14.4544 13.1579 14.0467 13.6606 14.0467H16.4167V12.2134H25.5833ZM16.4167 15.88H14.5833V28.7134H27.4167V15.88H25.5833V17.7134H16.4167V15.88ZM18.25 25.0467V26.88H16.4167V25.0467H18.25ZM18.25 22.2967V24.13H16.4167V22.2967H18.25ZM18.25 19.5467V21.38H16.4167V19.5467H18.25ZM23.75 14.0467H18.25V15.88H23.75V14.0467Z\" fill=\"black\"><\/path>\n<\/svg>",
+          "social_icon_3": "<svg width=\"42\" height=\"43\" viewbox=\"0 0 42 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect y=\"0.379883\" width=\"42\" height=\"42\" rx=\"21\" fill=\"#FBC9A6\"></rect>\n<path d=\"M25.5833 12.2134V14.0467H28.3394C28.8423 14.0467 29.25 14.4546 29.25 14.9573V29.6361C29.25 30.139 28.8422 30.5467 28.3394 30.5467H13.6606C13.1577 30.5467 12.75 30.1389 12.75 29.6361V14.9573C12.75 14.4544 13.1579 14.0467 13.6606 14.0467H16.4167V12.2134H25.5833ZM16.4167 15.88H14.5833V28.7134H27.4167V15.88H25.5833V17.7134H16.4167V15.88ZM18.25 25.0467V26.88H16.4167V25.0467H18.25ZM18.25 22.2967V24.13H16.4167V22.2967H18.25ZM18.25 19.5467V21.38H16.4167V19.5467H18.25ZM23.75 14.0467H18.25V15.88H23.75V14.0467Z\" fill=\"black\"></path>\n</svg>",
           "social_text_3": "Fill the form",
-          "social_link_3": "shopify:\/\/pages\/contact-us"
+          "social_link_3": "shopify://pages/contact-us"
         }
       },
       "page-search": {
@@ -3338,19 +3338,19 @@
       "testing": {
         "type": "testing",
         "settings": {
-          "hero_image": "shopify:\/\/shop_images\/Slice_1.jpg"
+          "hero_image": "shopify://shop_images/Slice_1.jpg"
         }
       },
       "separator-section": {
         "type": "separator-section",
         "settings": {
-          "separator_image": "shopify:\/\/shop_images\/ingredient_glossary.png"
+          "separator_image": "shopify://shop_images/ingredient_glossary.png"
         }
       },
       "mobile-image-section": {
         "type": "mobile-image-section",
         "settings": {
-          "mobile_image": "shopify:\/\/shop_images\/Frame_456.jpg"
+          "mobile_image": "shopify://shop_images/Frame_456.jpg"
         }
       },
       "page-productCRO": {
@@ -3390,14 +3390,14 @@
     ],
     "blocks": {
       "733389323033596483": {
-        "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/theme-settings\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+        "type": "shopify://apps/okendo-product-reviews-ugc/blocks/theme-settings/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
         "disabled": false,
         "settings": {
           "show_preview_data": true
         }
       },
       "17151115064775110295": {
-        "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/recharge-theme\/371eed76-0b44-4869-9813-730372ea378e",
+        "type": "shopify://apps/recharge-subscriptions/blocks/recharge-theme/371eed76-0b44-4869-9813-730372ea378e",
         "disabled": false,
         "settings": {
           "color_brand": "#000000",
@@ -3413,27 +3413,27 @@
         }
       },
       "11797761893487868451": {
-        "type": "shopify:\/\/apps\/convertflow\/blocks\/convertflow_script\/f6367d00-7b7b-4ff9-aea4-2576ea814ccc",
+        "type": "shopify://apps/convertflow/blocks/convertflow_script/f6367d00-7b7b-4ff9-aea4-2576ea814ccc",
         "disabled": false,
         "settings": {}
       },
       "4804304946286255945": {
-        "type": "shopify:\/\/apps\/avada-cookie-consent\/blocks\/app-embed\/deacc407-65bc-4a4e-84d9-f90e9e492cf3",
+        "type": "shopify://apps/avada-cookie-consent/blocks/app-embed/deacc407-65bc-4a4e-84d9-f90e9e492cf3",
         "disabled": false,
         "settings": {}
       },
       "12509190167029697241": {
-        "type": "shopify:\/\/apps\/blotout-edgetag\/blocks\/app-embed\/ae22d985-ba57-41f5-94c5-18d3dd98ea3c",
+        "type": "shopify://apps/blotout-edgetag/blocks/app-embed/ae22d985-ba57-41f5-94c5-18d3dd98ea3c",
         "disabled": false,
         "settings": {}
       },
       "6065014864672580889": {
-        "type": "shopify:\/\/apps\/slide-cart-by-amp\/blocks\/app-embed\/0a410b8d-7dc4-4f2d-b4e8-c12d34fd2255",
+        "type": "shopify://apps/slide-cart-by-amp/blocks/app-embed/0a410b8d-7dc4-4f2d-b4e8-c12d34fd2255",
         "disabled": false,
         "settings": {}
       },
       "6441254115607727225": {
-        "type": "shopify:\/\/apps\/shop-quiz-product-recommender\/blocks\/automatic-popup\/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+        "type": "shopify://apps/shop-quiz-product-recommender/blocks/automatic-popup/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
         "disabled": false,
         "settings": {
           "quiz_id": "",
@@ -3444,14 +3444,14 @@
         }
       },
       "2209279550302034861": {
-        "type": "shopify:\/\/apps\/shop-quiz-product-recommender\/blocks\/link-popup\/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+        "type": "shopify://apps/shop-quiz-product-recommender/blocks/link-popup/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
         "disabled": false,
         "settings": {
           "show_list": true
         }
       },
       "4087582241319980836": {
-        "type": "shopify:\/\/apps\/ground\/blocks\/ground_script\/33606432-4610-4a99-a33b-7bec990f60ef",
+        "type": "shopify://apps/ground/blocks/ground_script/33606432-4610-4a99-a33b-7bec990f60ef",
         "disabled": false,
         "settings": {}
       }
@@ -3463,35 +3463,35 @@
       "85a7ca28-778c-4e20-8c32-d6d489c0fe52": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-pads-features1.svg",
+          "image": "shopify://shop_images/icon-pads-features1.svg",
           "heading": "Discreet fit and barely-there feel"
         }
       },
       "9380ead2-8bad-4eae-8150-4a1615f85164": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-pads-features2.svg",
+          "image": "shopify://shop_images/icon-pads-features2.svg",
           "heading": "Skin-Safe, DermaTest® Approved"
         }
       },
       "e1623fd2-921a-47af-9d4b-9874491657bb": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-pads-features3.svg",
+          "image": "shopify://shop_images/icon-pads-features3.svg",
           "heading": "Stay drier, longer"
         }
       },
       "6ca06a4b-cd34-4738-ad0e-660c147bbbb6": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-pads-features4.svg",
+          "image": "shopify://shop_images/icon-pads-features4.svg",
           "heading": "Luxuriously soft"
         }
       },
       "b2dc3b2b-0ab4-491f-85a9-92e22d69c40d": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-pads-features5.svg",
+          "image": "shopify://shop_images/icon-pads-features5.svg",
           "heading": "Eco-conscious design"
         }
       }
@@ -3508,11 +3508,11 @@
   "new-product-videos": {
     "type": "new-product-videos",
     "settings": {
-      "heading": "Our pads keep you <span>drier, longer.<\/span>",
-      "videourl": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/245b1b3b2d41492790fef70d14922772.mp4",
-      "videourl2": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cab10436da334aaea19c7be06ba3ff9e.mp4",
-      "image1": "shopify:\/\/shop_images\/keep-image1.jpg",
-      "image2": "shopify:\/\/shop_images\/keep-image2.jpg",
+      "heading": "Our pads keep you <span>drier, longer.</span>",
+      "videourl": "https://cdn.shopify.com/videos/c/o/v/245b1b3b2d41492790fef70d14922772.mp4",
+      "videourl2": "https://cdn.shopify.com/videos/c/o/v/cab10436da334aaea19c7be06ba3ff9e.mp4",
+      "image1": "shopify://shop_images/keep-image1.jpg",
+      "image2": "shopify://shop_images/keep-image2.jpg",
       "description": "Pads don't just have to absorb leaks, they have to retain them. Our pads absorb leaks quickly AND then keep them locked away — so you stay dry, even when the pad is soaked to capacity.",
       "notes": "*Testing performed by an independent, third party lab measuring Attn: Grace pads vs. leading drugstore brands."
     }
@@ -3520,14 +3520,14 @@
   "new-product-scinsafe": {
     "type": "new-product-scinsafe",
     "settings": {
-      "bg": "shopify:\/\/shop_images\/skinsafe-bg.jpg",
-      "heading": "The only incontinence pad backed by a <span>Skin-Safe Promise™<\/span>",
+      "bg": "shopify://shop_images/skinsafe-bg.jpg",
+      "heading": "The only incontinence pad backed by a <span>Skin-Safe Promise™</span>",
       "description": "With Attn: Grace you never have to choose between skin-safety and high-performance. Our pads are designed so that only soft, gentle, plant-based fibers touch your skin. Our sophisticated top sheet proudly boasts moisture-wicking capabilities that outperform premium, big-box brands, as well as brands using cotton top sheets. Tough on leaks, and safe on skin — no trade-offs.",
-      "image_left": "shopify:\/\/shop_images\/skinsafe-other-image.png",
+      "image_left": "shopify://shop_images/skinsafe-other-image.png",
       "heading_left": "other brands",
-      "imagei_left": "shopify:\/\/shop_images\/icon-skinsafe-other.svg",
-      "desc_left": "<strong>Petroleum-based <span>top sheets<\/span><\/strong>",
-      "image_right": "shopify:\/\/shop_images\/icon-skinsafe-info.svg",
+      "imagei_left": "shopify://shop_images/icon-skinsafe-other.svg",
+      "desc_left": "<strong>Petroleum-based <span>top sheets</span></strong>",
+      "image_right": "shopify://shop_images/icon-skinsafe-info.svg",
       "heading_right": "Skin-Safe Promise™",
       "caption_right": "PLANT-based top sheets",
       "text_right": "no bleaches, no dyes, no fragrance"
@@ -3553,7 +3553,7 @@
       "c9906881-a308-44be-acec-0aa91deece33": {
         "type": "text",
         "settings": {
-          "text": "This product is amazing! It feels like silk \u2028and is more comfortable, thinner, and \u2028more effective than any other brand.",
+          "text": "This product is amazing! It feels like silk  and is more comfortable, thinner, and  more effective than any other brand.",
           "autor": "Tara S."
         }
       },
@@ -3567,7 +3567,7 @@
       "31ed8e24-bd7d-4506-b88b-4ab519b20eb1": {
         "type": "text",
         "settings": {
-          "text": "They don’t fall apart, leak, make crinkly noises when you walk, or bunch up like \u2028a lot of other brands. And no rash!",
+          "text": "They don’t fall apart, leak, make crinkly noises when you walk, or bunch up like  a lot of other brands. And no rash!",
           "autor": "Carmen R."
         }
       },
@@ -3604,7 +3604,7 @@
       "64338d5f-f1f5-4931-8ed4-408332d5858d"
     ],
     "settings": {
-      "heading": "9-out-of-10 customers noticed a<br> difference almost immediately after<br> switching to <span>Attn: Grace.<\/span>",
+      "heading": "9-out-of-10 customers noticed a<br> difference almost immediately after<br> switching to <span>Attn: Grace.</span>",
       "subheading": "A better way is waiting for you. Don’t miss out."
     }
   },
@@ -3614,42 +3614,42 @@
       "e6553b5b-42cc-48ac-b987-71e2d794d42d": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-love1.svg",
+          "image": "shopify://shop_images/icon-love1.svg",
           "heading": "Super absorbent core"
         }
       },
       "bce5a0e3-d5e5-4170-b3f5-a36969509cfd": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-love2.svg",
+          "image": "shopify://shop_images/icon-love2.svg",
           "heading": "Powerful, plant-based top and back sheets"
         }
       },
       "c8d22c74-ff35-4b4a-a31c-9df1d7929c9a": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-love3.svg",
+          "image": "shopify://shop_images/icon-love3.svg",
           "heading": "No dyes, fragrance, chlorine, lotions or latex"
         }
       },
       "74b103da-9843-41a2-b0d3-ea6d24574b09": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-love4.svg",
+          "image": "shopify://shop_images/icon-love4.svg",
           "heading": "Dermatologist tested and approved"
         }
       },
       "46f39ec2-4fdf-46ce-8540-d3a421c6e190": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-love5.svg",
+          "image": "shopify://shop_images/icon-love5.svg",
           "heading": "Sustainably sourced, designed and packaged"
         }
       },
       "5b5b2209-8e78-4a45-857d-7589442a0857": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-love6.svg",
+          "image": "shopify://shop_images/icon-love6.svg",
           "heading": "Sustainably forested, FSC Certified Wood Pulp"
         }
       }
@@ -3672,28 +3672,28 @@
       "bad976cf-4674-45b6-8d03-c36726fbdd07": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-structure1.svg",
+          "image": "shopify://shop_images/icon-structure1.svg",
           "text": "100% Breathable design supports skin health (and according to many of you, even helps prevent UTIs!)"
         }
       },
       "5ad4b762-a3b1-479f-ab2d-0d63d3e24c11": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-structure2.svg",
+          "image": "shopify://shop_images/icon-structure2.svg",
           "text": "Ultra-soft, plant-based top sheet quickly wicks away moisture and won’t irritate even your most sensitive skin."
         }
       },
       "bf8c4cbb-0d01-42d9-8ee1-b3b06acb27f3": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-structure3.svg",
+          "image": "shopify://shop_images/icon-structure3.svg",
           "text": "Sustainably-forested FSC Certified wood pulp and super-absorbent core lock in leaks."
         }
       },
       "a8397ef0-3f8c-4708-a62b-e1155a807ed3": {
         "type": "image",
         "settings": {
-          "image": "shopify:\/\/shop_images\/icon-structure4.svg",
+          "image": "shopify://shop_images/icon-structure4.svg",
           "text": "Powerful plant-based back sheets trap leaks where they belong."
         }
       }
@@ -3705,12 +3705,12 @@
       "a8397ef0-3f8c-4708-a62b-e1155a807ed3"
     ],
     "settings": {
-      "bg": "shopify:\/\/shop_images\/structure-image.jpg",
-      "bg-mobile": "shopify:\/\/shop_images\/structure-image-mobile.png",
-      "heading": "<span>Attn: Grace pads<\/span> are better for your<br> body and better for our planet.",
-      "cert_image": "shopify:\/\/shop_images\/image_12.png",
+      "bg": "shopify://shop_images/structure-image.jpg",
+      "bg-mobile": "shopify://shop_images/structure-image-mobile.png",
+      "heading": "<span>Attn: Grace pads</span> are better for your<br> body and better for our planet.",
+      "cert_image": "shopify://shop_images/image_12.png",
       "cert_text": "Attn: Grace is proudly a Certified B Corporation™, meeting the highest verified standards of social and environmental performance, transparency and accountability.",
-      "structure-info_image": "shopify:\/\/shop_images\/structure-info-image.png",
+      "structure-info_image": "shopify://shop_images/structure-info-image.png",
       "structure-info_heading": "Plants > Petroleum",
       "structure-info_text": "Not so fun fact: It takes roughly 1 cup of crude oil to make a single conventional disposable adult incontinence pad or brief. That’s why we replace petroleum-based plastics with skin-safe, high-performing, plant-based materials to bring you game-changing comfort and confidence."
     }
@@ -3718,9 +3718,9 @@
   "n-product-message": {
     "type": "n-product-message",
     "settings": {
-      "bg": "shopify:\/\/shop_images\/message-bg.jpg",
-      "image": "shopify:\/\/shop_images\/message-photo.jpg",
-      "text": "<p>There are so many women who suffer from itchy or painful skin irritation because of the bleach, dyes, and fragrances found in their ncontinence pads.<\/p><p>Are there colorful designs on your pads? Avoid them!<\/p><p>Instead, look for skin-safe incontinence pads with no harsh chemicals against your skin. You want breathable, natural materials that won’t irritate you down there.<\/p>",
+      "bg": "shopify://shop_images/message-bg.jpg",
+      "image": "shopify://shop_images/message-photo.jpg",
+      "text": "<p>There are so many women who suffer from itchy or painful skin irritation because of the bleach, dyes, and fragrances found in their ncontinence pads.</p><p>Are there colorful designs on your pads? Avoid them!</p><p>Instead, look for skin-safe incontinence pads with no harsh chemicals against your skin. You want breathable, natural materials that won’t irritate you down there.</p>",
       "name": "Dr. Barbara Frank",
       "desc": "Harvrd-affiliated OBGYN,<br> Attn: Grace Medical Advisor"
     }
@@ -3728,7 +3728,7 @@
   "n-product-try": {
     "type": "n-product-try",
     "settings": {
-      "image": "shopify:\/\/shop_images\/try-image.jpg",
+      "image": "shopify://shop_images/try-image.jpg",
       "heading": "Try us, risk free.",
       "subheading": "If you're not satisfied with your first order, we’ll help you find the right product for your needs, or issue you a complete refund. Whichever you prefer.",
       "btn-label": "Shop now",
@@ -3774,7 +3774,7 @@
       "b8ca0a98-58a5-4f37-aee4-7337c9be6568"
     ],
     "settings": {
-      "image": "shopify:\/\/shop_images\/faq-image.jpg",
+      "image": "shopify://shop_images/faq-image.jpg",
       "heading": "All your questions answered",
       "subheading": "And if they’re not, take a look at our FAQs."
     }
