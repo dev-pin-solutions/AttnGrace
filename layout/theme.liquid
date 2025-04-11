@@ -432,14 +432,14 @@ Creation date: 08/14/2024
                   slide_product_id: '{{ value.product_for_slide.value.first_available_variant.id }}',
                   slide_product_title: '{{ value.product_for_slide.value.title }}',
                   slide_product_price: '{{ value.product_for_slide.value.price | money }}',
-                  slide_image: '{{ value.image_for_product | img_url }}',
+                  slide_image: '{{ value.image_for_product | img_url: '500x' }}',
                   cart_title: '{{ value.cart_title }}',
                   cart_subtitle: '{{ value.cart_subtitle }}',
                   review_author: '{{ value.review_autor }}',
                   review_rating: '{{ value.review_rating }}',
                   review_title: '{{ value.review_title }}',
-              review_text: '{{ value.review_text_short |  }}'
-
+                  review_text: '{{ value.review_text_short |  }}',
+                  okendo_reviews: '{{ value.product_for_slide.value.metafields.app--1576377--reviews.review_count }}'
               {% endif %}
               {% endfor %}
           }

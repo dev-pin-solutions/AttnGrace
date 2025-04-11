@@ -26305,14 +26305,7 @@ body.pageqr-code {
   display: flex;
   flex: 0 0 82%;
   flex-direction: column;
-  gap: 20px;
-}
-.slidecarthq .cmb_product-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  gap: 20px
+  gap: 5px;
 }
 .slidecarthq .cmb_product_info_price_btn {
   text-align: left;
@@ -26327,7 +26320,7 @@ body.pageqr-code {
   line-height: 25px;
   font-weight: 500px;
 }
-.slidecarthq .cmb_product-info .add-to-cart-button {
+.slidecarthq .add-to-cart-button {
     min-width: 168px;
     background: black;
     border-radius: 25px;
@@ -26347,7 +26340,7 @@ body.pageqr-code {
 }
 
 .slidecarthq .cmb_review .verified-buyer {
-  color: blue;
+  color: black;
   font-size: 0.9rem;
   font-weight: bold;
   display: flex;
@@ -26370,7 +26363,12 @@ body.pageqr-code {
   margin: 5px 0;
 }
 .slidecarthq .custom-product-block .cmb_review .last_review_p {
-  max-width: 90%;
+  max-width: 97%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
 }
 .slidecarthq .upsells-stacked {
   display: none;
