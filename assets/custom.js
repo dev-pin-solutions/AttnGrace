@@ -859,14 +859,43 @@ async function handleCartFullClick() {
                     scrollContainer.addEventListener('scroll', () => {
                         const scrollLeft = scrollContainer.scrollLeft;
                         const slideWidth = 330 + 16;
-                        const index = Math.round(scrollLeft / slideWidth);
+                        const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+                        // Use Math.round for dot index but clamp it
+                        let index = 0;
+                        let closestDistance = Infinity;
+
+                        slides.forEach((slide, i) => {
+                            const slideOffset = slide.offsetLeft;
+                            const distance = Math.abs(slideOffset - scrollLeft);
+                            if (distance < closestDistance) {
+                                closestDistance = distance;
+                                index = i;
+                            }
+                        });
 
                         const dots = slider.querySelectorAll('.slider-dot');
-                        dots.forEach(dot => dot.classList.remove('active'));
-                        if (dots[index]) dots[index].classList.add('active');
 
-                        leftArrow.style.opacity = index === 0 ? '0.5' : '1';
-                        rightArrow.style.opacity = index >= slides.length - 1 ? '0.5' : '1';
+// Track visible slide using IntersectionObserver
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const index = Array.from(slides).indexOf(entry.target);
+                                    dots.forEach(dot => dot.classList.remove('active'));
+                                    if (dots[index]) dots[index].classList.add('active');
+                                }
+                            });
+                        }, {
+                            root: scrollContainer,
+                            threshold: 0.6, // slide must be 60% in view to count
+                        });
+
+// Observe all slides
+                        slides.forEach(slide => observer.observe(slide));
+
+                        // Arrow visibility logic using precise scroll values
+                        leftArrow.style.opacity = scrollLeft <= 0 ? '0.5' : '1';
+                        rightArrow.style.opacity = scrollLeft >= maxScrollLeft - 2 ? '0.5' : '1';
                     });
 
                     // Hide arrows/dots if only one slide
